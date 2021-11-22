@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimedCredito", "SimedCredito\SimedCredito.csproj", "{D2F0282B-F457-488C-B8AF-8FF6F01F2775}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simed.Entity", "Simed.Entity\Simed.Entity.csproj", "{7550186B-300B-4CF5-822E-773AAE32D571}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simed.Data", "Simed.Data\Simed.Data.csproj", "{AB4DD7E7-8BFD-42DB-954F-15B5A0CA1873}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simed.Business", "Simed.Business\Simed.Business.csproj", "{A99A1A96-B900-4025-B12E-8A62EE88877C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simed.Utilities", "Simed.Utilities\Simed.Utilities.csproj", "{02F200C9-7769-465D-93DD-C639FE42D68C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimedCredito.Web", "SimedCredito.Web\SimedCredito.Web.csproj", "{D253294F-94F7-4D41-9FE0-8B91F8087683}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2F0282B-F457-488C-B8AF-8FF6F01F2775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2F0282B-F457-488C-B8AF-8FF6F01F2775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2F0282B-F457-488C-B8AF-8FF6F01F2775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2F0282B-F457-488C-B8AF-8FF6F01F2775}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7550186B-300B-4CF5-822E-773AAE32D571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7550186B-300B-4CF5-822E-773AAE32D571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7550186B-300B-4CF5-822E-773AAE32D571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7550186B-300B-4CF5-822E-773AAE32D571}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB4DD7E7-8BFD-42DB-954F-15B5A0CA1873}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB4DD7E7-8BFD-42DB-954F-15B5A0CA1873}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB4DD7E7-8BFD-42DB-954F-15B5A0CA1873}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB4DD7E7-8BFD-42DB-954F-15B5A0CA1873}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A99A1A96-B900-4025-B12E-8A62EE88877C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A99A1A96-B900-4025-B12E-8A62EE88877C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A99A1A96-B900-4025-B12E-8A62EE88877C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A99A1A96-B900-4025-B12E-8A62EE88877C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02F200C9-7769-465D-93DD-C639FE42D68C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F200C9-7769-465D-93DD-C639FE42D68C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F200C9-7769-465D-93DD-C639FE42D68C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F200C9-7769-465D-93DD-C639FE42D68C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D253294F-94F7-4D41-9FE0-8B91F8087683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D253294F-94F7-4D41-9FE0-8B91F8087683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D253294F-94F7-4D41-9FE0-8B91F8087683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D253294F-94F7-4D41-9FE0-8B91F8087683}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98B751C7-C91D-45E5-BCCE-409AAD7BD7C3}
+	EndGlobalSection
+EndGlobal

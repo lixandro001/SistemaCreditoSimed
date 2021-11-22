@@ -1,0 +1,14 @@
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\bin\Debug\netcoreapp2.1\Simed.Data.deps.json
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\bin\Debug\netcoreapp2.1\Simed.Data.dll
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\bin\Debug\netcoreapp2.1\Simed.Data.pdb
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\bin\Debug\netcoreapp2.1\Simed.Entity.dll
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\bin\Debug\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\bin\Debug\netcoreapp2.1\Simed.Entity.pdb
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\bin\Debug\netcoreapp2.1\System.Data.SqlClient.xml
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\obj\Debug\netcoreapp2.1\Simed.Data.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\obj\Debug\netcoreapp2.1\Simed.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\obj\Debug\netcoreapp2.1\Simed.Data.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\obj\Debug\netcoreapp2.1\Simed.Data.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\obj\Debug\netcoreapp2.1\Simed.Data.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\obj\Debug\netcoreapp2.1\Simed.Data.dll
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\obj\Debug\netcoreapp2.1\Simed.Data.pdb
