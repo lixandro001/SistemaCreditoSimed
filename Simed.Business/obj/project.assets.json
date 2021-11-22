@@ -723,26 +723,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Users\\usuario\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\SistemaCreditoSimed\\SimedCredito\\Simed.Business\\Simed.Business.csproj",
+      "projectUniqueName": "C:\\Users\\usuario\\Source\\Repos\\.NET\\SistemaCreditoSimed\\Simed.Business\\Simed.Business.csproj",
       "projectName": "Simed.Business",
-      "projectPath": "C:\\Users\\Usuario\\Desktop\\SistemaCreditoSimed\\SimedCredito\\Simed.Business\\Simed.Business.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\Desktop\\SistemaCreditoSimed\\SimedCredito\\Simed.Business\\obj\\",
+      "projectPath": "C:\\Users\\usuario\\Source\\Repos\\.NET\\SistemaCreditoSimed\\Simed.Business\\Simed.Business.csproj",
+      "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\usuario\\Source\\Repos\\.NET\\SistemaCreditoSimed\\Simed.Business\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -756,8 +753,8 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "projectReferences": {
-            "C:\\Users\\Usuario\\Desktop\\SistemaCreditoSimed\\SimedCredito\\Simed.Data\\Simed.Data.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\Desktop\\SistemaCreditoSimed\\SimedCredito\\Simed.Data\\Simed.Data.csproj"
+            "C:\\Users\\usuario\\Source\\Repos\\.NET\\SistemaCreditoSimed\\Simed.Data\\Simed.Data.csproj": {
+              "projectPath": "C:\\Users\\usuario\\Source\\Repos\\.NET\\SistemaCreditoSimed\\Simed.Data\\Simed.Data.csproj"
             }
           }
         }
@@ -789,7 +786,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

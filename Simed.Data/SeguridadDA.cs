@@ -18,6 +18,7 @@ namespace Simed.Data
         public void Disponse()
         {
             GC.SuppressFinalize(this);
+
         }
 
         public SeguridadResponse GetLogin(LoginRequest Login)
