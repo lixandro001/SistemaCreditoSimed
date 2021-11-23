@@ -1,0 +1,147 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+
+<div class="register-box">
+    <div class="register-logo">
+        <a href="@Url.Action("Index", "Login")"><b>Boleta Electronica</b> EKT</a>
+    </div>
+    <div class="card">
+        <div class="card-body register-card-body">
+
+            <div id="divRegister">
+                <p class="login-box-msg">Ingrese sus datos para registrarse</p>
+                <form id="fmrRegister" action="#" method="post">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group mb-1 mt-2">
+                                <input id="Fullname" type="text" name="Fullname" class="form-control" placeholder="Nombre Completo">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-user"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <label id="Fullname-error" class="error" for="Fullname" style="display:none">Este campo es obligatorio.</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group mb-1 mt-2">
+                                <input id="DucumentNumber" name="DucumentNumber" type="text" class="form-control" placeholder="DNI (este será su usuario para ingresar)">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-dna"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <label id="DucumentNumber-error" class="error" for="DucumentNumber" style="display:none">Este campo es obligatorio.</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group mt-2">
+                                <input id="Email" type="email" name="Email" class="form-control" placeholder="Email">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-envelope"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group mb-1 mt-2">
+                                <input id="Password" type="password" name="Password" class="form-control" placeholder="Password">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-lock"></span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <label id="Password-error" class="error" for="Password" style="display:none"></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group mb-3 mt-2">
+                                <input id="Password2" type="password" name="Password2" class="form-control" placeholder="Repetir password">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-lock"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <label id="Password2-error" class="error" for="Password2" style="display:none">Por favor, escriba el mismo valor de nuevo.</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+
+                            <div>
+
+                            </div>
+
+
+                            <div class="icheck-primary">
+                                <input type="checkbox" id="agreeTerms" name="terms" value="agree">
+                                <label for="agreeTerms">
+                                    Acepto los <a href="#">términos y condiciones</a>
+                                </label>
+                            </div>
+
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-4">
+                            <button id="btnRegister" type="button" class="btn btn-primary btn-block">Registrar</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+            </div>
+
+            <a href="@Url.Action("Index", "Login")" class="text-center">Iniciar Sesión</a>
+        </div>
+        <!-- /.form-box -->
+    </div><!-- /.card -->
+</div>
+<!-- /.register-box -->
+
+<div class="modal fade" id="modalTerminos" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content border-modal-custom-principal">
+            <div class="modal-header border-modal-custom-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">TERMINOS Y CONDICIONES</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding:0px !important">
+                <div class="col-xs-12 col-md-12 centerBlock div-row-general" style="padding-top:20px !important">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<link href="~/adminlte/css/sweetalert2.min.css" rel="stylesheet" />
+
+@section scripts{
+    
+   
+    <script src="@Url.Content("~/js/User.js")"></script>
+
+}
+
+
+<!--
+<script src="~/js/sweetalert2.min.js"></script>
+-->

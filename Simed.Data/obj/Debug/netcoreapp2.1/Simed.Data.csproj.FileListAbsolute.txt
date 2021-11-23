@@ -12,6 +12,7 @@ C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\obj\Debug\n
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\obj\Debug\netcoreapp2.1\Simed.Data.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\obj\Debug\netcoreapp2.1\Simed.Data.dll
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\obj\Debug\netcoreapp2.1\Simed.Data.pdb
+<<<<<<< HEAD
 C:\Users\usuario\Source\Repos\.NET\SistemaCreditoSimed\Simed.Data\bin\Debug\netcoreapp2.1\Simed.Data.deps.json
 C:\Users\usuario\Source\Repos\.NET\SistemaCreditoSimed\Simed.Data\bin\Debug\netcoreapp2.1\Simed.Data.dll
 C:\Users\usuario\Source\Repos\.NET\SistemaCreditoSimed\Simed.Data\bin\Debug\netcoreapp2.1\Simed.Data.pdb
@@ -27,3 +28,6 @@ C:\Users\usuario\Source\Repos\.NET\SistemaCreditoSimed\Simed.Data\obj\Debug\netc
 C:\Users\usuario\Source\Repos\.NET\SistemaCreditoSimed\Simed.Data\obj\Debug\netcoreapp2.1\Simed.Data.csproj.CopyComplete
 C:\Users\usuario\Source\Repos\.NET\SistemaCreditoSimed\Simed.Data\obj\Debug\netcoreapp2.1\Simed.Data.dll
 C:\Users\usuario\Source\Repos\.NET\SistemaCreditoSimed\Simed.Data\obj\Debug\netcoreapp2.1\Simed.Data.pdb
+=======
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Data\obj\Debug\netcoreapp2.1\Simed.Data.csproj.CopyComplete
+>>>>>>> main

@@ -20,7 +20,6 @@ C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito\bin\Debug
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito\bin\Debug\netcoreapp2.1\Simed.Utilities.pdb
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito\bin\Debug\netcoreapp2.1\Simed.Data.pdb
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito\obj\Debug\netcoreapp2.1\SimedCredito.RazorTargetAssemblyInfo.cache
-C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito\obj\Debug\netcoreapp2.1\SimedCredito.csproj.CopyComplete
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito\obj\Debug\netcoreapp2.1\SimedCredito.dll
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito\obj\Debug\netcoreapp2.1\SimedCredito.pdb
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito\obj\Debug\netcoreapp2.1\SimedCredito.genruntimeconfig.cache
