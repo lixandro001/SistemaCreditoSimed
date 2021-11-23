@@ -10,6 +10,7 @@ namespace Simed.Entity.Response
         public string message { get; set; }
         public string data { get; set; }
         public object Data { get; set; }
+        public string Prueba { get; set; }
 
     }
 }
