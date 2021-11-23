@@ -86,8 +86,8 @@ namespace Simed.Data
                         while (Dr.Read())
                         {
                             var Entity = new TipoIdentificacionListResponse();
-                            if (Dr["Id_S_Tipo_Identifiacion"] != DBNull.Value) { Entity.Id_S_Tipo_Identifiacion = (int)Dr["Id_S_Tipo_Identifiacion"]; }
-                            if (Dr["Nombre_S_Tipo_Identifiacion"] != DBNull.Value) { Entity.Nombre_S_Tipo_Identifiacion = (string)Dr["Nombre_S_Tipo_Identifiacion"]; }
+                            if (Dr["Id_S_Tipo_Identificacion"] != DBNull.Value) { Entity.Id_S_Tipo_Identificacion = (int)Dr["Id_S_Tipo_Identificacion"]; }
+                            if (Dr["Nombre_S_Tipo_Identificacion"] != DBNull.Value) { Entity.Nombre_S_Tipo_Identificacion = (string)Dr["Nombre_S_Tipo_Identificacion"]; }
 
                             List.Add(Entity);
                         }

@@ -10,7 +10,6 @@ C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Entity\obj\Debug
 C:\Users\usuario\Source\Repos\.NET\SistemaCreditoSimed\Simed.Entity\bin\Debug\netcoreapp2.1\Simed.Entity.deps.json
 C:\Users\usuario\Source\Repos\.NET\SistemaCreditoSimed\Simed.Entity\bin\Debug\netcoreapp2.1\Simed.Entity.dll
 C:\Users\usuario\Source\Repos\.NET\SistemaCreditoSimed\Simed.Entity\bin\Debug\netcoreapp2.1\Simed.Entity.pdb
-C:\Users\usuario\Source\Repos\.NET\SistemaCreditoSimed\Simed.Entity\obj\Debug\netcoreapp2.1\Simed.Entity.csproj.AssemblyReference.cache
 C:\Users\usuario\Source\Repos\.NET\SistemaCreditoSimed\Simed.Entity\obj\Debug\netcoreapp2.1\Simed.Entity.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\usuario\Source\Repos\.NET\SistemaCreditoSimed\Simed.Entity\obj\Debug\netcoreapp2.1\Simed.Entity.AssemblyInfoInputs.cache
 C:\Users\usuario\Source\Repos\.NET\SistemaCreditoSimed\Simed.Entity\obj\Debug\netcoreapp2.1\Simed.Entity.AssemblyInfo.cs
