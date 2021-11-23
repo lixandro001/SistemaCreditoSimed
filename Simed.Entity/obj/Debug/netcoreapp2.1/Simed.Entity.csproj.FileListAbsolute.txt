@@ -7,3 +7,4 @@ C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Entity\obj\Debug
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Entity\obj\Debug\netcoreapp2.1\Simed.Entity.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Entity\obj\Debug\netcoreapp2.1\Simed.Entity.dll
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Entity\obj\Debug\netcoreapp2.1\Simed.Entity.pdb
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Entity\obj\Debug\netcoreapp2.1\Simed.Entity.csproj.AssemblyReference.cache
