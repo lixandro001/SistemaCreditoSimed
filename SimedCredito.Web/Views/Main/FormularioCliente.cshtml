@@ -18,60 +18,368 @@
         </div>
     </div>
 
+
     <div class="card-body">
         <form id="frmExport" class="form-horizontal" role="form" method="post" action="@Url.Action("Download", "Report")">
+
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-12">
+                    <div class="col-auto bg-dark p-1 text-center">
+                        <h6>DATOS GENERALES </h6>
+                    </div>
+                </div>
+            </div>
+            <br />
+
+            <div class="row">
+                <div class="col-sm-6">
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-4 col-form-label">Desde</label>
-                        <div class="col-sm-8">
-                            <input type="hidden" id="hdnStartDate" class="form-control" name="date1" />
-                            <div class="input-group date">
-                                <input type="text" class="form-control pull-right" id="txtStartDate" value="@CFecha">
-                                <div class="input-group-append" data-target="#txtStartDate" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                </div>
-                            </div>
+                        <label for="inputNombreRazon" class="col-sm-3 col-form-label">*Nombre o Razon Social</label>
+                        <div class="col-sm-9">
+                            <input id="txtNombreRazon" type="text" class="form-control" />
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <div class="form-group row">
-                        <label for="inputPassword3" class="col-sm-4 col-form-label">Hasta</label>
-                        <div class="col-sm-8">
-                            <input type="hidden" id="hdnEndDate" class="form-control" name="date2" />
-                            <div class="input-group date">
-                                <input type="text" class="form-control pull-right" id="txtEndDate" value="@CFecha">
-                                <div class="input-group-append" data-target="#txtStartDate" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                </div>
-                            </div>
+                        <label for="inputDireccion" class="col-sm-3 col-form-label">*Direccion</label>
+                        <div class="col-sm-9">
+                            <input id="txtDireccion" type="text" class="form-control" />
                         </div>
                     </div>
                 </div>
-                @*<div class="col-sm-3">
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
                     <div class="form-group row">
-                        <label for="chkApplyDates" class="col-sm-12 col-form-label">
-                            <input type="checkbox" name="chkApplyDates" id="chkApplyDates" checked /> Aplicar Fechas
-                        </label>
+                        <label for="inputPais" class="col-sm-3 col-form-label">*Pais</label>
+                        <div class="col-sm-8">
+                            <select id="cboPais" class="form-control"></select>
+                        </div>
                     </div>
-                </div>*@
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputCiudadPrincipal" class="col-sm-3 col-form-label">*Ciudad de la sede principal</label>
+                        <div class="col-sm-9">
+                            <input id="txtCiudadPrincipal" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputTelefonoFijo" class="col-sm-3 col-form-label">*Telefono Fijo</label>
+                        <div class="col-sm-8">
+                            <input id="txtTelefonoFijo" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputCelular" class="col-sm-3 col-form-label">*Celular</label>
+                        <div class="col-sm-9">
+                            <input id="txtCelular" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group row">
+                        <label for="inputCorreoEnvioFacturaElectronica" class="col-sm-3 col-form-label">*Correo para envio de factura electronica</label>
+                        <div class="col-sm-9">
+                            <input id="txtCorreoEnvioFacturaElectronica" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="form-group row">
+                        <label for="inputDireccionEntregaFactura" class="col-sm-3 col-form-label">*Direccion para entrega de factura</label>
+                        <div class="col-sm-9">
+                            <input id="txtDireccionEntregaFactura" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group row">
+                        <label for="inputCiudadFactura" class="col-sm-3 col-form-label">*Ciudad</label>
+                        <div class="col-sm-9">
+                            <input id="txtCiudadFactura" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="form-group row">
+                        <label for="inputDireccionEntregaPedido" class="col-sm-3 col-form-label">*Direccion para entrega de pedido</label>
+                        <div class="col-sm-9">
+                            <input id="txtDireccionEntregaPedido" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group row">
+                        <label for="inputCiudadPedido" class="col-sm-3 col-form-label">*Ciudad</label>
+                        <div class="col-sm-9">
+                            <input id="txtCiudadPedido" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="form-group row">
+                        <label for="inputDireccionEntregaPedido" class="col-sm-3 col-form-label">Direccion Secundaria para entrega de pedido</label>
+                        <div class="col-sm-9">
+                            <input id="txtDireccionEntregaPedido" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group row">
+                        <label for="inputCiudadPedido" class="col-sm-3 col-form-label">Ciudad</label>
+                        <div class="col-sm-9">
+                            <input id="txtCiudadPedido" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="col-auto bg-dark p-1 text-center">
+                        <h6>INFORMACION DE CONTACTOS</h6>
+                    </div>
+                </div>
+            </div>
+            <br />
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group row">
+                        <label for="inputNombreContactoAreaCobranza" class="col-sm-3 col-form-label">*NOMBRE DE CONTACTO PARA AREA DE COBRANZA</label>
+                        <div class="col-sm-9">
+                            <input id="txtNombreContactoAreaCobranza" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="form-group row">
+                        <label for="inputCorreoElectronicoAreaCobranza" class="col-sm-3 col-form-label">*CORREO ELECTRONICO COBRANZA</label>
+                        <div class="col-sm-9">
+                            <input id="txtCorreoElectronicoAreaCobranza" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group row">
+                        <label for="inputTelefonoAreaCobranza" class="col-sm-3 col-form-label">*TELEFONO COBRANZA</label>
+                        <div class="col-sm-8">
+                            <input id="txtTelefonoAreaCobranza" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group row">
+                        <label for="inputNombreContactoAreaFinanzas" class="col-sm-3 col-form-label">*NOMBRE DE CONTACTO PARA AREA FINANCIERA</label>
+                        <div class="col-sm-9">
+                            <input id="txtNombreContactoAreaFinanzas" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="form-group row">
+                        <label for="inputCorreoElectronicoAreaFinanzas" class="col-sm-3 col-form-label">*CORREO ELECTRONICO FINANCIERA</label>
+                        <div class="col-sm-9">
+                            <input id="txtCorreoElectronicoAreaFinanzas" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="form-group row">
+                        <label for="inputTelefonoAreaFinanzas" class="col-sm-3 col-form-label">*TELEFONO FINANCIERA</label>
+                        <div class="col-sm-8">
+                            <input id="txtTelefonoAreaFinanzas" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group row">
+                        <label for="inputNombreContactoAreaComercial" class="col-sm-3 col-form-label">*NOMBRE DE CONTACTO PARA AREA COMERCIAL</label>
+                        <div class="col-sm-9">
+                            <input id="txtNombreContactoAreaComercial" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="form-group row">
+                        <label for="inputCorreoElectronicoAreaComercial" class="col-sm-3 col-form-label">*CORREO ELECTRONICO COMERCIAL</label>
+                        <div class="col-sm-9">
+                            <input id="txtCorreoElectronicoAreaComercial" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group row">
+                        <label for="inputTelefonoAreaComercial" class="col-sm-3 col-form-label">*TELEFONO COMERCIAL</label>
+                        <div class="col-sm-8">
+                            <input id="txtTelefonoAreaComercial" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="col-auto bg-dark p-1 text-center">
+                        <h6>INFORMACION TRIBUTARIA</h6>
+                    </div>
+                </div>
+            </div>
+            <br />
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputTipoIdentificacion" class="col-sm-3 col-form-label">*TIPO DE IDENTIFICACION</label>
+                        <div class="col-sm-8">
+                            <select id="cboTipoIdentificacion" class="form-control"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputOtro" class="col-sm-6 col-form-label">*OTRO TIPO DOCUMENTO</label>
+                        <div class="col-sm-2">
+                            <input id="txtOtro" type="checkbox" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="form-group row">
+                        <label for="inputCual" class="col-sm-3 col-form-label">*cual?</label>
+                        <div class="col-sm-9">
+                            <input id="txtCual" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputNumeroIdentificacion" class="col-sm-3 col-form-label">*Numero Idnetificacion</label>
+                        <div class="col-sm-9">
+                            <input id="txtNumeroIdentificacion" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="form-group row">
+                        <label for="inputTipoContribuyente" class="col-sm-3 col-form-label">*Tipo de Contribuyente</label>
+                        <div class="col-sm-8">
+                            <select id="cboTipoContribuyente" class="form-control"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group row">
+                        <label for="inputTipoSociedad" class="col-sm-3 col-form-label">*Tipo de Sociedad</label>
+                        <div class="col-sm-8">
+                            <select id="cboTipoSociedad" class="form-control"></select>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="row">
                 <div class="col-sm-4">
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-4 col-form-label">Sucursal</label>
-                        <div class="col-sm-8">
-                            <select id="cboSubsidiary" class="form-control"></select>
+                        <label for="inputOtra" class="col-sm-3 col-form-label">*Otra?</label>
+                        <div class="col-sm-4">
+                            <input id="txtOtra" type="checkbox" class="form-control" />
                         </div>
                     </div>
                 </div>
+
+                <div class="col-sm-7">
+                    <div class="form-group row">
+                        <label for="inputCual" class="col-sm-2 col-form-label">*Cual?</label>
+                        <div class="col-sm-10">
+                            <input id="txtCual" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputOrigenCapital" class="col-sm-3 col-form-label">*ORIGEN CAPITAL</label>
+                        <div class="col-sm-8">
+                            <select id="cboOrigenCapital" class="form-control"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputActividadEconomica" class="col-sm-3 col-form-label">*Actividad Economica</label>
+                        <div class="col-sm-8">
+                            <select id="cboActividadEconomica" class="form-control"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
                 <div class="col-sm-4">
                     <div class="form-group row">
-                        <label for="inputPassword3" class="col-sm-4 col-form-label">Pedido</label>
-                        <div class="col-sm-8">
-                            <input id="txtNumOrder" type="text" class="form-control" />
+                        <label for="inputCual" class="col-sm-3 col-form-label">Cual?</label>
+                        <div class="col-sm-6">
+                            <input id="txtCual" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-7">
+                    <div class="form-group row">
+                        <label for="inputSuperIntendencia" class="col-sm-5 col-form-label">¿El titular esta vigilado por alguna SuperIntendencia ? ¿cual?</label>
+                        <div class="col-sm-7">
+                            <input id="txtSuperIntendencia" type="text" class="form-control" />
                         </div>
                     </div>
                 </div>
@@ -80,16 +388,253 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="form-group row">
-                        <label for="inputPassword3" class="col-sm-4 col-form-label">Doc. Identidad</label>
+                        <label for="inputFechaConstitucion" class="col-sm-4 col-form-label">Fecha de Constitucion</label>
                         <div class="col-sm-8">
-                            <input id="txtDocumentNumber" type="text" class="form-control" />
+                            <input id="txtFechaConstitucion" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-7">
+                    <div class="form-group row">
+                        <label for="inputRegimen" class="col-sm-2 col-form-label">Regimen</label>
+                        <div class="col-sm-8">
+                            <select id="cboRegimen" class="form-control"></select>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="col-auto bg-dark p-1 text-center">
+                        <h6>INFORMACION ACTIVIDAD ECONOMICA</h6>
+                    </div>
+                </div>
+            </div>
+            <br />
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputActividadPrincipal" class="col-sm-4 col-form-label">Actividad principal</label>
+                        <div class="col-sm-8">
+                            <input id="txtActividadPrincipal" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputActividadSecundaria" class="col-sm-3 col-form-label">Actividad Secundaria</label>
+                        <div class="col-sm-9">
+                            <input id="txtActividadSecundaria" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="col-auto bg-dark p-1 text-center">
+                        <h6>INFORMACION DE REPRESENTACION LEGAL (UNICAMENTE APLICA PARA PERSONAS JURIDICAS)</h6>
+                    </div>
+                </div>
+            </div>
+            <br />
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputNombreRepresentanteLegal" class="col-sm-4 col-form-label">Nombre del Representante Legal</label>
+                        <div class="col-sm-8">
+                            <input id="txtNombreRepresentanteLegal" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputTipoIdentificacion" class="col-sm-3 col-form-label">Tipo de Identificacion</label>
+                        <div class="col-sm-8">
+                            <select id="cboTipoIdentificacion" class="form-control"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputNumeroIdentificacion" class="col-sm-4 col-form-label">Numero de Identificacion</label>
+                        <div class="col-sm-8">
+                            <input id="txtNumeroIdentificacion" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputNacionalidad" class="col-sm-3 col-form-label">NACIONALIDAD</label>
+                        <div class="col-sm-8">
+                            <select id="cboNacionalidad" class="form-control"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="form-group row">
+                        <label for="inputOtra" class="col-sm-4 col-form-label">Otra?</label>
+                        <div class="col-sm-4">
+                            <input id="txtOtra" type="checkbox" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="form-group row">
+                        <label for="inputCual" class="col-sm-2 col-form-label">Cual?</label>
+                        <div class="col-sm-8">
+                            <input id="txtCual" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="form-group row">
+                        <label for="inputFechaExpedicionDocumento" class="col-sm-4 col-form-label">Fecha Expedicion del documento</label>
+                        <div class="col-sm-8">
+                            <input id="txtFechaExpedicionDocumento" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputDireccionResidencia" class="col-sm-4 col-form-label">DIRECCION DE RESIDENCIA</label>
+                        <div class="col-sm-8">
+                            <input id="txtDireccionResidencia" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputCiudad" class="col-sm-2 col-form-label">CIUDAD</label>
+                        <div class="col-sm-8">
+                            <input id="txtCiudad" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="col-auto bg-dark p-1 text-center">
+                        <h6>PREGUNTAS PEP (PERSONA PUBLICAMENTE EXPUESTA)</h6>
+                    </div>
+                </div>
+            </div>
+            <br />
+
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="form-group row">
+                        <label for="inputReconocimientoPublico" class="col-sm-7 col-form-label">GOZA DE RECONOCIMIENTO PUBLICO</label>
+                        <label for="inputReconocimientoPublico" class="col-sm-1 col-form-label">SI/NO</label>
+                        <div class="col-sm-1">
+                            <input id="txtReconocimientoPublico" type="checkbox" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-7">
+                    <div class="form-group row">
+                        <label for="inputEspecifiqueReconocimientoPublico" class="col-sm-3 col-form-label">ESPECIFIQUE</label>
+                        <div class="col-sm-9">
+                            <input id="txtEspecifiqueReconocimientoPublico" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputRecursosPublicos" class="col-sm-7 col-form-label">MANEJA RECURSOS PUBLICOS</label>
+                        <label for="inputRecursosPublicos" class="col-sm-1 col-form-label">SI/NO</label>
+                        <div class="col-sm-1">
+                            <input id="txtRecursosPublicos" type="checkbox" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputEspecifiqueRecursosPublicos" class="col-sm-3 col-form-label">ESPECIFIQUE</label>
+                        <div class="col-sm-9">
+                            <input id="txtEspecifiqueRecursosPublicos" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputCargosPublicos" class="col-sm-7 col-form-label">Ocupa o ha Ocupado Cargos Publicos</label>
+                        <label for="inputCargosPublicos" class="col-sm-1 col-form-label">SI/NO</label>
+                        <div class="col-sm-1">
+                            <input id="txtDireccionResidencia" type="checkbox" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputEspecifiqueCargosPublicos" class="col-sm-3 col-form-label">ESPECIFIQUE</label>
+                        <div class="col-sm-9">
+                            <input id="txtEspecifiqueCargosPublicos" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputDireccionResidencia" class="col-sm-7 col-form-label">EXISTE ALGUN VINCULO ENTRE USTED Y UNA PERSONA PUBLICAMENTE EXPUESTA?</label>
+                        <label for="inputDireccionResidencia" class="col-sm-1 col-form-label">SI/NO</label>
+                        <div class="col-sm-1">
+                            <input id="txtDireccionResidencia" type="checkbox" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group row">
+                        <label for="inputDireccionResidencia" class="col-sm-3 col-form-label">ESPECIFIQUE</label>
+                        <div class="col-sm-9">
+                            <input id="txtDireccionResidencia" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </form>
     </div>
+
+     
     <div class="card-footer">
         <button id="btnRefresh" type="button" class="btn btn-primary">Consultar</button>
         <button id="btnShowPoppup" type="button" class="btn btn-success">Guardar</button>
