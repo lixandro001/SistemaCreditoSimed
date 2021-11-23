@@ -52,7 +52,7 @@ namespace SimedCredito.Web.Controllers
                 switch (User.code)
                 {
                     case (int)Enums.eCodeError.OK:
-                        var UrlUser = GeneralModel.UrlWebApi + "User/GetUserDataByToken";
+                        var UrlUser = GeneralModel.UrlWebApi + "usuario/GetUserDataByToken";
                         var ResultUser = Simed.Utilities.Rest.RestClient.ProcessGetRequest(UrlUser, User.data);
                         var ResultUserJson = JsonConvert.SerializeObject(ResultUser);
                         var UserData = JsonConvert.DeserializeObject<UserResponse>(ResultUserJson);

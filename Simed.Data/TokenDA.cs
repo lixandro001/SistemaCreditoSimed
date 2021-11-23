@@ -37,14 +37,14 @@ namespace Simed.Data
                 while (Dr.Read())
                 {
                     Entity = new UsuarioResponse();
-                    Entity.UserCode = Convert.ToString(Dr["UserCode"]);
+                    Entity.UserCode = Convert.ToString(Dr["UsuarioCodeGuid"]);
                     Entity.Login = (string)Dr["Login"];
-                    Entity.Fullname = (string)Dr["Fullname"];
-                    Entity.DocumentType = Convert.ToInt32(Dr["DocumentType"]);
-                    Entity.DocumentNumber = (string)Dr["DocumentNumber"];
+                    Entity.Fullname = (string)Dr["NombreCompleto"];
+                    Entity.DocumentType = Convert.ToInt32(Dr["TipoDocumento"]);
+                    Entity.DocumentNumber = (string)Dr["DocumentoIdentidad"];
                     Entity.Email = (string)Dr["Email"];
-                    Entity.ProfileId = (int)Dr["ProfileId"];
-                    Entity.Status = Convert.ToInt32(Dr["Status"]);
+                    Entity.ProfileId = (int)Dr["IdPerfil"];
+                    Entity.Status = Convert.ToInt32(Dr["Estado"]);
 
                     break;
                 }

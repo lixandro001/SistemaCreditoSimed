@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "Gestión Creditos Clientes";
+    string CFecha = string.Format("{0:dd/MM/yyyy}", DateTime.Today);
+}
+
+<!-- Default box -->
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Gestión de Creditos</h3>
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <form id="frmExport" class="form-horizontal" role="form" method="post" action="@Url.Action("Download", "Report")">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-4 col-form-label">Desde</label>
+                        <div class="col-sm-8">
+                            <input type="hidden" id="hdnStartDate" class="form-control" name="date1" />
+                            <div class="input-group date">
+                                <input type="text" class="form-control pull-right" id="txtStartDate" value="@CFecha">
+                                <div class="input-group-append" data-target="#txtStartDate" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-4 col-form-label">Hasta</label>
+                        <div class="col-sm-8">
+                            <input type="hidden" id="hdnEndDate" class="form-control" name="date2" />
+                            <div class="input-group date">
+                                <input type="text" class="form-control pull-right" id="txtEndDate" value="@CFecha">
+                                <div class="input-group-append" data-target="#txtStartDate" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="col-sm-3">
+                    <div class="form-group row">
+                        <label for="chkApplyDates" class="col-sm-12 col-form-label">
+                            <input type="checkbox" name="chkApplyDates" id="chkApplyDates" checked /> Aplicar Fechas
+                        </label>
+                    </div>
+                </div>*@
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-4 col-form-label">Sucursal</label>
+                        <div class="col-sm-8">
+                            <select id="cboSubsidiary" class="form-control"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-4 col-form-label">Pedido</label>
+                        <div class="col-sm-8">
+                            <input id="txtNumOrder" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-4 col-form-label">Doc. Identidad</label>
+                        <div class="col-sm-8">
+                            <input id="txtDocumentNumber" type="text" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="card-footer">
+        <button id="btnRefresh" type="button" class="btn btn-primary">Consultar</button>
+        <button id="btnShowPoppup" type="button" class="btn btn-success">Guardar</button>
+    </div>
+   
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+ 
+ 

@@ -21,9 +21,10 @@ namespace Simed.Entity
 
         public enum Profile : int
         {
-            GESTOR = 1,
-            FACTURADOR = 2,
-            USUARIO = 3
+            ADMINISTRADOR = 1,
+            ASESORCOMERCIAL=2,
+            ANALISTAREDITO=3,
+            GERENTENEGOCIO=4
         }
 
     }

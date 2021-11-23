@@ -26,9 +26,18 @@ namespace SimedCredito.Web.Controllers
 
         public IActionResult Index()
         {
-
-
             return View();
         }
+
+        public IActionResult Cliente()
+        {
+            return View();
+        }
+
+        public IActionResult FormularioCliente()
+        {
+            return View();
+        }
+
     }
 }

@@ -14,7 +14,7 @@ namespace SimedCredito.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SeguridadController : Controller
+    public class SeguridadController : ControllerBase
     {
         private readonly IConfiguration Configuration;
         private readonly ILogger Logger;
@@ -24,8 +24,7 @@ namespace SimedCredito.Controllers
             Configuration = IConfiguration;
             Logger = LoggerFactory.CreateLogger<SeguridadController>();
             objSeguridadBL = new SeguridadBL(Configuration["ConnectionStrings:SIMED"]);
-            //objTokenBL = new TokenBL(Configuration["ConnectionStrings:FACT"]);
-            //objUserBL = new UserBL(Configuration["ConnectionStrings:FACT"]);
+            
         }
 
         [HttpPost]

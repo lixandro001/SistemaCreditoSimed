@@ -25,12 +25,12 @@ C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\D
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\SimedCredito.Web.pdb
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\SimedCredito.Web.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\SimedCredito.Web.csproj.CopyComplete
-C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Login\ForgotPassword.cshtml.g.cs
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Login\Index.cshtml.g.cs
-C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Login\Register.cshtml.g.cs
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutLogin.cshtml.g.cs
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\bin\Debug\netcoreapp2.1\Simed.Entity.dll
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\bin\Debug\netcoreapp2.1\Simed.Utilities.dll
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\bin\Debug\netcoreapp2.1\Simed.Entity.pdb
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\bin\Debug\netcoreapp2.1\Simed.Utilities.pdb
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Main\Index.cshtml.g.cs
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Main\Cliente.cshtml.g.cs
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Main\FormularioCliente.cshtml.g.cs
