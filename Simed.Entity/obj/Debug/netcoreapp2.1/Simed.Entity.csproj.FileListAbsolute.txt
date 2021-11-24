@@ -20,3 +20,4 @@ C:\Users\usuario\Source\Repos\.NET\SistemaCreditoSimed\Simed.Entity\obj\Debug\ne
 =======
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Entity\obj\Debug\netcoreapp2.1\Simed.Entity.csproj.AssemblyReference.cache
 >>>>>>> main
+C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\Simed.Entity\obj\Debug\netcoreapp2.1\Simed.Entity.csproj.AssemblyReference.cache
