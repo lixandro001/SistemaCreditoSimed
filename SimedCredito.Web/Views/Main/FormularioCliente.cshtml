@@ -21,1277 +21,1282 @@
 
 
     <div class="card-body">
-        <form id="frmExport" class="form-horizontal" role="form" method="post" action="@Url.Action("Download", "Report")">
+        <!--<form id="frmExport" class="form-horizontal" role="form" method="post" action="@Url.Action("Download", "Report")">-->
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-auto bg-dark p-1 text-center">
-                        <h6>DATOS GENERALES </h6>
-                    </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-auto bg-dark p-1 text-center">
+                    <h6>DATOS GENERALES </h6>
                 </div>
             </div>
-            <br />
+        </div>
+        <br />
 
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputNombreRazon" class="col-sm-3 col-form-label">*Nombre o Razón Social</label>
-                        <div class="col-sm-9">
-                            <input id="txtNombreRazon" type="text" class="form-control" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputDireccion" class="col-sm-3 col-form-label">*Dirección</label>
-                        <div class="col-sm-9">
-                            <input id="txtDireccion" type="text" class="form-control" />
-                        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label for="inputNombreRazon" class="col-sm-3 col-form-label">*Nombre o Razón Social</label>
+                    <div class="col-sm-9">
+                        <input id="txtNombreRazonDG" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputPais" class="col-sm-3 col-form-label">*País</label>
-                        <div class="col-sm-8">
-                            <select id="cboPais" class="form-control"></select>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputCiudadPrincipal" class="col-sm-3 col-form-label">*Ciudad de la sede principal</label>
-                        <div class="col-sm-9">
-                            <input id="txtCiudadPrincipal" type="text" class="form-control" />
-                        </div>
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label for="inputDireccion" class="col-sm-3 col-form-label">*Dirección</label>
+                    <div class="col-sm-9">
+                        <input id="txtDireccionDG" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputTelefonoFijo" class="col-sm-3 col-form-label">*Teléfono Fijo</label>
-                        <div class="col-sm-8">
-                            <input id="txtTelefonoFijo" type="text" class="form-control" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputCelular" class="col-sm-3 col-form-label">*Celular</label>
-                        <div class="col-sm-9">
-                            <input id="txtCelular" type="text" class="form-control" />
-                        </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label for="inputPais" class="col-sm-3 col-form-label">*País</label>
+                    <div class="col-sm-8">
+                        <select id="cboPais" class="form-control"></select>
                     </div>
                 </div>
             </div>
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label for="inputCiudadPrincipal" class="col-sm-3 col-form-label">*Ciudad de la sede principal</label>
+                    <div class="col-sm-9">
+                        <input id="txtCiudadPrincipalDG" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label for="inputTelefonoFijo" class="col-sm-3 col-form-label">*Teléfono Fijo</label>
+                    <div class="col-sm-8">
+                        <input id="txtTelefonoFijoDG" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label for="inputCelular" class="col-sm-3 col-form-label">*Celular</label>
+                    <div class="col-sm-9">
+                        <input id="txtCelularDG" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group row">
-                        <label for="inputCorreoEnvioFacturaElectronica" class="col-sm-3 col-form-label">*Correo para envío de factura electrónica</label>
-                        <div class="col-sm-9">
-                            <input id="txtCorreoEnvioFacturaElectronica" type="text" class="form-control" />
-                        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group row">
+                    <label for="inputCorreoEnvioFacturaElectronica" class="col-sm-3 col-form-label">*Correo para envío de factura electrónica</label>
+                    <div class="col-sm-9">
+                        <input id="txtCorreoEnvioFacturaElectronicaDG" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="row">
-                <div class="col-sm-7">
-                    <div class="form-group row">
-                        <label for="inputDireccionEntregaFactura" class="col-sm-3 col-form-label">*Dirección para entrega de factura</label>
-                        <div class="col-sm-9">
-                            <input id="txtDireccionEntregaFactura" type="text" class="form-control" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-5">
-                    <div class="form-group row">
-                        <label for="inputCiudadFactura" class="col-sm-3 col-form-label">*Ciudad</label>
-                        <div class="col-sm-9">
-                            <input id="txtCiudadFactura" type="text" class="form-control" />
-                        </div>
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="form-group row">
+                    <label for="inputDireccionEntregaFactura" class="col-sm-3 col-form-label">*Dirección para entrega de factura</label>
+                    <div class="col-sm-9">
+                        <input id="txtDireccionEntregaFacturaDG" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
+            <div class="col-sm-5">
+                <div class="form-group row">
+                    <label for="inputCiudadFactura" class="col-sm-3 col-form-label">*Ciudad</label>
+                    <div class="col-sm-9">
+                        <input id="txtCiudadFacturaDG" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <div class="row">
-                <div class="col-sm-7">
-                    <div class="form-group row">
-                        <label for="inputDireccionEntregaPedido" class="col-sm-3 col-form-label">*Dirección para entrega de pedido</label>
-                        <div class="col-sm-9">
-                            <input id="txtDireccionEntregaPedido" type="text" class="form-control" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-5">
-                    <div class="form-group row">
-                        <label for="inputCiudadPedido" class="col-sm-3 col-form-label">*Ciudad</label>
-                        <div class="col-sm-9">
-                            <input id="txtCiudadPedido" type="text" class="form-control" />
-                        </div>
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="form-group row">
+                    <label for="inputDireccionEntregaPedido" class="col-sm-3 col-form-label">*Dirección para entrega de pedido</label>
+                    <div class="col-sm-9">
+                        <input id="txtDireccionEntregaPedidoDG" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
+            <div class="col-sm-5">
+                <div class="form-group row">
+                    <label for="inputCiudadPedido" class="col-sm-3 col-form-label">*Ciudad</label>
+                    <div class="col-sm-9">
+                        <input id="txtCiudadPedidoDG" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <div class="row">
-                <div class="col-sm-7">
-                    <div class="form-group row">
-                        <label for="inputDireccionEntregaPedido" class="col-sm-3 col-form-label">Dirección Secundaria para entrega de pedido</label>
-                        <div class="col-sm-9">
-                            <input id="txtDireccionEntregaPedido" type="text" class="form-control" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-5">
-                    <div class="form-group row">
-                        <label for="inputCiudadPedido" class="col-sm-3 col-form-label">Ciudad</label>
-                        <div class="col-sm-9">
-                            <input id="txtCiudadPedido" type="text" class="form-control" />
-                        </div>
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="form-group row">
+                    <label for="inputDireccionEntregaSecundariaPedido" class="col-sm-3 col-form-label">Dirección Secundaria para entrega de pedido</label>
+                    <div class="col-sm-9">
+                        <input id="txtDireccionEntregaSecundarioPedidoDG" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
+            <div class="col-sm-5">
+                <div class="form-group row">
+                    <label for="inputCiudadPedido" class="col-sm-3 col-form-label">Ciudad</label>
+                    <div class="col-sm-9">
+                        <input id="txtCiudadSecundarioPedidoDG" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-auto bg-dark p-1 text-center">
-                        <h6>INFORMACIÓN DE CONTACTOS</h6>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-auto bg-dark p-1 text-center">
+                    <h6>INFORMACIÓN DE CONTACTOS</h6>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-4">
+                <label class="col-form-label">* Nombre de contacto para área de cobranza</label>
+                <input id="txtNombreContactoAreaCobranzaIDC1" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-4">
+                <label class="col-form-label">* Teléfono</label>
+                <input id="txtTelefonoContactoAreaCobranzaIDC1" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-4">
+                <label class="col-form-label">* Correo electrónico</label>
+                <input id="txtCorreoContactoAreaCobranzaIDC1" type="text" class="form-control" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-4">
+                <label class="col-form-label">* Nombre de contacto para área de financiera </label>
+                <input id="txtNombreContactoAreaFinancieraIDC2" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-4">
+                <label class="col-form-label">* Teléfono</label>
+                <input id="txtTelefonoContactoAreaFinancieraIDC2" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-4">
+                <label class="col-form-label">* Correo electrónico</label>
+                <input id="txtCorreoContactoAreaFinancieraIDC2" type="text" class="form-control" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-4">
+                <label class="col-form-label">* Nombre de contacto para área comercial</label>
+                <input id="txtNombreContactoAreaComercialIDC3" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-4">
+                <label class="col-form-label">* Teléfono</label>
+                <input id="txtTelefonoContactoAreaComercialIDC3" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-4">
+                <label class="col-form-label">* Correo electrónico</label>
+                <input id="txtCorreoContactoAreaComercialIDC3" type="text" class="form-control" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-auto bg-dark p-1 text-center">
+                    <h6>INFORMACIÓN TRIBUTARIA</h6>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-2">
+                <label class="col-form-label">* Tipo de Identificación</label>
+            </div>
+            <div class="col-sm-2">
+                <select id="cboTipoIdentificacionTributaria" class="form-control"></select>
+            </div>
+            <div class="col-sm-0">
+                <label class="col-form-label">Otro</label>
+            </div>
+            <div class="col-sm-1">
+                <input id="checkOtroIdentificacionIT" type="checkbox" class="form-control" />
+            </div>
+            <div class="col-sm-1">
+                <label class="col-form-label">Cúal?</label>
+            </div>
+            <div class="col-sm-2">
+                <input id="txtCualIdentificacionIT" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label class="col-form-label">* N° de Identificación</label>
+            </div>
+            <div class="col-sm-1">
+                <input id="txtNumIdentificacionIT" type="text" class="form-control" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-2">
+                <label class="col-form-label">* Tipo de contribuyente</label>
+            </div>
+            <div class="col-sm-2">
+                <select id="cboTipoContribuyente" class="form-control"></select>
+            </div>
+            <div class="col-sm-0">
+                <label class="col-form-label">* Tipo de Sociedad</label>
+            </div>
+            <div class="col-sm-2">
+                <select id="cboTipoSociedad" class="form-control"></select>
+            </div>
+            <div class="col-sm-0">
+                <label class="col-form-label">¿Otra?</label>
+            </div>
+            <div class="col-sm-1">
+                <input id="checkContribuyenteOtroIT" type="checkbox" class="form-control" />
+            </div>
+            <div class="col-sm-">
+                <label class="col-form-label">Cúal?</label>
+            </div>
+            <div class="col-sm-2">
+                <input id="txtCualContribuyenteIT" type="text" class="form-control" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-2">
+                <label class="col-form-label">* Origen de Capital</label>
+            </div>
+            <div class="col-sm-2">
+                <select id="cboOrigenCapital" class="form-control"></select>
+            </div>
+            <div class="col-sm-0">
+                <label class="col-form-label">* Actividad Economica</label>
+            </div>
+            <div class="col-sm-3">
+                <select id="cboActividadEconomica" class="form-control"></select>
+            </div>
+            <div class="col-sm-">
+                <label class="col-form-label">Cúal?</label>
+            </div>
+            <div class="col-sm-3">
+                <input id="txtCualEconomicaIT" type="text" class="form-control" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-5">
+                <label>¿El titular esta vigilado por alguna SuperIntendencia ? ¿cual?</label>
+                <input id="txtSuperIntendenciaIT" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-3">
+                <label>* Fecha de Constitución</label>
+                <div class="input-group date">
+                    <input id="txtFechaConstitucionIT" type="text" class="form-control pull-right DateFechaOnly" value="">
+                    <div class="input-group-append" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                     </div>
                 </div>
             </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-4">
-                    <label for="inputNombreContactoAreaCobranza" class="col-form-label">* Nombre de contacto para área de cobranza</label>
-                    <input id="txtNombreContactoAreaCobranza" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-4">
-                    <label for="inputNombreContactoAreaCobranza" class="col-form-label">* Teléfono</label>
-                    <input id="txtNombreContactoAreaCobranza" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-4">
-                    <label for="inputNombreContactoAreaCobranza" class="col-form-label">* Correo electónico</label>
-                    <input id="txtNombreContactoAreaCobranza" type="text" class="form-control" />
-                </div>
+            <div class="col-sm-3">
+                <label>* Regimen</label>
+                <select id="cboRegimen" class="form-control"></select>
             </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-4">
-                    <label for="inputNombreContactoAreaCobranza" class="col-form-label">* Nombre de contacto para área de financiera </label>
-                    <input id="txtNombreContactoAreaCobranza" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-4">
-                    <label for="inputNombreContactoAreaCobranza" class="col-form-label">* Teléfono</label>
-                    <input id="txtNombreContactoAreaCobranza" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-4">
-                    <label for="inputNombreContactoAreaCobranza" class="col-form-label">* Correo electónico</label>
-                    <input id="txtNombreContactoAreaCobranza" type="text" class="form-control" />
-                </div>
-            </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-4">
-                    <label for="inputNombreContactoAreaCobranza" class="col-form-label">* Nombre de contacto para área comercial</label>
-                    <input id="txtNombreContactoAreaCobranza" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-4">
-                    <label for="inputNombreContactoAreaCobranza" class="col-form-label">* Teléfono</label>
-                    <input id="txtNombreContactoAreaCobranza" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-4">
-                    <label for="inputNombreContactoAreaCobranza" class="col-form-label">* Correo electónico</label>
-                    <input id="txtNombreContactoAreaCobranza" type="text" class="form-control" />
-                </div>
-            </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-auto bg-dark p-1 text-center">
-                        <h6>INFORMACIÓN TRIBUTARIA</h6>
-                    </div>
-                </div>
-            </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-2">
-                    <label for="inputNombreContactoAreaCobranza" class="col-form-label">* Tipo de Identificación</label>
-                </div>
-                <div class="col-sm-2">
-                    <select id="cboTipoIdentificacion" class="form-control"></select>
-                </div>
-                <div class="col-sm-0">
-                    <label class="col-form-label">Otro</label>
-                </div>
-                <div class="col-sm-1">
-                    <input id="txtOtro" type="checkbox" class="form-control" />
-                </div>
-                <div class="col-sm-1">
-                    <label class="col-form-label">Cúal?</label>
-                </div>
-                <div class="col-sm-2">
-                    <input type="text" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label class="col-form-label">* N° de Identificación</label>
-                </div>
-                <div class="col-sm-1">
-                    <input type="text" class="form-control" />
-                </div>
-            </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-2">
-                    <label for="inputNombreContactoAreaCobranza" class="col-form-label">* Tipo de contribuyente</label>
-                </div>
-                <div class="col-sm-2">
-                    <select id="" class="form-control"></select>
-                </div>
-                <div class="col-sm-0">
-                    <label class="col-form-label">* Tipo de Sociedad</label>
-                </div>
-                <div class="col-sm-2">
-                    <select id="" class="form-control"></select>
-                </div>
-                <div class="col-sm-0">
-                    <label class="col-form-label">¿Otra?</label>
-                </div>
-                <div class="col-sm-1">
-                    <input id="txtOtro" type="checkbox" class="form-control" />
-                </div>
-                <div class="col-sm-">
-                    <label class="col-form-label">Cúal?</label>
-                </div>
-                <div class="col-sm-2">
-                    <input type="text" class="form-control" />
-                </div>
-            </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-2">
-                    <label for="inputNombreContactoAreaCobranza" class="col-form-label">* Origen de Capital</label>
-                </div>
-                <div class="col-sm-2">
-                    <select id="" class="form-control"></select>
-                </div>
-                <div class="col-sm-0">
-                    <label class="col-form-label">* Actividad Economica</label>
-                </div>
-                <div class="col-sm-3">
-                    <select id="" class="form-control"></select>
-                </div>
-                <div class="col-sm-">
-                    <label class="col-form-label">Cúal?</label>
-                </div>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" />
-                </div>
-            </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-5">
-                    <label>¿El titular esta vigilado por alguna SuperIntendencia ? ¿cual?</label>
-                    <input id="" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-3">
-                    <label>* Fecha de Constitución</label>
-                    <div class="input-group date">
-                        <input type="text" class="form-control pull-right DateFechaOnly" value="">
-                        <div class="input-group-append" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <label>* Regimen</label>
-                    <select id="cboRegimen" class="form-control"></select>
-                </div>
-            </div>
-            <br />
+        </div>
+        <br />
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-auto bg-dark p-1 text-center">
-                        <h6>INFORMACIÓN ACTIVIDAD ECONÓMICA</h6>
-                    </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-auto bg-dark p-1 text-center">
+                    <h6>INFORMACIÓN ACTIVIDAD ECONÓMICA</h6>
                 </div>
             </div>
-            <br />
+        </div>
+        <br />
 
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputActividadPrincipal" class="col-sm-4 col-form-label">* Actividad principal</label>
-                        <div class="col-sm-8">
-                            <input id="txtActividadPrincipal" type="text" class="form-control" />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputActividadSecundaria" class="col-sm-3 col-form-label">Actividad Secundaria</label>
-                        <div class="col-sm-9">
-                            <input id="txtActividadSecundaria" type="text" class="form-control" />
-                        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">* Actividad principal</label>
+                    <div class="col-sm-8">
+                        <input id="txtActividadPrincipalIAE" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
 
-
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-auto bg-dark p-1 text-center">
-                        <h6>INFORMACION DE REPRESENTACION LEGAL (UNICAMENTE APLICA PARA PERSONAS JURIDICAS)</h6>
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Actividad Secundaria</label>
+                    <div class="col-sm-9">
+                        <input id="txtActividadSecundariaIAE" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
-            <br />
+        </div>
 
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputNombreRepresentanteLegal" class="col-sm-4 col-form-label">* Nombre del Representante Legal</label>
-                        <div class="col-sm-8">
-                            <input id="txtNombreRepresentanteLegal" type="text" class="form-control" />
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputTipoIdentificacion" class="col-sm-3 col-form-label">* Tipo de Identificación</label>
-                        <div class="col-sm-8">
-                            <select id="cboTipoIdentificacion" class="form-control"></select>
-                        </div>
-                    </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-auto bg-dark p-1 text-center">
+                    <h6>INFORMACION DE REPRESENTACION LEGAL (UNICAMENTE APLICA PARA PERSONAS JURIDICAS)</h6>
                 </div>
             </div>
+        </div>
+        <br />
 
-
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputNumeroIdentificacion" class="col-sm-4 col-form-label">* Número de Identificación</label>
-                        <div class="col-sm-8">
-                            <input id="txtNumeroIdentificacion" type="text" class="form-control" />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputNacionalidad" class="col-sm-3 col-form-label">* Nacionalidad</label>
-                        <div class="col-sm-8">
-                            <select id="cboNacionalidad" class="form-control"></select>
-                        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">* Nombre del Representante Legal</label>
+                    <div class="col-sm-8">
+                        <input id="txtNombreRepresentanteLegalIRL" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-2">
-                    <div class="form-group row">
-                        <label for="inputOtra" class="col-sm-4 col-form-label">Otra?</label>
-                        <div class="col-sm-4">
-                            <input id="txtOtra" type="checkbox" class="form-control" />
-                        </div>
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">* Tipo de Identificación</label>
+                    <div class="col-sm-8">
+                        <select id="cboTipoIdenticacionLegal" class="form-control"></select>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="col-sm-5">
-                    <div class="form-group row">
-                        <label for="inputCual" class="col-sm-2 col-form-label">Cual?</label>
-                        <div class="col-sm-8">
-                            <input id="txtCual" type="text" class="form-control" />
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-sm-5">
-                    <div class="form-group row">
-                        <label for="inputFechaExpedicionDocumento" class="col-sm-4 col-form-label">* Fecha Expedición del documento</label>
-                        <div class="col-sm-8">
-                            <input id="txtFechaExpedicionDocumento" type="text" class="form-control" />
-                        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">* Número de Identificación</label>
+                    <div class="col-sm-8">
+                        <input id="txtNumeroIdentificacionIRL" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputDireccionResidencia" class="col-sm-4 col-form-label">Dirección de Residencia</label>
-                        <div class="col-sm-8">
-                            <input id="txtDireccionResidencia" type="text" class="form-control" />
-                        </div>
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">* Nacionalidad</label>
+                    <div class="col-sm-8">
+                        <select id="cboNacionalidad" class="form-control"></select>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputCiudad" class="col-sm-2 col-form-label">Ciudad</label>
-                        <div class="col-sm-8">
-                            <input id="txtCiudad" type="text" class="form-control" />
-                        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Otra?</label>
+                    <div class="col-sm-4">
+                        <input id="checkOtraIRL" type="checkbox" class="form-control" />
                     </div>
                 </div>
             </div>
 
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-auto bg-dark p-1 text-center">
-                        <h6>PREGUNTAS PEP (PERSONA PUBLICAMENTE EXPUESTA)</h6>
-                    </div>
-                </div>
-            </div>
-            <br />
-
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputReconocimientoPublico" class="col-sm-7 col-form-label">* Goza de reconocimiento público</label>
-                        <label for="inputReconocimientoPublico" class="col-sm-1 col-form-label">Si/No</label>
-                        <div class="col-sm-1">
-                            <input id="txtReconocimientoPublico" type="checkbox" class="form-control" />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputEspecifiqueReconocimientoPublico" class="col-sm-3 col-form-label">Especifique</label>
-                        <div class="col-sm-9">
-                            <input id="txtEspecifiqueReconocimientoPublico" type="text" class="form-control" />
-                        </div>
+            <div class="col-sm-5">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Cual?</label>
+                    <div class="col-sm-8">
+                        <input id="txtCualIRL" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputRecursosPublicos" class="col-sm-7 col-form-label">* Maneja recursos públicos</label>
-                        <label for="inputRecursosPublicos" class="col-sm-1 col-form-label">Si/No</label>
-                        <div class="col-sm-1">
-                            <input id="txtRecursosPublicos" type="checkbox" class="form-control" />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputEspecifiqueRecursosPublicos" class="col-sm-3 col-form-label">Especifique</label>
-                        <div class="col-sm-9">
-                            <input id="txtEspecifiqueRecursosPublicos" type="text" class="form-control" />
+            <div class="col-sm-5">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">* Fecha Expedición del documento</label>
+                    <div class="col-sm-8">
+                        <div class="input-group date">
+                            <input id="txtFechaExpedicionDocumentoIRL" type="text" class="form-control DateFechaOnly" />
+                            <div class="input-group-append" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputCargosPublicos" class="col-sm-7 col-form-label">* Ocupa o ha ocupado cargos públicos</label>
-                        <label for="inputCargosPublicos" class="col-sm-1 col-form-label">Si/No</label>
-                        <div class="col-sm-1">
-                            <input id="txtDireccionResidencia" type="checkbox" class="form-control" />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputEspecifiqueCargosPublicos" class="col-sm-3 col-form-label">Especifique</label>
-                        <div class="col-sm-9">
-                            <input id="txtEspecifiqueCargosPublicos" type="text" class="form-control" />
-                        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Dirección de Residencia</label>
+                    <div class="col-sm-8">
+                        <input id="txtDireccionResidenciaIRL" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputDireccionResidencia" class="col-sm-7 col-form-label">* Existe algún vínculo entre usted y una persona públicamente expuesta?</label>
-                        <label for="inputDireccionResidencia" class="col-sm-1 col-form-label">Si/No</label>
-                        <div class="col-sm-1">
-                            <input id="txtDireccionResidencia" type="checkbox" class="form-control" />
-                        </div>
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Ciudad</label>
+                    <div class="col-sm-8">
+                        <input id="txtCiudadIRL" type="text" class="form-control" />
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputDireccionResidencia" class="col-sm-3 col-form-label">Especifique</label>
-                        <div class="col-sm-9">
-                            <input id="txtDireccionResidencia" type="text" class="form-control" />
-                        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-auto bg-dark p-1 text-center">
+                    <h6>PREGUNTAS PEP (PERSONA PUBLICAMENTE EXPUESTA)</h6>
+                </div>
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label for="inputReconocimientoPublico" class="col-sm-7 col-form-label">* Goza de reconocimiento público</label>
+                    <label for="inputReconocimientoPublico" class="col-sm-1 col-form-label">Si/No</label>
+                    <div class="col-sm-1">
+                        <input id="txtReconocimientoPublico" type="checkbox" class="form-control" />
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <label>* Existe algún vínculo diferente al comercial (familiar o personal) con empleados de SIMED</label>
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label for="inputEspecifiqueReconocimientoPublico" class="col-sm-3 col-form-label">Especifique</label>
+                    <div class="col-sm-9">
+                        <input id="txtEspecifiqueReconocimientoPublico" type="text" class="form-control" />
+                    </div>
                 </div>
-                <div class="col-sm-6 form-group" style="text-align:center">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label for="inputRecursosPublicos" class="col-sm-7 col-form-label">* Maneja recursos públicos</label>
+                    <label for="inputRecursosPublicos" class="col-sm-1 col-form-label">Si/No</label>
+                    <div class="col-sm-1">
+                        <input id="txtRecursosPublicos" type="checkbox" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label for="inputEspecifiqueRecursosPublicos" class="col-sm-3 col-form-label">Especifique</label>
+                    <div class="col-sm-9">
+                        <input id="txtEspecifiqueRecursosPublicos" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label for="inputCargosPublicos" class="col-sm-7 col-form-label">* Ocupa o ha ocupado cargos públicos</label>
+                    <label for="inputCargosPublicos" class="col-sm-1 col-form-label">Si/No</label>
+                    <div class="col-sm-1">
+                        <input id="txtDireccionResidencia" type="checkbox" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label for="inputEspecifiqueCargosPublicos" class="col-sm-3 col-form-label">Especifique</label>
+                    <div class="col-sm-9">
+                        <input id="txtEspecifiqueCargosPublicos" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label for="inputDireccionResidencia" class="col-sm-7 col-form-label">* Existe algún vínculo entre usted y una persona públicamente expuesta?</label>
                     <label for="inputDireccionResidencia" class="col-sm-1 col-form-label">Si/No</label>
-                    <input id="txtDireccionResidencia" type="checkbox" class="form-control" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <label>En caso afirmativo, especifique la persona con la cual tiene vínculos:</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Nombre y Apellidos</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" placeholder="" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="row">
-                        <label class="col-sm-3 col-form-label">Cargo</label>
-                        <div class="col-sm-8">
-                            <input id="" type="text" class="form-control" placeholder="" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!---------------informacion de socios---------->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-auto bg-dark p-1 text-center">
-                        <h6>INFORMACIÓN DE SOCIOS O ACCIONISTAS (UNICAMENTE APLICA PARA PERSONAS JURIDICAS)</h6>
-                    </div>
-                </div>
-            </div>
-            <br />
-
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label for="inputDireccionResidencia" class="col-sm-7 col-form-label">* ¿Su compañía cuenta con accionistas?</label>
-                        <label for="inputDireccionResidencia" class="col-sm-1 col-form-label">Si/No</label>
-                        <div class="col-sm-1">
-                            <input id="checkAccionista" type="checkbox" class="form-control" />
-                        </div>
+                    <div class="col-sm-1">
+                        <input id="txtDireccionResidencia" type="checkbox" class="form-control" />
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group row table-responsive">
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        * Nombres y Apellidos del accionistas
-                                    </th>
-                                    <th>
-                                        *Tipo ID
-                                    </th>
-                                    <th>
-                                        *No. De documento
-                                    </th>
-                                    <th>
-                                        *Participación
-                                    </th>
-                                    <th>
-                                        *Nacionalidad
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                    <td>
-                                        <input placeholder="Info" />
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label for="inputDireccionResidencia" class="col-sm-3 col-form-label">Especifique</label>
+                    <div class="col-sm-9">
+                        <input id="txtDireccionResidencia" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!---------------informaciopn financiera---------->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-auto bg-dark p-1 text-center">
-                        <h6>INFORMACIÓN FINANCIERA</h6>
+        <div class="row">
+            <div class="col-sm-12">
+                <label>* Existe algún vínculo diferente al comercial (familiar o personal) con empleados de SIMED</label>
+            </div>
+            <div class="col-sm-6 form-group" style="text-align:center">
+                <label for="inputDireccionResidencia" class="col-sm-1 col-form-label">Si/No</label>
+                <input id="txtDireccionResidencia" type="checkbox" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <label>En caso afirmativo, especifique la persona con la cual tiene vínculos:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Nombre y Apellidos</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" placeholder="" />
                     </div>
                 </div>
             </div>
-            <br />
+            <div class="col-sm-6">
+                <div class="row">
+                    <label class="col-sm-3 col-form-label">Cargo</label>
+                    <div class="col-sm-8">
+                        <input id="" type="text" class="form-control" placeholder="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---------------informacion de socios---------->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-auto bg-dark p-1 text-center">
+                    <h6>INFORMACIÓN DE SOCIOS O ACCIONISTAS (UNICAMENTE APLICA PARA PERSONAS JURIDICAS)</h6>
+                </div>
+            </div>
+        </div>
+        <br />
 
-            <div class="row">
-                <div class="col-sm-9">
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Fecha de corte DD/MM/AAAA</label>
-                        <div class="col-sm-4">
-                            <input id="FechaCorte" type="text" class="form-control" />
-                        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label for="inputDireccionResidencia" class="col-sm-7 col-form-label">* ¿Su compañía cuenta con accionistas?</label>
+                    <label for="inputDireccionResidencia" class="col-sm-1 col-form-label">Si/No</label>
+                    <div class="col-sm-1">
+                        <input id="checkAccionista" type="checkbox" class="form-control" />
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label class="col-sm-5 col-form-label">La información debe estar en dólares</label>
-                    </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group row table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    * Nombres y Apellidos del accionistas
+                                </th>
+                                <th>
+                                    *Tipo ID
+                                </th>
+                                <th>
+                                    *No. De documento
+                                </th>
+                                <th>
+                                    *Participación
+                                </th>
+                                <th>
+                                    *Nacionalidad
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                                <td>
+                                    <input placeholder="Info" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
+        </div>
 
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">* Activos</label>
-                        <div class="col-sm-4">
-                            <input id="Activos" type="text" class="form-control" placeholder="$" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="row">
-                        <label class="col-sm-3 col-form-label">* Ingresos mensuales</label>
-                        <div class="col-sm-4">
-                            <input id="Activos" type="text" class="form-control" placeholder="$" />
-                        </div>
-                    </div>
+        <!---------------informaciopn financiera---------->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-auto bg-dark p-1 text-center">
+                    <h6>INFORMACIÓN FINANCIERA</h6>
                 </div>
             </div>
+        </div>
+        <br />
 
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">* Pasivos</label>
-                        <div class="col-sm-4">
-                            <input id="Activos" type="text" class="form-control" placeholder="$" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="row">
-                        <label class="col-sm-3 col-form-label">* Egresos mensuales</label>
-                        <div class="col-sm-4">
-                            <input id="Activos" type="text" class="form-control" placeholder="$" />
-                        </div>
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Fecha de corte DD/MM/AAAA</label>
+                    <div class="col-sm-4">
+                        <input id="FechaCorte" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">* Patrimonio</label>
-                        <div class="col-sm-4">
-                            <input id="Activos" type="text" class="form-control" placeholder="$" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="row">
-                        <label class="col-sm-3 col-form-label">Otros ingresos</label>
-                        <div class="col-sm-4">
-                            <input id="Activos" type="text" class="form-control" placeholder="$" />
-                        </div>
-                    </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label">La información debe estar en dólares</label>
                 </div>
             </div>
+        </div>
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Concepto de otros ingresos:</label>
-                        <div class="col-sm-10">
-                            <input id="ConceptoOtrosIngresos" type="text" class="form-control" />
-                        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">* Activos</label>
+                    <div class="col-sm-4">
+                        <input id="Activos" type="text" class="form-control" placeholder="$" />
                     </div>
                 </div>
             </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <label class="col-sm-3 col-form-label">* Ingresos mensuales</label>
+                    <div class="col-sm-4">
+                        <input id="Activos" type="text" class="form-control" placeholder="$" />
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <!---------------Referencias Comerciales---------->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-auto bg-dark p-1 text-center">
-                        <h6>REFERENCIAS COMERCIALES</h6>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">* Pasivos</label>
+                    <div class="col-sm-4">
+                        <input id="Activos" type="text" class="form-control" placeholder="$" />
                     </div>
                 </div>
             </div>
-            <br />
+            <div class="col-sm-6">
+                <div class="row">
+                    <label class="col-sm-3 col-form-label">* Egresos mensuales</label>
+                    <div class="col-sm-4">
+                        <input id="Activos" type="text" class="form-control" placeholder="$" />
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <div class="row">
-                <div class="col-sm-3">
-                    <label>Empresa</label> <br />
-                    <input placeholder="Empresa" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Ruc</label> <br />
-                    <input placeholder="Ruc" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Teléfono</label> <br />
-                    <input placeholder="Teléfono" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Dirección</label> <br />
-                    <input placeholder="Dirección" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Ciudad</label> <br />
-                    <input placeholder="Ciudad" type="text" class="form-control" />
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">* Patrimonio</label>
+                    <div class="col-sm-4">
+                        <input id="Activos" type="text" class="form-control" placeholder="$" />
+                    </div>
                 </div>
             </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <label class="col-sm-3 col-form-label">Otros ingresos</label>
+                    <div class="col-sm-4">
+                        <input id="Activos" type="text" class="form-control" placeholder="$" />
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <div class="row">
-                <div class="col-sm-3">
-                    <label>Empresa</label> <br />
-                    <input placeholder="Empresa" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Ruc</label> <br />
-                    <input placeholder="Ruc" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Teléfono</label> <br />
-                    <input placeholder="Teléfono" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Dirección</label> <br />
-                    <input placeholder="Dirección" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Ciudad</label> <br />
-                    <input placeholder="Ciudad" type="text" class="form-control" />
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Concepto de otros ingresos:</label>
+                    <div class="col-sm-10">
+                        <input id="ConceptoOtrosIngresos" type="text" class="form-control" />
+                    </div>
                 </div>
             </div>
-            <br />
+        </div>
 
-            <!---------------Referencias Comerciales---------->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-auto bg-dark p-1 text-center">
-                        <h6>REFERENCIAS BANCARIAS</h6>
-                    </div>
+        <!---------------Referencias Comerciales---------->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-auto bg-dark p-1 text-center">
+                    <h6>REFERENCIAS COMERCIALES</h6>
                 </div>
             </div>
-            <br />
+        </div>
+        <br />
 
-            <div class="row">
-                <div class="col-sm-3">
-                    <label>Institución</label> <br />
-                    <input placeholder="Institución" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Nro. De Cuenta</label> <br />
-                    <input placeholder="Nro. De Cuenta" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Tipo Cuenta</label> <br />
-                    <input placeholder="Tipo Cuenta" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Beneficiario</label> <br />
-                    <input placeholder="Beneficiario" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Vacio</label> <br />
-                    <input placeholder="Vacio" type="text" class="form-control" />
-                </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Empresa</label> <br />
+                <input placeholder="Empresa" type="text" class="form-control" />
             </div>
+            <div class="col-sm-2">
+                <label>Ruc</label> <br />
+                <input placeholder="Ruc" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label>Teléfono</label> <br />
+                <input placeholder="Teléfono" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label>Dirección</label> <br />
+                <input placeholder="Dirección" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label>Ciudad</label> <br />
+                <input placeholder="Ciudad" type="text" class="form-control" />
+            </div>
+        </div>
 
-            <div class="row">
-                <div class="col-sm-3">
-                    <label>Empresa</label> <br />
-                    <input placeholder="Empresa" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Ruc</label> <br />
-                    <input placeholder="Ruc" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Teléfono</label> <br />
-                    <input placeholder="Teléfono" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Dirección</label> <br />
-                    <input placeholder="Dirección" type="text" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Vacio</label> <br />
-                    <input placeholder="Vacio" type="text" class="form-control" />
-                </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Empresa</label> <br />
+                <input placeholder="Empresa" type="text" class="form-control" />
             </div>
-            <br />
+            <div class="col-sm-2">
+                <label>Ruc</label> <br />
+                <input placeholder="Ruc" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label>Teléfono</label> <br />
+                <input placeholder="Teléfono" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label>Dirección</label> <br />
+                <input placeholder="Dirección" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label>Ciudad</label> <br />
+                <input placeholder="Ciudad" type="text" class="form-control" />
+            </div>
+        </div>
+        <br />
 
-            <!---------------Control de Documentos---------->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-auto bg-dark p-1 text-center">
-                        <h6>CONTROL DE DOCUMENTOS EXIGIDOS PARA INGRESO DE CLIENTES</h6>
+        <!---------------Referencias Comerciales---------->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-auto bg-dark p-1 text-center">
+                    <h6>REFERENCIAS BANCARIAS</h6>
+                </div>
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Institución</label> <br />
+                <input placeholder="Institución" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label>Nro. De Cuenta</label> <br />
+                <input placeholder="Nro. De Cuenta" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label>Tipo Cuenta</label> <br />
+                <input placeholder="Tipo Cuenta" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label>Beneficiario</label> <br />
+                <input placeholder="Beneficiario" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label>Vacio</label> <br />
+                <input placeholder="Vacio" type="text" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Empresa</label> <br />
+                <input placeholder="Empresa" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label>Ruc</label> <br />
+                <input placeholder="Ruc" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label>Teléfono</label> <br />
+                <input placeholder="Teléfono" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label>Dirección</label> <br />
+                <input placeholder="Dirección" type="text" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label>Vacio</label> <br />
+                <input placeholder="Vacio" type="text" class="form-control" />
+            </div>
+        </div>
+        <br />
+
+        <!---------------Control de Documentos---------->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-auto bg-dark p-1 text-center">
+                    <h6>CONTROL DE DOCUMENTOS EXIGIDOS PARA INGRESO DE CLIENTES</h6>
+                </div>
+            </div>
+        </div>
+        <br />
+        <!--#region -->
+        <div class="row" style="margin-bottom:1%">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-4">
+                Copias de las tres últimas declaraciones del PDT IGV 621
+            </div>
+            <div class="col-sm-3">
+                <input type="file" class="form-control-file" />
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:1%">
+            <div class="col-sm-3">
+                <label>PERSONAS NATURALES</label>
+            </div>
+            <div class="col-sm-4">
+                Copia de formulario PDT ANUAL RENTA DE TERCERA
+            </div>
+            <div class="col-sm-3">
+                <input type="file" class="form-control-file" />
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:1%">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-4">
+                Copia de Ficha RUC
+            </div>
+            <div class="col-sm-3">
+                <input type="file" class="form-control-file" />
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:1%">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-4">
+                Copia de DNI
+            </div>
+            <div class="col-sm-3">
+                <input type="file" class="form-control-file" />
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:1%">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-4">
+                Certificado de referencias comerciales
+            </div>
+            <div class="col-sm-3">
+                <input type="file" class="form-control-file" />
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:1%">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-4">
+                Certificado Bancario
+            </div>
+            <div class="col-sm-3">
+                <input type="file" class="form-control-file" />
+            </div>
+        </div>
+        <hr />
+        <!--#endregion -->
+        <!--#region -->
+        <div class="row" style="margin-bottom:1%">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-4">
+                Situación financiera ( Balance General, Perdidas y Ganancias)
+            </div>
+            <div class="col-sm-3">
+                <input type="file" class="form-control-file" />
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:1%">
+            <div class="col-sm-3">
+                <label>PERSONAS JURIDICAS</label>
+            </div>
+            <div class="col-sm-4">
+                Copia de formulario PDT ANUAL RENTA DE TERCERA
+            </div>
+            <div class="col-sm-3">
+                <input type="file" class="form-control-file" />
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:1%">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-4">
+                Copia de Ficha RUC
+            </div>
+            <div class="col-sm-3">
+                <input type="file" class="form-control-file" />
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:1%">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-4">
+                Copia de DNI  del Representante Legal
+            </div>
+            <div class="col-sm-3">
+                <input type="file" class="form-control-file" />
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:1%">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-4">
+                Vigencia Poder del Representante Legal
+            </div>
+            <div class="col-sm-3">
+                <input type="file" class="form-control-file" />
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:1%">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-4">
+                Certificado de referencias comerciales
+            </div>
+            <div class="col-sm-3">
+                <input type="file" class="form-control-file" />
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:1%">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-4">
+                Certificado Bancario
+            </div>
+            <div class="col-sm-3">
+                <input type="file" class="form-control-file" />
+            </div>
+        </div>
+        <!--#endregion -->
+        <!---------------Clasificación para uso Comercial---------->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-auto bg-dark p-1 text-center">
+                    <h6>CLASIFICACIÓN PARA USO COMERCIAL</h6>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-3">
+                <label>Unidad</label> <br />
+                <select id="cboUnidad" class="form-control"></select>
+            </div>
+            <div class="col-sm-3">
+                <label>Sub Unidad</label> <br />
+                <select id="cboSubUnidad" class="form-control"></select>
+            </div>
+            <div class="col-sm-3">
+                <label>Asesor Comercial</label> <br />
+                <select id="cboAsesorComercial" class="form-control"></select>
+            </div>
+            <div class="col-sm-3">
+                <label>Descripción</label> <br />
+                <textarea class="form-control" rows="3" placeholder="Descripción"></textarea>
+            </div>
+        </div>
+        <br />
+        <!---------------Terminos de pago---------->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-auto bg-dark p-1 text-center">
+                    <h6>TÉRMINOS DE PAGO (Marcar con una X)</h6>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-2">
+                <label>Pago de contado</label>
+            </div>
+            <div class="col-sm-2">
+                <input type="checkbox" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label>Pago anticipado</label>
+            </div>
+            <div class="col-sm-2">
+                <input type="checkbox" class="form-control" />
+            </div>
+            <div class="col-sm-2">
+                <label>Transferencia con % anticipo</label>
+            </div>
+            <div class="col-sm-2">
+                <input type="checkbox" class="form-control" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-1">
+                <label>8 días</label>
+            </div>
+            <div class="col-sm-1">
+                <input type="checkbox" class="form-control" />
+            </div>
+            <div class="col-sm-1">
+                <label>15 días</label>
+            </div>
+            <div class="col-sm-1">
+                <input type="checkbox" class="form-control" />
+            </div>
+            <div class="col-sm-1">
+                <label>30 días</label>
+            </div>
+            <div class="col-sm-1">
+                <input type="checkbox" class="form-control" />
+            </div>
+            <div class="col-sm-1">
+                <label>45 días</label>
+            </div>
+            <div class="col-sm-1">
+                <input type="checkbox" class="form-control" />
+            </div>
+            <div class="col-sm-1">
+                <label>60 días</label>
+            </div>
+            <div class="col-sm-1">
+                <input type="checkbox" class="form-control" />
+            </div>
+            <div class="col-sm-1">
+                <label>Cupo solicitado</label>
+            </div>
+            <div class="col-sm-1">
+                <input type="text" class="form-control" />
+            </div>
+        </div>
+        <br />
+        <!---------------Verificacion para uso interno---------->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-auto bg-dark p-1 text-center">
+                    <h6>VERIFICACIÓN PARA USO INTERNO</h6>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="col-sm-12 col-form-label">Declaro a mi leal saber y entender, que he verificado que la información aportada en la solicitud de registro ha sido diligenciada de manera correcta y completa. Así mismo declaro que he verificado los originales de los documentos de identidad del solicitante, así como la demás documentación e información proporcionada por el solicitante, a los fines de identificar personalmente al solicitante y determinar las actividades económicas a las cuales se dedica:</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <input type="text" class="form-control" />
+                <label>* Responsable de la contratación - Asesor Comercial</label> <br />
+            </div>
+            <div class="col-sm-3">
+                <div class="input-group date">
+                    <input type="text" class="form-control pull-right DateFechaOnly" value="">
+                    <div class="input-group-append" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                     </div>
                 </div>
+                <label>* Fecha</label> <br />
             </div>
-            <br />
-            <!--#region -->
-            <div class="row" style="margin-bottom:1%">
-                <div class="col-sm-3">
-                </div>
-                <div class="col-sm-4">
-                    Copias de las tres últimas declaraciones del PDT IGV 621
-                </div>
-                <div class="col-sm-3">
-                    <input type="file" class="form-control-file" />
-                </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" />
+                <label>* Hora</label> <br />
             </div>
-            <div class="row" style="margin-bottom:1%">
-                <div class="col-sm-3">
-                    <label>PERSONAS NATURALES</label>
-                </div>
-                <div class="col-sm-4">
-                    Copia de formulario PDT ANUAL RENTA DE TERCERA
-                </div>
-                <div class="col-sm-3">
-                    <input type="file" class="form-control-file" />
-                </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-2">
+                <label>* Firma</label>
             </div>
-            <div class="row" style="margin-bottom:1%">
-                <div class="col-sm-3">
-                </div>
-                <div class="col-sm-4">
-                    Copia de Ficha RUC
-                </div>
-                <div class="col-sm-3">
-                    <input type="file" class="form-control-file" />
+            <div class="col-sm-2">
+                <input type="text" class="form-control" />
+            </div>
+        </div>
+        <br />
+        <!---------------Autorización Gerente de Unidad de Negocio---------->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-auto bg-dark p-1 text-center">
+                    <h6>AUTORIZACION GERENTE DE UNIDAD DE NEGOCIO</h6>
                 </div>
             </div>
-            <div class="row" style="margin-bottom:1%">
-                <div class="col-sm-3">
-                </div>
-                <div class="col-sm-4">
-                    Copia de DNI
-                </div>
-                <div class="col-sm-3">
-                    <input type="file" class="form-control-file" />
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="col-sm-12 col-form-label">Declaro a mi leal saber y entender, que he verificado que la información aportada en la solicitud de registro ha sido diligenciada de manera correcta y completa. Así mismo declaro que he verificado los originales de los documentos de identidad del solicitante, así como la demás documentación e información proporcionada por el solicitante, a los fines de identificar personalmente al solicitante y determinar las actividades económicas a las cuales se dedica:</label>
                 </div>
             </div>
-            <div class="row" style="margin-bottom:1%">
-                <div class="col-sm-3">
-                </div>
-                <div class="col-sm-4">
-                    Certificado de referencias comerciales
-                </div>
-                <div class="col-sm-3">
-                    <input type="file" class="form-control-file" />
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <input type="text" class="form-control" />
+                <label>* Nombre GUN</label> <br />
             </div>
-            <div class="row" style="margin-bottom:1%">
-                <div class="col-sm-3">
-                </div>
-                <div class="col-sm-4">
-                    Certificado Bancario
-                </div>
-                <div class="col-sm-3">
-                    <input type="file" class="form-control-file" />
-                </div>
-            </div>
-            <hr />
-            <!--#endregion -->
-            <!--#region -->
-            <div class="row" style="margin-bottom:1%">
-                <div class="col-sm-3">
-                </div>
-                <div class="col-sm-4">
-                    Situación financiera ( Balance General, Perdidas y Ganancias)
-                </div>
-                <div class="col-sm-3">
-                    <input type="file" class="form-control-file" />
-                </div>
-            </div>
-            <div class="row" style="margin-bottom:1%">
-                <div class="col-sm-3">
-                    <label>PERSONAS JURIDICAS</label>
-                </div>
-                <div class="col-sm-4">
-                    Copia de formulario PDT ANUAL RENTA DE TERCERA
-                </div>
-                <div class="col-sm-3">
-                    <input type="file" class="form-control-file" />
-                </div>
-            </div>
-            <div class="row" style="margin-bottom:1%">
-                <div class="col-sm-3">
-                </div>
-                <div class="col-sm-4">
-                    Copia de Ficha RUC
-                </div>
-                <div class="col-sm-3">
-                    <input type="file" class="form-control-file" />
-                </div>
-            </div>
-            <div class="row" style="margin-bottom:1%">
-                <div class="col-sm-3">
-                </div>
-                <div class="col-sm-4">
-                    Copia de DNI  del Representante Legal
-                </div>
-                <div class="col-sm-3">
-                    <input type="file" class="form-control-file" />
-                </div>
-            </div>
-            <div class="row" style="margin-bottom:1%">
-                <div class="col-sm-3">
-                </div>
-                <div class="col-sm-4">
-                    Vigencia Poder del Representante Legal
-                </div>
-                <div class="col-sm-3">
-                    <input type="file" class="form-control-file" />
-                </div>
-            </div>
-            <div class="row" style="margin-bottom:1%">
-                <div class="col-sm-3">
-                </div>
-                <div class="col-sm-4">
-                    Certificado de referencias comerciales
-                </div>
-                <div class="col-sm-3">
-                    <input type="file" class="form-control-file" />
-                </div>
-            </div>
-            <div class="row" style="margin-bottom:1%">
-                <div class="col-sm-3">
-                </div>
-                <div class="col-sm-4">
-                    Certificado Bancario
-                </div>
-                <div class="col-sm-3">
-                    <input type="file" class="form-control-file" />
-                </div>
-            </div>
-            <!--#endregion -->
-            <!---------------Clasificación para uso Comercial---------->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-auto bg-dark p-1 text-center">
-                        <h6>CLASIFICACIÓN PARA USO COMERCIAL</h6>
+            <div class="col-sm-3">
+                <div class="input-group date">
+                    <input type="text" class="form-control pull-right DateFechaOnly" value="">
+                    <div class="input-group-append" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                     </div>
                 </div>
+                <label>* Fecha</label> <br />
             </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-3">
-                    <label>Unidad</label> <br />
-                    <select id="cboUnidad" class="form-control"></select>
-                </div>
-                <div class="col-sm-3">
-                    <label>Sub Unidad</label> <br />
-                    <select id="cboSubUnidad" class="form-control"></select>
-                </div>
-                <div class="col-sm-3">
-                    <label>Asesor Comercial</label> <br />
-                    <select id="cboAsesorComercial" class="form-control"></select>
-                </div>
-                <div class="col-sm-3">
-                    <label>Descripción</label> <br />
-                    <textarea class="form-control" rows="3" placeholder="Descripción"></textarea>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" />
+                <label>* Hora</label> <br />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-2">
+                <label>* Firma</label>
+            </div>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" />
+            </div>
+        </div>
+        <br />
+        <!---------------Departamento de credito y cobranzas---------->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-auto bg-dark p-1 text-center">
+                    <h6>PARA USO EXCLUSIVO DEL DEPARTAMENTO DE CREDITO Y COBRANZAS</h6>
                 </div>
             </div>
-            <br />
-            <!---------------Terminos de pago---------->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-auto bg-dark p-1 text-center">
-                        <h6>TÉRMINOS DE PAGO (Marcar con una X)</h6>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-5">
+                <input type="text" class="form-control" />
+                <label>* Analista de Crédito</label> <br />
+            </div>
+            <div class="col-sm-3">
+                <div class="input-group date">
+                    <input type="text" class="form-control pull-right DateFechaOnly" value="">
+                    <div class="input-group-append" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                     </div>
                 </div>
+                <label>* FECHA DE REVISION</label> <br />
             </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-2">
-                    <label>Pago de contado</label>
-                </div>
-                <div class="col-sm-2">
-                    <input type="checkbox" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Pago anticipado</label>
-                </div>
-                <div class="col-sm-2">
-                    <input type="checkbox" class="form-control" />
-                </div>
-                <div class="col-sm-2">
-                    <label>Transferencia con % anticipo</label>
-                </div>
-                <div class="col-sm-2">
-                    <input type="checkbox" class="form-control" />
-                </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" />
+                <label>* HORA</label> <br />
             </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-1">
-                    <label>8 días</label>
-                </div>
-                <div class="col-sm-1">
-                    <input type="checkbox" class="form-control" />
-                </div>
-                <div class="col-sm-1">
-                    <label>15 días</label>
-                </div>
-                <div class="col-sm-1">
-                    <input type="checkbox" class="form-control" />
-                </div>
-                <div class="col-sm-1">
-                    <label>30 días</label>
-                </div>
-                <div class="col-sm-1">
-                    <input type="checkbox" class="form-control" />
-                </div>
-                <div class="col-sm-1">
-                    <label>45 días</label>
-                </div>
-                <div class="col-sm-1">
-                    <input type="checkbox" class="form-control" />
-                </div>
-                <div class="col-sm-1">
-                    <label>60 días</label>
-                </div>
-                <div class="col-sm-1">
-                    <input type="checkbox" class="form-control" />
-                </div>
-                <div class="col-sm-1">
-                    <label>Cupo solicitado</label>
-                </div>
-                <div class="col-sm-1">
-                    <input type="text" class="form-control" />
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <input type="text" class="form-control" />
+                <label>* Analista de Crédito y Cobranza</label> <br />
             </div>
-            <br />
-            <!---------------Verificacion para uso interno---------->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-auto bg-dark p-1 text-center">
-                        <h6>VERIFICACIÓN PARA USO INTERNO</h6>
-                    </div>
-                </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" />
+                <label>* CUPO ASIGNADO</label> <br />
             </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <label class="col-sm-12 col-form-label">Declaro a mi leal saber y entender, que he verificado que la información aportada en la solicitud de registro ha sido diligenciada de manera correcta y completa. Así mismo declaro que he verificado los originales de los documentos de identidad del solicitante, así como la demás documentación e información proporcionada por el solicitante, a los fines de identificar personalmente al solicitante y determinar las actividades económicas a las cuales se dedica:</label>
-                    </div>
-                </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" />
+                <label>* PLAZO</label> <br />
             </div>
-            <div class="row">
-                <div class="col-sm-5">
-                    <input type="text" class="form-control" />
-                    <label>* Responsable de la contratación - Asesor Comercial</label> <br />
-                </div>
-                <div class="col-sm-3">
-                    <div class="input-group date">
-                        <input type="text" class="form-control pull-right DateFechaOnly" value="">
-                        <div class="input-group-append" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                    </div>
-                    <label>* Fecha</label> <br />
-                </div>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" />
-                    <label>* Hora</label> <br />
-                </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-2">
+                <label>* Firma</label>
             </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-2">
-                    <label>* Firma</label>
-                </div>
-                <div class="col-sm-2">
-                    <input type="text" class="form-control" />
-                </div>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" />
             </div>
-            <br />
-            <!---------------Autorización Gerente de Unidad de Negocio---------->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-auto bg-dark p-1 text-center">
-                        <h6>AUTORIZACION GERENTE DE UNIDAD DE NEGOCIO</h6>
-                    </div>
-                </div>
-            </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <label class="col-sm-12 col-form-label">Declaro a mi leal saber y entender, que he verificado que la información aportada en la solicitud de registro ha sido diligenciada de manera correcta y completa. Así mismo declaro que he verificado los originales de los documentos de identidad del solicitante, así como la demás documentación e información proporcionada por el solicitante, a los fines de identificar personalmente al solicitante y determinar las actividades económicas a las cuales se dedica:</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-5">
-                    <input type="text" class="form-control" />
-                    <label>* Nombre GUN</label> <br />
-                </div>
-                <div class="col-sm-3">
-                    <div class="input-group date">
-                        <input type="text" class="form-control pull-right DateFechaOnly" value="">
-                        <div class="input-group-append" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                    </div>
-                    <label>* Fecha</label> <br />
-                </div>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" />
-                    <label>* Hora</label> <br />
-                </div>
-            </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-2">
-                    <label>* Firma</label>
-                </div>
-                <div class="col-sm-2">
-                    <input type="text" class="form-control" />
-                </div>
-            </div>
-            <br />
-            <!---------------Departamento de credito y cobranzas---------->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="col-auto bg-dark p-1 text-center">
-                        <h6>PARA USO EXCLUSIVO DEL DEPARTAMENTO DE CREDITO Y COBRANZAS</h6>
-                    </div>
-                </div>
-            </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-5">
-                    <input type="text" class="form-control" />
-                    <label>* Analista de Crédito</label> <br />
-                </div>
-                <div class="col-sm-3">
-                    <div class="input-group date">
-                        <input type="text" class="form-control pull-right DateFechaOnly" value="">
-                        <div class="input-group-append" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                    </div>
-                    <label>* FECHA DE REVISION</label> <br />
-                </div>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" />
-                    <label>* HORA</label> <br />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-5">
-                    <input type="text" class="form-control" />
-                    <label>* Analista de Crédito y Cobranza</label> <br />
-                </div>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" />
-                    <label>* CUPO ASIGNADO</label> <br />
-                </div>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" />
-                    <label>* PLAZO</label> <br />
-                </div>
-            </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-2">
-                    <label>* Firma</label>
-                </div>
-                <div class="col-sm-2">
-                    <input type="text" class="form-control" />
-                </div>
-            </div>
-        </form>
+        </div>
+        <!--</form>-->
     </div>
 
 
     <div class="card-footer">
         <button id="btnRefresh" type="button" class="btn btn-primary">Consultar</button>
-        <button id="btnShowPoppup" type="button" class="btn btn-success">Guardar</button>
+        <button id="btnGuardarFormulario" type="button" class="btn btn-success">Guardar</button>
     </div>
 
     <!-- /.card-body -->
