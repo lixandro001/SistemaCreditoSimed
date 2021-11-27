@@ -273,40 +273,68 @@ function fnChangeNacionalidadIT() {
 
 function fnSaveFormularioCliente() {
     //---- DATOS GENERALES (DG)
-    /*if (!fnValidFormularioDG()) {
+    if (!fnValidFormularioDG()) {
         fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Datos Generales.");
         return;
-    }*/
+    }
     //---- INFORMACION DE CONTACTOS (IDC)
-    /*if (!fnValidFormularioIDC()) {
+    if (!fnValidFormularioIDC()) {
         fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Información De Contactos.");
         return;
-    }*/
+    }
     //---- INFORMACION TRIBUTARIA (IT)
-    /*if (!fnValidFormularioIT()) {
+    if (!fnValidFormularioIT()) {
         fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Información Tributaria.");
         return;
-    }*/
+    }
     //----- INFORMACION ACTIVIDAD ECONOMICA (IAE)
-    /*if (!fnValidFormularioIAE()) {
+    if (!fnValidFormularioIAE()) {
         fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Información Actividad Económica.");
         return;
-    }*/
+    }
     //----- INFORMACION REPRESENTANTE LEGAL(IRL)
-    /*if (!fnValidFormularioIRL()) {
+    if (!fnValidFormularioIRL()) {
         fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Información Representación Legal.");
         return;
-    }*/
+    }
     //----- PREGUNTAS PEP(PEP)
-    /*if (!fnValidFormularioPEP()) {
+    if (!fnValidFormularioPEP()) {
         fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Preguntas PEP.");
         return;
-    }*/
+    }
     //----- INFORMACION DE SOCIOS O ACCIONISTAS(ISA)
     if (!fnValidFormularioISA()) {
         fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Información de Socios o Accionistas.");
         return;
     }
+    //------- INFORMACION FINANCIERA (IF)
+    if (!fnValidFormularioIF()) {
+        fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Información Financiera.");
+        return;
+    }
+    //------  REFERENCIAS COMERCIALES (RC)
+    if (!fnValidFormularioRC()) {
+        fnAlertAdvertencia("Debe llenar los campos de Referencias Comerciales.");
+        return;
+    }
+    //------  REFERENCIAS BANCARIAS (RB)
+    if (!fnValidFormularioRB()) {
+        fnAlertAdvertencia("Debe llenar los campos de Referencias Bancarias, minimo la primera fila.");
+        return;
+    }
+    //------  CONTROL DE DOCUMENTOS EXIGIDOS PARA INGRESO DE CLIENTES (CDE)
+    if (!fnValidFormularioCDE()) {
+        fnAlertAdvertencia("Debe subir archivo de los datos obligatorios (*) en Control de Documentos Exigidos para Ingreso de Clientes.");
+        return;
+    }
+    //----- VERIFICACION PARA USO INTERNO (VUI)
+    if (!fnValidFormularioVUI()) {
+        fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Verificación para uso Interno.");
+        return;
+    }
+
+    fnGuardarFormularioCliente();
+
 }
 
 function fnValidFormularioDG() {
@@ -491,6 +519,150 @@ function fnValidFormularioISA() {
     return Rpta;
 }
 
+function fnValidFormularioIF() {
+    var Rpta = true;
+    if (!document.getElementById("checkSolesIF").checked && !document.getElementById("checkDolaresIF").checked) {
+        Rpta = false;
+    }
+    if ($("#txtActivosIF").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtIngresosMensualesIF").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtPasivosIF").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtEgresosMensualesIF").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtPatrimonioIF").val() == '') {
+        Rpta = false;
+    }
+    return Rpta;
+}
+
+function fnValidFormularioRC() {
+    Rpta = true;
+    if ($("#txtEmpresa1RC").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtRuc1RC").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtTelefono1RC").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtDireccion1RC").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtCiudad1RC").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtEmpresa2RC").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtRuc2RC").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtTelefono2RC").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtDireccion2RC").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtCiudad2RC").val() == '') {
+        Rpta = false;
+    }
+    return Rpta;
+}
+
+function fnValidFormularioRB() {
+    var Rpta = true;
+    if ($("#txtInstitucionRB").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtNroCuentaRB").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtTipoCuentaRB").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtBeneficiarioRB").val() == '') {
+        Rpta = false;
+    }
+    return Rpta;
+}
+
+function fnValidFormularioCDE() {
+    var Rpta = true;
+    if ($("#txtFile1CDE").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtFile3CDE").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtFile4CDE").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtFile7CDE").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtFile8CDE").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtFile9CDE").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtFile10CDE").val() == '') {
+        Rpta = false;
+    }
+
+    return Rpta;
+}
+
+function fnValidFormularioVUI() {
+    var Rpta = true;
+    if ($("#txtAsesorComercialVUI").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtFirmaVUI").val() == '') {
+        Rpta = false;
+    }
+    return Rpta;
+}
+
+function fnGuardarFormularioCliente() {
+
+    var obj = {
+        //DG()
+        NombreRazonSocialDG: $("#txtNombreRazonDG").val(),
+        DireccionDG: $("#txtDireccionDG").val(),
+        PaisId: $("#cboPais").val(),
+        CiudadPrinciaplDDG: $("#txtCiudadPrincipalDG").val(),
+        TelefonoFijoDG: $("#txtTelefonoFijoDG").val(),
+        CelularDG: $("#txtCelularDG").val(),
+        CorreoElecontronicoDG: $("#txtCorreoEnvioFacturaElectronicaDG").val(),
+        DireccionFacturaDG: $("#txtDireccionEntregaFacturaDG").val(),
+        CiudadFacturaDG: $("#txtCiudadFacturaDG").val(),
+        DireccionPedidoDG: $("#txtDireccionEntregaPedidoDG").val(),
+        CiudadPedidoDG: $("#txtCiudadPedidoDG").val(),
+        DireccionPedidoSecundarioDG: $("#txtDireccionEntregaSecundarioPedidoDG").val(),
+        CiudadPedidoSecundarioDG: $("#txtCiudadSecundarioPedidoDG").val(),
+        //IC()
+        NombreContactoAreaCobranza: $("#txtNombreContactoAreaCobranzaIDC1").val(),
+        TelefonoContactoAreaCobranza: $("#txtTelefonoContactoAreaCobranzaIDC1").val(),
+        CorreoContactoAreaCobranza: $("#txtCorreoContactoAreaCobranzaIDC1").val(),
+        NombreContactoAreaFinanciera: $("#txtNombreContactoAreaFinancieraIDC2").val(),
+        TelefonoContactoAreaFinanciera: $("#txtTelefonoContactoAreaFinancieraIDC2").val(),
+        CorreoContactoAreaFinanciera: $("#txtCorreoContactoAreaFinancieraIDC2").val(),
+        //IT()
+        TipoIdentificacionIdIT: $("#cboTipoIdentificacionTributaria").val(),
+        CualIdentificacionIT: $("#txtCualIdentificacionIT").val(),
+        NumeroIdentificacionIT: $("#txtNumIdentificacionIT").val(),
+    }
+}
+
 //--------PEP CHECKBOX TRUE O FALSE---------
 //#region PEP CHECKBOC
 $("#checkSiGozaPEP").on("change", function () {
@@ -649,5 +821,61 @@ function fnLimpiarCamposTable() {
     $("#txtNacionalidadAccionista3ISA").val('');
     $("#txtNacionalidadAccionista4ISA").val('');
 }
+//#endregion
+///-------FIN ISA CHECKBOX TRUE O FALSE-------
+//--------ISA CHECKBOX TRUE O FALSE---------
+
+//#region IF CHECKBOC
+$("#checkSolesIF").on("change", function () {
+    fnLimpiarCamposIF();
+    if (this.checked) {
+        $("#checkDolaresIF").prop("checked", false);
+        fnPlaceholderSolesIf();
+    }
+    else {
+        $("#checkDolaresIF").prop("checked", true);
+        fnPlaceholderDolaresIf();
+    }
+});
+
+$("#checkDolaresIF").on("change", function () {
+    fnLimpiarCamposIF();
+    if (this.checked) {
+        $("#checkSolesIF").prop("checked", false);
+        fnPlaceholderDolaresIf();
+    }
+    else {
+        $("#checkSolesIF").prop("checked", true);
+        fnPlaceholderSolesIf();
+    }
+});
+
+function fnLimpiarCamposIF() {
+    $("#txtActivosIF").val('');
+    $("#txtIngresosMensualesIF").val('');
+    $("#txtPasivosIF").val('');
+    $("#txtEgresosMensualesIF").val('');
+    $("#txtPatrimonioIF").val('');
+    $("#txtOtrosIngresosIF").val('');
+}
+
+function fnPlaceholderSolesIf() {
+    $("#txtActivosIF").attr('placeholder', 'S/.');
+    $("#txtIngresosMensualesIF").attr('placeholder', 'S/.');
+    $("#txtPasivosIF").attr('placeholder', 'S/.');
+    $("#txtEgresosMensualesIF").attr('placeholder', 'S/.');
+    $("#txtPatrimonioIF").attr('placeholder', 'S/.');
+    $("#txtOtrosIngresosIF").attr('placeholder', 'S/.');
+}
+
+function fnPlaceholderDolaresIf() {
+    $("#txtActivosIF").attr('placeholder', '$');
+    $("#txtIngresosMensualesIF").attr('placeholder', '$');
+    $("#txtPasivosIF").attr('placeholder', '$');
+    $("#txtEgresosMensualesIF").attr('placeholder', '$');
+    $("#txtPatrimonioIF").attr('placeholder', '$');
+    $("#txtOtrosIngresosIF").attr('placeholder', '$');
+}
+
 //#endregion
 ///-------FIN ISA CHECKBOX TRUE O FALSE-------

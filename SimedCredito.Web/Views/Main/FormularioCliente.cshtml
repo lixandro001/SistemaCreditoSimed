@@ -223,12 +223,12 @@
             </div>
             <div class="col-sm-2">
                 <select id="cboTipoIdentificacionTributaria" class="form-control"></select>
-            </div>            
+            </div>
             <div class="col-sm-2">
                 <label class="col-form-label">Cúal?</label>
             </div>
             <div class="col-sm-2">
-                <input id="txtCualIdentificacionIT" type="text" class="form-control" disabled/>
+                <input id="txtCualIdentificacionIT" type="text" class="form-control" disabled />
             </div>
             <div class="col-sm-1">
                 <label class="col-form-label">* N° de Identificación</label>
@@ -255,7 +255,7 @@
                 <label class="col-form-label">Cúal?</label>
             </div>
             <div class="col-sm-3">
-                <input id="txtCualSociedadIT" type="text" class="form-control" disabled/>
+                <input id="txtCualSociedadIT" type="text" class="form-control" disabled />
             </div>
         </div>
         <br />
@@ -276,7 +276,7 @@
                 <label class="col-form-label">Cúal?</label>
             </div>
             <div class="col-sm-3">
-                <input id="txtCualEconomicaIT" type="text" class="form-control" disabled/>
+                <input id="txtCualEconomicaIT" type="text" class="form-control" disabled />
             </div>
         </div>
         <br />
@@ -592,12 +592,12 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group row">
-                    <label for="inputDireccionResidencia" class="col-sm-7 col-form-label">* ¿Su compañía cuenta con accionistas?</label>
-                    <label for="inputDireccionResidencia" class="col-form-label">Si</label>
+                    <label class="col-sm-7 col-form-label">* ¿Su compañía cuenta con accionistas?</label>
+                    <label class="col-form-label">Si</label>
                     <div class="col-sm-1">
                         <input id="checkSiAccionistaISA" type="checkbox" class="form-control" />
                     </div>
-                    <label for="inputDireccionResidencia" class="col-form-label">No</label>
+                    <label class="col-form-label">No</label>
                     <div class="col-sm-1">
                         <input id="checkNoAccionistaISA" type="checkbox" class="form-control" />
                     </div>
@@ -631,7 +631,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <input id="txtNombreApellidoAccionista1ISA" class="form-control" placeholder="Info" disabled/>
+                                    <input id="txtNombreApellidoAccionista1ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
                                     <input id="txtTipoIdAccionista1ISA" class="form-control" placeholder="Info" disabled />
@@ -657,7 +657,7 @@
                                     <input id="txtNroDocumentoAccionista2ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
-                                    <input id="txtParticipacionAccionista2ISA" class="form-control" placeholder="Info" disabled/>
+                                    <input id="txtParticipacionAccionista2ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
                                     <input id="txtNacionalidadAccionista2ISA" class="form-control" placeholder="Info" disabled />
@@ -668,13 +668,13 @@
                                     <input id="txtNombreApellidoAccionista3ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
-                                    <input id="txtTipoIdAccionista3ISA" class="form-control" placeholder="Info" disabled  />
+                                    <input id="txtTipoIdAccionista3ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
                                     <input id="txtNroDocumentoAccionista3ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
-                                    <input id="txtParticipacionAccionista3ISA" class="form-control" placeholder="Info" disabled/>
+                                    <input id="txtParticipacionAccionista3ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
                                     <input id="txtNacionalidadAccionista3ISA" class="form-control" placeholder="Info" disabled />
@@ -682,13 +682,13 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <input id="txtNombreApellidoAccionista4ISA" class="form-control" placeholder="Info" disabled/>
+                                    <input id="txtNombreApellidoAccionista4ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
-                                    <input id="txtTipoIdAccionista4ISA" class="form-control" placeholder="Info" disabled  />
+                                    <input id="txtTipoIdAccionista4ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
-                                    <input id="txtNroDocumentoAccionista4ISA" class="form-control" placeholder="Info" disabled/>
+                                    <input id="txtNroDocumentoAccionista4ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
                                     <input id="txtParticipacionAccionista4ISA" class="form-control" placeholder="Info" disabled />
@@ -718,16 +718,29 @@
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Fecha de corte DD/MM/AAAA</label>
                     <div class="col-sm-4">
-                        <input id="FechaCorte" type="text" class="form-control" />
+                        <div class="input-group date">
+                            <input id="FechaCorte" type="text" class="form-control DateFechaOnly" />
+                            <div class="input-group-append" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-8">
                 <div class="form-group row">
-                    <label class="col-sm-5 col-form-label">La información debe estar en dólares</label>
+                    <label class="col-sm-6 col-form-label">* La información debe estar en soles o dólares</label>
+                    <label class="col-form-label">Soles</label>
+                    <div class="col-sm-1">
+                        <input id="checkSolesIF" type="checkbox" class="form-control" />
+                    </div>
+                    <label class="col-form-label">Dólares</label>
+                    <div class="col-sm-1">
+                        <input id="checkDolaresIF" type="checkbox" class="form-control" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -737,7 +750,7 @@
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">* Activos</label>
                     <div class="col-sm-4">
-                        <input id="Activos" type="text" class="form-control" placeholder="$" />
+                        <input id="txtActivosIF" type="number" class="form-control" placeholder="S/. o $" />
                     </div>
                 </div>
             </div>
@@ -745,7 +758,7 @@
                 <div class="row">
                     <label class="col-sm-4 col-form-label">* Ingresos mensuales</label>
                     <div class="col-sm-4">
-                        <input id="Activos" type="text" class="form-control" placeholder="$" />
+                        <input id="txtIngresosMensualesIF" type="number" class="form-control" placeholder="S/. o $" />
                     </div>
                 </div>
             </div>
@@ -756,7 +769,7 @@
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">* Pasivos</label>
                     <div class="col-sm-4">
-                        <input id="Activos" type="text" class="form-control" placeholder="$" />
+                        <input id="txtPasivosIF" type="number" class="form-control" placeholder="S/. o $" />
                     </div>
                 </div>
             </div>
@@ -764,7 +777,7 @@
                 <div class="row">
                     <label class="col-sm-4 col-form-label">* Egresos mensuales</label>
                     <div class="col-sm-4">
-                        <input id="Activos" type="text" class="form-control" placeholder="$" />
+                        <input id="txtEgresosMensualesIF" type="number" class="form-control" placeholder="S/. o $" />
                     </div>
                 </div>
             </div>
@@ -775,7 +788,7 @@
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">* Patrimonio</label>
                     <div class="col-sm-4">
-                        <input id="Activos" type="text" class="form-control" placeholder="$" />
+                        <input id="txtPatrimonioIF" type="number" class="form-control" placeholder="S/. o $" />
                     </div>
                 </div>
             </div>
@@ -783,7 +796,7 @@
                 <div class="row">
                     <label class="col-sm-4 col-form-label">Otros ingresos</label>
                     <div class="col-sm-4">
-                        <input id="Activos" type="text" class="form-control" placeholder="$" />
+                        <input id="txtOtrosIngresosIF" type="number" class="form-control" placeholder="S/. o $" />
                     </div>
                 </div>
             </div>
@@ -794,7 +807,7 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Concepto de otros ingresos:</label>
                     <div class="col-sm-10">
-                        <input id="ConceptoOtrosIngresos" type="text" class="form-control" />
+                        <input id="txtConceptoOtrosIngresosIF" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
@@ -813,51 +826,51 @@
         <div class="row">
             <div class="col-sm-3">
                 <label>Empresa</label> <br />
-                <input placeholder="Empresa" type="text" class="form-control" />
+                <input id="txtEmpresa1RC" placeholder="Empresa" type="text" class="form-control" />
             </div>
             <div class="col-sm-2">
                 <label>Ruc</label> <br />
-                <input placeholder="Ruc" type="text" class="form-control" />
+                <input id="txtRuc1RC" placeholder="Ruc" type="text" class="form-control" />
             </div>
             <div class="col-sm-2">
                 <label>Teléfono</label> <br />
-                <input placeholder="Teléfono" type="text" class="form-control" />
+                <input id="txtTelefono1RC" placeholder="Teléfono" type="number" class="form-control" />
             </div>
             <div class="col-sm-2">
                 <label>Dirección</label> <br />
-                <input placeholder="Dirección" type="text" class="form-control" />
+                <input id="txtDireccion1RC" placeholder="Dirección" type="text" class="form-control" />
             </div>
             <div class="col-sm-2">
                 <label>Ciudad</label> <br />
-                <input placeholder="Ciudad" type="text" class="form-control" />
+                <input id="txtCiudad1RC" placeholder="Ciudad" type="text" class="form-control" />
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-3">
                 <label>Empresa</label> <br />
-                <input placeholder="Empresa" type="text" class="form-control" />
+                <input id="txtEmpresa2RC" placeholder="Empresa" type="text" class="form-control" />
             </div>
             <div class="col-sm-2">
                 <label>Ruc</label> <br />
-                <input placeholder="Ruc" type="text" class="form-control" />
+                <input id="txtRuc2RC" placeholder="Ruc" type="text" class="form-control" />
             </div>
             <div class="col-sm-2">
                 <label>Teléfono</label> <br />
-                <input placeholder="Teléfono" type="text" class="form-control" />
+                <input id="txtTelefono2RC" placeholder="Teléfono" type="number" class="form-control" />
             </div>
             <div class="col-sm-2">
                 <label>Dirección</label> <br />
-                <input placeholder="Dirección" type="text" class="form-control" />
+                <input id="txtDireccion2RC" placeholder="Dirección" type="text" class="form-control" />
             </div>
             <div class="col-sm-2">
                 <label>Ciudad</label> <br />
-                <input placeholder="Ciudad" type="text" class="form-control" />
+                <input id="txtCiudad2RC" placeholder="Ciudad" type="text" class="form-control" />
             </div>
         </div>
         <br />
 
-        <!---------------Referencias Comerciales---------->
+        <!---------------Referencias BANCARIAS---------->
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-auto bg-dark p-1 text-center">
@@ -870,47 +883,48 @@
         <div class="row">
             <div class="col-sm-3">
                 <label>Institución</label> <br />
-                <input placeholder="Institución" type="text" class="form-control" />
+                <input id="txtInstitucionRB" placeholder="Institución" type="text" class="form-control" />
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
                 <label>Nro. De Cuenta</label> <br />
-                <input placeholder="Nro. De Cuenta" type="text" class="form-control" />
+                <input id="txtNroCuentaRB" placeholder="Nro. De Cuenta" type="number" class="form-control" />
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
                 <label>Tipo Cuenta</label> <br />
-                <input placeholder="Tipo Cuenta" type="text" class="form-control" />
+                <input id="txtTipoCuentaRB" placeholder="Tipo Cuenta" type="text" class="form-control" />
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
                 <label>Beneficiario</label> <br />
-                <input placeholder="Beneficiario" type="text" class="form-control" />
+                <input id="txtBeneficiarioRB" placeholder="Beneficiario" type="text" class="form-control" />
             </div>
-            <div class="col-sm-2">
+            <!--<div class="col-sm-2">
                 <label>Vacio</label> <br />
                 <input placeholder="Vacio" type="text" class="form-control" />
-            </div>
+            </div>-->
         </div>
+
 
         <div class="row">
             <div class="col-sm-3">
                 <label>Empresa</label> <br />
-                <input placeholder="Empresa" type="text" class="form-control" />
+                <input id="txtEmpresaRB" placeholder="Empresa" type="text" class="form-control" />
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
                 <label>Ruc</label> <br />
-                <input placeholder="Ruc" type="text" class="form-control" />
+                <input id="txtRucRB" placeholder="Ruc" type="number" class="form-control" />
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
                 <label>Teléfono</label> <br />
-                <input placeholder="Teléfono" type="text" class="form-control" />
+                <input id="txtTelefonoRB" placeholder="Teléfono" type="number" class="form-control" />
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
                 <label>Dirección</label> <br />
-                <input placeholder="Dirección" type="text" class="form-control" />
+                <input id="txtDireccionRB" placeholder="Dirección" type="text" class="form-control" />
             </div>
-            <div class="col-sm-2">
+            <!--<div class="col-sm-2">
                 <label>Vacio</label> <br />
                 <input placeholder="Vacio" type="text" class="form-control" />
-            </div>
+            </div>-->
         </div>
         <br />
 
@@ -928,10 +942,10 @@
             <div class="col-sm-3">
             </div>
             <div class="col-sm-4">
-                Copias de las tres últimas declaraciones del PDT IGV 621
+                <label>* Copias de las tres últimas declaraciones del PDT IGV 621</label>
             </div>
-            <div class="col-sm-3">
-                <input type="file" class="form-control-file" />
+            <div class="col-sm-4">
+                <input id="txtFile1CDE" type="file" class="form-control-file" />
             </div>
         </div>
         <div class="row" style="margin-bottom:1%">
@@ -939,50 +953,50 @@
                 <label>PERSONAS NATURALES</label>
             </div>
             <div class="col-sm-4">
-                Copia de formulario PDT ANUAL RENTA DE TERCERA
+                <label>Copia de formulario PDT ANUAL RENTA DE TERCERA</label>
             </div>
-            <div class="col-sm-3">
-                <input type="file" class="form-control-file" />
+            <div class="col-sm-4">
+                <input id="txtFile2CDE" type="file" class="form-control-file" />
             </div>
         </div>
         <div class="row" style="margin-bottom:1%">
             <div class="col-sm-3">
             </div>
             <div class="col-sm-4">
-                Copia de Ficha RUC
+                <label>* Copia de Ficha RUC</label>
             </div>
-            <div class="col-sm-3">
-                <input type="file" class="form-control-file" />
+            <div class="col-sm-4">
+                <input id="txtFile3CDE" type="file" class="form-control-file" />
             </div>
         </div>
         <div class="row" style="margin-bottom:1%">
             <div class="col-sm-3">
             </div>
             <div class="col-sm-4">
-                Copia de DNI
+                <label>* Copia de DNI</label>
             </div>
-            <div class="col-sm-3">
-                <input type="file" class="form-control-file" />
+            <div class="col-sm-4">
+                <input id="txtFile4CDE" type="file" class="form-control-file" />
             </div>
         </div>
         <div class="row" style="margin-bottom:1%">
             <div class="col-sm-3">
             </div>
             <div class="col-sm-4">
-                Certificado de referencias comerciales
+                <label>Certificado de referencias comerciales</label>
             </div>
-            <div class="col-sm-3">
-                <input type="file" class="form-control-file" />
+            <div class="col-sm-4">
+                <input id="txtFile5CDE" type="file" class="form-control-file" />
             </div>
         </div>
         <div class="row" style="margin-bottom:1%">
             <div class="col-sm-3">
             </div>
             <div class="col-sm-4">
-                Certificado Bancario
+                <label>Certificado Bancario</label>
             </div>
-            <div class="col-sm-3">
-                <input type="file" class="form-control-file" />
+            <div class="col-sm-4">
+                <input id="txtFile6CDE" type="file" class="form-control-file" />
             </div>
         </div>
         <hr />
@@ -992,10 +1006,10 @@
             <div class="col-sm-3">
             </div>
             <div class="col-sm-4">
-                Situación financiera ( Balance General, Perdidas y Ganancias)
+                <label>* Situación financiera ( Balance General, Perdidas y Ganancias)</label>
             </div>
-            <div class="col-sm-3">
-                <input type="file" class="form-control-file" />
+            <div class="col-sm-4">
+                <input id="txtFile7CDE" type="file" class="form-control-file" />
             </div>
         </div>
         <div class="row" style="margin-bottom:1%">
@@ -1003,60 +1017,60 @@
                 <label>PERSONAS JURIDICAS</label>
             </div>
             <div class="col-sm-4">
-                Copia de formulario PDT ANUAL RENTA DE TERCERA
+                <label>* Copia de formulario PDT ANUAL RENTA DE TERCERA</label>
             </div>
-            <div class="col-sm-3">
-                <input type="file" class="form-control-file" />
+            <div class="col-sm-4">
+                <input id="txtFile8CDE" type="file" class="form-control-file" />
             </div>
         </div>
         <div class="row" style="margin-bottom:1%">
             <div class="col-sm-3">
             </div>
             <div class="col-sm-4">
-                Copia de Ficha RUC
+                <label>* Copia de Ficha RUC</label>
             </div>
-            <div class="col-sm-3">
-                <input type="file" class="form-control-file" />
+            <div class="col-sm-4">
+                <input id="txtFile9CDE" type="file" class="form-control-file" />
             </div>
         </div>
         <div class="row" style="margin-bottom:1%">
             <div class="col-sm-3">
             </div>
             <div class="col-sm-4">
-                Copia de DNI  del Representante Legal
+                <label>* Copia de DNI  del Representante Legal</label>
             </div>
             <div class="col-sm-3">
-                <input type="file" class="form-control-file" />
+                <input id="txtFile10CDE" type="file" class="form-control-file" />
             </div>
         </div>
         <div class="row" style="margin-bottom:1%">
             <div class="col-sm-3">
             </div>
             <div class="col-sm-4">
-                Vigencia Poder del Representante Legal
+                <label>Vigencia Poder del Representante Legal</label>
             </div>
-            <div class="col-sm-3">
-                <input type="file" class="form-control-file" />
+            <div class="col-sm-4">
+                <input id="txtFile11CDE" type="file" class="form-control-file" />
             </div>
         </div>
         <div class="row" style="margin-bottom:1%">
             <div class="col-sm-3">
             </div>
             <div class="col-sm-4">
-                Certificado de referencias comerciales
+                <label>Certificado de referencias comerciales</label>
             </div>
-            <div class="col-sm-3">
-                <input type="file" class="form-control-file" />
+            <div class="col-sm-4">
+                <input id="txtFile12CDE" type="file" class="form-control-file" />
             </div>
         </div>
         <div class="row" style="margin-bottom:1%">
             <div class="col-sm-3">
             </div>
             <div class="col-sm-4">
-                Certificado Bancario
+                <label>Certificado Bancario</label>
             </div>
-            <div class="col-sm-3">
-                <input type="file" class="form-control-file" />
+            <div class="col-sm-4">
+                <input id="txtFile13CDE" type="file" class="form-control-file" />
             </div>
         </div>
         <!--#endregion -->
@@ -1178,13 +1192,13 @@
                 <label>* Responsable de la contratación - Asesor Comercial</label>
             </div>
             <div class="col-sm-3">
-                <input type="text" class="form-control" />
+                <input id="txtAsesorComercialVUI" type="text" class="form-control" />
             </div>
             <div class="col-sm-1">
                 <label>* Firma</label>
             </div>
             <div class="col-sm-3">
-                <input type="text" class="form-control" />
+                <input id="txtFirmaVUI" type="text" class="form-control" />
             </div>
         </div>
         <br />
