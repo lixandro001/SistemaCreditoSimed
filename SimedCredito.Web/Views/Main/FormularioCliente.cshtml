@@ -223,23 +223,17 @@
             </div>
             <div class="col-sm-2">
                 <select id="cboTipoIdentificacionTributaria" class="form-control"></select>
-            </div>
-            <div class="col-sm-0">
-                <label class="col-form-label">Otro</label>
-            </div>
-            <div class="col-sm-1">
-                <input id="checkOtroIdentificacionIT" type="checkbox" class="form-control" />
-            </div>
-            <div class="col-sm-1">
+            </div>            
+            <div class="col-sm-2">
                 <label class="col-form-label">Cúal?</label>
             </div>
             <div class="col-sm-2">
-                <input id="txtCualIdentificacionIT" type="text" class="form-control" />
-            </div>
-            <div class="col-sm-2">
-                <label class="col-form-label">* N° de Identificación</label>
+                <input id="txtCualIdentificacionIT" type="text" class="form-control" disabled/>
             </div>
             <div class="col-sm-1">
+                <label class="col-form-label">* N° de Identificación</label>
+            </div>
+            <div class="col-sm-3">
                 <input id="txtNumIdentificacionIT" type="text" class="form-control" />
             </div>
         </div>
@@ -251,23 +245,17 @@
             <div class="col-sm-2">
                 <select id="cboTipoContribuyente" class="form-control"></select>
             </div>
-            <div class="col-sm-0">
+            <div class="col-sm-2">
                 <label class="col-form-label">* Tipo de Sociedad</label>
             </div>
             <div class="col-sm-2">
                 <select id="cboTipoSociedad" class="form-control"></select>
             </div>
-            <div class="col-sm-0">
-                <label class="col-form-label">¿Otra?</label>
-            </div>
             <div class="col-sm-1">
-                <input id="checkContribuyenteOtroIT" type="checkbox" class="form-control" />
-            </div>
-            <div class="col-sm-">
                 <label class="col-form-label">Cúal?</label>
             </div>
-            <div class="col-sm-2">
-                <input id="txtCualContribuyenteIT" type="text" class="form-control" />
+            <div class="col-sm-3">
+                <input id="txtCualSociedadIT" type="text" class="form-control" disabled/>
             </div>
         </div>
         <br />
@@ -278,17 +266,17 @@
             <div class="col-sm-2">
                 <select id="cboOrigenCapital" class="form-control"></select>
             </div>
-            <div class="col-sm-0">
+            <div class="col-sm-2">
                 <label class="col-form-label">* Actividad Economica</label>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <select id="cboActividadEconomica" class="form-control"></select>
             </div>
-            <div class="col-sm-">
+            <div class="col-sm-1">
                 <label class="col-form-label">Cúal?</label>
             </div>
             <div class="col-sm-3">
-                <input id="txtCualEconomicaIT" type="text" class="form-control" />
+                <input id="txtCualEconomicaIT" type="text" class="form-control" disabled/>
             </div>
         </div>
         <br />
@@ -395,27 +383,18 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-2">
+            <div class="col-sm-6">
                 <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Otra?</label>
-                    <div class="col-sm-4">
-                        <input id="checkOtraIRL" type="checkbox" class="form-control" />
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-5">
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Cual?</label>
+                    <label class="col-sm-4 col-form-label">Cual?</label>
                     <div class="col-sm-8">
                         <input id="txtCualIRL" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
 
-            <div class="col-sm-5">
+            <div class="col-sm-6">
                 <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">* Fecha Expedición del documento</label>
+                    <label class="col-sm-3 col-form-label">* Fecha Expedición del documento</label>
                     <div class="col-sm-8">
                         <div class="input-group date">
                             <input id="txtFechaExpedicionDocumentoIRL" type="text" class="form-control DateFechaOnly" />
@@ -440,7 +419,7 @@
 
             <div class="col-sm-6">
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Ciudad</label>
+                    <label class="col-sm-3 col-form-label">Ciudad</label>
                     <div class="col-sm-8">
                         <input id="txtCiudadIRL" type="text" class="form-control" />
                     </div>
@@ -459,85 +438,24 @@
         <br />
 
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
                 <div class="form-group row">
-                    <label for="inputReconocimientoPublico" class="col-sm-7 col-form-label">* Goza de reconocimiento público</label>
-                    <label for="inputReconocimientoPublico" class="col-sm-1 col-form-label">Si/No</label>
+                    <label class="col-sm-3 col-form-label">* Goza de reconocimiento público</label>
                     <div class="col-sm-1">
-                        <input id="txtReconocimientoPublico" type="checkbox" class="form-control" />
                     </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6">
-                <div class="form-group row">
-                    <label for="inputEspecifiqueReconocimientoPublico" class="col-sm-3 col-form-label">Especifique</label>
-                    <div class="col-sm-9">
-                        <input id="txtEspecifiqueReconocimientoPublico" type="text" class="form-control" />
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="form-group row">
-                    <label for="inputRecursosPublicos" class="col-sm-7 col-form-label">* Maneja recursos públicos</label>
-                    <label for="inputRecursosPublicos" class="col-sm-1 col-form-label">Si/No</label>
+                    <label class="col-form-label">Si</label>
                     <div class="col-sm-1">
-                        <input id="txtRecursosPublicos" type="checkbox" class="form-control" />
+                        <input id="checkSiGozaPEP" type="checkbox" class="form-control" />
                     </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6">
-                <div class="form-group row">
-                    <label for="inputEspecifiqueRecursosPublicos" class="col-sm-3 col-form-label">Especifique</label>
-                    <div class="col-sm-9">
-                        <input id="txtEspecifiqueRecursosPublicos" type="text" class="form-control" />
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="form-group row">
-                    <label for="inputCargosPublicos" class="col-sm-7 col-form-label">* Ocupa o ha ocupado cargos públicos</label>
-                    <label for="inputCargosPublicos" class="col-sm-1 col-form-label">Si/No</label>
+                    <label class="col-form-label">No</label>
                     <div class="col-sm-1">
-                        <input id="txtDireccionResidencia" type="checkbox" class="form-control" />
+                        <input id="checkNoGozaPEP" type="checkbox" class="form-control" />
                     </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6">
-                <div class="form-group row">
-                    <label for="inputEspecifiqueCargosPublicos" class="col-sm-3 col-form-label">Especifique</label>
-                    <div class="col-sm-9">
-                        <input id="txtEspecifiqueCargosPublicos" type="text" class="form-control" />
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="form-group row">
-                    <label for="inputDireccionResidencia" class="col-sm-7 col-form-label">* Existe algún vínculo entre usted y una persona públicamente expuesta?</label>
-                    <label for="inputDireccionResidencia" class="col-sm-1 col-form-label">Si/No</label>
                     <div class="col-sm-1">
-                        <input id="txtDireccionResidencia" type="checkbox" class="form-control" />
+                        <label class="col-form-label">Especifique</label>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6">
-                <div class="form-group row">
-                    <label for="inputDireccionResidencia" class="col-sm-3 col-form-label">Especifique</label>
-                    <div class="col-sm-9">
-                        <input id="txtDireccionResidencia" type="text" class="form-control" />
+                    <div class="col-sm-4">
+                        <input id="txtEspecifiqueGozaPEP" type="text" class="form-control" />
                     </div>
                 </div>
             </div>
@@ -545,11 +463,97 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <label>* Existe algún vínculo diferente al comercial (familiar o personal) con empleados de SIMED</label>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">* Maneja recursos públicos</label>
+                    <div class="col-sm-1">
+                    </div>
+                    <label class="col-form-label">Si</label>
+                    <div class="col-sm-1">
+                        <input id="checkSiManejaPEP" type="checkbox" class="form-control" />
+                    </div>
+                    <label class="col-form-label">No</label>
+                    <div class="col-sm-1">
+                        <input id="checkNoManejaPEP" type="checkbox" class="form-control" />
+                    </div>
+                    <div class="col-sm-1">
+                        <label class="col-form-label">Especifique</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input id="txtEspecifiqueManejaPEP" type="text" class="form-control" />
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-6 form-group" style="text-align:center">
-                <label for="inputDireccionResidencia" class="col-sm-1 col-form-label">Si/No</label>
-                <input id="txtDireccionResidencia" type="checkbox" class="form-control" />
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">* Ocupa o ha ocupado cargos públicos</label>
+                    <div class="col-sm-1">
+                    </div>
+                    <label class="col-form-label">Si</label>
+                    <div class="col-sm-1">
+                        <input id="checkSiOcupaPEP" type="checkbox" class="form-control" />
+                    </div>
+                    <label class="col-form-label">No</label>
+                    <div class="col-sm-1">
+                        <input id="checkNoOcupaPEP" type="checkbox" class="form-control" />
+                    </div>
+                    <div class="col-sm-1">
+                        <label class="col-form-label">Especifique</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input id="txtEspecifiqueOcupaPEP" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group row">
+                    <label for="inputDireccionResidencia" class="col-sm-3 col-form-label">* Existe algún vínculo entre usted y una persona públicamente expuesta?</label>
+                    <div class="col-sm-1">
+                    </div>
+                    <label for="inputDireccionResidencia" class="col-form-label">Si</label>
+                    <div class="col-sm-1">
+                        <input id="checkSiVinculo1PEP" type="checkbox" class="form-control" />
+                    </div>
+                    <label for="inputDireccionResidencia" class="col-form-label">No</label>
+                    <div class="col-sm-1">
+                        <input id="checkNoVinculo1PEP" type="checkbox" class="form-control" />
+                    </div>
+                    <div class="col-sm-1">
+                        <label for="inputDireccionResidencia" class="col-form-label">Especifique</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input id="txtEspecifiqueVinculo1PEP" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">* Existe algún vínculo diferente al comercial (familiar o personal) con empleados de SIMED</label>
+                    <div class="col-sm-1">
+                    </div>
+                    <label class="col-form-label">Si</label>
+                    <div class="col-sm-1">
+                        <input id="checkSiVinculo2PEP" type="checkbox" class="form-control" />
+                    </div>
+                    <label class="col-form-label">No</label>
+                    <div class="col-sm-1">
+                        <input id="checkNoVinculo2PEP" type="checkbox" class="form-control" />
+                    </div>
+                    <div class="col-sm-1">
+                        <label class="col-form-label">Especifique</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input id="txtEspecifiqueVinculo2PEP" type="text" class="form-control" />
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -562,7 +566,7 @@
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Nombre y Apellidos</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" placeholder="" />
+                        <input type="text" id="txtNombreApellidoPEP" class="form-control" placeholder="" />
                     </div>
                 </div>
             </div>
@@ -570,7 +574,7 @@
                 <div class="row">
                     <label class="col-sm-3 col-form-label">Cargo</label>
                     <div class="col-sm-8">
-                        <input id="" type="text" class="form-control" placeholder="" />
+                        <input id="txtCargoPEP" type="text" class="form-control" placeholder="" />
                     </div>
                 </div>
             </div>
@@ -589,9 +593,13 @@
             <div class="col-sm-6">
                 <div class="form-group row">
                     <label for="inputDireccionResidencia" class="col-sm-7 col-form-label">* ¿Su compañía cuenta con accionistas?</label>
-                    <label for="inputDireccionResidencia" class="col-sm-1 col-form-label">Si/No</label>
+                    <label for="inputDireccionResidencia" class="col-form-label">Si</label>
                     <div class="col-sm-1">
-                        <input id="checkAccionista" type="checkbox" class="form-control" />
+                        <input id="checkSiAccionistaISA" type="checkbox" class="form-control" />
+                    </div>
+                    <label for="inputDireccionResidencia" class="col-form-label">No</label>
+                    <div class="col-sm-1">
+                        <input id="checkNoAccionistaISA" type="checkbox" class="form-control" />
                     </div>
                 </div>
             </div>
@@ -623,70 +631,70 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <input placeholder="Info" />
+                                    <input id="txtNombreApellidoAccionista1ISA" class="form-control" placeholder="Info" disabled/>
                                 </td>
                                 <td>
-                                    <input placeholder="Info" />
+                                    <input id="txtTipoIdAccionista1ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
-                                    <input placeholder="Info" />
+                                    <input id="txtNroDocumentoAccionista1ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
-                                    <input placeholder="Info" />
+                                    <input id="txtParticipacionAccionista1ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
-                                    <input placeholder="Info" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input placeholder="Info" />
-                                </td>
-                                <td>
-                                    <input placeholder="Info" />
-                                </td>
-                                <td>
-                                    <input placeholder="Info" />
-                                </td>
-                                <td>
-                                    <input placeholder="Info" />
-                                </td>
-                                <td>
-                                    <input placeholder="Info" />
+                                    <input id="txtNacionalidadAccionista1ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input placeholder="Info" />
+                                    <input id="txtNombreApellidoAccionista2ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
-                                    <input placeholder="Info" />
+                                    <input id="txtTipoIdAccionista2ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
-                                    <input placeholder="Info" />
+                                    <input id="txtNroDocumentoAccionista2ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
-                                    <input placeholder="Info" />
+                                    <input id="txtParticipacionAccionista2ISA" class="form-control" placeholder="Info" disabled/>
                                 </td>
                                 <td>
-                                    <input placeholder="Info" />
+                                    <input id="txtNacionalidadAccionista2ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input placeholder="Info" />
+                                    <input id="txtNombreApellidoAccionista3ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
-                                    <input placeholder="Info" />
+                                    <input id="txtTipoIdAccionista3ISA" class="form-control" placeholder="Info" disabled  />
                                 </td>
                                 <td>
-                                    <input placeholder="Info" />
+                                    <input id="txtNroDocumentoAccionista3ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                                 <td>
-                                    <input placeholder="Info" />
+                                    <input id="txtParticipacionAccionista3ISA" class="form-control" placeholder="Info" disabled/>
                                 </td>
                                 <td>
-                                    <input placeholder="Info" />
+                                    <input id="txtNacionalidadAccionista3ISA" class="form-control" placeholder="Info" disabled />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input id="txtNombreApellidoAccionista4ISA" class="form-control" placeholder="Info" disabled/>
+                                </td>
+                                <td>
+                                    <input id="txtTipoIdAccionista4ISA" class="form-control" placeholder="Info" disabled  />
+                                </td>
+                                <td>
+                                    <input id="txtNroDocumentoAccionista4ISA" class="form-control" placeholder="Info" disabled/>
+                                </td>
+                                <td>
+                                    <input id="txtParticipacionAccionista4ISA" class="form-control" placeholder="Info" disabled />
+                                </td>
+                                <td>
+                                    <input id="txtNacionalidadAccionista4ISA" class="form-control" placeholder="Info" disabled />
                                 </td>
                             </tr>
                         </tbody>
@@ -735,7 +743,7 @@
             </div>
             <div class="col-sm-6">
                 <div class="row">
-                    <label class="col-sm-3 col-form-label">* Ingresos mensuales</label>
+                    <label class="col-sm-4 col-form-label">* Ingresos mensuales</label>
                     <div class="col-sm-4">
                         <input id="Activos" type="text" class="form-control" placeholder="$" />
                     </div>
@@ -754,7 +762,7 @@
             </div>
             <div class="col-sm-6">
                 <div class="row">
-                    <label class="col-sm-3 col-form-label">* Egresos mensuales</label>
+                    <label class="col-sm-4 col-form-label">* Egresos mensuales</label>
                     <div class="col-sm-4">
                         <input id="Activos" type="text" class="form-control" placeholder="$" />
                     </div>
@@ -773,7 +781,7 @@
             </div>
             <div class="col-sm-6">
                 <div class="row">
-                    <label class="col-sm-3 col-form-label">Otros ingresos</label>
+                    <label class="col-sm-4 col-form-label">Otros ingresos</label>
                     <div class="col-sm-4">
                         <input id="Activos" type="text" class="form-control" placeholder="$" />
                     </div>
@@ -1166,141 +1174,127 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-5">
-                <input type="text" class="form-control" />
-                <label>* Responsable de la contratación - Asesor Comercial</label> <br />
-            </div>
             <div class="col-sm-3">
-                <div class="input-group date">
-                    <input type="text" class="form-control pull-right DateFechaOnly" value="">
-                    <div class="input-group-append" data-toggle="datetimepicker">
-                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                    </div>
-                </div>
-                <label>* Fecha</label> <br />
+                <label>* Responsable de la contratación - Asesor Comercial</label>
             </div>
             <div class="col-sm-3">
                 <input type="text" class="form-control" />
-                <label>* Hora</label> <br />
             </div>
-        </div>
-        <br />
-        <div class="row">
-            <div class="col-sm-2">
+            <div class="col-sm-1">
                 <label>* Firma</label>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
                 <input type="text" class="form-control" />
             </div>
         </div>
         <br />
         <!---------------Autorización Gerente de Unidad de Negocio---------->
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="col-auto bg-dark p-1 text-center">
-                    <h6>AUTORIZACION GERENTE DE UNIDAD DE NEGOCIO</h6>
-                </div>
-            </div>
-        </div>
-        <br />
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="form-group">
-                    <label class="col-sm-12 col-form-label">Declaro a mi leal saber y entender, que he verificado que la información aportada en la solicitud de registro ha sido diligenciada de manera correcta y completa. Así mismo declaro que he verificado los originales de los documentos de identidad del solicitante, así como la demás documentación e información proporcionada por el solicitante, a los fines de identificar personalmente al solicitante y determinar las actividades económicas a las cuales se dedica:</label>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5">
-                <input type="text" class="form-control" />
-                <label>* Nombre GUN</label> <br />
-            </div>
-            <div class="col-sm-3">
-                <div class="input-group date">
-                    <input type="text" class="form-control pull-right DateFechaOnly" value="">
-                    <div class="input-group-append" data-toggle="datetimepicker">
-                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+        @*<div class="row">
+                <div class="col-sm-12">
+                    <div class="col-auto bg-dark p-1 text-center">
+                        <h6>AUTORIZACION GERENTE DE UNIDAD DE NEGOCIO</h6>
                     </div>
                 </div>
-                <label>* Fecha</label> <br />
             </div>
-            <div class="col-sm-3">
-                <input type="text" class="form-control" />
-                <label>* Hora</label> <br />
-            </div>
-        </div>
-        <br />
-        <div class="row">
-            <div class="col-sm-2">
-                <label>* Firma</label>
-            </div>
-            <div class="col-sm-2">
-                <input type="text" class="form-control" />
-            </div>
-        </div>
-        <br />
-        <!---------------Departamento de credito y cobranzas---------->
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="col-auto bg-dark p-1 text-center">
-                    <h6>PARA USO EXCLUSIVO DEL DEPARTAMENTO DE CREDITO Y COBRANZAS</h6>
-                </div>
-            </div>
-        </div>
-        <br />
-        <div class="row">
-            <div class="col-sm-5">
-                <input type="text" class="form-control" />
-                <label>* Analista de Crédito</label> <br />
-            </div>
-            <div class="col-sm-3">
-                <div class="input-group date">
-                    <input type="text" class="form-control pull-right DateFechaOnly" value="">
-                    <div class="input-group-append" data-toggle="datetimepicker">
-                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+            <br />
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="col-sm-12 col-form-label">Declaro a mi leal saber y entender, que he verificado que la información aportada en la solicitud de registro ha sido diligenciada de manera correcta y completa. Así mismo declaro que he verificado los originales de los documentos de identidad del solicitante, así como la demás documentación e información proporcionada por el solicitante, a los fines de identificar personalmente al solicitante y determinar las actividades económicas a las cuales se dedica:</label>
                     </div>
                 </div>
-                <label>* FECHA DE REVISION</label> <br />
             </div>
-            <div class="col-sm-3">
-                <input type="text" class="form-control" />
-                <label>* HORA</label> <br />
+            <div class="row">
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" />
+                    <label>* Nombre GUN</label> <br />
+                </div>
+                <div class="col-sm-3">
+                    <div class="input-group date">
+                        <input type="text" class="form-control pull-right DateFechaOnly" value="">
+                        <div class="input-group-append" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                    <label>* Fecha</label> <br />
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" />
+                    <label>* Hora</label> <br />
+                </div>
             </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-2">
+                    <label>* Firma</label>
+                </div>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <br />
+            <!---------------Departamento de credito y cobranzas---------->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="col-auto bg-dark p-1 text-center">
+                        <h6>PARA USO EXCLUSIVO DEL DEPARTAMENTO DE CREDITO Y COBRANZAS</h6>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" />
+                    <label>* Analista de Crédito</label> <br />
+                </div>
+                <div class="col-sm-3">
+                    <div class="input-group date">
+                        <input type="text" class="form-control pull-right DateFechaOnly" value="">
+                        <div class="input-group-append" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                    <label>* FECHA DE REVISION</label> <br />
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" />
+                    <label>* HORA</label> <br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" />
+                    <label>* Analista de Crédito y Cobranza</label> <br />
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" />
+                    <label>* CUPO ASIGNADO</label> <br />
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" />
+                    <label>* PLAZO</label> <br />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-2">
+                    <label>* Firma</label>
+                </div>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <!--</form>-->
         </div>
-        <div class="row">
-            <div class="col-sm-5">
-                <input type="text" class="form-control" />
-                <label>* Analista de Crédito y Cobranza</label> <br />
-            </div>
-            <div class="col-sm-3">
-                <input type="text" class="form-control" />
-                <label>* CUPO ASIGNADO</label> <br />
-            </div>
-            <div class="col-sm-3">
-                <input type="text" class="form-control" />
-                <label>* PLAZO</label> <br />
-            </div>
+        *@
+
+        <div class="card-footer">
+            <button id="btnRefresh" type="button" class="btn btn-primary">Consultar</button>
+            <button id="btnGuardarFormulario" type="button" class="btn btn-success">Guardar</button>
         </div>
-        <br />
-        <div class="row">
-            <div class="col-sm-2">
-                <label>* Firma</label>
-            </div>
-            <div class="col-sm-2">
-                <input type="text" class="form-control" />
-            </div>
-        </div>
-        <!--</form>-->
+
+        <!-- /.card-body -->
     </div>
-
-
-    <div class="card-footer">
-        <button id="btnRefresh" type="button" class="btn btn-primary">Consultar</button>
-        <button id="btnGuardarFormulario" type="button" class="btn btn-success">Guardar</button>
-    </div>
-
-    <!-- /.card-body -->
-</div>
 <!-- /.card -->
 
 @section styles{

@@ -21,7 +21,23 @@ $(function () {
     $("#btnGuardarFormulario").on("click", function () {
         fnSaveFormularioCliente();
     });
-    
+
+    $("#cboTipoIdentificacionTributaria").on("change", function () {
+        fnChangeIdentificacionIT();
+    });
+
+    $("#cboTipoSociedad").on("change", function () {
+        fnChangeSociedadIT();
+    });
+
+    $("#cboActividadEconomica").on("change", function () {
+        fnChangeEconomicaIT();
+    });
+
+    $("#cboNacionalidad").on("change", function () {
+        fnChangeNacionalidadIT();
+    });
+
 });
 
 function fnLoadCategoriaCliente() {
@@ -216,30 +232,79 @@ function fnLoadAsesorComercial() {
     });
 }
 
+function fnChangeIdentificacionIT() {
+    if ($("#cboTipoIdentificacionTributaria").val() != '4') {
+        $("#txtCualIdentificacionIT").val('');
+        $("#txtCualIdentificacionIT").prop('disabled', true);
+    }
+    else {
+        $("#txtCualIdentificacionIT").prop('disabled', false);
+    }
+}
+
+function fnChangeSociedadIT() {
+    if ($("#cboTipoSociedad").val() != '5') {
+        $("#txtCualSociedadIT").val('');
+        $("#txtCualSociedadIT").prop('disabled', true);
+    }
+    else {
+        $("#txtCualSociedadIT").prop('disabled', false);
+    }
+}
+
+function fnChangeEconomicaIT() {
+    if ($("#cboActividadEconomica").val() != '7') {
+        $("#txtCualEconomicaIT").val('');
+        $("#txtCualEconomicaIT").prop('disabled', true);
+    }
+    else {
+        $("#txtCualEconomicaIT").prop('disabled', false);
+    }
+}
+
+function fnChangeNacionalidadIT() {
+    if ($("#cboNacionalidad").val() != '2') {
+        $("#txtCualIRL").prop('disabled', true);
+    }
+    else {
+        $("#txtCualIRL").prop('disabled', false);
+    }
+}
+
 function fnSaveFormularioCliente() {
     //---- DATOS GENERALES (DG)
-    if (!fnValidFormularioDG()) {
+    /*if (!fnValidFormularioDG()) {
         fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Datos Generales.");
         return;
-    }
+    }*/
     //---- INFORMACION DE CONTACTOS (IDC)
-    if (!fnValidFormularioIDC()) {
+    /*if (!fnValidFormularioIDC()) {
         fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Información De Contactos.");
         return;
-    }
+    }*/
     //---- INFORMACION TRIBUTARIA (IT)
-    if (!fnValidFormularioIT()) {
+    /*if (!fnValidFormularioIT()) {
         fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Información Tributaria.");
         return;
-    }
+    }*/
     //----- INFORMACION ACTIVIDAD ECONOMICA (IAE)
-    if (!fnValidFormularioIAE()) {
+    /*if (!fnValidFormularioIAE()) {
         fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Información Actividad Económica.");
         return;
-    }
+    }*/
     //----- INFORMACION REPRESENTANTE LEGAL(IRL)
-    if (!fnValidFormularioIRL()) {
+    /*if (!fnValidFormularioIRL()) {
         fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Información Representación Legal.");
+        return;
+    }*/
+    //----- PREGUNTAS PEP(PEP)
+    /*if (!fnValidFormularioPEP()) {
+        fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Preguntas PEP.");
+        return;
+    }*/
+    //----- INFORMACION DE SOCIOS O ACCIONISTAS(ISA)
+    if (!fnValidFormularioISA()) {
+        fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Información de Socios o Accionistas.");
         return;
     }
 }
@@ -319,14 +384,9 @@ function fnValidFormularioIT() {
     if ($("#cboTipoIdentificacionTributaria").val() == '') {
         Rpta = false;
     }
-    /*
-    if ($("#checkOtroIdentificacionIT").val() == '') {
+    if ($("#txtCualIdentificacionIT").val() == '' && $("#cboTipoIdentificacionTributaria").val() == '4') {
         Rpta = false;
     }
-    if ($("#txtCualIdentificacionIT").val() == '') {
-        Rpta = false;
-    }
-    */
     if ($("#txtNumIdentificacionIT").val() == '') {
         Rpta = false;
     }
@@ -336,25 +396,18 @@ function fnValidFormularioIT() {
     if ($("#cboTipoSociedad").val() == '') {
         Rpta = false;
     }
-    /*
-    if ($("#checkContribuyenteOtroIT").val() == '') {
+    if ($("#txtCualSociedadIT").val() == '' && $("#cboTipoSociedad").val() == '5') {
         Rpta = false;
     }
-    if ($("#txtCualContribuyenteIT").val() == '') {
-        Rpta = false;
-    }
-    */
     if ($("#cboOrigenCapital").val() == '') {
         Rpta = false;
     }
     if ($("#cboActividadEconomica").val() == '') {
         Rpta = false;
     }
-    /*
-    if ($("#txtCualEconomicaIT").val() == '') {
+    if ($("#txtCualEconomicaIT").val() == '' && $("#cboActividadEconomica").val() == '7') {
         Rpta = false;
     }
-     */
     if ($("#txtFechaConstitucionIT").val() == '') {
         Rpta = false;
     }
@@ -399,3 +452,202 @@ function fnValidFormularioIRL() {
     }
     return Rpta;
 }
+
+function fnValidFormularioPEP() {
+    var Rpta = true;    
+    if (!document.getElementById("checkSiGozaPEP").checked && !document.getElementById("checkNoGozaPEP").checked) {
+        Rpta = false;
+    }
+    if (!document.getElementById("checkSiManejaPEP").checked && !document.getElementById("checkNoManejaPEP").checked) {
+        Rpta = false;
+    }
+    if (!document.getElementById("checkSiOcupaPEP").checked && !document.getElementById("checkNoOcupaPEP").checked) {
+        Rpta = false;
+    }
+    if (!document.getElementById("checkSiVinculo1PEP").checked && !document.getElementById("checkNoVinculo1PEP").checked) {
+        Rpta = false;
+    }
+    if (!document.getElementById("checkSiVinculo2PEP").checked && !document.getElementById("checkNoVinculo2PEP").checked) {
+        Rpta = false;
+    }
+    return Rpta;
+}
+
+function fnValidFormularioISA() {
+    var Rpta = true;
+    if (!document.getElementById("checkSiAccionistaISA").checked && !document.getElementById("checkNoAccionistaISA").checked) {
+        Rpta = false;
+    }
+    if (document.getElementById("checkSiAccionistaISA").checked) {
+        if ($("#txtNombreApellidoAccionista1ISA").val() == '' || $("#txtTipoIdAccionista1ISA").val() == '' || $("#txtNroDocumentoAccionista1ISA").val() == '' || $("#txtParticipacionAccionista1ISA").val() == '' || $("#txtNacionalidadAccionista1ISA").val() == '') {
+            Rpta = true;
+            fnAlertAdvertencia("Debe llenar los campos de Información de Socios o Accionistas, Minimo 2 filas.");
+        }
+        if ($("#txtNombreApellidoAccionista2ISA").val() == '' || $("#txtTipoIdAccionista2ISA").val() == '' || $("#txtNroDocumentoAccionista2ISA").val() == '' || $("#txtParticipacionAccionista2ISA").val() == '' || $("#txtNacionalidadAccionista2ISA").val() == '') {
+            Rpta = true;
+            fnAlertAdvertencia("Debe llenar los campos de Información de Socios o Accionistas, Minimo 2 filas.");
+        }
+    }
+    return Rpta;
+}
+
+//--------PEP CHECKBOX TRUE O FALSE---------
+//#region PEP CHECKBOC
+$("#checkSiGozaPEP").on("change", function () {
+    if (this.checked) {
+        $("#checkNoGozaPEP").prop("checked", false);
+    }
+});
+
+$("#checkNoGozaPEP").on("change", function () {
+    if (this.checked) {
+        $("#checkSiGozaPEP").prop("checked", false);
+    }
+});
+
+$("#checkSiManejaPEP").on("change", function () {
+    if (this.checked) {
+        $("#checkNoManejaPEP").prop("checked", false);
+    }
+});
+
+$("#checkNoManejaPEP").on("change", function () {
+    if (this.checked) {
+        $("#checkSiManejaPEP").prop("checked", false);
+    }
+});
+
+$("#checkSiOcupaPEP").on("change", function () {
+    if (this.checked) {
+        $("#checkNoOcupaPEP").prop("checked", false);
+    }
+});
+
+$("#checkNoOcupaPEP").on("change", function () {
+    if (this.checked) {
+        $("#checkSiOcupaPEP").prop("checked", false);
+    }
+});
+
+$("#checkSiVinculo1PEP").on("change", function () {
+    if (this.checked) {
+        $("#checkNoVinculo1PEP").prop("checked", false);
+    }
+});
+
+$("#checkNoVinculo1PEP").on("change", function () {
+    if (this.checked) {
+        $("#checkSiVinculo1PEP").prop("checked", false);
+    }
+});
+
+$("#checkSiVinculo2PEP").on("change", function () {
+    if (this.checked) {
+        $("#checkNoVinculo2PEP").prop("checked", false);
+    }
+});
+
+$("#checkNoVinculo2PEP").on("change", function () {
+    if (this.checked) {
+        $("#checkSiVinculo2PEP").prop("checked", false);
+    }
+});
+//#endregion
+///-------FIN PEP CHECKBOX TRUE O FALSE-------
+
+//--------ISA CHECKBOX TRUE O FALSE---------
+//#region ISA CHECKBOC
+$("#checkSiAccionistaISA").on("change", function () {
+    if (this.checked) {
+        $("#checkNoAccionistaISA").prop("checked", false);
+        fnInhabilitarImputTable();
+    }
+    else {
+        $("#checkNoAccionistaISA").prop("checked", true);
+        fnHabilitarImputTable();
+    }
+});
+
+$("#checkNoAccionistaISA").on("change", function () {
+    if (this.checked) {
+        $("#checkSiAccionistaISA").prop("checked", false);
+        fnHabilitarImputTable();
+        fnLimpiarCamposTable();
+    }
+    else {
+        $("#checkSiAccionistaISA").prop("checked", true);
+        fnInhabilitarImputTable();
+        fnLimpiarCamposTable();
+    }
+});
+
+function fnHabilitarImputTable() {
+    $("#txtNombreApellidoAccionista1ISA").prop("disabled", true);
+    $("#txtNombreApellidoAccionista2ISA").prop("disabled", true);
+    $("#txtNombreApellidoAccionista3ISA").prop("disabled", true);
+    $("#txtNombreApellidoAccionista4ISA").prop("disabled", true);
+    $("#txtTipoIdAccionista1ISA").prop("disabled", true);
+    $("#txtTipoIdAccionista2ISA").prop("disabled", true);
+    $("#txtTipoIdAccionista3ISA").prop("disabled", true);
+    $("#txtTipoIdAccionista4ISA").prop("disabled", true);
+    $("#txtNroDocumentoAccionista1ISA").prop("disabled", true);
+    $("#txtNroDocumentoAccionista2ISA").prop("disabled", true);
+    $("#txtNroDocumentoAccionista3ISA").prop("disabled", true);
+    $("#txtNroDocumentoAccionista4ISA").prop("disabled", true);
+    $("#txtParticipacionAccionista1ISA").prop("disabled", true);
+    $("#txtParticipacionAccionista2ISA").prop("disabled", true);
+    $("#txtParticipacionAccionista3ISA").prop("disabled", true);
+    $("#txtParticipacionAccionista4ISA").prop("disabled", true);
+    $("#txtNacionalidadAccionista1ISA").prop("disabled", true);
+    $("#txtNacionalidadAccionista2ISA").prop("disabled", true);
+    $("#txtNacionalidadAccionista3ISA").prop("disabled", true);
+    $("#txtNacionalidadAccionista4ISA").prop("disabled", true);
+}
+
+function fnInhabilitarImputTable() {
+    $("#txtNombreApellidoAccionista1ISA").prop("disabled", false);
+    $("#txtNombreApellidoAccionista2ISA").prop("disabled", false);
+    $("#txtNombreApellidoAccionista3ISA").prop("disabled", false);
+    $("#txtNombreApellidoAccionista4ISA").prop("disabled", false);
+    $("#txtTipoIdAccionista1ISA").prop("disabled", false);
+    $("#txtTipoIdAccionista2ISA").prop("disabled", false);
+    $("#txtTipoIdAccionista3ISA").prop("disabled", false);
+    $("#txtTipoIdAccionista4ISA").prop("disabled", false);
+    $("#txtNroDocumentoAccionista1ISA").prop("disabled", false);
+    $("#txtNroDocumentoAccionista2ISA").prop("disabled", false);
+    $("#txtNroDocumentoAccionista3ISA").prop("disabled", false);
+    $("#txtNroDocumentoAccionista4ISA").prop("disabled", false);
+    $("#txtParticipacionAccionista1ISA").prop("disabled", false);
+    $("#txtParticipacionAccionista2ISA").prop("disabled", false);
+    $("#txtParticipacionAccionista3ISA").prop("disabled", false);
+    $("#txtParticipacionAccionista4ISA").prop("disabled", false);
+    $("#txtNacionalidadAccionista1ISA").prop("disabled", false);
+    $("#txtNacionalidadAccionista2ISA").prop("disabled", false);
+    $("#txtNacionalidadAccionista3ISA").prop("disabled", false);
+    $("#txtNacionalidadAccionista4ISA").prop("disabled", false);
+}
+
+function fnLimpiarCamposTable() {
+    $("#txtNombreApellidoAccionista1ISA").val('');
+    $("#txtNombreApellidoAccionista2ISA").val('');
+    $("#txtNombreApellidoAccionista3ISA").val('');
+    $("#txtNombreApellidoAccionista4ISA").val('');
+    $("#txtTipoIdAccionista1ISA").val('');
+    $("#txtTipoIdAccionista2ISA").val('');
+    $("#txtTipoIdAccionista3ISA").val('');
+    $("#txtTipoIdAccionista4ISA").val('');
+    $("#txtNroDocumentoAccionista1ISA").val('');
+    $("#txtNroDocumentoAccionista2ISA").val('');
+    $("#txtNroDocumentoAccionista3ISA").val('');
+    $("#txtNroDocumentoAccionista4ISA").val('');
+    $("#txtParticipacionAccionista1ISA").val('');
+    $("#txtParticipacionAccionista2ISA").val('');
+    $("#txtParticipacionAccionista3ISA").val('');
+    $("#txtParticipacionAccionista4ISA").val('');
+    $("#txtNacionalidadAccionista1ISA").val('');
+    $("#txtNacionalidadAccionista2ISA").val('');
+    $("#txtNacionalidadAccionista3ISA").val('');
+    $("#txtNacionalidadAccionista4ISA").val('');
+}
+//#endregion
+///-------FIN ISA CHECKBOX TRUE O FALSE-------
