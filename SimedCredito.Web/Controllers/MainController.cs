@@ -39,5 +39,20 @@ namespace SimedCredito.Web.Controllers
             return View();
         }
 
+        public IActionResult FormularioPerfilFinanzas()
+        {
+            return View();
+        }
+
+        public IActionResult FormularioPerfilGerenteVentas()
+        {
+            return View();
+        }
+
+        public IActionResult FormularioPerfilAnalistaCredito()
+        {
+            return View();
+        }
+
     }
 }

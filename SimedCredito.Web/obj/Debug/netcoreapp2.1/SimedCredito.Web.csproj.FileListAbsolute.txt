@@ -70,3 +70,6 @@ C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\SimedCredito.Web\obj\Debu
 C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\SimedCredito.Web\obj\Debug\netcoreapp2.1\SimedCredito.Web.dll
 C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\SimedCredito.Web\obj\Debug\netcoreapp2.1\SimedCredito.Web.pdb
 C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\SimedCredito.Web\obj\Debug\netcoreapp2.1\SimedCredito.Web.genruntimeconfig.cache
+C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Main\FormularioPerfilFinanzas.cshtml.g.cs
+C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Main\FormularioPerfilGerenteVentas.cshtml.g.cs
+C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Main\FormularioPerfilAnalistaCredito.cshtml.g.cs
