@@ -21,4 +21,8 @@
     <ProjectReference Include="..\Simed.Utilities\Simed.Utilities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\files\" />
+  </ItemGroup>
+
 </Project>

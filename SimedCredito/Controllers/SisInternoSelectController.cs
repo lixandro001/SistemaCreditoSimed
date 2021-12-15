@@ -21,7 +21,7 @@ namespace SimedCredito.Controllers
         public SisInternoSelectController(IConfiguration IConfiguration, ILoggerFactory LoggerFactory)
         {
             Configuration = IConfiguration;
-            Logger = LoggerFactory.CreateLogger<SeguridadController>();
+            Logger = LoggerFactory.CreateLogger<SisInternoSelectController>();
             objSisInternoSelectBL = new SisInternoSelectBL(Configuration["ConnectionStrings:SIMED"]);
         }
 
