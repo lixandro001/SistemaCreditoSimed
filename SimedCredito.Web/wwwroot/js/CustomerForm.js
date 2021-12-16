@@ -1027,114 +1027,117 @@ function fnGuardarFormularioCliente() {
     var NombreContactoAreaFinanciera = $("#txtNombreContactoAreaFinancieraIDC2").val();
     var TelefonoContactoAreaFinanciera = $("#txtTelefonoContactoAreaFinancieraIDC2").val();
     var CorreoContactoAreaFinanciera = $("#txtCorreoContactoAreaFinancieraIDC2").val();
+    var NombreContactoAreaComercial = $("#txtNombreContactoAreaComercialIDC3").val();
+    var TelefonoContactoAreaComercial = $("#txtTelefonoContactoAreaComercialIDC3").val();
+    var CorreoContactoAreaComercial = $("#txtCorreoContactoAreaComercialIDC3").val();
     //IT()
     var TipoIdentificacionIdIT = $("#cboTipoIdentificacionTributaria").val();
     var CualIdentificacionIT = $("#txtCualIdentificacionIT").val();
     var NumeroIdentificacionIT = $("#txtNumIdentificacionIT").val();
-    var cboTipoContribuyente = $("cboTipoContribuyente").val();
-    var cboTipoSociedad = $("cboTipoSociedad").val();
-    var txtCualSociedadIT = $("txtCualSociedadIT").val();
-    var cboOrigenCapital = $("cboOrigenCapital").val();
-    var cboActividadEconomica = $("cboActividadEconomica").val();
-    var txtCualEconomicaIT = $("txtCualEconomicaIT").val();
-    var txtSuperIntendenciaIT = $("txtSuperIntendenciaIT").val();
-    var txtFechaConstitucionIT = $("txtFechaConstitucionIT").val();
-    var cboRegimen = $("cboRegimen").val();
+    var cboTipoContribuyente = $("#cboTipoContribuyente").val();
+    var cboTipoSociedad = $("#cboTipoSociedad").val();
+    var txtCualSociedadIT = $("#txtCualSociedadIT").val();
+    var cboOrigenCapital = $("#cboOrigenCapital").val();
+    var cboActividadEconomica = $("#cboActividadEconomica").val();
+    var txtCualEconomicaIT = $("#txtCualEconomicaIT").val();
+    var txtSuperIntendenciaIT = $("#txtSuperIntendenciaIT").val();
+    var txtFechaConstitucionIT = $("#txtFechaConstitucionIT").val();
+    var cboRegimen = $("#cboRegimen").val();
     //INFORMACION AE()
-    var txtActividadPrincipalIAE = $("txtActividadPrincipalIAE").val();
-    var txtActividadSecundariaIAE = $("txtActividadSecundariaIAE").val();
+    var txtActividadPrincipalIAE = $("#txtActividadPrincipalIAE").val();
+    var txtActividadSecundariaIAE = $("#txtActividadSecundariaIAE").val();
     //informacion representante legal()
-    var txtNombreRepresentanteLegalIRL = $("txtNombreRepresentanteLegalIRL").val();
-    var cboTipoIdenticacionLegal = $("cboTipoIdenticacionLegal").val();
-    var txtNumeroIdentificacionIRL = $("txtNumeroIdentificacionIRL").val();
-    var cboNacionalidad = $("cboNacionalidad").val();
-    var txtCualIRL = $("txtCualIRL").val();
-    var txtFechaExpedicionDocumentoIRL = $("txtFechaExpedicionDocumentoIRL").val();
-    var txtDireccionResidenciaIRL = $("txtDireccionResidenciaIRL").val();
-    var txtCiudadIRL = $("txtCiudadIRL").val();
+    var txtNombreRepresentanteLegalIRL = $("#txtNombreRepresentanteLegalIRL").val();
+    var cboTipoIdenticacionLegal = $("#cboTipoIdenticacionLegal").val();
+    var txtNumeroIdentificacionIRL = $("#txtNumeroIdentificacionIRL").val();
+    var cboNacionalidad = $("#cboNacionalidad").val();
+    var txtCualIRL = $("#txtCualIRL").val();
+    var txtFechaExpedicionDocumentoIRL = $("#txtFechaExpedicionDocumentoIRL").val();
+    var txtDireccionResidenciaIRL = $("#txtDireccionResidenciaIRL").val();
+    var txtCiudadIRL = $("#txtCiudadIRL").val();
     //preguntas pep (persona publicamente expuesta)
-    var checkSiGozaPEP = $("checkSiGozaPEP").val();
-    var checkNoGozaPEP = $("checkNoGozaPEP").val();
-    var txtEspecifiqueGozaPEP = $("txtEspecifiqueGozaPEP").val();
-    var checkSiManejaPEP = $("checkSiManejaPEP").val();
-    var checkNoManejaPEP = $("checkNoManejaPEP").val();
-    var txtEspecifiqueManejaPEP = $("txtEspecifiqueManejaPEP").val();
-    var checkSiOcupaPEP = $("checkSiOcupaPEP").val();
-    var checkNoOcupaPEP = $("checkNoOcupaPEP").val();
-    var txtEspecifiqueOcupaPEP = $("txtEspecifiqueOcupaPEP").val();
-    var checkSiVinculo1PEP = $("checkSiVinculo1PEP").val();
-    var checkNoVinculo1PEP = $("checkNoVinculo1PEP").val();
-    var txtEspecifiqueVinculo1PEP = $("txtEspecifiqueVinculo1PEP").val();
-    var checkSiVinculo2PEP = $("checkSiVinculo2PEP").val();
-    var checkNoVinculo2PEP = $("checkNoVinculo2PEP").val();
-    var txtEspecifiqueVinculo2PEP = $("txtEspecifiqueVinculo2PEP").val();
-    var txtNombreApellidoPEP = $("txtNombreApellidoPEP").val();
-    var txtCargoPEP = $("txtCargoPEP").val();
+    var checkGozaPEP = false;
+    if (document.getElementById("checkSiGozaPEP").checked) { checkGozaPEP = true}
+    var txtEspecifiqueGozaPEP = $("#txtEspecifiqueGozaPEP").val();
+    var checkManejaPEP = false;
+    if (document.getElementById("checkSiManejaPEP").checked) { checkManejaPEP = true }
+    var txtEspecifiqueManejaPEP = $("#txtEspecifiqueManejaPEP").val();
+    var checkOcupaPEP = false;
+    if (document.getElementById("checkSiOcupaPEP").checked) { checkOcupaPEP = true }
+    var txtEspecifiqueOcupaPEP = $("#txtEspecifiqueOcupaPEP").val();
+    var checkVinculo1PEP = false;
+    if (document.getElementById("checkSiVinculo1PEP").checked) { checkVinculo1PEP = true }
+    var txtEspecifiqueVinculo1PEP = $("#txtEspecifiqueVinculo1PEP").val();
+    var checkVinculo2PEP = $("#checkSiVinculo2PEP").val();
+    if (document.getElementById("checkSiVinculo2PEP").checked) { checkVinculo2PEP = true }
+    var txtEspecifiqueVinculo2PEP = $("#txtEspecifiqueVinculo2PEP").val();
+    var txtNombreApellidoPEP = $("#txtNombreApellidoPEP").val();
+    var txtCargoPEP = $("#txtCargoPEP").val();
     //informacion socios o accionistas
-    var checkSiAccionistaISA = $("checkSiAccionistaISA").val();
-    var checkNoAccionistaISA = $("checkNoAccionistaISA").val();
-    var txtNombreApellidoAccionista1ISA = $("txtNombreApellidoAccionista1ISA").val();
-    var txtTipoIdAccionista1ISA = $("txtTipoIdAccionista1ISA").val();
-    var txtNroDocumentoAccionista1ISA = $("txtNroDocumentoAccionista1ISA").val();
-    var txtParticipacionAccionista1ISA = $("txtParticipacionAccionista1ISA").val();
-    var txtNacionalidadAccionista1ISA = $("txtNacionalidadAccionista1ISA").val();
-    var txtNombreApellidoAccionista2ISA = $("txtNombreApellidoAccionista2ISA").val();
+    var checkSiAccionistaISA = $("#checkSiAccionistaISA").val();
+    var checkNoAccionistaISA = $("#checkNoAccionistaISA").val();
+    var txtNombreApellidoAccionista1ISA = $("#txtNombreApellidoAccionista1ISA").val();
+    var txtTipoIdAccionista1ISA = $("#txtTipoIdAccionista1ISA").val();
+    var txtNroDocumentoAccionista1ISA = $("#txtNroDocumentoAccionista1ISA").val();
+    var txtParticipacionAccionista1ISA = $("#txtParticipacionAccionista1ISA").val();
+    var txtNacionalidadAccionista1ISA = $("#txtNacionalidadAccionista1ISA").val();
+    var txtNombreApellidoAccionista2ISA = $("#txtNombreApellidoAccionista2ISA").val();
 
-    var txtTipoIdAccionista2ISA = $("txtTipoIdAccionista2ISA").val();
-    var txtNroDocumentoAccionista2ISA = $("txtNroDocumentoAccionista2ISA").val();
-    var txtParticipacionAccionista2ISA = $("txtParticipacionAccionista2ISA").val();
-    var txtNacionalidadAccionista2ISA = $("txtNacionalidadAccionista2ISA").val();
-    var txtNombreApellidoAccionista3ISA = $("txtNombreApellidoAccionista3ISA").val();
-    var txtTipoIdAccionista3ISA = $("txtTipoIdAccionista3ISA").val();
-    var txtNroDocumentoAccionista3ISA = $("txtNroDocumentoAccionista3ISA").val();
-    var txtParticipacionAccionista3ISA = $("txtParticipacionAccionista3ISA").val();
-    var txtNacionalidadAccionista3ISA = $("txtNacionalidadAccionista3ISA").val();
-    var txtNombreApellidoAccionista4ISA = $("txtNombreApellidoAccionista4ISA").val();
-    var txtTipoIdAccionista4ISA = $("txtTipoIdAccionista4ISA").val();
-    var txtNroDocumentoAccionista4ISA = $("txtNroDocumentoAccionista4ISA").val();
-    var txtParticipacionAccionista4ISA = $("txtParticipacionAccionista4ISA").val();
-    var txtNacionalidadAccionista4ISA = $("txtNacionalidadAccionista4ISA").val();
+    var txtTipoIdAccionista2ISA = $("#txtTipoIdAccionista2ISA").val();
+    var txtNroDocumentoAccionista2ISA = $("#txtNroDocumentoAccionista2ISA").val();
+    var txtParticipacionAccionista2ISA = $("#txtParticipacionAccionista2ISA").val();
+    var txtNacionalidadAccionista2ISA = $("#txtNacionalidadAccionista2ISA").val();
+    var txtNombreApellidoAccionista3ISA = $("#txtNombreApellidoAccionista3ISA").val();
+    var txtTipoIdAccionista3ISA = $("#txtTipoIdAccionista3ISA").val();
+    var txtNroDocumentoAccionista3ISA = $("#txtNroDocumentoAccionista3ISA").val();
+    var txtParticipacionAccionista3ISA = $("#txtParticipacionAccionista3ISA").val();
+    var txtNacionalidadAccionista3ISA = $("#txtNacionalidadAccionista3ISA").val();
+    var txtNombreApellidoAccionista4ISA = $("#txtNombreApellidoAccionista4ISA").val();
+    var txtTipoIdAccionista4ISA = $("#txtTipoIdAccionista4ISA").val();
+    var txtNroDocumentoAccionista4ISA = $("#txtNroDocumentoAccionista4ISA").val();
+    var txtParticipacionAccionista4ISA = $("#txtParticipacionAccionista4ISA").val();
+    var txtNacionalidadAccionista4ISA = $("#txtNacionalidadAccionista4ISA").val();
     //INFORMACIÓN FINANCIERA
-    var FechaCorte = $("FechaCorte").val();
-    var checkSolesIF = $("checkSolesIF").val();
-    var checkDolaresIF = $("checkDolaresIF").val();
-    var txtActivosIF = $("txtActivosIF").val();
-    var txtIngresosMensualesIF = $("txtIngresosMensualesIF").val();
-    var txtPasivosIF = $("txtPasivosIF").val();
-    var txtEgresosMensualesIF = $("txtEgresosMensualesIF").val();
-    var txtPatrimonioIF = $("txtPatrimonioIF").val();
-    var txtOtrosIngresosIF = $("txtOtrosIngresosIF").val();
-    var txtConceptoOtrosIngresosIF = $("txtConceptoOtrosIngresosIF").val();
+    var FechaCorte = $("#FechaCorte").val();
+    var checkSolesIF = $("#checkSolesIF").val();
+    var checkDolaresIF = $("#checkDolaresIF").val();
+    var txtActivosIF = $("#txtActivosIF").val();
+    var txtIngresosMensualesIF = $("#txtIngresosMensualesIF").val();
+    var txtPasivosIF = $("#txtPasivosIF").val();
+    var txtEgresosMensualesIF = $("#txtEgresosMensualesIF").val();
+    var txtPatrimonioIF = $("#txtPatrimonioIF").val();
+    var txtOtrosIngresosIF = $("#txtOtrosIngresosIF").val();
+    var txtConceptoOtrosIngresosIF = $("#txtConceptoOtrosIngresosIF").val();
     //Referencias Comerciales
-    var txtEmpresa1RC = $("txtEmpresa1RC").val();
-    var txtRuc1RC = $("txtRuc1RC").val();
-    var txtTelefono1RC = $("txtTelefono1RC").val();
-    var txtDireccion1RC = $("txtDireccion1RC").val();
-    var txtCiudad1RC = $("txtCiudad1RC").val();
-    var txtEmpresa2RC = $("txtEmpresa2RC").val();
-    var txtRuc2RC = $("txtRuc2RC").val();
-    var txtTelefono2RC = $("txtTelefono2RC").val();
-    var txtDireccion2RC = $("txtDireccion2RC").val();
-    var txtCiudad2RC = $("txtCiudad2RC").val();
+    var txtEmpresa1RC = $("#txtEmpresa1RC").val();
+    var txtRuc1RC = $("#txtRuc1RC").val();
+    var txtTelefono1RC = $("#txtTelefono1RC").val();
+    var txtDireccion1RC = $("#txtDireccion1RC").val();
+    var txtCiudad1RC = $("#txtCiudad1RC").val();
+    var txtEmpresa2RC = $("#txtEmpresa2RC").val();
+    var txtRuc2RC = $("#txtRuc2RC").val();
+    var txtTelefono2RC = $("#txtTelefono2RC").val();
+    var txtDireccion2RC = $("#txtDireccion2RC").val();
+    var txtCiudad2RC = $("#txtCiudad2RC").val();
     //Referencias BANCARIAS
-    var txtInstitucionRB = $("txtInstitucionRB").val();
-    var txtNroCuentaRB = $("txtNroCuentaRB").val();
-    var txtTipoCuentaRB = $("txtTipoCuentaRB").val();
-    var txtBeneficiarioRB = $("txtBeneficiarioRB").val();
-    var txtEmpresaRB = $("txtEmpresaRB").val();
-    var txtRucRB = $("txtRucRB").val();
-    var txtTelefonoRB = $("txtTelefonoRB").val();
-    var txtDireccionRB = $("txtDireccionRB").val();
+    var txtInstitucionRB = $("#txtInstitucionRB").val();
+    var txtNroCuentaRB = $("#txtNroCuentaRB").val();
+    var txtTipoCuentaRB = $("#txtTipoCuentaRB").val();
+    var txtBeneficiarioRB = $("#txtBeneficiarioRB").val();
+    var txtEmpresaRB = $("#txtEmpresaRB").val();
+    var txtRucRB = $("#txtRucRB").val();
+    var txtTelefonoRB = $("#txtTelefonoRB").val();
+    var txtDireccionRB = $("#txtDireccionRB").val();
     //Clasificación para uso Comercial
-    var cboUnidad = $("cboUnidad").val();
-    var cboSubUnidad = $("cboSubUnidad").val();
-    var cboAsesorComercial = $("cboAsesorComercial").val();
-    var txtDescripcion = $("txtDescripcion").val();
+    var cboUnidad = $("#cboUnidad").val();
+    var cboSubUnidad = $("#cboSubUnidad").val();
+    var cboAsesorComercial = $("#cboAsesorComercial").val();
+    var txtDescripcion = $("#txtDescripcion").val();
     //Terminos de pago  
-    var cboTipoPago = $("cboTipoPago").val();
-    var cuposolicitado = $("cuposolicitado").val();
+    var cboTipoPago = $("#cboTipoPago").val();
+    var cuposolicitado = $("#cuposolicitado").val();
     //Verificacion=  
-    var txtAsesorComercialVUI = $("txtAsesorComercialVUI").val();
+    var txtAsesorComercialVUI = $("#txtAsesorComercialVUI").val();
     // Control de Documentos 
     var file1 = $("#real-input1")[0].files;
     console.log(file1);
@@ -1199,6 +1202,9 @@ function fnGuardarFormularioCliente() {
     fdata.append("NombreContactoAreaFinanciera", NombreContactoAreaFinanciera);
     fdata.append("TelefonoContactoAreaFinanciera", TelefonoContactoAreaFinanciera);
     fdata.append("CorreoContactoAreaFinanciera", CorreoContactoAreaFinanciera);
+    fdata.append("NombreContactoAreaComercial", NombreContactoAreaComercial);
+    fdata.append("TelefonoContactoAreaComercial", TelefonoContactoAreaComercial);
+    fdata.append("CorreoContactoAreaComercial", CorreoContactoAreaComercial);
     //IT()
     fdata.append("TipoIdentificacionIdIT", TipoIdentificacionIdIT);
     fdata.append("CualIdentificacionIT", CualIdentificacionIT);
@@ -1225,20 +1231,15 @@ function fnGuardarFormularioCliente() {
     fdata.append("txtDireccionResidenciaIRL", txtDireccionResidenciaIRL);
     fdata.append("txtCiudadIRL", txtCiudadIRL);
     //preguntas pep (persona publicamente expuesta)
-    fdata.append("checkSiGozaPEP", checkSiGozaPEP);
-    fdata.append("checkNoGozaPEP", checkNoGozaPEP);
+    fdata.append("checkGozaPEP", checkGozaPEP);
     fdata.append("txtEspecifiqueGozaPEP", txtEspecifiqueGozaPEP);
-    fdata.append("checkSiManejaPEP", checkSiManejaPEP);
-    fdata.append("checkNoManejaPEP", checkNoManejaPEP);
+    fdata.append("checkManejaPEP", checkManejaPEP);
     fdata.append("txtEspecifiqueManejaPEP", txtEspecifiqueManejaPEP);
-    fdata.append("checkSiOcupaPEP", checkSiOcupaPEP);
-    fdata.append("checkNoOcupaPEP", checkNoOcupaPEP);
+    fdata.append("checkOcupaPEP", checkOcupaPEP);
     fdata.append("txtEspecifiqueOcupaPEP", txtEspecifiqueOcupaPEP);
-    fdata.append("checkSiVinculo1PEP", checkSiVinculo1PEP);
-    fdata.append("checkNoVinculo1PEP", checkNoVinculo1PEP);
+    fdata.append("checkVinculo1PEP", checkVinculo1PEP);
     fdata.append("txtEspecifiqueVinculo1PEP", txtEspecifiqueVinculo1PEP);
-    fdata.append("checkSiVinculo2PEP", checkSiVinculo2PEP);
-    fdata.append("checkNoVinculo2PEP", checkNoVinculo2PEP);
+    fdata.append("checkVinculo2PEP", checkVinculo2PEP);
     fdata.append("txtEspecifiqueVinculo2PEP", txtEspecifiqueVinculo2PEP);
     fdata.append("txtNombreApellidoPEP", txtNombreApellidoPEP);
     fdata.append("txtCargoPEP", txtCargoPEP);
@@ -1261,7 +1262,6 @@ function fnGuardarFormularioCliente() {
     fdata.append("txtParticipacionAccionista3ISA", txtParticipacionAccionista3ISA);
     fdata.append("txtNacionalidadAccionista3ISA", txtNacionalidadAccionista3ISA);
     fdata.append("txtNombreApellidoAccionista4ISA", txtNombreApellidoAccionista4ISA);
-
     fdata.append("txtTipoIdAccionista4ISA", txtTipoIdAccionista4ISA);
     fdata.append("txtNroDocumentoAccionista4ISA", txtNroDocumentoAccionista4ISA);
     fdata.append("txtParticipacionAccionista4ISA", txtParticipacionAccionista4ISA);

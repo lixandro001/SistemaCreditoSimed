@@ -25,42 +25,40 @@ namespace Simed.Entity.Request
         public string NombreContactoAreaFinanciera { get; set; }
         public string TelefonoContactoAreaFinanciera { get; set; }
         public string CorreoContactoAreaFinanciera { get; set; }
+        public string NombreContactoAreaComercial { get; set; }
+        public string TelefonoContactoAreaComercial { get; set; }
+        public string CorreoContactoAreaComercial { get; set; }
         public string TipoIdentificacionIdIT { get; set; }
         public string CualIdentificacionIT { get; set; }
         public string NumeroIdentificacionIT { get; set; }
-        public string cboTipoContribuyente { get; set; }
-        public string cboTipoSociedad { get; set; }
+        public int cboTipoContribuyente { get; set; }
+        public int cboTipoSociedad { get; set; }
         public string txtCualSociedadIT { get; set; }
-        public string cboOrigenCapital { get; set; }
-        public string cboActividadEconomica { get; set; }
+        public int cboOrigenCapital { get; set; }
+        public int cboActividadEconomica { get; set; }
         public string txtCualEconomicaIT { get; set; }
         public string txtSuperIntendenciaIT { get; set; }
-        public string txtFechaConstitucionIT { get; set; }
-        public string cboRegimen { get; set; }
+        public DateTime txtFechaConstitucionIT { get; set; }
+        public int cboRegimen { get; set; }
         public string txtActividadPrincipalIAE { get; set; }
         public string txtActividadSecundariaIAE { get; set; }
         public string txtNombreRepresentanteLegalIRL { get; set; }
-        public string cboTipoIdenticacionLegal { get; set; }
+        public int cboTipoIdenticacionLegal { get; set; }
         public string txtNumeroIdentificacionIRL { get; set; }
-        public string cboNacionalidad { get; set; }
+        public int cboNacionalidad { get; set; }
         public string txtCualIRL { get; set; }
-        public string txtFechaExpedicionDocumentoIRL { get; set; }
+        public DateTime txtFechaExpedicionDocumentoIRL { get; set; }
         public string txtDireccionResidenciaIRL { get; set; }
         public string txtCiudadIRL { get; set; }
-        public string checkSiGozaPEP { get; set; }
-        public string checkNoGozaPEP { get; set; }
+        public bool checkGozaPEP { get; set; }
         public string txtEspecifiqueGozaPEP { get; set; }
-        public string checkSiManejaPEP { get; set; }
-        public string checkNoManejaPEP { get; set; }
+        public bool checkManejaPEP { get; set; }
         public string txtEspecifiqueManejaPEP { get; set; }
-        public string checkSiOcupaPEP { get; set; }
-        public string checkNoOcupaPEP { get; set; }
+        public bool checkOcupaPEP { get; set; }
         public string txtEspecifiqueOcupaPEP { get; set; }
-        public string checkSiVinculo1PEP { get; set; }
-        public string checkNoVinculo1PEP { get; set; }
+        public bool checkVinculo1PEP { get; set; }
         public string txtEspecifiqueVinculo1PEP { get; set; }
-        public string checkSiVinculo2PEP { get; set; }
-        public string checkNoVinculo2PEP { get; set; }
+        public bool checkVinculo2PEP { get; set; }
         public string txtEspecifiqueVinculo2PEP { get; set; }
         public string txtNombreApellidoPEP { get; set; }
         public string txtCargoPEP { get; set; }

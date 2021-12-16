@@ -78,3 +78,11 @@ System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'usp_Guar
 ClientConnectionId:07ce716c-b25a-442c-af67-06a349ed772a
 Error Number:201,State:4,Class:16
 2021-12-15 15:19:08.439 -05:00 [Warning] Ingreso
+2021-12-15 18:14:05.906 -05:00 [Warning] Ingreso
+2021-12-15 18:47:27.552 -05:00 [Warning] Ingreso
+2021-12-15 19:53:08.836 -05:00 [Warning] Ingreso
+2021-12-15 20:04:41.048 -05:00 [Warning] Ingreso
+2021-12-15 20:04:59.551 -05:00 [Warning] Ingreso
+2021-12-15 20:16:24.521 -05:00 [Warning] Ingreso
+2021-12-15 20:46:02.122 -05:00 [Warning] Ingreso
+2021-12-15 20:54:39.918 -05:00 [Warning] Ingreso
