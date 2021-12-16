@@ -62,48 +62,16 @@ namespace Simed.Entity.Request
         public string txtEspecifiqueVinculo2PEP { get; set; }
         public string txtNombreApellidoPEP { get; set; }
         public string txtCargoPEP { get; set; }
-        public string checkSiAccionistaISA { get; set; }
-        public string checkNoAccionistaISA { get; set; }
-        public string txtNombreApellidoAccionista1ISA { get; set; }
-        public string txtTipoIdAccionista1ISA { get; set; }
-        public string txtNroDocumentoAccionista1ISA { get; set; }
-        public string txtParticipacionAccionista1ISA { get; set; }
-        public string txtNacionalidadAccionista1ISA { get; set; }
-        public string txtNombreApellidoAccionista2ISA { get; set; }
-        public string txtTipoIdAccionista2ISA { get; set; }
-        public string txtNroDocumentoAccionista2ISA { get; set; }
-        public string txtParticipacionAccionista2ISA { get; set; }
-        public string txtNacionalidadAccionista2ISA { get; set; }
-        public string txtNombreApellidoAccionista3ISA { get; set; }
-        public string txtTipoIdAccionista3ISA { get; set; }
-        public string txtNroDocumentoAccionista3ISA { get; set; }
-        public string txtParticipacionAccionista3ISA { get; set; }
-        public string txtNacionalidadAccionista3ISA { get; set; }
-        public string txtNombreApellidoAccionista4ISA { get; set; }
-        public string txtTipoIdAccionista4ISA { get; set; }
-        public string txtNroDocumentoAccionista4ISA { get; set; }
-        public string txtParticipacionAccionista4ISA { get; set; }
-        public string txtNacionalidadAccionista4ISA { get; set; }
-        public string FechaCorte { get; set; }
-        public string checkSolesIF { get; set; }
-        public string checkDolaresIF { get; set; }
-        public string txtActivosIF { get; set; }
-        public string txtIngresosMensualesIF { get; set; }
-        public string txtPasivosIF { get; set; }
-        public string txtEgresosMensualesIF { get; set; }
-        public string txtPatrimonioIF { get; set; }
-        public string txtOtrosIngresosIF { get; set; }
+        public DateTime FechaCorte { get; set; }
+        public bool checkSolesIF { get; set; }
+        public bool checkDolaresIF { get; set; }
+        public decimal txtActivosIF { get; set; }
+        public decimal txtIngresosMensualesIF { get; set; }
+        public decimal txtPasivosIF { get; set; }
+        public decimal txtEgresosMensualesIF { get; set; }
+        public decimal txtPatrimonioIF { get; set; }
+        public decimal txtOtrosIngresosIF { get; set; }
         public string txtConceptoOtrosIngresosIF { get; set; }
-        public string txtEmpresa1RC { get; set; }
-        public string txtRuc1RC { get; set; }
-        public string txtTelefono1RC { get; set; }
-        public string txtDireccion1RC { get; set; }
-        public string txtCiudad1RC { get; set; }
-        public string txtEmpresa2RC { get; set; }
-        public string txtRuc2RC { get; set; }
-        public string txtTelefono2RC { get; set; }
-        public string txtDireccion2RC { get; set; }
-        public string txtCiudad2RC { get; set; }
         public string txtInstitucionRB { get; set; }
         public string txtNroCuentaRB { get; set; }
         public string txtTipoCuentaRB { get; set; }
@@ -134,5 +102,29 @@ namespace Simed.Entity.Request
         public string Filename13 { get; set; }
 
         public string tokenCode { get; set; }
+
+        //---detealle list refererncias comerciales--//
+        public List<ReferenciasComercialesArray> DetalleReferenciasComerciales { get; set; }
+        public List<UnicamentePersonaJuridicas> DetalleUnicamentePersonaJuridicas { get; set; }
     }
+
+    public class ReferenciasComercialesArray
+    {
+        public string Empresa { get; set; }
+        public string Ruc { get; set; }
+        public string Telefono { get; set; }
+        public string Direccion { get; set; }
+        public string Ciudad { get; set; }
+    }
+
+    public class UnicamentePersonaJuridicas
+    {
+        public bool CompañiaCuentaAccionistas { get; set; }
+        public string NombreApellidoAccionistas { get; set; }
+        public string TipoId { get; set; }
+        public string NroDocumento { get; set; }
+        public string Participacion { get; set; }
+        public string Nacionalidad { get; set; }
+    }
+
 }

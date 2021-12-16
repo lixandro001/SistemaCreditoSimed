@@ -125,15 +125,68 @@ namespace Simed.Data
                     Ado.ExecNonQueryProc(strsql6, parametros6);
 
                     string strsql7 = "usp_GuardarInformacionSociosAccionistasUnicamentePersonasJuridicas";
-                    for (int i = 1; i < 5; i++)
+                    foreach (var item in datos.DetalleUnicamentePersonaJuridicas)
                     {
                         var parametros7 = new SqlParameter[]
                         {
                             new SqlParameter { ParameterName = "@IdClienteDatosGenerales", SqlDbType = SqlDbType.Int, SqlValue = idcliente},
-
+                            new SqlParameter { ParameterName = "@CompañiaCuentaAccionistas", SqlDbType = SqlDbType.Bit, SqlValue = item.CompañiaCuentaAccionistas},
+                            new SqlParameter { ParameterName = "@NombreApellidoAccionistas", SqlDbType = SqlDbType.VarChar,Size=500, SqlValue = item.NombreApellidoAccionistas},
+                            new SqlParameter { ParameterName = "@TipoId", SqlDbType = SqlDbType.VarChar,Size=500, SqlValue = item.TipoId},
+                            new SqlParameter { ParameterName = "@NroDocumento", SqlDbType = SqlDbType.VarChar,Size=500, SqlValue = item.NroDocumento},
+                            new SqlParameter { ParameterName = "@Participacion", SqlDbType = SqlDbType.VarChar,Size=500, SqlValue = item.Participacion},
+                            new SqlParameter { ParameterName = "@Nacionalidad", SqlDbType = SqlDbType.VarChar,Size=500, SqlValue = item.Nacionalidad},
                         };
                         Ado.ExecNonQueryProc(strsql7, parametros7);
                     }
+
+                    string strsql8 = "usp_GuardarInformacionFinanciera";
+                    var parametros8 = new SqlParameter[]
+                    {
+                        new SqlParameter { ParameterName = "@IdClienteDatosGenerales", SqlDbType = SqlDbType.Int, SqlValue = idcliente},
+                        new SqlParameter { ParameterName = "@FechaCorte", SqlDbType = SqlDbType.DateTime, SqlValue = datos.FechaCorte},
+                        new SqlParameter { ParameterName = "@InformacionDebeSoles", SqlDbType = SqlDbType.Bit, SqlValue = datos.checkSolesIF},
+                        new SqlParameter { ParameterName = "@InformacionDebeDolares", SqlDbType = SqlDbType.Bit, SqlValue = datos.checkDolaresIF},
+                        new SqlParameter { ParameterName = "@Activos", SqlDbType = SqlDbType.Decimal, SqlValue = datos.txtActivosIF},
+                        new SqlParameter { ParameterName = "@Pasivos", SqlDbType = SqlDbType.Decimal, SqlValue = datos.txtPasivosIF},
+                        new SqlParameter { ParameterName = "@Patrimonio", SqlDbType = SqlDbType.Decimal, SqlValue = datos.txtPatrimonioIF},
+                        new SqlParameter { ParameterName = "@IngresoMensual", SqlDbType = SqlDbType.Decimal, SqlValue = datos.txtIngresosMensualesIF},
+                        new SqlParameter { ParameterName = "@EgresoMensual", SqlDbType = SqlDbType.Decimal, SqlValue = datos.txtEgresosMensualesIF},
+                        new SqlParameter { ParameterName = "@OtrosIngresos", SqlDbType = SqlDbType.Decimal, SqlValue = datos.txtOtrosIngresosIF},
+                        new SqlParameter { ParameterName = "@ConceptoOtrosIngresos", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.txtConceptoOtrosIngresosIF},
+                    };
+                    Ado.ExecNonQueryProc(strsql8, parametros8);
+
+                    string strsql9 = "usp_GuardarReferenciasComerciales";
+                    foreach(var item in datos.DetalleReferenciasComerciales)
+                    {
+                        var parametros9 = new SqlParameter[]
+                        {
+                            new SqlParameter { ParameterName = "@IdClienteDatosGenerales", SqlDbType = SqlDbType.Int, SqlValue = idcliente},
+                            new SqlParameter { ParameterName = "@Empresa", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = item.Empresa},
+                            new SqlParameter { ParameterName = "@Ruc", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = item.Ruc},
+                            new SqlParameter { ParameterName = "@Telefono", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = item.Telefono},
+                            new SqlParameter { ParameterName = "@Direccion", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = item.Direccion},
+                            new SqlParameter { ParameterName = "@Ciudad", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = item.Ciudad}
+                        };
+                        Ado.ExecNonQueryProc(strsql9, parametros9);
+                    }
+                    
+
+                    string strsql10 = "usp_GuardarReferenciaBancarias";
+                    var parametros10 = new SqlParameter[]
+                    {
+                        new SqlParameter { ParameterName = "@IdClienteDatosGenerales", SqlDbType = SqlDbType.Int, SqlValue = idcliente},
+                        new SqlParameter { ParameterName = "@Institucion", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.txtInstitucionRB},
+                        new SqlParameter { ParameterName = "@NroCuenta", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.txtNroCuentaRB},
+                        new SqlParameter { ParameterName = "@TipoCuenta", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.txtTipoCuentaRB},
+                        new SqlParameter { ParameterName = "@Beneficiario", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.txtBeneficiarioRB},
+                        new SqlParameter { ParameterName = "@Empresa", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.txtEmpresaRB},
+                        new SqlParameter { ParameterName = "@Ruc", SqlDbType = SqlDbType.VarChar, Size = 11, SqlValue = datos.txtRucRB},
+                        new SqlParameter { ParameterName = "@Telefono", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.txtTelefonoRB},
+                        new SqlParameter { ParameterName = "@Direccion", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.txtDireccionRB},
+                    };
+                    Ado.ExecNonQueryProc(strsql10, parametros10);
 
                     return idcliente;
                 }

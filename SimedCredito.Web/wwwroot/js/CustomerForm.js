@@ -1074,15 +1074,14 @@ function fnGuardarFormularioCliente() {
     var txtNombreApellidoPEP = $("#txtNombreApellidoPEP").val();
     var txtCargoPEP = $("#txtCargoPEP").val();
     //informacion socios o accionistas
-    var checkSiAccionistaISA = $("#checkSiAccionistaISA").val();
-    var checkNoAccionistaISA = $("#checkNoAccionistaISA").val();
+    var checkAccionistaISA = false;
+    if (document.getElementById("checkSiAccionistaISA").checked) { checkAccionistaISA = true }
     var txtNombreApellidoAccionista1ISA = $("#txtNombreApellidoAccionista1ISA").val();
     var txtTipoIdAccionista1ISA = $("#txtTipoIdAccionista1ISA").val();
     var txtNroDocumentoAccionista1ISA = $("#txtNroDocumentoAccionista1ISA").val();
     var txtParticipacionAccionista1ISA = $("#txtParticipacionAccionista1ISA").val();
     var txtNacionalidadAccionista1ISA = $("#txtNacionalidadAccionista1ISA").val();
     var txtNombreApellidoAccionista2ISA = $("#txtNombreApellidoAccionista2ISA").val();
-
     var txtTipoIdAccionista2ISA = $("#txtTipoIdAccionista2ISA").val();
     var txtNroDocumentoAccionista2ISA = $("#txtNroDocumentoAccionista2ISA").val();
     var txtParticipacionAccionista2ISA = $("#txtParticipacionAccionista2ISA").val();
@@ -1244,8 +1243,7 @@ function fnGuardarFormularioCliente() {
     fdata.append("txtNombreApellidoPEP", txtNombreApellidoPEP);
     fdata.append("txtCargoPEP", txtCargoPEP);
     //informacion socios o accionistas
-    fdata.append("checkSiAccionistaISA", checkSiAccionistaISA);
-    fdata.append("checkNoAccionistaISA", checkNoAccionistaISA);
+    fdata.append("checkAccionistaISA", checkAccionistaISA);
     fdata.append("txtNombreApellidoAccionista1ISA", txtNombreApellidoAccionista1ISA);
     fdata.append("txtTipoIdAccionista1ISA", txtTipoIdAccionista1ISA);
     fdata.append("txtNroDocumentoAccionista1ISA", txtNroDocumentoAccionista1ISA);
@@ -1256,7 +1254,7 @@ function fnGuardarFormularioCliente() {
     fdata.append("txtNroDocumentoAccionista2ISA", txtNroDocumentoAccionista2ISA);
     fdata.append("txtParticipacionAccionista2ISA", txtParticipacionAccionista2ISA);
     fdata.append("txtNacionalidadAccionista2ISA", txtNacionalidadAccionista2ISA);
-    fdata.append(" txtNombreApellidoAccionista3ISA", txtNombreApellidoAccionista3ISA);
+    fdata.append("txtNombreApellidoAccionista3ISA", txtNombreApellidoAccionista3ISA);
     fdata.append("txtTipoIdAccionista3ISA", txtTipoIdAccionista3ISA);
     fdata.append("txtNroDocumentoAccionista3ISA", txtNroDocumentoAccionista3ISA);
     fdata.append("txtParticipacionAccionista3ISA", txtParticipacionAccionista3ISA);
