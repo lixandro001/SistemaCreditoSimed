@@ -16,3 +16,4 @@ C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\obj\De
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\obj\Debug\netcoreapp2.1\Simed.Utilities.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\obj\Debug\netcoreapp2.1\Simed.Utilities.dll
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\obj\Debug\netcoreapp2.1\Simed.Utilities.pdb
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\obj\Debug\netcoreapp2.1\Simed.Utilities.csproj.AssemblyReference.cache

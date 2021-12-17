@@ -5,6 +5,10 @@ $(function (e) {
         format: "dd/mm/yyyy",
     });
 
+    $("#btnRefresh").on("click", function () {
+        window.location = fnBaseUrlWeb("Main/FormularioCliente");
+    });
+
     fnLoadCategoriaCliente();
     fnLoadPrecios();
     fnLoadTipoIdentificacion();
@@ -1070,6 +1074,7 @@ function fnGuardarFormularioCliente() {
     var txtEspecifiqueVinculo1PEP = $("#txtEspecifiqueVinculo1PEP").val();
     var checkVinculo2PEP = $("#checkSiVinculo2PEP").val();
     if (document.getElementById("checkSiVinculo2PEP").checked) { checkVinculo2PEP = true }
+
     var txtEspecifiqueVinculo2PEP = $("#txtEspecifiqueVinculo2PEP").val();
     var txtNombreApellidoPEP = $("#txtNombreApellidoPEP").val();
     var txtCargoPEP = $("#txtCargoPEP").val();
@@ -1098,8 +1103,17 @@ function fnGuardarFormularioCliente() {
     var txtNacionalidadAccionista4ISA = $("#txtNacionalidadAccionista4ISA").val();
     //INFORMACIÓN FINANCIERA
     var FechaCorte = $("#FechaCorte").val();
-    var checkSolesIF = $("#checkSolesIF").val();
-    var checkDolaresIF = $("#checkDolaresIF").val();
+ 
+    var checkSolesIF = false; 
+    if (document.getElementById("checkSolesIF").checked)
+    {
+        checkSolesIF = true
+    }
+    var checkDolaresIF = false;
+    if (document.getElementById("checkDolaresIF").checked)
+    {
+        checkDolaresIF = true
+    }
     var txtActivosIF = $("#txtActivosIF").val();
     var txtIngresosMensualesIF = $("#txtIngresosMensualesIF").val();
     var txtPasivosIF = $("#txtPasivosIF").val();

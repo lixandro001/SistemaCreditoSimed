@@ -80,11 +80,11 @@ namespace Simed.Entity.Request
         public string txtRucRB { get; set; }
         public string txtTelefonoRB { get; set; }
         public string txtDireccionRB { get; set; }
-        public string cboUnidad { get; set; }
-        public string cboSubUnidad { get; set; }
-        public string cboAsesorComercial { get; set; }
+        public int cboUnidad { get; set; }
+        public int cboSubUnidad { get; set; }
+        public int cboAsesorComercial { get; set; }
         public string txtDescripcion { get; set; }
-        public string cboTipoPago { get; set; }
+        public int cboTipoPago { get; set; }
         public string cuposolicitado { get; set; }
         public string txtAsesorComercialVUI { get; set; }
         public string Filename1 { get; set; }
@@ -100,6 +100,20 @@ namespace Simed.Entity.Request
         public string Filename11 { get; set; }
         public string Filename12 { get; set; }
         public string Filename13 { get; set; }
+        public string ruta1 { get; set; }
+        public string ruta2 { get; set; }
+        public string ruta3 { get; set; }
+        public string ruta4 { get; set; }
+        public string ruta5 { get; set; }
+        public string ruta6 { get; set; }
+        public string ruta7 { get; set; }
+        public string ruta8 { get; set; }
+        public string ruta9 { get; set; }
+        public string ruta10 { get; set; }
+        public string ruta11 { get; set; }
+        public string ruta12 { get; set; }
+        public string ruta13 { get; set; }
+
 
         public string tokenCode { get; set; }
 

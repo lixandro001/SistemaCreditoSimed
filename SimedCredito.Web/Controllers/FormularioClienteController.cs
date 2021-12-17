@@ -152,7 +152,7 @@ namespace SimedCredito.Web.Controllers
                 var cuposolicitado = Request.Form["cuposolicitado"];
                 var txtAsesorComercialVUI = Request.Form["txtAsesorComercialVUI"];
 
-                var exten1 ="";
+                var exten1 = "";
                 var exten2 = "";
                 var exten3 = "";
                 var exten4 = "";
@@ -162,10 +162,10 @@ namespace SimedCredito.Web.Controllers
                 var exten8 = "";
                 var exten9 = "";
                 var exten10 = "";
-                var exten11= "";
+                var exten11 = "";
                 var exten12 = "";
                 var exten13 = "";
- 
+
                 if (FormFile1 != null)
                 {
                     var extension1 = FormFile1.ContentType;
@@ -213,7 +213,7 @@ namespace SimedCredito.Web.Controllers
                 }
                 if (FormFile7 != null)
                 {
-                   var extension7 = FormFile7.ContentType;
+                    var extension7 = FormFile7.ContentType;
                     var separar7 = extension7.Split("/");
                     var ext7 = separar7[1];
                     exten7 = ext7;
@@ -260,30 +260,44 @@ namespace SimedCredito.Web.Controllers
                     var ext13 = separar13[1];
                     exten13 = ext13;
                 }
-                             
+
                 var BasePath = Path.Combine(HostingEnvironment.WebRootPath, "files");
                 var fecha = DateTime.Now;
                 var formatfecha = string.Format("{0:yyyyMMdd}", fecha);
                 var formathora = string.Format("{0:HHmmss}", fecha);
 
-                var Filename1 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten1) ;
-                var Filename2= string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten2);
-                var Filename3 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten3);
-                var Filename4 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten4);
-                var Filename5 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten5);
-                var Filename6 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten6);
-                var Filename7 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten7);
-                var Filename8 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten8);
-                var Filename9 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten9);
-                var Filename10 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten10);
-                var Filename11 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten11);
-                var Filename12 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten12);
-                var Filename13 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten13);
+                var Filename1 = "";
+                var Filename2 = "";
+                var Filename3 = "";
+                var Filename4 = "";
+                var Filename5 = "";
+                var Filename6 = "";
+                var Filename7 = "";
+                var Filename8 = "";
+                var Filename9 = "";
+                var Filename10 = "";
+                var Filename11 = "";
+                var Filename12 = "";
+                var Filename13 = "";
+                var PathFilename1 = "";
+                var PathFilename2 = "";
+                var PathFilename3 = "";
+                var PathFilename4 = "";
+                var PathFilename5 = "";
+                var PathFilename6 = "";
+                var PathFilename7 = "";
+                var PathFilename8 = "";
+                var PathFilename9 = "";
+                var PathFilename10 = "";
+                var PathFilename11 = "";
+                var PathFilename12 = "";
+                var PathFilename13 = "";
+
 
                 if (FormFile1 != null)
                 {
-                    
-                    var PathFilename1 = Path.Combine(BasePath, Filename1);
+                    Filename1 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten1);
+                    PathFilename1 = Path.Combine(BasePath, Filename1);
                     //Preguntar si existe para Eliminarlo
                     if (System.IO.File.Exists(PathFilename1))
                     {
@@ -298,8 +312,8 @@ namespace SimedCredito.Web.Controllers
                 }
                 if (FormFile2 != null)
                 {
-                   
-                    var PathFilename2 = Path.Combine(BasePath, Filename2);
+                    Filename2 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten2);
+                    PathFilename2 = Path.Combine(BasePath, Filename2);
                     //Preguntar si existe para Eliminarlo
                     if (System.IO.File.Exists(PathFilename2))
                     {
@@ -314,8 +328,8 @@ namespace SimedCredito.Web.Controllers
                 }
                 if (FormFile3 != null)
                 {
-                   
-                    var PathFilename3 = Path.Combine(BasePath, Filename3);
+                    Filename3 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten3);
+                    PathFilename3 = Path.Combine(BasePath, Filename3);
                     //Preguntar si existe para Eliminarlo
                     if (System.IO.File.Exists(PathFilename3))
                     {
@@ -330,8 +344,8 @@ namespace SimedCredito.Web.Controllers
                 }
                 if (FormFile4 != null)
                 {
-                    
-                    var PathFilename4 = Path.Combine(BasePath, Filename4);
+                    Filename4 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten4);
+                    PathFilename4 = Path.Combine(BasePath, Filename4);
                     //Preguntar si existe para Eliminarlo
                     if (System.IO.File.Exists(PathFilename4))
                     {
@@ -346,8 +360,8 @@ namespace SimedCredito.Web.Controllers
                 }
                 if (FormFile5 != null)
                 {
-                   
-                    var PathFilename5 = Path.Combine(BasePath, Filename5);
+                    Filename5 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten5);
+                    PathFilename5 = Path.Combine(BasePath, Filename5);
                     //Preguntar si existe para Eliminarlo
                     if (System.IO.File.Exists(PathFilename5))
                     {
@@ -362,8 +376,8 @@ namespace SimedCredito.Web.Controllers
                 }
                 if (FormFile6 != null)
                 {
-                   
-                    var PathFilename6 = Path.Combine(BasePath, Filename6);
+                    Filename6 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten6);
+                    PathFilename6 = Path.Combine(BasePath, Filename6);
                     //Preguntar si existe para Eliminarlo
                     if (System.IO.File.Exists(PathFilename6))
                     {
@@ -378,8 +392,8 @@ namespace SimedCredito.Web.Controllers
                 }
                 if (FormFile7 != null)
                 {
-                    
-                    var PathFilename7 = Path.Combine(BasePath, Filename7);
+                    Filename7 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten7);
+                    PathFilename7 = Path.Combine(BasePath, Filename7);
                     //Preguntar si existe para Eliminarlo
                     if (System.IO.File.Exists(PathFilename7))
                     {
@@ -394,8 +408,8 @@ namespace SimedCredito.Web.Controllers
                 }
                 if (FormFile8 != null)
                 {
-                    
-                    var PathFilename8 = Path.Combine(BasePath, Filename8);
+                    Filename8 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten8);
+                    PathFilename8 = Path.Combine(BasePath, Filename8);
                     //Preguntar si existe para Eliminarlo
                     if (System.IO.File.Exists(PathFilename8))
                     {
@@ -410,8 +424,8 @@ namespace SimedCredito.Web.Controllers
                 }
                 if (FormFile9 != null)
                 {
-                   
-                    var PathFilename9 = Path.Combine(BasePath, Filename9);
+                    Filename9 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten9);
+                    PathFilename9 = Path.Combine(BasePath, Filename9);
                     //Preguntar si existe para Eliminarlo
                     if (System.IO.File.Exists(PathFilename9))
                     {
@@ -426,8 +440,8 @@ namespace SimedCredito.Web.Controllers
                 }
                 if (FormFile10 != null)
                 {
-                   
-                    var PathFilename10 = Path.Combine(BasePath, Filename10);
+                    Filename10 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten10);
+                    PathFilename10 = Path.Combine(BasePath, Filename10);
                     //Preguntar si existe para Eliminarlo
                     if (System.IO.File.Exists(PathFilename10))
                     {
@@ -442,8 +456,8 @@ namespace SimedCredito.Web.Controllers
                 }
                 if (FormFile11 != null)
                 {
-
-                    var PathFilename11 = Path.Combine(BasePath, Filename11);
+                    Filename11 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten11);
+                    PathFilename11 = Path.Combine(BasePath, Filename11);
                     //Preguntar si existe para Eliminarlo
                     if (System.IO.File.Exists(PathFilename11))
                     {
@@ -458,8 +472,8 @@ namespace SimedCredito.Web.Controllers
                 }
                 if (FormFile12 != null)
                 {
-                   
-                    var PathFilename12 = Path.Combine(BasePath, Filename12);
+                    Filename12 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten12);
+                    PathFilename12 = Path.Combine(BasePath, Filename12);
                     //Preguntar si existe para Eliminarlo
                     if (System.IO.File.Exists(PathFilename12))
                     {
@@ -474,8 +488,8 @@ namespace SimedCredito.Web.Controllers
                 }
                 if (FormFile13 != null)
                 {
-                 
-                    var PathFilename13 = Path.Combine(BasePath, Filename13);
+                    Filename13 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten13);
+                    PathFilename13 = Path.Combine(BasePath, Filename13);
                     //Preguntar si existe para Eliminarlo
                     if (System.IO.File.Exists(PathFilename13))
                     {
@@ -549,7 +563,9 @@ namespace SimedCredito.Web.Controllers
                 request.txtEspecifiqueVinculo2PEP = txtEspecifiqueVinculo2PEP;
                 request.txtNombreApellidoPEP = txtNombreApellidoPEP;
                 request.txtCargoPEP = txtCargoPEP;
+                             
                 var ArrayDetalleUPJ = new List<UnicamentePersonaJuridicas>();
+ 
                 var itemDetalleUPJ = new UnicamentePersonaJuridicas();
                 itemDetalleUPJ.CompañiaCuentaAccionistas = Convert.ToBoolean(checkAccionistaISA);
                 itemDetalleUPJ.NombreApellidoAccionistas = txtNombreApellidoAccionista1ISA;
@@ -579,6 +595,9 @@ namespace SimedCredito.Web.Controllers
                 itemDetalleUPJ.Participacion = txtParticipacionAccionista4ISA;
                 itemDetalleUPJ.Nacionalidad = txtNacionalidadAccionista4ISA;
                 ArrayDetalleUPJ.Add(itemDetalleUPJ);
+
+                request.DetalleUnicamentePersonaJuridicas = ArrayDetalleUPJ;
+
                 request.FechaCorte = Convert.ToDateTime(FechaCorte);
                 request.checkSolesIF = Convert.ToBoolean(checkSolesIF);
                 request.checkDolaresIF = Convert.ToBoolean(checkDolaresIF);
@@ -613,14 +632,15 @@ namespace SimedCredito.Web.Controllers
                 request.txtRucRB = txtRucRB;
                 request.txtTelefonoRB = txtTelefonoRB;
                 request.txtDireccionRB = txtDireccionRB;
-                request.cboUnidad = cboUnidad;
-                request.cboSubUnidad = cboSubUnidad;
-                request.cboAsesorComercial = cboAsesorComercial;
+                request.cboUnidad = 0;//Convert.ToInt32(cboUnidad);
+
+                request.cboSubUnidad = Convert.ToInt32 (cboSubUnidad);
+                request.cboAsesorComercial = Convert.ToInt32 (cboAsesorComercial);
                 request.txtDescripcion = txtDescripcion;
-                request.cboTipoPago = cboTipoPago;
+                request.cboTipoPago = 0;//Convert.ToInt32( cboTipoPago);
                 request.cuposolicitado = cuposolicitado;
                 request.txtAsesorComercialVUI = txtAsesorComercialVUI;
-                //FilenameImageCodeBar
+               
                 request.Filename1 = Filename1;
                 request.Filename2 = Filename2;
                 request.Filename3 = Filename3;
@@ -634,13 +654,29 @@ namespace SimedCredito.Web.Controllers
                 request.Filename11 = Filename11;
                 request.Filename12 = Filename12;
                 request.Filename13 = Filename13;
-           
+                request.ruta1 = PathFilename1;
+                request.ruta2 = PathFilename2;
+                request.ruta3 = PathFilename3;
+                request.ruta4 = PathFilename4;
+                request.ruta5 = PathFilename5;
+                request.ruta6 = PathFilename6;
+                request.ruta7 = PathFilename7;
+                request.ruta8 = PathFilename8;
+                request.ruta9 = PathFilename9;
+                request.ruta10 = PathFilename10;
+                request.ruta11 = PathFilename11;
+                request.ruta12 = PathFilename12;
+                request.ruta13 = PathFilename13;
+
+                 
                 var Url = GeneralModel.UrlWebApi + "FormularioCliente/GuardarClienteFormulario";
                 var Result = Simed.Utilities.Rest.RestClient.ProcessPostRequest(Url, request, token);
 
-
-                Response.code = (int)Enums.eCodeError.OK;
-                Response.data = Result;
+                if (Result!=null)
+                {
+                    Response.code = (int)Enums.eCodeError.OK;
+                    Response.data = Result;
+                }
                  
             }
             catch (Exception ex)
