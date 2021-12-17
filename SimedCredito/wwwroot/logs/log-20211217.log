@@ -238,3 +238,5 @@ System.FormatException: Failed to convert parameter value from a String to a Int
    at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
 2021-12-17 13:33:04.744 -05:00 [Warning] Ingreso
+2021-12-17 14:07:03.886 -05:00 [Warning] Ingreso
+2021-12-17 14:58:07.546 -05:00 [Warning] Ingreso

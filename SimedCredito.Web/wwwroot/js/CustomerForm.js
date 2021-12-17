@@ -113,79 +113,79 @@ $(function (e) {
     $("#real-input1").on("change", function () {
         const name = $("#real-input1").val().split(/\\|\//).pop();
         console.log(name);
-        var htmlName = name.length > 40 ? name.substr(name.length - 40) : name;
+        var htmlName = name.length > 80 ? name.substr(name.length - 80) : name;
         $(".file-info1").text(htmlName);
     });
     $("#real-input2").on("change", function () {
         const name = $("#real-input2").val().split(/\\|\//).pop();
         console.log(name);
-        var htmlName = name.length > 40 ? name.substr(name.length - 40) : name;
+        var htmlName = name.length > 80 ? name.substr(name.length - 80) : name;
         $(".file-info2").text(htmlName);
     });
     $("#real-input3").on("change", function () {
         const name = $("#real-input3").val().split(/\\|\//).pop();
         console.log(name);
-        var htmlName = name.length > 40 ? name.substr(name.length - 40) : name;
+        var htmlName = name.length > 80 ? name.substr(name.length - 80) : name;
         $(".file-info3").text(htmlName);
     });
     $("#real-input4").on("change", function () {
         const name = $("#real-input4").val().split(/\\|\//).pop();
         console.log(name);
-        var htmlName = name.length > 40 ? name.substr(name.length - 40) : name;
+        var htmlName = name.length > 80 ? name.substr(name.length - 80) : name;
         $(".file-info4").text(htmlName);
     });
     $("#real-input5").on("change", function () {
         const name = $("#real-input5").val().split(/\\|\//).pop();
         console.log(name);
-        var htmlName = name.length > 40 ? name.substr(name.length - 40) : name;
+        var htmlName = name.length > 80 ? name.substr(name.length - 80) : name;
         $(".file-info5").text(htmlName);
     });
     $("#real-input6").on("change", function () {
         const name = $("#real-input6").val().split(/\\|\//).pop();
         console.log(name);
-        var htmlName = name.length > 40 ? name.substr(name.length - 40) : name;
+        var htmlName = name.length > 80 ? name.substr(name.length - 80) : name;
         $(".file-info6").text(htmlName);
     });
     $("#real-input7").on("change", function () {
         const name = $("#real-input7").val().split(/\\|\//).pop();
         console.log(name);
-        var htmlName = name.length > 40 ? name.substr(name.length - 40) : name;
+        var htmlName = name.length > 80 ? name.substr(name.length - 80) : name;
         $(".file-info7").text(htmlName);
     });
     $("#real-input8").on("change", function () {
         const name = $("#real-input8").val().split(/\\|\//).pop();
         console.log(name);
-        var htmlName = name.length > 40 ? name.substr(name.length - 40) : name;
+        var htmlName = name.length > 80 ? name.substr(name.length - 80) : name;
         $(".file-info8").text(htmlName);
     });
     $("#real-input9").on("change", function () {
         const name = $("#real-input9").val().split(/\\|\//).pop();
         console.log(name);
-        var htmlName = name.length > 40 ? name.substr(name.length - 40) : name;
+        var htmlName = name.length > 80 ? name.substr(name.length - 80) : name;
         $(".file-info9").text(htmlName);
     });
     $("#real-input10").on("change", function () {
         const name = $("#real-input10").val().split(/\\|\//).pop();
         console.log(name);
-        var htmlName = name.length > 40 ? name.substr(name.length - 40) : name;
+        var htmlName = name.length > 80 ? name.substr(name.length - 80) : name;
         $(".file-info10").text(htmlName);
     });
     $("#real-input11").on("change", function () {
         const name = $("#real-input11").val().split(/\\|\//).pop();
         console.log(name);
-        var htmlName = name.length > 40 ? name.substr(name.length - 40) : name;
+        var htmlName = name.length > 80 ? name.substr(name.length - 80) : name;
         $(".file-info11").text(htmlName);
     });
     $("#real-input12").on("change", function () {
         const name = $("#real-input12").val().split(/\\|\//).pop();
         console.log(name);
-        var htmlName = name.length > 40 ? name.substr(name.length - 40) : name;
+        var htmlName = name.length > 80 ? name.substr(name.length - 80) : name;
         $(".file-info12").text(htmlName);
     });
     $("#real-input13").on("change", function () {
         const name = $("#real-input13").val().split(/\\|\//).pop();
         console.log(name);
-        var htmlName = name.length > 40 ? name.substr(name.length - 40) : name;
+        var htmlName = name.length > 80 ? name.substr(name.length - 80) : name;
         $(".file-info13").text(htmlName);
     });
 
@@ -749,16 +749,16 @@ function fnValidFormularioRB() {
 }
 
 function fnValidFormularioCDE() {
-    var Rpta = true;
-    if ($("#real-input1").val() == '') {
-        Rpta = false;
-    }
-    if ($("#real-input3").val() == '') {
-        Rpta = false;
-    }
-    if ($("#real-input4").val() == '') {
-        Rpta = false;
-    }
+    //var Rpta = true;
+    //if ($("#real-input1").val() == '') {
+    //    Rpta = false;
+    //}
+    //if ($("#real-input3").val() == '') {
+    //    Rpta = false;
+    //}
+    //if ($("#real-input4").val() == '') {
+    //    Rpta = false;
+    //}
     //if ($("#txtFile7CDE").val() == '') {
     //    Rpta = false;
     //}
