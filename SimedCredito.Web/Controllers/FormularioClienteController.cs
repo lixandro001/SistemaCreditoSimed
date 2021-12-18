@@ -632,12 +632,12 @@ namespace SimedCredito.Web.Controllers
                 request.txtRucRB = txtRucRB;
                 request.txtTelefonoRB = txtTelefonoRB;
                 request.txtDireccionRB = txtDireccionRB;
-                request.cboUnidad = 0;//Convert.ToInt32(cboUnidad);
+                request.cboUnidad = Convert.ToInt32(cboUnidad);
 
                 request.cboSubUnidad = Convert.ToInt32 (cboSubUnidad);
                 request.cboAsesorComercial = Convert.ToInt32 (cboAsesorComercial);
                 request.txtDescripcion = txtDescripcion;
-                request.cboTipoPago = 0;//Convert.ToInt32( cboTipoPago);
+                request.cboTipoPago = Convert.ToInt32(cboTipoPago);
                 request.cuposolicitado = cuposolicitado;
                 request.txtAsesorComercialVUI = txtAsesorComercialVUI;
                

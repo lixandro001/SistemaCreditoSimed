@@ -95,5 +95,17 @@ namespace Simed.Business
             var Data = objSisInternoSelectDL.GetAsesorComercial();
             return Data;
         }
+
+        public List<UnidadListResponse> GetUnidad()
+        {
+            var Data = objSisInternoSelectDL.GetUnidad();
+            return Data;
+        }
+
+        public List<TipoPagoListResponse> GetTipoPago()
+        {
+            var Data = objSisInternoSelectDL.GetTipoPago();
+            return Data;
+        }
     }
 }

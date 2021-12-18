@@ -21,6 +21,8 @@ $(function (e) {
     fnLoadNacionalidad();
     fnLoadSubUnidad();
     fnLoadAsesorComercial();
+    fnLoadUnidad();
+    fnLoadTipoPago();
 
     $("#btnGuardarFormulario").on("click", function () {
         fnSaveFormularioCliente();
@@ -384,6 +386,34 @@ function fnLoadAsesorComercial() {
     });
 }
 
+function fnLoadUnidad() {
+    Get("SisInternoSelect/GetUnidad").done(function (response) {
+        var Response = response.data.Data;
+        if (Response != null) {
+            var select = document.getElementById('cboUnidad');
+            var options = '<option value="">Seleccionar Unidad</option>';
+            for (let item of Response) {
+                options += `<option value="${item.IdUnidad}">${item.DescripcionUnidad}</option>`;
+            }
+            select.innerHTML = options;
+        }
+    });
+}
+
+function fnLoadTipoPago() {
+    Get("SisInternoSelect/GetTipoPago").done(function (response) {
+        var Response = response.data.Data;
+        if (Response != null) {
+            var select = document.getElementById('cboTipoPago');
+            var options = '<option value="">Seleccionar Tipo Pago</option>';
+            for (let item of Response) {
+                options += `<option value="${item.IdTipoPago}">${item.Descripcion}</option>`;
+            }
+            select.innerHTML = options;
+        }
+    });
+}
+
 function fnChangeIdentificacionIT() {
     if ($("#cboTipoIdentificacionTributaria").val() != '4') {
         $("#txtCualIdentificacionIT").val('');
@@ -478,7 +508,18 @@ function fnSaveFormularioCliente() {
     }
     //------  CONTROL DE DOCUMENTOS EXIGIDOS PARA INGRESO DE CLIENTES (CDE)
     if (!fnValidFormularioCDE()) {
-        fnAlertAdvertencia("Debe subir archivo de los datos obligatorios (*) en Control de Documentos Exigidos para Ingreso de Clientes.");
+        //fnAlertAdvertencia("Debe subir archivo de los datos obligatorios (*) en Control de Documentos Exigidos para Ingreso de Clientes.");
+        fnAlertAdvertencia("Debe subir archivo de los datos obligatorios (*) Ya sea Personas Naturales o Persona Juridicas.");
+        return;
+    }
+    //------    CLASIFICACION PARA USO COMERCIAL (CUC)
+    if (!fnValidFormularioCUC()) {
+        fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Clasificación para uso Comercial.");
+        return;
+    }
+    //------    TERMINOS DE PAGO (TP)
+    if (!fnValidFormularioTP()) {
+        fnAlertAdvertencia("Debe llenar los datos de Términos de Pago.");
         return;
     }
     //----- VERIFICACION PARA USO INTERNO (VUI)
@@ -749,37 +790,46 @@ function fnValidFormularioRB() {
 }
 
 function fnValidFormularioCDE() {
-    //var Rpta = true;
-    //if ($("#real-input1").val() == '') {
-    //    Rpta = false;
-    //}
-    //if ($("#real-input3").val() == '') {
-    //    Rpta = false;
-    //}
-    //if ($("#real-input4").val() == '') {
-    //    Rpta = false;
-    //}
-    //if ($("#txtFile7CDE").val() == '') {
-    //    Rpta = false;
-    //}
-    //if ($("#txtFile8CDE").val() == '') {
-    //    Rpta = false;
-    //}
-    //if ($("#txtFile9CDE").val() == '') {
-    //    Rpta = false;
-    //}
-    //if ($("#txtFile10CDE").val() == '') {
-    //    Rpta = false;
-    //}
+    var Rpta = true;
+    if ($("#real-input1").val() == '' || $("#real-input3").val() == '' || $("#real-input4").val() == '') {
+        if ($("#real-input7").val() == '' || $("#real-input8").val() == '' || $("#real-input9").val() == '' || $("#real-input10").val() == '') {
+            Rpta = false;
+        }
+    }
+    return Rpta;
+}
+
+function fnValidFormularioCUC() {
+    var Rpta = true;
+    if ($("#cboUnidad").val() == '') {
+        Rpta = false;
+    }
+    if ($("#cboSubUnidad").val() == '') {
+        Rpta = false;
+    }
+    if ($("#cboAsesorComercial").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtDescripcion").val() == '') {
+        Rpta = false;
+    }
+    return Rpta;
+}
+
+function fnValidFormularioTP() {
+    var Rpta = true;
+    if ($("#cboTipoPago").val() == '') {
+        Rpta = false;
+    }
+    if ($("#cuposolicitado").val() == '') {
+        Rpta = false;
+    }
     return Rpta;
 }
 
 function fnValidFormularioVUI() {
     var Rpta = true;
     if ($("#txtAsesorComercialVUI").val() == '') {
-        Rpta = false;
-    }
-    if ($("#txtFirmaVUI").val() == '') {
         Rpta = false;
     }
     return Rpta;
@@ -1141,7 +1191,7 @@ function fnGuardarFormularioCliente() {
     var txtRucRB = $("#txtRucRB").val();
     var txtTelefonoRB = $("#txtTelefonoRB").val();
     var txtDireccionRB = $("#txtDireccionRB").val();
-    //Clasificación para uso Comercial
+    //Clasificación para uso Comercial CUC
     var cboUnidad = $("#cboUnidad").val();
     var cboSubUnidad = $("#cboSubUnidad").val();
     var cboAsesorComercial = $("#cboAsesorComercial").val();

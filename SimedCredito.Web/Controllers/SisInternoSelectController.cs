@@ -272,5 +272,41 @@ namespace SimedCredito.Web.Controllers
             return Json(Response);
         }
 
+        [HttpGet]
+        public IActionResult GetUnidad()
+        {
+            var Response = new GenericObjectResponse();
+            try
+            {
+                var Url = GeneralModel.UrlWebApi + "SisInternoSelect/GetUnidad";
+                var Result = Simed.Utilities.Rest.RestClient.ProcessGetRequest(Url);
+                Response.data = Result;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogWarning(ex, ex.Message);
+                Response.message = ex.Message;
+            }
+            return Json(Response);
+        }
+
+        [HttpGet]
+        public IActionResult GetTipoPago()
+        {
+            var Response = new GenericObjectResponse();
+            try
+            {
+                var Url = GeneralModel.UrlWebApi + "SisInternoSelect/GetTipoPago";
+                var Result = Simed.Utilities.Rest.RestClient.ProcessGetRequest(Url);
+                Response.data = Result;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogWarning(ex, ex.Message);
+                Response.message = ex.Message;
+            }
+            return Json(Response);
+        }
+
     }
 }

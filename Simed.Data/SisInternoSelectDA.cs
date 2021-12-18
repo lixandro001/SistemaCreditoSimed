@@ -380,5 +380,62 @@ namespace Simed.Data
                 }
             }
         }
+
+        public List<UnidadListResponse> GetUnidad()
+        {
+            using (var Ado = new SQLServer(ConStr))
+            {
+                try
+                {
+                    List<UnidadListResponse> List = new List<UnidadListResponse>();
+                    var Dr = Ado.ExecDataReaderProc("usp_GetUnidad", null);
+                    {
+                        if (!Dr.HasRows) { return List; }
+                        while (Dr.Read())
+                        {
+                            var Entity = new UnidadListResponse();
+                            if (Dr["IdUnidad"] != DBNull.Value) { Entity.IdUnidad = (int)Dr["IdUnidad"]; }
+                            if (Dr["DescripcionUnidad"] != DBNull.Value) { Entity.DescripcionUnidad = (string)Dr["DescripcionUnidad"]; }
+
+                            List.Add(Entity);
+                        }
+                        return List;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+
+        public List<TipoPagoListResponse> GetTipoPago()
+        {
+            using (var Ado = new SQLServer(ConStr))
+            {
+                try
+                {
+                    List<TipoPagoListResponse> List = new List<TipoPagoListResponse>();
+                    var Dr = Ado.ExecDataReaderProc("usp_GetTipoPago", null);
+                    {
+                        if (!Dr.HasRows) { return List; }
+                        while (Dr.Read())
+                        {
+                            var Entity = new TipoPagoListResponse();
+                            if (Dr["IdTipoPago"] != DBNull.Value) { Entity.IdTipoPago = (int)Dr["IdTipoPago"]; }
+                            if (Dr["Descripcion"] != DBNull.Value) { Entity.Descripcion = (string)Dr["Descripcion"]; }
+
+                            List.Add(Entity);
+                        }
+                        return List;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+
     }
 }

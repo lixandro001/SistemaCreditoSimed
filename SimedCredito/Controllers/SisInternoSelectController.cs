@@ -285,5 +285,45 @@ namespace SimedCredito.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("GetUnidad")]
+        public IActionResult GetUnidad()
+        {
+            try
+            {
+                var response = new GenericResponse();
+                var data = objSisInternoSelectBL.GetUnidad();
+                response.code = (int)Enums.eCodeError.OK;
+                response.Data = data;
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogWarning(ex.Message);
+                Logger.LogError(ex.Message);
+                throw ex;
+            }
+        }
+
+        [HttpGet]
+        [Route("GetTipoPago")]
+        public IActionResult GetTipoPago()
+        {
+            try
+            {
+                var response = new GenericResponse();
+                var data = objSisInternoSelectBL.GetTipoPago();
+                response.code = (int)Enums.eCodeError.OK;
+                response.Data = data;
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogWarning(ex.Message);
+                Logger.LogError(ex.Message);
+                throw ex;
+            }
+        }
+
     }
 }
