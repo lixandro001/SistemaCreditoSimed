@@ -54,5 +54,14 @@ namespace SimedCredito.Web.Controllers
             return View();
         }
 
+        public IActionResult BandejaGerenteFinanzas()
+        {
+            return View();
+        }
+        public IActionResult BandejaGerenteVenta()
+        {
+            return View();
+        }
+
     }
 }

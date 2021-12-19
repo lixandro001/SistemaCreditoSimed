@@ -2,7 +2,7 @@
 
 $(function () {
 
-    $("#tabTray").DataTable({
+    $("#tabDescTable").DataTable({
         "paging": true,
         "lengthChange": false,
         "searching": false,
@@ -21,8 +21,8 @@ $(function () {
             "targets": 0,
             "orderable": false,
             "data": "CodeClienteDatosGenerales",
-            "render": function (data, type, full, meta) {                
-                return  `<div style="text-align:center;">
+            "render": function (data, type, full, meta) {
+                return `<div style="text-align:center;">
                             <a class="fa fa-pencil" href="#" onclick="event.preventDefault();fnViewRegister('${data.CodeClienteDatosGenerales}')"><i class="fa fa-eye" aria-hidden="true"></i></a>
                         </div>`;
             }
@@ -50,7 +50,7 @@ function fnLoadTrayUser() {
     Get("Bandeja/GetBandejaCliente?StartDate=" + startDate + "&EndDate=" + endDate + "&PerfilId=" + 1).done(function (response) {
         if (response.data.Data != null) {
             if (response.data.Data.length > 0) {
-                $('#tabTray').dataTable().fnAddData(response.data.Data);
+                $('#tabDescTable').dataTable().fnAddData(response.data.Data);
             } else {
                 fnAlertAdvertencia("No se Encontro Datos Disponibles");
             }
@@ -59,5 +59,5 @@ function fnLoadTrayUser() {
 }
 
 function fnViewRegister(CodeRegister) {
-    location.href = '/Main/FormularioPerfilAnalistaCredito/?code=' + CodeRegister;
+    location.href = '/Main/FormularioPerfilGerenteVentas/?code=' + CodeRegister;
 }
