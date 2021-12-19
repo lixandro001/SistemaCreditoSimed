@@ -23,7 +23,7 @@ $(function () {
             "data": "CodeClienteDatosGenerales",
             "render": function (data, type, full, meta) {                
                 return  `<div style="text-align:center;">
-                            <a class="fa fa-pencil" href="#" onclick="event.preventDefault();gestion.certificado('${data.CodeClienteDatosGenerales}')"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                            <a class="fa fa-pencil" href="#" onclick="event.preventDefault();fnViewRegister('${data.CodeClienteDatosGenerales}')"><i class="fa fa-eye" aria-hidden="true"></i></a>
                         </div>`;
             }
         }
@@ -48,10 +48,7 @@ function fnLoadTrayUser() {
     endDate = $("#txtEndDate").val();
 
     Get("Bandeja/GetBandejaCliente?StartDate=" + startDate + "&EndDate=" + endDate + "&PerfilId=" + 1).done(function (response) {
-
-        console.log(response);
         if (response.data.Data != null) {
-            //fnClearTable($('#tabTray').dataTable());
             if (response.data.Data.length > 0) {
                 $('#tabTray').dataTable().fnAddData(response.data.Data);
             } else {
@@ -59,5 +56,10 @@ function fnLoadTrayUser() {
             }
         }
     });
+}
 
+function fnViewRegister(CodeRegister) {
+    console.log(CodeRegister);
+    /// consultar al servicio
+    window.location = fnBaseUrlWeb("Main/FormularioPerfilAnalistaCredito");
 }

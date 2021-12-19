@@ -23,7 +23,7 @@ namespace Simed.Entity
         {
             ADMINISTRADOR = 1,
             ASESORCOMERCIAL=2,
-            ANALISTAREDITO=3,
+            ANALISTACREDITO=3,
             GERENTENEGOCIO=4
         }
 
