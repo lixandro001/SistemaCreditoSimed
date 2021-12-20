@@ -2,7 +2,9 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Simed.Business;
+using Simed.Entity;
 using Simed.Entity.Request;
+using Simed.Entity.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +40,6 @@ namespace SimedCredito.Controllers
 
                 request.tokenCode = tokenCode;
 
-
                 int resul = objFormularioClienteBL.GuardarFormulario(request);
                 return Ok(resul);
             }
@@ -49,6 +50,25 @@ namespace SimedCredito.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("DataByCode/{Code}")]
+        public IActionResult DataByCode(string Code)
+        {
+            try
+            {
+                var response = new GenericResponse();
+                var data = objFormularioClienteBL.DataByCode(Code);
+                response.code = (int)Enums.eCodeError.OK;
+                response.Data = data;
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogWarning(ex.Message);
+                Logger.LogError(ex.Message);
+                throw ex;
+            }
+        }
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Simed.Data;
 using Simed.Entity.Request;
+using Simed.Entity.Response;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -29,5 +30,18 @@ namespace Simed.Business
                 throw ex;
             }
         }
+
+        public DataByCodeResponse DataByCode(string Code)
+        {
+            try
+            {
+                return objGuardarFormulario.DataByCode(Code);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

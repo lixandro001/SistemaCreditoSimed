@@ -687,9 +687,22 @@ namespace SimedCredito.Web.Controllers
             return Json(Response);
         }
 
-
-
-
-
+        [HttpGet]
+        public IActionResult DataByCode(string Code)
+        {
+            var Response = new GenericObjectResponse();
+            try
+            {
+                var Url = GeneralModel.UrlWebApi + "FormularioCliente/DataByCode/" + Code;
+                var Result = Simed.Utilities.Rest.RestClient.ProcessGetRequest(Url);
+                Response.data = Result;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogWarning(ex, ex.Message);
+                Response.message = ex.Message;
+            }
+            return Json(Response);
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿@{
-    ViewBag.Title = "Gestión Creditos Clientes";
-    string CFecha = string.Format("{0:dd/MM/yyyy}", DateTime.Today);
+        ViewBag.Title = "Gestión Creditos Clientes";
+        string CFecha = string.Format("{0:dd/MM/yyyy}", DateTime.Today);
 }
 
 
@@ -54,7 +54,7 @@
                 <div class="form-group row">
                     <label for="inputPais" class="col-sm-3 col-form-label">*País</label>
                     <div class="col-sm-8">
-                        <select id="cboPais" class="form-control" disabled></select>
+                        <input id="cboPais" class="form-control" disabled />
                     </div>
                 </div>
             </div>
@@ -221,7 +221,7 @@
                 <label class="col-form-label">* Tipo de Identificación</label>
             </div>
             <div class="col-sm-2">
-                <select id="cboTipoIdentificacionTributaria" class="form-control" disabled></select>
+                <input id="cboTipoIdentificacionTributaria" class="form-control" disabled />
             </div>
             <div class="col-sm-2">
                 <label class="col-form-label">Cúal?</label>
@@ -242,13 +242,13 @@
                 <label class="col-form-label">* Tipo de contribuyente</label>
             </div>
             <div class="col-sm-2">
-                <select id="cboTipoContribuyente" class="form-control" disabled></select>
+                <input id="cboTipoContribuyente" class="form-control" disabled />
             </div>
             <div class="col-sm-2">
                 <label class="col-form-label">* Tipo de Sociedad</label>
             </div>
             <div class="col-sm-2">
-                <select id="cboTipoSociedad" class="form-control" disabled></select>
+                <input id="cboTipoSociedad" class="form-control" disabled />
             </div>
             <div class="col-sm-1">
                 <label class="col-form-label">Cúal?</label>
@@ -263,13 +263,13 @@
                 <label class="col-form-label">* Origen de Capital</label>
             </div>
             <div class="col-sm-2">
-                <select id="cboOrigenCapital" class="form-control" disabled></select>
+                <input id="cboOrigenCapital" class="form-control" disabled />
             </div>
             <div class="col-sm-2">
                 <label class="col-form-label">* Actividad Economica</label>
             </div>
             <div class="col-sm-2">
-                <select id="cboActividadEconomica" class="form-control" disabled></select>
+                <input id="cboActividadEconomica" class="form-control" disabled />
             </div>
             <div class="col-sm-1">
                 <label class="col-form-label">Cúal?</label>
@@ -295,7 +295,7 @@
             </div>
             <div class="col-sm-3">
                 <label>* Regimen</label>
-                <select id="cboRegimen" class="form-control" disabled></select>
+                <input id="cboRegimen" class="form-control" disabled />
             </div>
         </div>
         <br />
@@ -354,7 +354,7 @@
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">* Tipo de Identificación</label>
                     <div class="col-sm-8">
-                        <select id="cboTipoIdenticacionLegal" class="form-control" disabled></select>
+                        <input id="cboTipoIdenticacionLegal" class="form-control" disabled />
                     </div>
                 </div>
             </div>
@@ -375,7 +375,7 @@
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">* Nacionalidad</label>
                     <div class="col-sm-8">
-                        <select id="cboNacionalidad" class="form-control" disabled></select>
+                        <input id="cboNacionalidad" class="form-control" disabled />
                     </div>
                 </div>
             </div>
@@ -1085,15 +1085,15 @@
         <div class="row">
             <div class="col-sm-3">
                 <label>Unidad</label> <br />
-                <select id="cboUnidad" class="form-control" disabled></select>
+                <input id="cboUnidad" class="form-control" disabled />
             </div>
             <div class="col-sm-3">
                 <label>Sub Unidad</label> <br />
-                <select id="cboSubUnidad" class="form-control" disabled></select>
+                <input id="cboSubUnidad" class="form-control" disabled />
             </div>
             <div class="col-sm-3">
                 <label>Asesor Comercial</label> <br />
-                <select id="cboAsesorComercial" class="form-control" disabled></select>
+                <input id="cboAsesorComercial" class="form-control" disabled />
             </div>
             <div class="col-sm-3">
                 <label>Descripción</label> <br />
@@ -1105,68 +1105,19 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-auto bg-dark p-1 text-center">
-                    <h6>TÉRMINOS DE PAGO (Marcar con una X)</h6>
+                    <h6>TÉRMINOS DE PAGO</h6>
                 </div>
             </div>
         </div>
         <br />
         <div class="row">
-            <div class="col-sm-2">
-                <label>Pago de contado</label>
+            <div class="col-sm-3">
+                <label>Tipo De Pago</label>
+                <input id="cboTipoPago" class="form-control" disabled />
             </div>
-            <div class="col-sm-2">
-                <input type="checkbox" class="form-control" />
-            </div>
-            <div class="col-sm-2">
-                <label>Pago anticipado</label>
-            </div>
-            <div class="col-sm-2">
-                <input type="checkbox" class="form-control" />
-            </div>
-            <div class="col-sm-2">
-                <label>Transferencia con % anticipo</label>
-            </div>
-            <div class="col-sm-2">
-                <input type="checkbox" class="form-control" />
-            </div>
-        </div>
-        <br />
-        <div class="row">
-            <div class="col-sm-1">
-                <label>8 días</label>
-            </div>
-            <div class="col-sm-1">
-                <input type="checkbox" class="form-control" />
-            </div>
-            <div class="col-sm-1">
-                <label>15 días</label>
-            </div>
-            <div class="col-sm-1">
-                <input type="checkbox" class="form-control" />
-            </div>
-            <div class="col-sm-1">
-                <label>30 días</label>
-            </div>
-            <div class="col-sm-1">
-                <input type="checkbox" class="form-control" />
-            </div>
-            <div class="col-sm-1">
-                <label>45 días</label>
-            </div>
-            <div class="col-sm-1">
-                <input type="checkbox" class="form-control" />
-            </div>
-            <div class="col-sm-1">
-                <label>60 días</label>
-            </div>
-            <div class="col-sm-1">
-                <input type="checkbox" class="form-control" />
-            </div>
-            <div class="col-sm-1">
+            <div class="col-sm-3">
                 <label>Cupo solicitado</label>
-            </div>
-            <div class="col-sm-1">
-                <input type="text" class="form-control" />
+                <input id="cuposolicitado" type="text" class="form-control" disabled />
             </div>
         </div>
         <br />
@@ -1203,26 +1154,26 @@
         <br />
 
         <div class="card-footer">
-            <button id="btnRefresh" type="button" class="btn btn-primary">Consultar</button>
-            <button id="btnGuardarFormularioFinanzas" type="button" class="btn btn-success">Guardar</button>
+            <button id="btnRechazar" type="button" class="btn btn-danger">Rechazar</button>
+            <button id="btnAprobar" type="button" class="btn btn-success">Aprobar</button>
         </div>
 
         <!-- /.card-body -->
     </div>
 </div>
-    <!-- /.card -->
+<!-- /.card -->
 
-    @section styles{
-        <!-- DataTables -->
-        <link rel="stylesheet" href="@Url.Content("~/plugins/datatables-bs4/css/dataTables.bootstrap4.css")">
-        <link rel="stylesheet" href="@Url.Content("~/plugins/dateticker/datepicker3.css")">
+@section styles{
+    <!-- DataTables -->
+    <link rel="stylesheet" href="@Url.Content("~/plugins/datatables-bs4/css/dataTables.bootstrap4.css")">
+    <link rel="stylesheet" href="@Url.Content("~/plugins/dateticker/datepicker3.css")">
 
-    }
+}
 
-    @section scripts{
-        <!-- DataTables -->
-        <script src="@Url.Content("~/plugins/datatables/jquery.dataTables.js")"></script>
-        <script src="@Url.Content("~/plugins/datatables-bs4/js/dataTables.bootstrap4.js")"></script>
-        <script src="@Url.Content("~/plugins/dateticker/bootstrap-datepicker.js")"></script>
-        <script src="@Url.Content("~/js/GerenteVenta.js")"></script>
-    }
+@section scripts{
+    <!-- DataTables -->
+    <script src="@Url.Content("~/plugins/datatables/jquery.dataTables.js")"></script>
+    <script src="@Url.Content("~/plugins/datatables-bs4/js/dataTables.bootstrap4.js")"></script>
+    <script src="@Url.Content("~/plugins/dateticker/bootstrap-datepicker.js")"></script>
+    <script src="@Url.Content("~/js/GerenteVenta.js")"></script>
+}

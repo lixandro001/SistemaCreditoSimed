@@ -1,4 +1,5 @@
 ﻿using Simed.Entity.Request;
+using Simed.Entity.Response;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -293,6 +294,109 @@ namespace Simed.Data
                 {
                     throw ex;
                 }
+        }
+
+        public DataByCodeResponse DataByCode(string Code)
+        {
+            using (var Ado = new SQLServer(ConStr))
+            {
+                try
+                {
+                    DataByCodeResponse Entity = null;
+                    var Parameters = new SqlParameter[]
+                    {
+                        new SqlParameter{ ParameterName = "@Code", SqlDbType = SqlDbType.VarChar,SqlValue=Code},
+                    };
+                    var Dr = Ado.ExecDataReaderProc("usp_GetDatosRegistroByCode", Parameters);
+                    {
+                        if (!Dr.HasRows) { return Entity; }
+                        while (Dr.Read())
+                        {
+                            Entity = new DataByCodeResponse();
+                            //--Datos Generales
+                            if (Dr["Nombre_RazonSocialDatosGenerales"] != DBNull.Value) { Entity.Nombre_RazonSocialDatosGenerales = (string)Dr["Nombre_RazonSocialDatosGenerales"]; }
+                            if (Dr["DireccionDatosGenerales"] != DBNull.Value) { Entity.DireccionDatosGenerales = (string)Dr["DireccionDatosGenerales"]; }
+                            if (Dr["Nombre_S_PAIS"] != DBNull.Value) { Entity.Nombre_S_PAIS = (string)Dr["Nombre_S_PAIS"]; }
+                            if (Dr["CiudadSedePrincipalDatosGenerales"] != DBNull.Value) { Entity.CiudadSedePrincipalDatosGenerales = (string)Dr["CiudadSedePrincipalDatosGenerales"]; }
+                            if (Dr["TelefonoFijoDatosGenerales"] != DBNull.Value) { Entity.TelefonoFijoDatosGenerales = (string)Dr["TelefonoFijoDatosGenerales"]; }
+                            if (Dr["CelularDatosGenerales"] != DBNull.Value) { Entity.CelularDatosGenerales = (string)Dr["CelularDatosGenerales"]; }
+                            if (Dr["CorreoEnvioFacturaElectronicaDatosGenerales"] != DBNull.Value) { Entity.CorreoEnvioFacturaElectronicaDatosGenerales = (string)Dr["CorreoEnvioFacturaElectronicaDatosGenerales"]; }
+                            if (Dr["DireccionEntregaFacturaDatosGenerales"] != DBNull.Value) { Entity.DireccionEntregaFacturaDatosGenerales = (string)Dr["DireccionEntregaFacturaDatosGenerales"]; }
+                            if (Dr["CiudadDireccionEntregaFacturaDatosGenerales"] != DBNull.Value) { Entity.CiudadDireccionEntregaFacturaDatosGenerales = (string)Dr["CiudadDireccionEntregaFacturaDatosGenerales"]; }
+                            if (Dr["DireccionEntregaPedidoDatosGenerales"] != DBNull.Value) { Entity.DireccionEntregaPedidoDatosGenerales = (string)Dr["DireccionEntregaPedidoDatosGenerales"]; }
+                            if (Dr["CiudadDireccionEntregaPedidoDatosGenerales"] != DBNull.Value) { Entity.CiudadDireccionEntregaPedidoDatosGenerales = (string)Dr["CiudadDireccionEntregaPedidoDatosGenerales"]; }
+                            if (Dr["DireccionSecundariaEntregaPedidoDatosGenerales"] != DBNull.Value) { Entity.DireccionSecundariaEntregaPedidoDatosGenerales = (string)Dr["DireccionSecundariaEntregaPedidoDatosGenerales"]; }
+                            if (Dr["CiudadDireccionSecundariaEntregaPedidoDatosGenerales"] != DBNull.Value) { Entity.CiudadDireccionSecundariaEntregaPedidoDatosGenerales = (string)Dr["CiudadDireccionSecundariaEntregaPedidoDatosGenerales"]; }
+                            //----INFORMACIÓN DE CONTACTOS
+                            if (Dr["NombreContactoAreaCobranza"] != DBNull.Value) { Entity.NombreContactoAreaCobranza = (string)Dr["NombreContactoAreaCobranza"]; }
+                            if (Dr["TelefonoContactoAreaCobranza"] != DBNull.Value) { Entity.TelefonoContactoAreaCobranza = (string)Dr["TelefonoContactoAreaCobranza"]; }
+                            if (Dr["CorreoElectronicoContactoAreaCobranza"] != DBNull.Value) { Entity.CorreoElectronicoContactoAreaCobranza = (string)Dr["CorreoElectronicoContactoAreaCobranza"]; }
+                            if (Dr["NombreContactoAreaFinanciera"] != DBNull.Value) { Entity.NombreContactoAreaFinanciera = (string)Dr["NombreContactoAreaFinanciera"]; }
+                            if (Dr["TelefonoContactoAreaFinanciera"] != DBNull.Value) { Entity.TelefonoContactoAreaFinanciera = (string)Dr["TelefonoContactoAreaFinanciera"]; }
+                            if (Dr["CorreoContactoAreaFinanciera"] != DBNull.Value) { Entity.CorreoContactoAreaFinanciera = (string)Dr["CorreoContactoAreaFinanciera"]; }
+                            if (Dr["NombreContactoAreaComercial"] != DBNull.Value) { Entity.NombreContactoAreaComercial = (string)Dr["NombreContactoAreaComercial"]; }
+                            if (Dr["TelefonoContactoAreaComercial"] != DBNull.Value) { Entity.TelefonoContactoAreaComercial = (string)Dr["TelefonoContactoAreaComercial"]; }
+                            if (Dr["CorreoContactoAreaComercial"] != DBNull.Value) { Entity.CorreoContactoAreaComercial = (string)Dr["CorreoContactoAreaComercial"]; }
+                            //--INFORMACIÓN TRIBUTARIA
+                            if (Dr["Nombre_S_TIPO_IDENTIFICACION"] != DBNull.Value) { Entity.Nombre_S_TIPO_IDENTIFICACION = (string)Dr["Nombre_S_TIPO_IDENTIFICACION"]; }
+                            if (Dr["CualTipoIdentificacion"] != DBNull.Value) { Entity.CualTipoIdentificacion = (string)Dr["CualTipoIdentificacion"]; }
+                            if (Dr["NumeroIdentificacion"] != DBNull.Value) { Entity.NumeroIdentificacion = (string)Dr["NumeroIdentificacion"]; }
+                            if (Dr["Nombre_S_TIPO_CONTRIBUYENTE"] != DBNull.Value) { Entity.Nombre_S_TIPO_CONTRIBUYENTE = (string)Dr["Nombre_S_TIPO_CONTRIBUYENTE"]; }
+                            if (Dr["Nombre_S_TIPO_SOCIEDAD"] != DBNull.Value) { Entity.Nombre_S_TIPO_SOCIEDAD = (string)Dr["Nombre_S_TIPO_SOCIEDAD"]; }
+                            if (Dr["CualTipoSociedad"] != DBNull.Value) { Entity.CualTipoSociedad = (string)Dr["CualTipoSociedad"]; }
+                            if (Dr["Nombre_S_ORIGEN_CAPITAL"] != DBNull.Value) { Entity.Nombre_S_ORIGEN_CAPITAL = (string)Dr["Nombre_S_ORIGEN_CAPITAL"]; }
+                            if (Dr["Nombre_S_ACTIVIDAD_ECONOMICA"] != DBNull.Value) { Entity.Nombre_S_ACTIVIDAD_ECONOMICA = (string)Dr["Nombre_S_ACTIVIDAD_ECONOMICA"]; }
+                            if (Dr["CualActividadEconomica"] != DBNull.Value) { Entity.CualActividadEconomica = (string)Dr["CualActividadEconomica"]; }
+                            if (Dr["TitularVigiladoPorAlgunaSuperIntendencia"] != DBNull.Value) { Entity.TitularVigiladoPorAlgunaSuperIntendencia = (string)Dr["TitularVigiladoPorAlgunaSuperIntendencia"]; }
+                            if (Dr["FechaConstitucion"] != DBNull.Value) { Entity.FechaConstitucion = (DateTime)Dr["FechaConstitucion"]; }
+                            if (Dr["Nombre_S_REGIMEN"] != DBNull.Value) { Entity.Nombre_S_REGIMEN = (string)Dr["Nombre_S_REGIMEN"]; }
+                            //--INFORMACIÓN ACTIVIDAD ECONÓMICA
+                            if (Dr["ActidadPrincipal"] != DBNull.Value) { Entity.ActidadPrincipal = (string)Dr["ActidadPrincipal"]; }
+                            if (Dr["ActividadSecundaria"] != DBNull.Value) { Entity.ActividadSecundaria = (string)Dr["ActividadSecundaria"]; }
+                            //--INFORMACION DE REPRESENTACION LEGAL
+                            if (Dr["NombreRepresentanteLegal"] != DBNull.Value) { Entity.NombreRepresentanteLegal = (string)Dr["NombreRepresentanteLegal"]; }
+                            if (Dr["Nombre_S_TIPO_IDENTIFICACION_RL"] != DBNull.Value) { Entity.Nombre_S_TIPO_IDENTIFICACION_RL = (string)Dr["Nombre_S_TIPO_IDENTIFICACION_RL"]; }
+                            if (Dr["NumeroIdentificacion_RL"] != DBNull.Value) { Entity.NumeroIdentificacion_RL = (string)Dr["NumeroIdentificacion_RL"]; }
+                            if (Dr["Nombre_S_NACIONALIDAD"] != DBNull.Value) { Entity.Nombre_S_NACIONALIDAD = (string)Dr["Nombre_S_NACIONALIDAD"]; }
+                            if (Dr["CualNacionalidad"] != DBNull.Value) { Entity.CualNacionalidad = (string)Dr["CualNacionalidad"]; }
+                            if (Dr["FechaExpedicionDocumento"] != DBNull.Value) { Entity.FechaExpedicionDocumento = (DateTime)Dr["FechaExpedicionDocumento"]; }
+                            if (Dr["DireccionResidencia"] != DBNull.Value) { Entity.DireccionResidencia = (string)Dr["DireccionResidencia"]; }
+                            if (Dr["Ciudad_RL"] != DBNull.Value) { Entity.Ciudad_RL = (string)Dr["Ciudad_RL"]; }
+                            //--PREGUNTAS PEP
+                            if (Dr["GozaReconocimientoPublico"] != DBNull.Value) { Entity.GozaReconocimientoPublico = (bool)Dr["GozaReconocimientoPublico"]; }
+                            if (Dr["EspecifiqueGozaReconocimientoPublico"] != DBNull.Value) { Entity.EspecifiqueGozaReconocimientoPublico = (string)Dr["EspecifiqueGozaReconocimientoPublico"]; }
+                            if (Dr["ManejaRecursosPublicos"] != DBNull.Value) { Entity.ManejaRecursosPublicos = (bool)Dr["ManejaRecursosPublicos"]; }
+                            if (Dr["EspecifiqueManejaRecursosPublicos"] != DBNull.Value) { Entity.EspecifiqueManejaRecursosPublicos = (string)Dr["EspecifiqueManejaRecursosPublicos"]; }
+                            if (Dr["OcupaCargosPublicos"] != DBNull.Value) { Entity.OcupaCargosPublicos = (bool)Dr["OcupaCargosPublicos"]; }
+                            if (Dr["EspecifiqueOcupaCargosPublicos"] != DBNull.Value) { Entity.EspecifiqueOcupaCargosPublicos = (string)Dr["EspecifiqueOcupaCargosPublicos"]; }
+                            if (Dr["ExisteVinculoEntreUstedPersonaPublicamenteExpuesta"] != DBNull.Value) { Entity.ExisteVinculoEntreUstedPersonaPublicamenteExpuesta = (bool)Dr["ExisteVinculoEntreUstedPersonaPublicamenteExpuesta"]; }
+                            if (Dr["EspecifiqueExisteVinculoEntreUstedPersonaPublicamenteExpuesta"] != DBNull.Value) { Entity.EspecifiqueExisteVinculoEntreUstedPersonaPublicamenteExpuesta = (string)Dr["EspecifiqueExisteVinculoEntreUstedPersonaPublicamenteExpuesta"]; }
+                            if (Dr["ExisteVinculoDiferenteComercialFamiliarPersonalEmpleadoSimed"] != DBNull.Value) { Entity.ExisteVinculoDiferenteComercialFamiliarPersonalEmpleadoSimed = (bool)Dr["ExisteVinculoDiferenteComercialFamiliarPersonalEmpleadoSimed"]; }
+                            if (Dr["EspecifiqueExisteVinculoDiferenteComercialFamiliarPersonalEmpleadoSimed"] != DBNull.Value) { Entity.EspecifiqueExisteVinculoDiferenteComercialFamiliarPersonalEmpleadoSimed = (string)Dr["EspecifiqueExisteVinculoDiferenteComercialFamiliarPersonalEmpleadoSimed"]; }
+                            if (Dr["CasoAfirmativoEspecifiquePersonaConVinculo"] != DBNull.Value) { Entity.CasoAfirmativoEspecifiquePersonaConVinculo = (string)Dr["CasoAfirmativoEspecifiquePersonaConVinculo"]; }
+                            if (Dr["Cargo"] != DBNull.Value) { Entity.Cargo = (string)Dr["Cargo"]; }
+                            //--INFORMACIÓN DE SOCIOS O ACCIONISTAS (UNICAMENTE APLICA PARA PERSONAS JURIDICAS) --- pendiente --- G
+                            //--INFORMACIÓN FINANCIERA
+                            if (Dr["FechaCorte"] != DBNull.Value) { Entity.FechaCorte = (DateTime)Dr["FechaCorte"]; }
+                            if (Dr["InformacionDebeSoles"] != DBNull.Value) { Entity.InformacionDebeSoles = (bool)Dr["InformacionDebeSoles"]; }
+                            if (Dr["InformacionDebeDolares"] != DBNull.Value) { Entity.InformacionDebeDolares = (bool)Dr["InformacionDebeDolares"]; }
+                            if (Dr["Activos"] != DBNull.Value) { Entity.Activos = (decimal)Dr["Activos"]; }
+                            if (Dr["Pasivos"] != DBNull.Value) { Entity.Pasivos = (decimal)Dr["Pasivos"]; }
+                            if (Dr["Patrimonio"] != DBNull.Value) { Entity.Patrimonio = (decimal)Dr["Patrimonio"]; }
+                            if (Dr["IngresoMensual"] != DBNull.Value) { Entity.IngresoMensual = (decimal)Dr["IngresoMensual"]; }
+                            if (Dr["EgresoMensual"] != DBNull.Value) { Entity.EgresoMensual = (decimal)Dr["EgresoMensual"]; }
+                            if (Dr["OtrosIngresos"] != DBNull.Value) { Entity.OtrosIngresos = (decimal)Dr["OtrosIngresos"]; }
+                            if (Dr["ConceptoOtrosIngresos"] != DBNull.Value) { Entity.ConceptoOtrosIngresos = (string)Dr["ConceptoOtrosIngresos"]; }
+                            break;
+                        }
+                        return Entity;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
         }
 
     }
