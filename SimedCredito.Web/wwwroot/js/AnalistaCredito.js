@@ -80,13 +80,15 @@ function SeteoDatosFormulario(Datos) {
     $("#txtNombreApellidoPEP").val(Datos.CasoAfirmativoEspecifiquePersonaConVinculo);
     $("#txtCargoPEP").val(Datos.Cargo);
     //--INFORMACIÓN DE SOCIOS O ACCIONISTAS(UNICAMENTE APLICA PARA PERSONAS JURIDICAS)-- - pendiente-- 
+    if (Datos.DetalleInformacionSocio[0].CompañiaCuentaAccionistas) { $("#checkSiAccionistaISA").prop("checked", true); } else { $("#checkNoAccionistaISA").prop("checked", true);}
     for (var i = 0; i < Datos.DetalleInformacionSocio.length; i++) {
 
         $("#tblDocumentos > tbody").append('<tr>' +
-            '<td style="text-align: center;"></td>' +
-            '<td style="text-align: center;font-size:12pt;"> ' + Datos.DetalleInformacionSocio[i].IdClienteDatosGenerales + '" /></td>' +
-            '<td style="text-align: center;"></td>' + 
-            '<td style="text-align: center;font-size:12pt;">' + Datos.DetalleInformacionSocio[i].NombreApellidoAccionistas + '</td>'
+            '<td style="text-align: center;"> ' + Datos.DetalleInformacionSocio[i].NombreApellidoAccionistas +' </td>' +
+            '<td style="text-align: center;font-size:12pt;"> ' + Datos.DetalleInformacionSocio[i].TipoId + '</td>' +
+            '<td style="text-align: center;">' + Datos.DetalleInformacionSocio[i].NroDocumento+'</td>' +
+            '<td style="text-align: center;font-size:12pt;">' + Datos.DetalleInformacionSocio[i].Participacion + '</td>' +
+            '<td style="text-align: center;font-size:12pt;">' + Datos.DetalleInformacionSocio[i].Nacionalidad + '</td>'
             +'</tr>');
     }
     //--INFORMACIÓN FINANCIERA
@@ -100,5 +102,66 @@ function SeteoDatosFormulario(Datos) {
     $("#txtEgresosMensualesIF").val(Datos.EgresoMensual);
     $("#txtOtrosIngresosIF").val(Datos.OtrosIngresos);
     $("#txtConceptoOtrosIngresosIF").val(Datos.ConceptoOtrosIngresos);
-
+    //--REFERENCIAS COMERCIALES
+    var Indice = 1;
+    for (var i = 0; i < Datos.DetalleReferenciaComercial.length; i++) {
+        var Empresa = "#txtEmpresa" + Indice + "RC";
+        var Ruc = "#txtRuc" + Indice + "RC";
+        var Telefono = "#txtTelefono" + Indice + "RC";
+        var Direccion = "#txtDireccion" + Indice + "RC";
+        var Ciudad = "#txtCiudad" + Indice + "RC";
+        $(Empresa).val(Datos.DetalleReferenciaComercial[i].Empresa);
+        $(Ruc).val(Datos.DetalleReferenciaComercial[i].Ruc);
+        $(Telefono).val(Datos.DetalleReferenciaComercial[i].Telefono);
+        $(Direccion).val(Datos.DetalleReferenciaComercial[i].Direccion);
+        $(Ciudad).val(Datos.DetalleReferenciaComercial[i].Ciudad);
+        Indice++;
+    }
+    //--REFERENCIAS BANCARIAS
+    $("#txtInstitucionRB").val(Datos.Institucion);
+    $("#txtNroCuentaRB").val(Datos.NroCuenta);
+    $("#txtTipoCuentaRB").val(Datos.TipoCuenta);
+    $("#txtBeneficiarioRB").val(Datos.Beneficiario);
+    $("#txtEmpresaRB").val(Datos.Empresa);
+    $("#txtRucRB").val(Datos.Ruc);
+    $("#txtTelefonoRB").val(Datos.Telefono);
+    $("#txtDireccionRB").val(Datos.Direccion);
+    //--CONTROL DE DOCUMENTOS EXIGIDOS PARA INGRESO DE CLIENTES
+    $("#txtFile1CDE").html(Datos.CopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual);
+    $("#txtFile1CDE").attr('href', Datos.RutaCopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual);
+    $("#txtFile2CDE").html(Datos.CopiasFormularioPDTAnualRentaTerceraPersonaNatual);
+    $("#txtFile2CDE").attr('href', Datos.RutaCopiasFormularioPDTAnualRentaTerceraPersonaNatual);
+    $("#txtFile3CDE").html(Datos.CopiaFichaRucPersonaNatual);
+    $("#txtFile3CDE").attr('href', Datos.RutaCopiaFichaRucPersonaNatual);
+    $("#txtFile4CDE").html(Datos.CopiaDniPersonaNatual);
+    $("#txtFile4CDE").attr('href', Datos.RutaCopiaDniPersonaNatual);
+    $("#txtFile5CDE").html(Datos.CertificacoReferenciaComercialPersonaNatual);
+    $("#txtFile5CDE").attr('href', Datos.RutaCertificacoReferenciaComercialPersonaNatual);
+    $("#txtFile6CDE").html(Datos.CertificadoBancarioPersonaNatual);
+    $("#txtFile6CDE").attr('href', Datos.RutaCertificadoBancarioPersonaNatual);
+    $("#txtFile7CDE").html(Datos.SituacionFinancieraBalanceGeneralPerdidasJuridicas);
+    $("#txtFile7CDE").attr('href', Datos.RutaSituacionFinancieraBalanceGeneralPerdidasJuridicas);
+    $("#txtFile8CDE").html(Datos.CopiaFormularioPDTAnualRentaTerceraJuridicas);
+    $("#txtFile8CDE").attr('href', Datos.RutaCopiaFormularioPDTAnualRentaTerceraJuridicas);
+    $("#txtFile9CDE").html(Datos.CopiaFichaRucJuridicas);
+    $("#txtFile9CDE").attr('href', Datos.RutaCopiaFichaRucJuridicas);
+    $("#txtFile10CDE").html(Datos.CopiaDNIRepresentanteLegalJuridicas);
+    $("#txtFile10CDE").attr('href', Datos.RutaCopiaDNIRepresentanteLegalJuridicas);
+    $("#txtFile11CDE").html(Datos.VigenciaPoderRepresentanteLegalJuridicas);
+    $("#txtFile11CDE").attr('href', Datos.RutaVigenciaPoderRepresentanteLegalJuridicas);
+    $("#txtFile12CDE").html(Datos.CertificadoReferenciaComercialJuridicas);
+    $("#txtFile12CDE").attr('href', Datos.RutaCertificadoReferenciaComercialJuridicas);
+    $("#txtFile13CDE").html(Datos.CertificadoBancarioJuridicas);
+    $("#txtFile13CDE").attr('href', Datos.RutaCertificadoBancarioJuridicas);
+    //--CLASIFICACIÓN PARA USO COMERCIAL
+    $("#cboUnidad").val(Datos.DescripcionUnidad);
+    $("#cboSubUnidad").val(Datos.Nombre_S_SUB_UNIDAD);
+    $("#cboAsesorComercial").val(Datos.Nombre_S_ASESOR_COMERCIAL);
+    $("#txtDescripcion").val(Datos.Descripcion);
+    //--TÉRMINOS DE PAGO
+    $("#cboTipoPago").val(Datos.DescripcionPAGO);
+    $("#cuposolicitado").val(Datos.cupoSolicitado);
+    //--VERIFICACION PARA USO EXTERNO
+    $("#txtAsesorComercialVUI").val(Datos.ResponsableContratacion);
+    $("#txtFirmaVUI").val(Datos.Firma);
 }

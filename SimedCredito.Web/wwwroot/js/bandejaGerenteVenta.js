@@ -49,6 +49,7 @@ function fnLoadTrayUser() {
 
     Get("Bandeja/GetBandejaCliente?StartDate=" + startDate + "&EndDate=" + endDate + "&PerfilId=" + 1).done(function (response) {
         if (response.data.Data != null) {
+            fnClearTable($('#tabDescTable').dataTable());
             if (response.data.Data.length > 0) {
                 $('#tabDescTable').dataTable().fnAddData(response.data.Data);
             } else {

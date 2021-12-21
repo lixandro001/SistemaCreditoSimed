@@ -49,6 +49,7 @@ function fnLoadTrayUser() {
     //SIEMPRE EL ANALISTA DE CREDITO VA A VER EL GUARDADO DEL ASESOR COMERCIAL 
     Get("Bandeja/GetBandejaCliente?StartDate=" + startDate + "&EndDate=" + endDate + "&PerfilId=" + 2).done(function (response) {
         if (response.data.Data != null) {
+            fnClearTable($('#tabTray').dataTable());
             if (response.data.Data.length > 0) {
                 $('#tabTray').dataTable().fnAddData(response.data.Data);
             } else {

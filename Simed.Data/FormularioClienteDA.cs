@@ -432,7 +432,7 @@ namespace Simed.Data
                             if (Dr["Nombre_S_ASESOR_COMERCIAL"] != DBNull.Value) { Entity.Nombre_S_ASESOR_COMERCIAL = (string)Dr["Nombre_S_ASESOR_COMERCIAL"]; }
                             if (Dr["Descripcion"] != DBNull.Value) { Entity.Descripcion = (string)Dr["Descripcion"]; }
                             //TERMINO DE PAGO
-                            if (Dr["Descripcion"] != DBNull.Value) { Entity.DescripcionPAGO = (string)Dr["Descripcion"]; }
+                            if (Dr["DescripcionPago"] != DBNull.Value) { Entity.DescripcionPAGO = (string)Dr["DescripcionPago"]; }
                             if (Dr["cupoSolicitado"] != DBNull.Value) { Entity.cupoSolicitado = (string)Dr["cupoSolicitado"]; }
                             //VERIFICACION PARA USO EXTERNO
                             if (Dr["ResponsableContratacion"] != DBNull.Value) { Entity.ResponsableContratacion = (string)Dr["ResponsableContratacion"]; }
