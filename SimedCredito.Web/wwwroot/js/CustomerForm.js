@@ -488,7 +488,7 @@ function fnSaveFormularioCliente() {
     }
     //----- INFORMACION DE SOCIOS O ACCIONISTAS(ISA)
     if (!fnValidFormularioISA()) {
-        fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Información de Socios o Accionistas.");
+        fnAlertAdvertencia("Debe llenar los campos de Información de Socios o Accionistas, Minimo 2 filas y los datos obligatorios(*).");
         return;
     }
     //------- INFORMACION FINANCIERA (IF)
@@ -703,12 +703,10 @@ function fnValidFormularioISA() {
     }
     if (document.getElementById("checkSiAccionistaISA").checked) {
         if ($("#txtNombreApellidoAccionista1ISA").val() == '' || $("#txtTipoIdAccionista1ISA").val() == '' || $("#txtNroDocumentoAccionista1ISA").val() == '' || $("#txtParticipacionAccionista1ISA").val() == '' || $("#txtNacionalidadAccionista1ISA").val() == '') {
-            Rpta = true;
-            fnAlertAdvertencia("Debe llenar los campos de Información de Socios o Accionistas, Minimo 2 filas.");
+            Rpta = false;
         }
         if ($("#txtNombreApellidoAccionista2ISA").val() == '' || $("#txtTipoIdAccionista2ISA").val() == '' || $("#txtNroDocumentoAccionista2ISA").val() == '' || $("#txtParticipacionAccionista2ISA").val() == '' || $("#txtNacionalidadAccionista2ISA").val() == '') {
-            Rpta = true;
-            fnAlertAdvertencia("Debe llenar los campos de Información de Socios o Accionistas, Minimo 2 filas.");
+            Rpta = false;
         }
     }
     return Rpta;

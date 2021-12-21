@@ -568,7 +568,7 @@ namespace SimedCredito.Web.Controllers
                 request.txtNombreApellidoPEP = txtNombreApellidoPEP;
                 request.txtCargoPEP = txtCargoPEP;
                              
-                var ArrayDetalleUPJ = new List<UnicamentePersonaJuridicas>();
+                List<UnicamentePersonaJuridicas> ArrayDetalleUPJ = new List<UnicamentePersonaJuridicas>();
  
                 var itemDetalleUPJ = new UnicamentePersonaJuridicas();
                 itemDetalleUPJ.CompañiaCuentaAccionistas = Convert.ToBoolean(checkAccionistaISA);
@@ -578,6 +578,7 @@ namespace SimedCredito.Web.Controllers
                 itemDetalleUPJ.Participacion = txtParticipacionAccionista1ISA;
                 itemDetalleUPJ.Nacionalidad = txtNacionalidadAccionista1ISA;
                 ArrayDetalleUPJ.Add(itemDetalleUPJ);
+                itemDetalleUPJ = new UnicamentePersonaJuridicas();
                 itemDetalleUPJ.CompañiaCuentaAccionistas = Convert.ToBoolean(checkAccionistaISA);
                 itemDetalleUPJ.NombreApellidoAccionistas = txtNombreApellidoAccionista2ISA;
                 itemDetalleUPJ.TipoId = txtTipoIdAccionista2ISA;
@@ -585,6 +586,7 @@ namespace SimedCredito.Web.Controllers
                 itemDetalleUPJ.Participacion = txtParticipacionAccionista2ISA;
                 itemDetalleUPJ.Nacionalidad = txtNacionalidadAccionista2ISA;
                 ArrayDetalleUPJ.Add(itemDetalleUPJ);
+                itemDetalleUPJ = new UnicamentePersonaJuridicas();
                 itemDetalleUPJ.CompañiaCuentaAccionistas = Convert.ToBoolean(checkAccionistaISA);
                 itemDetalleUPJ.NombreApellidoAccionistas = txtNombreApellidoAccionista3ISA;
                 itemDetalleUPJ.TipoId = txtTipoIdAccionista3ISA;
@@ -592,6 +594,7 @@ namespace SimedCredito.Web.Controllers
                 itemDetalleUPJ.Participacion = txtParticipacionAccionista3ISA;
                 itemDetalleUPJ.Nacionalidad = txtNacionalidadAccionista3ISA;
                 ArrayDetalleUPJ.Add(itemDetalleUPJ);
+                itemDetalleUPJ = new UnicamentePersonaJuridicas();
                 itemDetalleUPJ.CompañiaCuentaAccionistas = Convert.ToBoolean(checkAccionistaISA);
                 itemDetalleUPJ.NombreApellidoAccionistas = txtNombreApellidoAccionista4ISA;
                 itemDetalleUPJ.TipoId = txtTipoIdAccionista4ISA;
@@ -613,7 +616,7 @@ namespace SimedCredito.Web.Controllers
                 request.txtOtrosIngresosIF = Convert.ToDecimal(txtOtrosIngresosIF);
                 request.txtConceptoOtrosIngresosIF = txtConceptoOtrosIngresosIF;
                 //------Referencia comerciales------//
-                var ArrayDetalleRC = new List<ReferenciasComercialesArray>();
+                List<ReferenciasComercialesArray> ArrayDetalleRC = new List<ReferenciasComercialesArray>();
                 var itemDetalleReferenciaComercial = new ReferenciasComercialesArray();
                 itemDetalleReferenciaComercial.Empresa = txtEmpresa1RC;
                 itemDetalleReferenciaComercial.Ruc = txtRuc1RC;
@@ -621,6 +624,7 @@ namespace SimedCredito.Web.Controllers
                 itemDetalleReferenciaComercial.Direccion = txtDireccion1RC;
                 itemDetalleReferenciaComercial.Ciudad = txtCiudad1RC;
                 ArrayDetalleRC.Add(itemDetalleReferenciaComercial);
+                itemDetalleReferenciaComercial = new ReferenciasComercialesArray();
                 itemDetalleReferenciaComercial.Empresa = txtEmpresa2RC;
                 itemDetalleReferenciaComercial.Ruc = txtRuc2RC;
                 itemDetalleReferenciaComercial.Telefono = txtTelefono2RC;
