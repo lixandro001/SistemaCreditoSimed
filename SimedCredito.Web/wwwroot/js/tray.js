@@ -46,8 +46,8 @@ function fnLoadTrayUser() {
     var endDate = "";
     startDate = $("#txtStartDate").val();
     endDate = $("#txtEndDate").val();
-
-    Get("Bandeja/GetBandejaCliente?StartDate=" + startDate + "&EndDate=" + endDate + "&PerfilId=" + 1).done(function (response) {
+    //SIEMPRE EL ANALISTA DE CREDITO VA A VER EL GUARDADO DEL ASESOR COMERCIAL 
+    Get("Bandeja/GetBandejaCliente?StartDate=" + startDate + "&EndDate=" + endDate + "&PerfilId=" + 2).done(function (response) {
         if (response.data.Data != null) {
             if (response.data.Data.length > 0) {
                 $('#tabTray').dataTable().fnAddData(response.data.Data);

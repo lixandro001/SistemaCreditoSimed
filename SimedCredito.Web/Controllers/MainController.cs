@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using Simed.Entity.Response;
 using Simed.Utilities.General;
 using System;
 using System.Collections.Generic;
@@ -61,6 +64,28 @@ namespace SimedCredito.Web.Controllers
         public IActionResult BandejaGerenteVenta()
         {
             return View();
+        }
+
+        public IActionResult GetUserData()
+        {
+            var Response = new GenericObjectResponse();
+            try
+            {
+                var token = HttpContext.Session.GetString("TOKEN");
+                var UrlUser = GeneralModel.UrlWebApi + "Usuario/GetUserDataByToken";
+
+                var ResultUser = Simed.Utilities.Rest.RestClient.ProcessGetRequest(UrlUser, token);
+
+                var ResultUserJson = JsonConvert.SerializeObject(ResultUser);
+                var UserData = JsonConvert.DeserializeObject<UserResponse>(ResultUserJson);
+                Response.data = UserData;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogWarning(ex, ex.Message);
+                Response.message = ex.Message;
+            }
+            return Json(Response);
         }
 
     }

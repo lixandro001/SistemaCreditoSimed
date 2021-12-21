@@ -79,7 +79,16 @@ function SeteoDatosFormulario(Datos) {
     $("#txtEspecifiqueVinculo2PEP").val(Datos.EspecifiqueExisteVinculoDiferenteComercialFamiliarPersonalEmpleadoSimed);
     $("#txtNombreApellidoPEP").val(Datos.CasoAfirmativoEspecifiquePersonaConVinculo);
     $("#txtCargoPEP").val(Datos.Cargo);
-    //--INFORMACIÓN DE SOCIOS O ACCIONISTAS(UNICAMENTE APLICA PARA PERSONAS JURIDICAS)-- - pendiente-- - G
+    //--INFORMACIÓN DE SOCIOS O ACCIONISTAS(UNICAMENTE APLICA PARA PERSONAS JURIDICAS)-- - pendiente-- 
+    for (var i = 0; i < Datos.DetalleInformacionSocio.length; i++) {
+
+        $("#tblDocumentos > tbody").append('<tr>' +
+            '<td style="text-align: center;"></td>' +
+            '<td style="text-align: center;font-size:12pt;"> ' + Datos.DetalleInformacionSocio[i].IdClienteDatosGenerales + '" /></td>' +
+            '<td style="text-align: center;"></td>' + 
+            '<td style="text-align: center;font-size:12pt;">' + Datos.DetalleInformacionSocio[i].NombreApellidoAccionistas + '</td>'
+            +'</tr>');
+    }
     //--INFORMACIÓN FINANCIERA
     $("#FechaCorte").val(Datos.CFechaCorte);
     if (Datos.InformacionDebeSoles) { $("#checkSolesIF").prop("checked", true); }

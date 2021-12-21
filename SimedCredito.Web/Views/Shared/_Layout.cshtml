@@ -50,7 +50,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link">
-                        Bienvenido(a) :   <strong id="nombreUsuarioLayout"></strong>
+                        Bienvenido(a) :   <strong id="nombreUsuarioLayout"></strong><input id="perfil" type="">
                     </a>
                 </li>
                 <li class="nav-item">
@@ -242,9 +242,12 @@
 
             Get("Main/GetUserData").done(function (response) {
                 var result = response.data;
+                console.log(result);
                 if (response.code == 0) {
                     var nombre = result.Fullname;
+                    var perfil = result.ProfileId;
                     $("#nombreUsuarioLayout").text(nombre);
+                    $("#perfil").val(perfil);
                 }
             });
 

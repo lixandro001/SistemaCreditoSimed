@@ -78,3 +78,5 @@ C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\D
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\SimedCredito.Web.genruntimeconfig.cache
 C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Main\BandejaGerenteFinanzas.cshtml.g.cs
 C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Main\BandejaGerenteVenta.cshtml.g.cs
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Main\BandejaGerenteFinanzas.cshtml.g.cs
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Main\BandejaGerenteVenta.cshtml.g.cs

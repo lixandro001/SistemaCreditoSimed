@@ -1122,9 +1122,8 @@ function fnGuardarFormularioCliente() {
     var checkVinculo1PEP = false;
     if (document.getElementById("checkSiVinculo1PEP").checked) { checkVinculo1PEP = true }
     var txtEspecifiqueVinculo1PEP = $("#txtEspecifiqueVinculo1PEP").val();
-    var checkVinculo2PEP = $("#checkSiVinculo2PEP").val();
+    var checkVinculo2PEP = false
     if (document.getElementById("checkSiVinculo2PEP").checked) { checkVinculo2PEP = true }
-
     var txtEspecifiqueVinculo2PEP = $("#txtEspecifiqueVinculo2PEP").val();
     var txtNombreApellidoPEP = $("#txtNombreApellidoPEP").val();
     var txtCargoPEP = $("#txtCargoPEP").val();
@@ -1243,7 +1242,11 @@ function fnGuardarFormularioCliente() {
     fdata.append("FormFile10", file10[0]);
     fdata.append("FormFile11", file11[0]);
     fdata.append("FormFile12", file12[0]);
-    fdata.append("FormFile13", file13[0]); 
+    fdata.append("FormFile13", file13[0]);
+    //perfil
+
+    fdata.append("IdPerfil", $("#perfil").val());
+
     //DG()
     fdata.append("NombreRazonSocialDG", NombreRazonSocialDG);
     fdata.append("DireccionDG", DireccionDG);

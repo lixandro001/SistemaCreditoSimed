@@ -42,13 +42,14 @@ namespace Simed.Data
                        new SqlParameter { ParameterName = "@CiudadDireccionEntregaPedidoDatosGenerales", SqlDbType = SqlDbType.VarChar,Size=100, SqlValue = datos.CiudadPedidoDG },
                        new SqlParameter { ParameterName = "@DireccionSecundariaEntregaPedidoDatosGenerales", SqlDbType = SqlDbType.VarChar,Size=100, SqlValue = datos.DireccionPedidoSecundarioDG },
                        new SqlParameter { ParameterName = "@CiudadDireccionSecundariaEntregaPedidoDatosGenerales", SqlDbType = SqlDbType.VarChar,Size=100, SqlValue = datos.CiudadPedidoSecundarioDG },
-                       new SqlParameter { ParameterName = "@IdUsuario", SqlDbType = SqlDbType.Int, SqlValue = 0},
+                       new SqlParameter { ParameterName = "@IdUsuario", SqlDbType = SqlDbType.Int, SqlValue = datos.IdUsuario},
+                       new SqlParameter { ParameterName = "@IdPerfil", SqlDbType = SqlDbType.Int, SqlValue = datos.IdPerfil},
                     };
                     Ado.ExecNonQueryProc(strsql, parametros);
                     var idcliente = Convert.ToInt32(parametros[0].Value.ToString());
 
 
-                    if (idcliente!=0)
+                    if (idcliente != 0)
                     {
                         string strsql2 = "usp_GuardarInformacionContacto";
                         var parametros2 = new SqlParameter[]
@@ -225,7 +226,7 @@ namespace Simed.Data
                                   new SqlParameter { ParameterName = "@BytesSituacionFinancieraBalanceGeneralPerdidasJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
                                   new SqlParameter { ParameterName = "@RutaSituacionFinancieraBalanceGeneralPerdidasJuridicas", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta7},
                                  new SqlParameter { ParameterName = "@CopiaFormularioPDTAnualRentaTerceraJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename8},
-                              
+
                             new SqlParameter { ParameterName = "@GuidCopiaFormularioPDTAnualRentaTerceraJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = Convert.ToString(Guid.NewGuid())},
                                  new SqlParameter { ParameterName = "@BytesCopiaFormularioPDTAnualRentaTerceraJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
                                new SqlParameter { ParameterName = "@RutaCopiaFormularioPDTAnualRentaTerceraJuridicas", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta8},
@@ -287,7 +288,7 @@ namespace Simed.Data
 
                     }
 
-                     
+
                     return idcliente;
                 }
                 catch (Exception ex)
@@ -305,11 +306,12 @@ namespace Simed.Data
                     DataByCodeResponse Entity = null;
                     var Parameters = new SqlParameter[]
                     {
-                        new SqlParameter{ ParameterName = "@Code", SqlDbType = SqlDbType.VarChar,SqlValue=Code},
+                        new SqlParameter{ ParameterName = "@Code", SqlDbType = SqlDbType.VarChar,Size=1000,SqlValue=Code},
                     };
                     var Dr = Ado.ExecDataReaderProc("usp_GetDatosRegistroByCode", Parameters);
                     {
                         if (!Dr.HasRows) { return Entity; }
+
                         while (Dr.Read())
                         {
                             Entity = new DataByCodeResponse();
@@ -375,7 +377,7 @@ namespace Simed.Data
                             if (Dr["EspecifiqueExisteVinculoDiferenteComercialFamiliarPersonalEmpleadoSimed"] != DBNull.Value) { Entity.EspecifiqueExisteVinculoDiferenteComercialFamiliarPersonalEmpleadoSimed = (string)Dr["EspecifiqueExisteVinculoDiferenteComercialFamiliarPersonalEmpleadoSimed"]; }
                             if (Dr["CasoAfirmativoEspecifiquePersonaConVinculo"] != DBNull.Value) { Entity.CasoAfirmativoEspecifiquePersonaConVinculo = (string)Dr["CasoAfirmativoEspecifiquePersonaConVinculo"]; }
                             if (Dr["Cargo"] != DBNull.Value) { Entity.Cargo = (string)Dr["Cargo"]; }
-                            //--INFORMACIÓN DE SOCIOS O ACCIONISTAS (UNICAMENTE APLICA PARA PERSONAS JURIDICAS) --- pendiente --- G
+                            //--INFORMACIÓN DE SOCIOS O ACCIONISTAS (UNICAMENTE APLICA PARA PERSONAS JURIDICAS) --- pendiente ---ARRAYLIST G
                             //--INFORMACIÓN FINANCIERA
                             if (Dr["FechaCorte"] != DBNull.Value) { Entity.FechaCorte = (DateTime)Dr["FechaCorte"]; }
                             if (Dr["InformacionDebeSoles"] != DBNull.Value) { Entity.InformacionDebeSoles = (bool)Dr["InformacionDebeSoles"]; }
@@ -387,8 +389,124 @@ namespace Simed.Data
                             if (Dr["EgresoMensual"] != DBNull.Value) { Entity.EgresoMensual = (decimal)Dr["EgresoMensual"]; }
                             if (Dr["OtrosIngresos"] != DBNull.Value) { Entity.OtrosIngresos = (decimal)Dr["OtrosIngresos"]; }
                             if (Dr["ConceptoOtrosIngresos"] != DBNull.Value) { Entity.ConceptoOtrosIngresos = (string)Dr["ConceptoOtrosIngresos"]; }
+                            //REFERENCIA COMERCIAL ---PENDIENTE --ARRAYLST
+                            //REFERENCIA BANCARIA
+                            if (Dr["Institucion"] != DBNull.Value) { Entity.Institucion = (string)Dr["Institucion"]; }
+                            if (Dr["NroCuenta"] != DBNull.Value) { Entity.NroCuenta = (string)Dr["NroCuenta"]; }
+                            if (Dr["TipoCuenta"] != DBNull.Value) { Entity.TipoCuenta = (string)Dr["TipoCuenta"]; }
+                            if (Dr["Beneficiario"] != DBNull.Value) { Entity.Beneficiario = (string)Dr["Beneficiario"]; }
+                            if (Dr["Empresa"] != DBNull.Value) { Entity.Empresa = (string)Dr["Empresa"]; }
+                            if (Dr["Ruc"] != DBNull.Value) { Entity.Ruc = (string)Dr["Ruc"]; }
+                            if (Dr["Telefono"] != DBNull.Value) { Entity.Telefono = (string)Dr["Telefono"]; }
+                            if (Dr["Direccion"] != DBNull.Value) { Entity.Direccion = (string)Dr["Direccion"]; }
+                            //CONTROL DOCUMENTOS EXIGIDOS
+                            if (Dr["CopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual"] != DBNull.Value) { Entity.CopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual = (string)Dr["CopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual"]; }
+                            if (Dr["RutaCopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual"] != DBNull.Value) { Entity.RutaCopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual = (string)Dr["RutaCopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual"]; }
+                            if (Dr["CopiasFormularioPDTAnualRentaTerceraPersonaNatual"] != DBNull.Value) { Entity.CopiasFormularioPDTAnualRentaTerceraPersonaNatual = (string)Dr["CopiasFormularioPDTAnualRentaTerceraPersonaNatual"]; }
+                            if (Dr["RutaCopiasFormularioPDTAnualRentaTerceraPersonaNatual"] != DBNull.Value) { Entity.RutaCopiasFormularioPDTAnualRentaTerceraPersonaNatual = (string)Dr["RutaCopiasFormularioPDTAnualRentaTerceraPersonaNatual"]; }
+                            if (Dr["CopiaFichaRucPersonaNatual"] != DBNull.Value) { Entity.CopiaFichaRucPersonaNatual = (string)Dr["CopiaFichaRucPersonaNatual"]; }
+                            if (Dr["RutaCopiaFichaRucPersonaNatual"] != DBNull.Value) { Entity.RutaCopiaFichaRucPersonaNatual = (string)Dr["RutaCopiaFichaRucPersonaNatual"]; }
+                            if (Dr["CopiaDniPersonaNatual"] != DBNull.Value) { Entity.CopiaDniPersonaNatual = (string)Dr["CopiaDniPersonaNatual"]; }
+                            if (Dr["RutaCopiaDniPersonaNatual"] != DBNull.Value) { Entity.RutaCopiaDniPersonaNatual = (string)Dr["RutaCopiaDniPersonaNatual"]; }
+                            if (Dr["CertificacoReferenciaComercialPersonaNatual"] != DBNull.Value) { Entity.CertificacoReferenciaComercialPersonaNatual = (string)Dr["CertificacoReferenciaComercialPersonaNatual"]; }
+                            if (Dr["RutaCertificacoReferenciaComercialPersonaNatual"] != DBNull.Value) { Entity.RutaCertificacoReferenciaComercialPersonaNatual = (string)Dr["RutaCertificacoReferenciaComercialPersonaNatual"]; }
+                            if (Dr["CertificadoBancarioPersonaNatual"] != DBNull.Value) { Entity.CertificadoBancarioPersonaNatual = (string)Dr["CertificadoBancarioPersonaNatual"]; }
+                            if (Dr["RutaCertificadoBancarioPersonaNatual"] != DBNull.Value) { Entity.RutaCertificadoBancarioPersonaNatual = (string)Dr["RutaCertificadoBancarioPersonaNatual"]; }
+                            if (Dr["SituacionFinancieraBalanceGeneralPerdidasJuridicas"] != DBNull.Value) { Entity.SituacionFinancieraBalanceGeneralPerdidasJuridicas = (string)Dr["SituacionFinancieraBalanceGeneralPerdidasJuridicas"]; }
+                            if (Dr["RutaSituacionFinancieraBalanceGeneralPerdidasJuridicas"] != DBNull.Value) { Entity.RutaSituacionFinancieraBalanceGeneralPerdidasJuridicas = (string)Dr["RutaSituacionFinancieraBalanceGeneralPerdidasJuridicas"]; }
+                            if (Dr["CopiaFormularioPDTAnualRentaTerceraJuridicas"] != DBNull.Value) { Entity.CopiaFormularioPDTAnualRentaTerceraJuridicas = (string)Dr["CopiaFormularioPDTAnualRentaTerceraJuridicas"]; }
+                            if (Dr["RutaCopiaFormularioPDTAnualRentaTerceraJuridicas"] != DBNull.Value) { Entity.RutaCopiaFormularioPDTAnualRentaTerceraJuridicas = (string)Dr["RutaCopiaFormularioPDTAnualRentaTerceraJuridicas"]; }
+                            if (Dr["CopiaFichaRucJuridicas"] != DBNull.Value) { Entity.CopiaFichaRucJuridicas = (string)Dr["CopiaFichaRucJuridicas"]; }
+                            if (Dr["RutaCopiaFichaRucJuridicas"] != DBNull.Value) { Entity.RutaCopiaFichaRucJuridicas = (string)Dr["RutaCopiaFichaRucJuridicas"]; }
+                            if (Dr["CopiaDNIRepresentanteLegalJuridicas"] != DBNull.Value) { Entity.CopiaDNIRepresentanteLegalJuridicas = (string)Dr["CopiaDNIRepresentanteLegalJuridicas"]; }
+                            if (Dr["RutaCopiaDNIRepresentanteLegalJuridicas"] != DBNull.Value) { Entity.RutaCopiaDNIRepresentanteLegalJuridicas = (string)Dr["RutaCopiaDNIRepresentanteLegalJuridicas"]; }
+                            if (Dr["VigenciaPoderRepresentanteLegalJuridicas"] != DBNull.Value) { Entity.VigenciaPoderRepresentanteLegalJuridicas = (string)Dr["VigenciaPoderRepresentanteLegalJuridicas"]; }
+                            if (Dr["RutaVigenciaPoderRepresentanteLegalJuridicas"] != DBNull.Value) { Entity.RutaVigenciaPoderRepresentanteLegalJuridicas = (string)Dr["RutaVigenciaPoderRepresentanteLegalJuridicas"]; }
+                            if (Dr["CertificadoReferenciaComercialJuridicas"] != DBNull.Value) { Entity.CertificadoReferenciaComercialJuridicas = (string)Dr["CertificadoReferenciaComercialJuridicas"]; }
+                            if (Dr["RutaCertificadoReferenciaComercialJuridicas"] != DBNull.Value) { Entity.RutaCertificadoReferenciaComercialJuridicas = (string)Dr["RutaCertificadoReferenciaComercialJuridicas"]; }
+                            if (Dr["CertificadoBancarioJuridicas"] != DBNull.Value) { Entity.CertificadoBancarioJuridicas = (string)Dr["CertificadoBancarioJuridicas"]; }
+                            if (Dr["RutaCertificadoBancarioJuridicas"] != DBNull.Value) { Entity.RutaCertificadoBancarioJuridicas = (string)Dr["RutaCertificadoBancarioJuridicas"]; }
+                            //CLASIFICACION PARA USO COMERCIAL
+                            if (Dr["DescripcionUnidad"] != DBNull.Value) { Entity.DescripcionUnidad = (string)Dr["DescripcionUnidad"]; }
+                            if (Dr["Nombre_S_SUB_UNIDAD"] != DBNull.Value) { Entity.Nombre_S_SUB_UNIDAD = (string)Dr["Nombre_S_SUB_UNIDAD"]; }
+                            if (Dr["Nombre_S_ASESOR_COMERCIAL"] != DBNull.Value) { Entity.Nombre_S_ASESOR_COMERCIAL = (string)Dr["Nombre_S_ASESOR_COMERCIAL"]; }
+                            if (Dr["Descripcion"] != DBNull.Value) { Entity.Descripcion = (string)Dr["Descripcion"]; }
+                            //TERMINO DE PAGO
+                            if (Dr["Descripcion"] != DBNull.Value) { Entity.DescripcionPAGO = (string)Dr["Descripcion"]; }
+                            if (Dr["cupoSolicitado"] != DBNull.Value) { Entity.cupoSolicitado = (string)Dr["cupoSolicitado"]; }
+                            //VERIFICACION PARA USO EXTERNO
+                            if (Dr["ResponsableContratacion"] != DBNull.Value) { Entity.ResponsableContratacion = (string)Dr["ResponsableContratacion"]; }
+                            if (Dr["Firma"] != DBNull.Value) { Entity.Firma = (string)Dr["Firma"]; }
+ 
                             break;
                         }
+
+                        Dr.Close();
+
+                        var ParametersDetalle = new SqlParameter[]
+                        {
+                        new SqlParameter{ ParameterName = "@Code", SqlDbType = SqlDbType.VarChar,SqlValue=Code},
+                        };
+                        var DrMain = Ado.ExecDataReaderProc("usp_GetDatosDetalleInformacionSocios", ParametersDetalle);
+
+                        List<listadoDetalleInformacionSocios> DetalleInformacionSocio = new List<listadoDetalleInformacionSocios>();
+
+                        while (DrMain.Read())
+                        {
+                            listadoDetalleInformacionSocios EntityInformacionSocio = new listadoDetalleInformacionSocios();
+
+                            if (DrMain["IdClienteDatosGenerales"] != DBNull.Value)
+                                EntityInformacionSocio.IdClienteDatosGenerales = (int)DrMain["IdClienteDatosGenerales"];
+                            if (DrMain["CompañiaCuentaAccionistas"] != DBNull.Value)
+                                EntityInformacionSocio.CompañiaCuentaAccionistas = (bool)DrMain["CompañiaCuentaAccionistas"];
+                            if (DrMain["NombreApellidoAccionistas"] != DBNull.Value)
+                                EntityInformacionSocio.NombreApellidoAccionistas = (string)DrMain["NombreApellidoAccionistas"];
+                            if (DrMain["TipoId"] != DBNull.Value)
+                                EntityInformacionSocio.TipoId = (string)DrMain["TipoId"];
+                            if (DrMain["NroDocumento"] != DBNull.Value)
+                                EntityInformacionSocio.NroDocumento = (string)DrMain["NroDocumento"];
+                            if (DrMain["Participacion"] != DBNull.Value)
+                                EntityInformacionSocio.Participacion = (string)DrMain["Participacion"];
+                            if (DrMain["Nacionalidad"] != DBNull.Value)
+                                EntityInformacionSocio.Nacionalidad = (string)DrMain["Nacionalidad"];
+
+                            DetalleInformacionSocio.Add(EntityInformacionSocio);
+                        }
+
+                        DrMain.Close();
+
+                        var ParametersDetalle2 = new SqlParameter[]
+                        {
+                        new SqlParameter{ ParameterName = "@Code", SqlDbType = SqlDbType.VarChar,SqlValue=Code},
+                        };
+                        var DrMain2 = Ado.ExecDataReaderProc("usp_GetDatosDetalleReferenciaComercial", ParametersDetalle2);
+
+                        List<listadoDetalleReferenciaComercial> DetalleReferenciaComercial = new List<listadoDetalleReferenciaComercial>();
+
+                        while (DrMain2.Read())
+                        {
+                            listadoDetalleReferenciaComercial EntityReferenciaComercial = new listadoDetalleReferenciaComercial();
+
+                            if (DrMain2["IdClienteDatosGenerales"] != DBNull.Value)
+                                EntityReferenciaComercial.IdClienteDatosGenerales = (int)DrMain2["IdClienteDatosGenerales"];
+                            if (DrMain2["Empresa"] != DBNull.Value)
+                                EntityReferenciaComercial.Empresa = (string)DrMain2["Empresa"];
+                            if (DrMain2["Ruc"] != DBNull.Value)
+                                EntityReferenciaComercial.Ruc = (string)DrMain2["Ruc"];
+                            if (DrMain2["Telefono"] != DBNull.Value)
+                                EntityReferenciaComercial.Telefono = (string)DrMain2["Telefono"];
+                            if (DrMain2["Direccion"] != DBNull.Value)
+                                EntityReferenciaComercial.Direccion = (string)DrMain2["Direccion"];
+                            if (DrMain2["Ciudad"] != DBNull.Value)
+                                EntityReferenciaComercial.Ciudad = (string)DrMain2["Ciudad"];
+                              
+                            DetalleReferenciaComercial.Add(EntityReferenciaComercial);
+                        }
+
+                        DrMain2.Close();
+ 
+                        Entity.DetalleReferenciaComercial = DetalleReferenciaComercial;
+                        Entity.DetalleInformacionSocio = DetalleInformacionSocio;
                         return Entity;
                     }
                 }

@@ -59,6 +59,8 @@ namespace SimedCredito.Web.Controllers
 
                         HttpContext.Session.SetString("TOKEN", User.data);
                         HttpContext.Session.SetInt32("PROFILE_ID", UserData.ProfileId);
+                        HttpContext.Session.SetInt32("USUARIO_ID", UserData.IdUsuario);
+                         
                         break;
                     default:
                         Response.message = User.message;

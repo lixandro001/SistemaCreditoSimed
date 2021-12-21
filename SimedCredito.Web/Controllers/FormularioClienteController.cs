@@ -39,6 +39,8 @@ namespace SimedCredito.Web.Controllers
 
             try
             {
+                var IdUsuario = HttpContext.Session.GetInt32("USUARIO_ID");
+                var IdPerfil = Request.Form["IdPerfil"];
                 var NombreRazonSocialDG = Request.Form["NombreRazonSocialDG"];
                 var DireccionDG = Request.Form["DireccionDG"];
                 var PaisId = Request.Form["PaisId"];
@@ -507,6 +509,8 @@ namespace SimedCredito.Web.Controllers
 
                 var token = HttpContext.Session.GetString("TOKEN");
 
+                request.IdUsuario = Convert.ToInt32(IdUsuario);
+                request.IdPerfil = Convert.ToInt32(IdPerfil);
                 request.NombreRazonSocialDG = NombreRazonSocialDG;
                 request.DireccionDG = DireccionDG;
                 request.PaisId = PaisId;

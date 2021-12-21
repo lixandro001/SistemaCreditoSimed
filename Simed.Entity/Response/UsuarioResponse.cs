@@ -14,5 +14,6 @@ namespace Simed.Entity.Response
         public string Email { get; set; }
         public int ProfileId { get; set; }
         public int Status { get; set; }
+        public int IdUsuario { get; set; }
     }
 }

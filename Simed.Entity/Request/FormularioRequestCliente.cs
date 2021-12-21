@@ -6,6 +6,8 @@ namespace Simed.Entity.Request
 {
     public class FormularioRequestCliente
     {
+        public int IdUsuario { get; set; }
+        public int IdPerfil { get; set; }
         public string NombreRazonSocialDG { get; set; }
         public string DireccionDG { get; set; }
         public string PaisId { get; set; }

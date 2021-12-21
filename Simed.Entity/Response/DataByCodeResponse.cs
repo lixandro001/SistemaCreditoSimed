@@ -113,5 +113,51 @@ namespace Simed.Entity.Response
                 return string.Empty;
             }
         }
+
+        public string Institucion { get; set; }
+        public string NroCuenta { get; set; }
+        public string TipoCuenta { get; set; }
+        public string Beneficiario { get; set; }
+        public string Empresa { get; set; }
+        public string Ruc { get; set; }
+        public string Telefono { get; set; }
+        public string Direccion { get; set; }
+        public string CopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual { get; set; }
+        public string RutaCopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual { get; set; }
+        public string CopiasFormularioPDTAnualRentaTerceraPersonaNatual { get; set; }
+        public string RutaCopiasFormularioPDTAnualRentaTerceraPersonaNatual { get; set; }
+        public string CopiaFichaRucPersonaNatual { get; set; }
+        public string RutaCopiaFichaRucPersonaNatual { get; set; }
+        public string CopiaDniPersonaNatual { get; set; }
+        public string RutaCopiaDniPersonaNatual { get; set; }
+        public string CertificacoReferenciaComercialPersonaNatual { get; set; }
+        public string RutaCertificacoReferenciaComercialPersonaNatual { get; set; }
+        public string CertificadoBancarioPersonaNatual { get; set; }
+        public string RutaCertificadoBancarioPersonaNatual { get; set; }
+        public string SituacionFinancieraBalanceGeneralPerdidasJuridicas { get; set; }
+        public string RutaSituacionFinancieraBalanceGeneralPerdidasJuridicas { get; set; }
+        public string CopiaFormularioPDTAnualRentaTerceraJuridicas { get; set; }
+        public string RutaCopiaFormularioPDTAnualRentaTerceraJuridicas { get; set; }
+        public string CopiaFichaRucJuridicas { get; set; }
+        public string RutaCopiaFichaRucJuridicas { get; set; }
+        public string CopiaDNIRepresentanteLegalJuridicas { get; set; }
+        public string RutaCopiaDNIRepresentanteLegalJuridicas { get; set; }
+        public string VigenciaPoderRepresentanteLegalJuridicas { get; set; }
+        public string RutaVigenciaPoderRepresentanteLegalJuridicas { get; set; }
+        public string CertificadoReferenciaComercialJuridicas { get; set; }
+        public string RutaCertificadoReferenciaComercialJuridicas { get; set; }
+        public string CertificadoBancarioJuridicas { get; set; }
+        public string RutaCertificadoBancarioJuridicas { get; set; }
+        public string DescripcionUnidad { get; set; }
+        public string Nombre_S_SUB_UNIDAD { get; set; }
+        public string Nombre_S_ASESOR_COMERCIAL { get; set; }
+        public string Descripcion { get; set; }
+        public string DescripcionPAGO { get; set; }
+        public string cupoSolicitado { get; set; }
+        public string ResponsableContratacion { get; set; }
+        public string Firma { get; set; }
+        public List<listadoDetalleInformacionSocios> DetalleInformacionSocio { get; set; }
+        public List<listadoDetalleReferenciaComercial> DetalleReferenciaComercial { get; set; }
+ 
     }
 }
