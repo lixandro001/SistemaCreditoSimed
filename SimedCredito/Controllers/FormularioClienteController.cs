@@ -70,5 +70,61 @@ namespace SimedCredito.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("AprobarFormularioCliente")]
+        public IActionResult AprobarFormularioCliente(UpdateEstadoYPerfilRequest request)
+        {
+            try
+            {
+                GenericResponse response = new GenericResponse();
+
+                if (objFormularioClienteBL.AprobarFormularioCliente(request))
+                {
+                    response.code = (int)Enums.eCodeError.OK;
+                    response.message = "Se Aprobó Correctamente";
+                }
+                else
+                {
+                    response.code = (int)Enums.eCodeError.ERROR;
+                    response.message = "No se pudo Aprobar";
+                }
+                return Ok(response);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex.Message);
+                throw ex;
+            }
+        }
+
+        [HttpPost]
+        [Route("RechazarFormularioCliente")]
+        public IActionResult RechazarFormularioCliente(UpdateEstadoYPerfilRequest request)
+        {
+            try
+            {
+                GenericResponse response = new GenericResponse();
+
+                if (objFormularioClienteBL.RechazarFormularioCliente(request))
+                {
+                    response.code = (int)Enums.eCodeError.OK;
+                    response.message = "Se Rechazó Correctamente";
+                }
+                else
+                {
+                    response.code = (int)Enums.eCodeError.ERROR;
+                    response.message = "No se pudo Rechazar";
+                }
+                return Ok(response);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex.Message);
+                throw ex;
+            }
+        }
+
     }
 }

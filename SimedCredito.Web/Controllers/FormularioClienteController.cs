@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using Simed.Entity;
 using Simed.Entity.Request;
 using Simed.Entity.Response;
@@ -704,6 +705,48 @@ namespace SimedCredito.Web.Controllers
                 var Url = GeneralModel.UrlWebApi + "FormularioCliente/DataByCode/" + Code;
                 var Result = Simed.Utilities.Rest.RestClient.ProcessGetRequest(Url);
                 Response.data = Result;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogWarning(ex, ex.Message);
+                Response.message = ex.Message;
+            }
+            return Json(Response);
+        }
+
+        [HttpPost]
+        public JsonResult AprobarFormularioCliente(UpdateEstadoYPerfilRequest request)
+        {
+            var Response = new GenericObjectResponse();
+            try
+            {
+                var Url = GeneralModel.UrlWebApi + "FormularioCliente/AprobarFormularioCliente";
+                var Result = Simed.Utilities.Rest.RestClient.ProcessPostRequest(Url, request);
+                Response.data = Result;
+
+                var ResultJson = JsonConvert.SerializeObject(Response.data);
+                var User = JsonConvert.DeserializeObject<GenericResponse>(ResultJson);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogWarning(ex, ex.Message);
+                Response.message = ex.Message;
+            }
+            return Json(Response);
+        }
+
+        [HttpPost]
+        public JsonResult RechazarFormularioCliente(UpdateEstadoYPerfilRequest request)
+        {
+            var Response = new GenericObjectResponse();
+            try
+            {
+                var Url = GeneralModel.UrlWebApi + "FormularioCliente/RechazarFormularioCliente";
+                var Result = Simed.Utilities.Rest.RestClient.ProcessPostRequest(Url, request);
+                Response.data = Result;
+
+                var ResultJson = JsonConvert.SerializeObject(Response.data);
+                var User = JsonConvert.DeserializeObject<GenericResponse>(ResultJson);
             }
             catch (Exception ex)
             {

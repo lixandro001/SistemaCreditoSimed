@@ -43,5 +43,14 @@ namespace Simed.Business
             }
         }
 
+        public bool AprobarFormularioCliente(UpdateEstadoYPerfilRequest request)
+        {
+            return objGuardarFormulario.AprobarFormularioCliente(request);
+        }
+
+        public bool RechazarFormularioCliente(UpdateEstadoYPerfilRequest request)
+        {
+            return objGuardarFormulario.RechazarFormularioCliente(request);
+        }
     }
 }

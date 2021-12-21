@@ -517,5 +517,50 @@ namespace Simed.Data
             }
         }
 
+        public bool AprobarFormularioCliente(UpdateEstadoYPerfilRequest request)
+        {
+            using (var Ado = new SQLServer(ConStr))
+                try
+                {
+                    Ado.BeginTransaction();
+                    var Parameters = new SqlParameter[]
+                    {
+                        new SqlParameter{ParameterName="@IdPerfil",SqlDbType=SqlDbType.Int,Size=50,SqlValue=request.IdPerfil},
+                        new SqlParameter{ParameterName="@Code",SqlDbType=SqlDbType.VarChar,Size=500,SqlValue=request.Code}
+                    };
+
+                    Ado.ExecNonQueryProcTransaction("usp_AprobarRegistroByPerfil", Parameters);
+                    Ado.Commit();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Ado.Rollback();
+                    throw ex;
+                }
+        }
+
+        public bool RechazarFormularioCliente(UpdateEstadoYPerfilRequest request)
+        {
+            using (var Ado = new SQLServer(ConStr))
+                try
+                {
+                    Ado.BeginTransaction();
+                    var Parameters = new SqlParameter[]
+                    {
+                        new SqlParameter{ParameterName="@IdPerfil",SqlDbType=SqlDbType.Int,Size=50,SqlValue=request.IdPerfil},
+                        new SqlParameter{ParameterName="@Code",SqlDbType=SqlDbType.VarChar,Size=500,SqlValue=request.Code}
+                    };
+
+                    Ado.ExecNonQueryProcTransaction("usp_RechazarRegistroByPerfil", Parameters);
+                    Ado.Commit();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Ado.Rollback();
+                    throw ex;
+                }
+        }
     }
 }

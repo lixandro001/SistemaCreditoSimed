@@ -1,7 +1,16 @@
-﻿$(function () {
+﻿var code = "";
+$(function () {
     var url = new URL(location.href);
-    var code = url.searchParams.get("code");
+    code = url.searchParams.get("code");
     LoadDataViewByCode(code);
+
+    $("#btnAprobar").on("click", function () {
+        fnAprobarFormulario();
+    });
+
+    $("#btnRechazar").on("click", function () {
+        fnRechazarFormulario();
+    });
 });
 
 function LoadDataViewByCode(code) {
@@ -164,4 +173,44 @@ function SeteoDatosFormulario(Datos) {
     //--VERIFICACION PARA USO EXTERNO
     $("#txtAsesorComercialVUI").val(Datos.ResponsableContratacion);
     $("#txtFirmaVUI").val(Datos.Firma);
+}
+
+function fnAprobarFormulario() {
+    var parametros = new Object();
+    parametros.IdPerfil = 4;
+    parametros.Code = code;
+
+    Post("FormularioCliente/AprobarFormularioCliente", parametros).done(function (response) {
+        if (response.code == 0) {
+            fnConfirm(response.message);
+        }
+    });
+}
+
+function fnRechazarFormulario() {
+    var parametros = new Object();
+    parametros.IdPerfil = 4;
+    parametros.Code = code;
+
+    Post("FormularioCliente/RechazarFormularioCliente", parametros).done(function (response) {
+        if (response.code == 0) {
+            fnConfirm(response.message);
+        }
+    });
+}
+
+
+function fnConfirm(message) {
+    swal({
+        title: "¡Exito!",
+        html: false,
+        text: message || "Acción ejecutada con exito.",
+        type: "success",
+        showCancelButton: false,
+        confirmButtonColor: "#007bff",
+        confirmButtonText: "Aceptar",
+        closeOnConfirm: true
+    }, function () {
+        location.href = '/Main/BandejaGerenteVenta';
+    });
 }
