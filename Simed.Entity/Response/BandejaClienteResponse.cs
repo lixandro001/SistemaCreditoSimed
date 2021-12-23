@@ -12,5 +12,6 @@ namespace Simed.Entity.Response
         public string CiudadSedePrincipalDatosGenerales { get; set; }
         public string CelularDatosGenerales { get; set; }
         public string Nombre_S_PAIS { get; set; }
+        public string Estado { get; set; }
     }
 }

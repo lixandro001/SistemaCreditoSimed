@@ -44,7 +44,7 @@ namespace Simed.Data
                             if (Dr["CiudadSedePrincipalDatosGenerales"] != DBNull.Value) { Entity.CiudadSedePrincipalDatosGenerales = Convert.ToString(Dr["CiudadSedePrincipalDatosGenerales"]); }
                             if (Dr["CelularDatosGenerales"] != DBNull.Value) { Entity.CelularDatosGenerales = Convert.ToString(Dr["CelularDatosGenerales"]); }
                             if (Dr["Nombre_S_PAIS"] != DBNull.Value) { Entity.Nombre_S_PAIS = Convert.ToString(Dr["Nombre_S_PAIS"]); }
-
+                            if (Dr["Estado"] != DBNull.Value) { Entity.Estado = Convert.ToString(Dr["Estado"]); }
 
                             List.Add(Entity);
                         }

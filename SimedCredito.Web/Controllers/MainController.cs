@@ -66,6 +66,11 @@ namespace SimedCredito.Web.Controllers
             return View();
         }
 
+        public IActionResult BandejaComercial()
+        {
+            return View();
+        }
+
         public IActionResult GetUserData()
         {
             var Response = new GenericObjectResponse();
