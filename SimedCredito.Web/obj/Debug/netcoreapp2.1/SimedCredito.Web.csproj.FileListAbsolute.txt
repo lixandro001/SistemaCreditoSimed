@@ -81,3 +81,5 @@ C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\SimedCredito.Web\obj\Debu
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Main\BandejaGerenteFinanzas.cshtml.g.cs
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Main\BandejaGerenteVenta.cshtml.g.cs
 C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Main\BandejaComercial.cshtml.g.cs
+C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Main\FormularioPerfilComercial.cshtml.g.cs
+C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Main\EditFormularioPerfilComercial.cshtml.g.cs

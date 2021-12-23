@@ -318,6 +318,7 @@ namespace Simed.Data
                             //--Datos Generales
                             if (Dr["Nombre_RazonSocialDatosGenerales"] != DBNull.Value) { Entity.Nombre_RazonSocialDatosGenerales = (string)Dr["Nombre_RazonSocialDatosGenerales"]; }
                             if (Dr["DireccionDatosGenerales"] != DBNull.Value) { Entity.DireccionDatosGenerales = (string)Dr["DireccionDatosGenerales"]; }
+                            if (Dr["IdPaisDatosGenerales"] != DBNull.Value) { Entity.IdPaisDatosGenerales = (int)Dr["IdPaisDatosGenerales"]; }
                             if (Dr["Nombre_S_PAIS"] != DBNull.Value) { Entity.Nombre_S_PAIS = (string)Dr["Nombre_S_PAIS"]; }
                             if (Dr["CiudadSedePrincipalDatosGenerales"] != DBNull.Value) { Entity.CiudadSedePrincipalDatosGenerales = (string)Dr["CiudadSedePrincipalDatosGenerales"]; }
                             if (Dr["TelefonoFijoDatosGenerales"] != DBNull.Value) { Entity.TelefonoFijoDatosGenerales = (string)Dr["TelefonoFijoDatosGenerales"]; }
@@ -340,6 +341,12 @@ namespace Simed.Data
                             if (Dr["TelefonoContactoAreaComercial"] != DBNull.Value) { Entity.TelefonoContactoAreaComercial = (string)Dr["TelefonoContactoAreaComercial"]; }
                             if (Dr["CorreoContactoAreaComercial"] != DBNull.Value) { Entity.CorreoContactoAreaComercial = (string)Dr["CorreoContactoAreaComercial"]; }
                             //--INFORMACIÓN TRIBUTARIA
+                            if (Dr["IdTipoIdentificacion"] != DBNull.Value) { Entity.IdTipoIdentificacion = (int)Dr["IdTipoIdentificacion"]; }
+                            if (Dr["IdTipoContribuyete"] != DBNull.Value) { Entity.IdTipoContribuyete = (int)Dr["IdTipoContribuyete"]; }
+                            if (Dr["IdTipoSociedad"] != DBNull.Value) { Entity.IdTipoSociedad = (int)Dr["IdTipoSociedad"]; }
+                            if (Dr["IdActividadEconomica"] != DBNull.Value) { Entity.IdActividadEconomica = (int)Dr["IdActividadEconomica"]; }
+                            if (Dr["IdRegimen"] != DBNull.Value) { Entity.IdRegimen = (int)Dr["IdRegimen"]; }
+                            if (Dr["IdOrigenCapital"] != DBNull.Value) { Entity.IdOrigenCapital = (int)Dr["IdOrigenCapital"]; }
                             if (Dr["Nombre_S_TIPO_IDENTIFICACION"] != DBNull.Value) { Entity.Nombre_S_TIPO_IDENTIFICACION = (string)Dr["Nombre_S_TIPO_IDENTIFICACION"]; }
                             if (Dr["CualTipoIdentificacion"] != DBNull.Value) { Entity.CualTipoIdentificacion = (string)Dr["CualTipoIdentificacion"]; }
                             if (Dr["NumeroIdentificacion"] != DBNull.Value) { Entity.NumeroIdentificacion = (string)Dr["NumeroIdentificacion"]; }
@@ -356,6 +363,8 @@ namespace Simed.Data
                             if (Dr["ActidadPrincipal"] != DBNull.Value) { Entity.ActidadPrincipal = (string)Dr["ActidadPrincipal"]; }
                             if (Dr["ActividadSecundaria"] != DBNull.Value) { Entity.ActividadSecundaria = (string)Dr["ActividadSecundaria"]; }
                             //--INFORMACION DE REPRESENTACION LEGAL
+                            if (Dr["IdTipoIdentificacion_RL"] != DBNull.Value) { Entity.IdTipoIdentificacion_RL = Convert.ToInt32(Dr["IdTipoIdentificacion_RL"]); }
+                            if (Dr["IdNacionalidad"] != DBNull.Value) { Entity.IdNacionalidad = (int)Dr["IdNacionalidad"]; }
                             if (Dr["NombreRepresentanteLegal"] != DBNull.Value) { Entity.NombreRepresentanteLegal = (string)Dr["NombreRepresentanteLegal"]; }
                             if (Dr["Nombre_S_TIPO_IDENTIFICACION_RL"] != DBNull.Value) { Entity.Nombre_S_TIPO_IDENTIFICACION_RL = (string)Dr["Nombre_S_TIPO_IDENTIFICACION_RL"]; }
                             if (Dr["NumeroIdentificacion_RL"] != DBNull.Value) { Entity.NumeroIdentificacion_RL = (string)Dr["NumeroIdentificacion_RL"]; }
@@ -427,11 +436,15 @@ namespace Simed.Data
                             if (Dr["CertificadoBancarioJuridicas"] != DBNull.Value) { Entity.CertificadoBancarioJuridicas = (string)Dr["CertificadoBancarioJuridicas"]; }
                             if (Dr["RutaCertificadoBancarioJuridicas"] != DBNull.Value) { Entity.RutaCertificadoBancarioJuridicas = (string)Dr["RutaCertificadoBancarioJuridicas"]; }
                             //CLASIFICACION PARA USO COMERCIAL
+                            if (Dr["Unidad"] != DBNull.Value) { Entity.Unidad = (int)Dr["Unidad"]; }
+                            if (Dr["SubUnidad"] != DBNull.Value) { Entity.SubUnidad = (int)Dr["SubUnidad"]; }
+                            if (Dr["AsesorComercial"] != DBNull.Value) { Entity.AsesorComercial = (int)Dr["AsesorComercial"]; }
                             if (Dr["DescripcionUnidad"] != DBNull.Value) { Entity.DescripcionUnidad = (string)Dr["DescripcionUnidad"]; }
                             if (Dr["Nombre_S_SUB_UNIDAD"] != DBNull.Value) { Entity.Nombre_S_SUB_UNIDAD = (string)Dr["Nombre_S_SUB_UNIDAD"]; }
                             if (Dr["Nombre_S_ASESOR_COMERCIAL"] != DBNull.Value) { Entity.Nombre_S_ASESOR_COMERCIAL = (string)Dr["Nombre_S_ASESOR_COMERCIAL"]; }
                             if (Dr["Descripcion"] != DBNull.Value) { Entity.Descripcion = (string)Dr["Descripcion"]; }
                             //TERMINO DE PAGO
+                            if (Dr["IdTerminoPago"] != DBNull.Value) { Entity.IdTerminoPago = (int)Dr["IdTerminoPago"]; }
                             if (Dr["DescripcionPago"] != DBNull.Value) { Entity.DescripcionPAGO = (string)Dr["DescripcionPago"]; }
                             if (Dr["cupoSolicitado"] != DBNull.Value) { Entity.cupoSolicitado = (string)Dr["cupoSolicitado"]; }
                             //VERIFICACION PARA USO EXTERNO

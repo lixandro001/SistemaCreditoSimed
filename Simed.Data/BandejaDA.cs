@@ -44,8 +44,12 @@ namespace Simed.Data
                             if (Dr["CiudadSedePrincipalDatosGenerales"] != DBNull.Value) { Entity.CiudadSedePrincipalDatosGenerales = Convert.ToString(Dr["CiudadSedePrincipalDatosGenerales"]); }
                             if (Dr["CelularDatosGenerales"] != DBNull.Value) { Entity.CelularDatosGenerales = Convert.ToString(Dr["CelularDatosGenerales"]); }
                             if (Dr["Nombre_S_PAIS"] != DBNull.Value) { Entity.Nombre_S_PAIS = Convert.ToString(Dr["Nombre_S_PAIS"]); }
-                            if (Dr["Estado"] != DBNull.Value) { Entity.Estado = Convert.ToString(Dr["Estado"]); }
-
+                            if (Dr["EstadoComercial"] != DBNull.Value) { Entity.EstadoComercial = Convert.ToString(Dr["EstadoComercial"]); }
+                            if (Dr["EstadoCredito"] != DBNull.Value) { Entity.EstadoCredito = Convert.ToString(Dr["EstadoCredito"]); }
+                            if (Dr["EstadoVenta"] != DBNull.Value) { Entity.EstadoVenta = Convert.ToString(Dr["EstadoVenta"]); }
+                            if (Dr["EstadoFinanza"] != DBNull.Value) { Entity.EstadoFinanza = Convert.ToString(Dr["EstadoFinanza"]); }
+                            if (Dr["NombreCompleto"] != DBNull.Value) { Entity.NombreCompleto = Convert.ToString(Dr["NombreCompleto"]); }
+                            if (Dr["IdEstadoComercial"] != DBNull.Value) { Entity.IdEstadoComercial = Convert.ToInt32(Dr["IdEstadoComercial"]); }
                             List.Add(Entity);
                         }
                         return List;

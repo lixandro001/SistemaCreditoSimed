@@ -71,6 +71,16 @@ namespace SimedCredito.Web.Controllers
             return View();
         }
 
+        public IActionResult FormularioPerfilComercial()
+        {
+            return View();
+        }
+
+        public IActionResult EditFormularioPerfilComercial()
+        {
+            return View();
+        }
+
         public IActionResult GetUserData()
         {
             var Response = new GenericObjectResponse();

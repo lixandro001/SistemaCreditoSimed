@@ -12,10 +12,10 @@ $(function () {
         columns: [
             { data: null },
             { data: "Nombre_RazonSocialDatosGenerales" },
-            { data: "DireccionDatosGenerales" },
-            { data: "Nombre_S_PAIS" },
-            { data: "CiudadSedePrincipalDatosGenerales" },
-            { data: "CelularDatosGenerales" }
+            { data: "EstadoCredito" },
+            { data: "EstadoVenta" },
+            { data: "EstadoFinanza" },
+            { data: "NombreCompleto" }
         ],
         columnDefs: [{
             "targets": 0,
@@ -46,8 +46,8 @@ function fnLoadTrayUser() {
     var endDate = "";
     startDate = $("#txtStartDate").val();
     endDate = $("#txtEndDate").val();
-    //SIEMPRE EL ANALISTA DE CREDITO VA A VER EL GUARDADO DEL ASESOR COMERCIAL 
-    Get("Bandeja/GetBandejaCliente?StartDate=" + startDate + "&EndDate=" + endDate + "&PerfilId=" + 2).done(function (response) {
+    var PerfilId = $("#perfil").val();
+    Get("Bandeja/GetBandejaCliente?StartDate=" + startDate + "&EndDate=" + endDate + "&PerfilId=" + PerfilId).done(function (response) {
         if (response.data.Data != null) {
             fnClearTable($('#tabTray').dataTable());
             if (response.data.Data.length > 0) {

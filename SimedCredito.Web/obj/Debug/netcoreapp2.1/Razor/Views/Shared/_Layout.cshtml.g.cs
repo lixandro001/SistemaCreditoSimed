@@ -68,7 +68,7 @@ using Microsoft.AspNetCore.Http;
             WriteLiteral("\r\n<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(234, 1325, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6716aa65e35442efbd6b2b1db5cb45ac", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1333968a6c2140938852d34ca917c70e", async() => {
                 BeginContext(240, 108, true);
                 WriteLiteral("\r\n    <meta charset=\"utf-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <title>SIMED | ");
                 EndContext();
@@ -178,7 +178,7 @@ Write(RenderSection("styles", false));
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(1561, 10153, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e607a3b082040c1bcbc7d5dcbf67872", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "07062c03a32943898b7c8329013d22ed", async() => {
                 BeginContext(1604, 767, true);
                 WriteLiteral(@"
     <div class=""wrapper"">

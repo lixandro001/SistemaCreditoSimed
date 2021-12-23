@@ -12,19 +12,28 @@ $(function () {
         columns: [
             { data: null },
             { data: "Nombre_RazonSocialDatosGenerales" },
-            { data: "Estado" },
-            { data: "Nombre_S_PAIS" },
-            { data: "CiudadSedePrincipalDatosGenerales" },
-            { data: "CelularDatosGenerales" }
+            { data: "EstadoComercial" },
+            { data: "EstadoCredito" },
+            { data: "EstadoVenta" },
+            { data: "EstadoFinanza" },
+            { data: "NombreCompleto" }
         ],
         columnDefs: [{
             "targets": 0,
             "orderable": false,
             "data": "CodeClienteDatosGenerales",
             "render": function (data, type, full, meta) {
-                return `<div style="text-align:center;">
+                if (data.IdEstadoComercial == 4) {
+                    return `<div style="text-align:center;">
+                            <a class="fa fa-pencil" href="#" onclick="event.preventDefault();fnEditRegister('${data.CodeClienteDatosGenerales}')"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                        </div>`;
+                }
+                else {
+                    return `<div style="text-align:center;">
                             <a class="fa fa-pencil" href="#" onclick="event.preventDefault();fnViewRegister('${data.CodeClienteDatosGenerales}')"><i class="fa fa-eye" aria-hidden="true"></i></a>
                         </div>`;
+                }
+                
             }
         }
         ]
@@ -50,8 +59,9 @@ function fnLoadTrayUser() {
     var endDate = "";
     startDate = $("#txtStartDate").val();
     endDate = $("#txtEndDate").val();
+    var PerfilId = $("#perfil").val();
 
-    Get("Bandeja/GetBandejaCliente?StartDate=" + startDate + "&EndDate=" + endDate + "&PerfilId=" + 3).done(function (response) {
+    Get("Bandeja/GetBandejaCliente?StartDate=" + startDate + "&EndDate=" + endDate + "&PerfilId=" + PerfilId).done(function (response) {
         if (response.data.Data != null) {
             fnClearTable($('#tabDescTable').dataTable());
             if (response.data.Data.length > 0) {
@@ -64,7 +74,11 @@ function fnLoadTrayUser() {
 }
 
 function fnViewRegister(CodeRegister) {
-    location.href = '/Main/FormularioPerfilGerenteVentas/?code=' + CodeRegister;
+    location.href = '/Main/FormularioPerfilComercial/?code=' + CodeRegister;
+}
+
+function fnEditRegister(CodeRegister) {
+    location.href = '/Main/EditFormularioPerfilComercial/?code=' + CodeRegister;
 }
 
 function fnViewForm() {

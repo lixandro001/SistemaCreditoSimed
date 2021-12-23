@@ -9,6 +9,7 @@ namespace Simed.Entity.Response
         //---Datos generales
         public string Nombre_RazonSocialDatosGenerales { get; set; }
         public string DireccionDatosGenerales { get; set; }
+        public int IdPaisDatosGenerales { get; set; }
         public string Nombre_S_PAIS { get; set; }
         public string CiudadSedePrincipalDatosGenerales { get; set; }
         public string TelefonoFijoDatosGenerales { get; set; }
@@ -31,6 +32,12 @@ namespace Simed.Entity.Response
         public string TelefonoContactoAreaComercial { get; set; }
         public string CorreoContactoAreaComercial { get; set; }
         //-- INFORMACIÓN TRIBUTARIA
+        public int IdTipoIdentificacion { get; set; }
+        public int IdTipoContribuyete { get; set; }
+        public int IdTipoSociedad { get; set; }
+        public int IdActividadEconomica { get; set; }
+        public int IdRegimen { get; set; }
+        public int IdOrigenCapital { get; set; }
         public string Nombre_S_TIPO_IDENTIFICACION { get; set; }
         public string CualTipoIdentificacion { get; set; }
         public string NumeroIdentificacion { get; set; }
@@ -59,6 +66,8 @@ namespace Simed.Entity.Response
         public string ActividadSecundaria { get; set; }
         //--INFORMACION DE REPRESENTACION LEGAL
         public string NombreRepresentanteLegal { get; set; }
+        public int IdTipoIdentificacion_RL { get; set; }
+        public int IdNacionalidad { get; set; }
         public string Nombre_S_TIPO_IDENTIFICACION_RL { get; set; }
         public string NumeroIdentificacion_RL { get; set; }
         public string Nombre_S_NACIONALIDAD { get; set; }
@@ -148,10 +157,14 @@ namespace Simed.Entity.Response
         public string RutaCertificadoReferenciaComercialJuridicas { get; set; }
         public string CertificadoBancarioJuridicas { get; set; }
         public string RutaCertificadoBancarioJuridicas { get; set; }
+        public int Unidad { get; set; }
+        public int SubUnidad { get; set; }
+        public int AsesorComercial { get; set; }
         public string DescripcionUnidad { get; set; }
         public string Nombre_S_SUB_UNIDAD { get; set; }
         public string Nombre_S_ASESOR_COMERCIAL { get; set; }
         public string Descripcion { get; set; }
+        public int IdTerminoPago { get; set; }
         public string DescripcionPAGO { get; set; }
         public string cupoSolicitado { get; set; }
         public string ResponsableContratacion { get; set; }
