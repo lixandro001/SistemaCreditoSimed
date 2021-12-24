@@ -820,9 +820,9 @@
                 <input id="txtBeneficiarioRB" placeholder="Beneficiario" type="text" class="form-control" disabled />
             </div>
             <!--<div class="col-sm-2">
-            <label>Vacio</label> <br />
-            <input placeholder="Vacio" type="text" class="form-control" />
-        </div>-->
+                <label>Vacio</label> <br />
+                <input placeholder="Vacio" type="text" class="form-control" />
+            </div>-->
         </div>
 
 
@@ -844,9 +844,9 @@
                 <input id="txtDireccionRB" placeholder="Dirección" type="text" class="form-control" disabled />
             </div>
             <!--<div class="col-sm-2">
-            <label>Vacio</label> <br />
-            <input placeholder="Vacio" type="text" class="form-control" />
-        </div>-->
+                <label>Vacio</label> <br />
+                <input placeholder="Vacio" type="text" class="form-control" />
+            </div>-->
         </div>
         <br />
 
@@ -1036,11 +1036,11 @@
         <div class="row">
             <div class="col-sm-3">
                 <label>Tipo De Pago</label>
-                <input id="cboTipoPago" class="form-control" disabled/>
+                <input id="cboTipoPago" class="form-control" disabled />
             </div>
             <div class="col-sm-3">
                 <label>Cupo solicitado</label>
-                <input id="cuposolicitado" type="text" class="form-control" disabled/>
+                <input id="cuposolicitado" type="text" class="form-control" disabled />
             </div>
         </div>
         <br />
@@ -1079,24 +1079,82 @@
         <div class="card-footer">
             <button id="btnRechazar" type="button" class="btn btn-danger">Rechazar</button>
             <button id="btnAprobar" type="button" class="btn btn-success">Aprobar</button>
+            <button id="btnVerRechazo" type="button" class="btn btn-danger" style="display:none">Ver Rechazó</button>
         </div>
 
         <!-- /.card-body -->
     </div>
 </div>
-    <!-- /.card -->
 
-    @section styles{
-        <!-- DataTables -->
-        <link rel="stylesheet" href="@Url.Content("~/plugins/datatables-bs4/css/dataTables.bootstrap4.css")">
-        <link rel="stylesheet" href="@Url.Content("~/plugins/dateticker/datepicker3.css")">
 
-    }
+<div class="modal fade" id="modalRechazo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content border-modal-custom-principal">
+            <div class="modal-header border-modal-custom-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">ENVIAR RECHAZO</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding:0px !important">
+                <div class="col-xs-12 col-md-12 centerBlock div-row-general" style="padding-top:20px !important">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="col-form-label">Motivo de Rechazó:</label>
 
-    @section scripts{
-        <!-- DataTables -->
-        <script src="@Url.Content("~/plugins/datatables/jquery.dataTables.js")"></script>
-        <script src="@Url.Content("~/plugins/datatables-bs4/js/dataTables.bootstrap4.js")"></script>
-        <script src="@Url.Content("~/plugins/dateticker/bootstrap-datepicker.js")"></script>
-        <script src="@Url.Content("~/js/AnalistaCredito.js")"></script>
-    }
+                            <textarea type="text" id="rechazopoppup" class="form-control" value="" required ></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="SendEnvioRechazo">Enviar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="VerMotivoRechazo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content border-modal-custom-principal">
+            <div class="modal-header border-modal-custom-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">FORMULARIO RECHAZADO</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding:0px !important">
+                <div class="col-xs-12 col-md-12 centerBlock div-row-general" style="padding-top:20px !important">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="col-form-label">Motivo de Rechazó:</label>
+
+                            <textarea type="text" id="verrechazopoppup" class="form-control" value="" required></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- /.card -->
+
+@section styles{
+    <!-- DataTables -->
+    <link rel="stylesheet" href="@Url.Content("~/plugins/datatables-bs4/css/dataTables.bootstrap4.css")">
+    <link rel="stylesheet" href="@Url.Content("~/plugins/dateticker/datepicker3.css")">
+
+}
+
+@section scripts{
+    <!-- DataTables -->
+    <script src="@Url.Content("~/plugins/datatables/jquery.dataTables.js")"></script>
+    <script src="@Url.Content("~/plugins/datatables-bs4/js/dataTables.bootstrap4.js")"></script>
+    <script src="@Url.Content("~/plugins/dateticker/bootstrap-datepicker.js")"></script>
+    <script src="@Url.Content("~/js/AnalistaCredito.js")"></script>
+}

@@ -3,6 +3,10 @@ $(function () {
     var url = new URL(location.href);
     code = url.searchParams.get("code");
     LoadDataViewByCode(code);
+
+    $("#btnVerRechazo").on("click", function () {
+        $("#VerMotivoRechazo").modal("show");
+    });
 });
 
 function LoadDataViewByCode(code) {
@@ -165,4 +169,9 @@ function SeteoDatosFormulario(Datos) {
     //--VERIFICACION PARA USO EXTERNO
     $("#txtAsesorComercialVUI").val(Datos.ResponsableContratacion);
     $("#txtFirmaVUI").val(Datos.Firma);
+
+    if (Datos.EstadoComercial == 3 || Datos.EstadoCredito == 3 || Datos.EstadoVenta == 3 || Datos.EstadoFinanza == 3) {
+        $("#verrechazopoppup").val(Datos.MotivoRechazo);
+        $("#btnVerRechazo").show();
+    }
 }

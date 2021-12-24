@@ -9,8 +9,22 @@ $(function () {
     });
 
     $("#btnRechazar").on("click", function () {
+        $("#rechazopoppup").val("");
+        $("#modalRechazo").modal("show");
+    });
+
+    $("#SendEnvioRechazo").on("click", function () {
+        if ($("#rechazopoppup").val() == "") {
+            fnAlertAdvertencia("Escriba el motivo del rechazó.");
+            return;
+        }
         fnRechazarFormulario();
     });
+
+    $("#btnVerRechazo").on("click", function () {
+        $("#VerMotivoRechazo").modal("show");
+    });
+    
 });
 
 function LoadDataViewByCode(code) {
@@ -173,11 +187,21 @@ function SeteoDatosFormulario(Datos) {
     //--VERIFICACION PARA USO EXTERNO
     $("#txtAsesorComercialVUI").val(Datos.ResponsableContratacion);
     $("#txtFirmaVUI").val(Datos.Firma);
+
+    if (Datos.EstadoCredito == 2 || Datos.EstadoCredito == 3) {
+        $("#btnRechazar").hide();
+        $("#btnAprobar").hide();
+    }
+    if (Datos.EstadoCredito == 3 || Datos.EstadoVenta == 3 || Datos.EstadoFinanza == 3) {
+        $("#verrechazopoppup").val(Datos.MotivoRechazo);
+        $("#btnVerRechazo").show();
+    }
 }
 
 function fnAprobarFormulario() {
     var parametros = new Object();
-    parametros.IdPerfil = 3;
+    var PerfilId = $("#perfil").val();
+    parametros.IdPerfil = PerfilId;
     parametros.Code = code;
 
     Post("FormularioCliente/AprobarFormularioCliente", parametros).done(function (response) {
@@ -188,9 +212,12 @@ function fnAprobarFormulario() {
 }
 
 function fnRechazarFormulario() {
+    var MensajeRechazo = $("#rechazopoppup").val();
+    var PerfilId = $("#perfil").val();
     var parametros = new Object();
-    parametros.IdPerfil = 3;
+    parametros.IdPerfil = PerfilId;
     parametros.Code = code;
+    parametros.MensajeRechazado = MensajeRechazo;
 
     Post("FormularioCliente/RechazarFormularioCliente", parametros).done(function (response) {
         if (response.code == 0) {
@@ -198,7 +225,6 @@ function fnRechazarFormulario() {
         }
     });
 }
-
 
 function fnConfirm(message) {
     swal({

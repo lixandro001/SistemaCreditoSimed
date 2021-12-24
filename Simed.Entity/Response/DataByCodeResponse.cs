@@ -21,6 +21,11 @@ namespace Simed.Entity.Response
         public string CiudadDireccionEntregaPedidoDatosGenerales { get; set; }
         public string DireccionSecundariaEntregaPedidoDatosGenerales { get; set; }
         public string CiudadDireccionSecundariaEntregaPedidoDatosGenerales { get; set; }
+        public int EstadoComercial { get; set; }
+        public int EstadoCredito { get; set; }
+        public int EstadoVenta { get; set; }
+        public int EstadoFinanza { get; set; }
+        public string MotivoRechazo { get; set; }
         //--INFORMACIÓN DE CONTACTOS
         public string NombreContactoAreaCobranza { get; set; }
         public string TelefonoContactoAreaCobranza { get; set; }

@@ -9,7 +9,20 @@ $(function () {
     });
 
     $("#btnRechazar").on("click", function () {
+        $("#rechazopoppup").val("");
+        $("#modalRechazo").modal("show");
+    });
+
+    $("#SendEnvioRechazo").on("click", function () {
+        if ($("#rechazopoppup").val() == "") {
+            fnAlertAdvertencia("Escriba el motivo del rechazó.");
+            return;
+        }
         fnRechazarFormulario();
+    });
+
+    $("#btnVerRechazo").on("click", function () {
+        $("#VerMotivoRechazo").modal("show");
     });
 });
 
@@ -173,11 +186,21 @@ function SeteoDatosFormulario(Datos) {
     //--VERIFICACION PARA USO EXTERNO
     $("#txtAsesorComercialVUI").val(Datos.ResponsableContratacion);
     $("#txtFirmaVUI").val(Datos.Firma);
+
+    if (Datos.EstadoFinanza == 2 || Datos.EstadoFinanza == 3) {
+        $("#btnRechazar").hide();
+        $("#btnAprobar").hide();
+    }
+    if (Datos.EstadoFinanza == 3) {
+        $("#verrechazopoppup").val(Datos.MotivoRechazo);
+        $("#btnVerRechazo").show();
+    }
 }
 
 function fnAprobarFormulario() {
+    var PerfilId = $("#perfil").val();
     var parametros = new Object();
-    parametros.IdPerfil = 5;
+    parametros.IdPerfil = PerfilId;
     parametros.Code = code;
 
     Post("FormularioCliente/AprobarFormularioCliente", parametros).done(function (response) {
@@ -188,9 +211,12 @@ function fnAprobarFormulario() {
 }
 
 function fnRechazarFormulario() {
+    var PerfilId = $("#perfil").val();
+    var MensajeRechazo = $("#rechazopoppup").val();
     var parametros = new Object();
-    parametros.IdPerfil = 5;
+    parametros.IdPerfil = PerfilId;
     parametros.Code = code;
+    parametros.MensajeRechazado = MensajeRechazo;
 
     Post("FormularioCliente/RechazarFormularioCliente", parametros).done(function (response) {
         if (response.code == 0) {

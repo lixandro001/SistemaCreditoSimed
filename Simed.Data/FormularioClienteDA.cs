@@ -330,6 +330,11 @@ namespace Simed.Data
                             if (Dr["CiudadDireccionEntregaPedidoDatosGenerales"] != DBNull.Value) { Entity.CiudadDireccionEntregaPedidoDatosGenerales = (string)Dr["CiudadDireccionEntregaPedidoDatosGenerales"]; }
                             if (Dr["DireccionSecundariaEntregaPedidoDatosGenerales"] != DBNull.Value) { Entity.DireccionSecundariaEntregaPedidoDatosGenerales = (string)Dr["DireccionSecundariaEntregaPedidoDatosGenerales"]; }
                             if (Dr["CiudadDireccionSecundariaEntregaPedidoDatosGenerales"] != DBNull.Value) { Entity.CiudadDireccionSecundariaEntregaPedidoDatosGenerales = (string)Dr["CiudadDireccionSecundariaEntregaPedidoDatosGenerales"]; }
+                            if (Dr["EstadoComercial"] != DBNull.Value) { Entity.EstadoComercial = Convert.ToInt32(Dr["EstadoComercial"]); }
+                            if (Dr["EstadoCredito"] != DBNull.Value) { Entity.EstadoCredito = Convert.ToInt32(Dr["EstadoCredito"]); }
+                            if (Dr["EstadoVenta"] != DBNull.Value) { Entity.EstadoVenta = Convert.ToInt32(Dr["EstadoVenta"]); }
+                            if (Dr["EstadoFinanza"] != DBNull.Value) { Entity.EstadoFinanza = Convert.ToInt32(Dr["EstadoFinanza"]); }
+                            if (Dr["MotivoRechazo"] != DBNull.Value) { Entity.MotivoRechazo = (string)Dr["MotivoRechazo"]; }                            
                             //----INFORMACIÓN DE CONTACTOS
                             if (Dr["NombreContactoAreaCobranza"] != DBNull.Value) { Entity.NombreContactoAreaCobranza = (string)Dr["NombreContactoAreaCobranza"]; }
                             if (Dr["TelefonoContactoAreaCobranza"] != DBNull.Value) { Entity.TelefonoContactoAreaCobranza = (string)Dr["TelefonoContactoAreaCobranza"]; }
@@ -539,7 +544,8 @@ namespace Simed.Data
                     var Parameters = new SqlParameter[]
                     {
                         new SqlParameter{ParameterName="@IdPerfil",SqlDbType=SqlDbType.Int,Size=50,SqlValue=request.IdPerfil},
-                        new SqlParameter{ParameterName="@Code",SqlDbType=SqlDbType.VarChar,Size=500,SqlValue=request.Code}
+                        new SqlParameter{ParameterName="@Code",SqlDbType=SqlDbType.VarChar,Size=500,SqlValue=request.Code},
+                        new SqlParameter{ParameterName="@UsuarioId",SqlDbType=SqlDbType.Int,Size=50,SqlValue=request.UsuarioId},
                     };
 
                     Ado.ExecNonQueryProcTransaction("usp_AprobarRegistroByPerfil", Parameters);
@@ -562,7 +568,9 @@ namespace Simed.Data
                     var Parameters = new SqlParameter[]
                     {
                         new SqlParameter{ParameterName="@IdPerfil",SqlDbType=SqlDbType.Int,Size=50,SqlValue=request.IdPerfil},
-                        new SqlParameter{ParameterName="@Code",SqlDbType=SqlDbType.VarChar,Size=500,SqlValue=request.Code}
+                        new SqlParameter{ParameterName="@Code",SqlDbType=SqlDbType.VarChar,Size=500,SqlValue=request.Code},
+                        new SqlParameter{ParameterName="@UsuarioId",SqlDbType=SqlDbType.Int,Size=50,SqlValue=request.UsuarioId},
+                        new SqlParameter{ParameterName="@MensajeRechazado",SqlDbType=SqlDbType.VarChar,Size=500,SqlValue=request.MensajeRechazado},
                     };
 
                     Ado.ExecNonQueryProcTransaction("usp_RechazarRegistroByPerfil", Parameters);

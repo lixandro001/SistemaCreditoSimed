@@ -820,9 +820,9 @@
                 <input id="txtBeneficiarioRB" placeholder="Beneficiario" type="text" class="form-control" disabled />
             </div>
             <!--<div class="col-sm-2">
-                <label>Vacio</label> <br />
-                <input placeholder="Vacio" type="text" class="form-control" />
-            </div>-->
+            <label>Vacio</label> <br />
+            <input placeholder="Vacio" type="text" class="form-control" />
+        </div>-->
         </div>
 
 
@@ -844,9 +844,9 @@
                 <input id="txtDireccionRB" placeholder="Dirección" type="text" class="form-control" disabled />
             </div>
             <!--<div class="col-sm-2">
-                <label>Vacio</label> <br />
-                <input placeholder="Vacio" type="text" class="form-control" />
-            </div>-->
+            <label>Vacio</label> <br />
+            <input placeholder="Vacio" type="text" class="form-control" />
+        </div>-->
         </div>
         <br />
 
@@ -1075,11 +1075,39 @@
             </div>
         </div>
         <br />
-
+        <div class="card-footer">
+            <button id="btnVerRechazo" type="button" class="btn btn-danger" style="display:none">Ver Rechazó</button>
+        </div>
         <!-- /.card-body -->
     </div>
 </div>
 <!-- /.card -->
+<div class="modal fade" id="VerMotivoRechazo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content border-modal-custom-principal">
+            <div class="modal-header border-modal-custom-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">FORMULARIO RECHAZADO</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding:0px !important">
+                <div class="col-xs-12 col-md-12 centerBlock div-row-general" style="padding-top:20px !important">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="col-form-label">Motivo de Rechazó:</label>
+
+                            <textarea type="text" id="verrechazopoppup" class="form-control" value="" required></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @section styles{
     <!-- DataTables -->

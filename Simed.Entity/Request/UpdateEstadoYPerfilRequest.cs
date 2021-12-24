@@ -8,5 +8,7 @@ namespace Simed.Entity.Request
     {
         public int IdPerfil { get; set; }
         public string Code { get; set; }
+        public int UsuarioId { get; set; }
+        public string MensajeRechazado { get; set; }
     }
 }

@@ -720,6 +720,8 @@ namespace SimedCredito.Web.Controllers
             var Response = new GenericObjectResponse();
             try
             {
+                var IdUsuario = HttpContext.Session.GetInt32("USUARIO_ID");
+                request.UsuarioId = Convert.ToInt32(IdUsuario);
                 var Url = GeneralModel.UrlWebApi + "FormularioCliente/AprobarFormularioCliente";
                 var Result = Simed.Utilities.Rest.RestClient.ProcessPostRequest(Url, request);
                 Response.data = Result;
@@ -741,6 +743,8 @@ namespace SimedCredito.Web.Controllers
             var Response = new GenericObjectResponse();
             try
             {
+                var IdUsuario = HttpContext.Session.GetInt32("USUARIO_ID");
+                request.UsuarioId = Convert.ToInt32(IdUsuario);
                 var Url = GeneralModel.UrlWebApi + "FormularioCliente/RechazarFormularioCliente";
                 var Result = Simed.Utilities.Rest.RestClient.ProcessPostRequest(Url, request);
                 Response.data = Result;

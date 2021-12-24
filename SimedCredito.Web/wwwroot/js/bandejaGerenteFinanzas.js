@@ -61,5 +61,5 @@ function fnLoadTrayUser() {
 }
 
 function fnViewRegister(CodeRegister) {
-    location.href = '/Main/FormularioPerfilGerenteVentas/?code=' + CodeRegister;
+    location.href = '/Main/FormularioPerfilFinanzas/?code=' + CodeRegister;
 }
