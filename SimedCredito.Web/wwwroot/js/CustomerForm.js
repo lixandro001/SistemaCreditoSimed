@@ -26,7 +26,13 @@ $(function (e) {
 
     $("#btnGuardarFormulario").on("click", function () {
         fnSaveFormularioCliente();
-        /*fnGuardarFormularioCliente();*/
+         
+    });
+
+    $("#btnEnviarFormulario").on("click", function (e) {
+        console.log("entro numero 1");          
+    
+        fnEnviarFormularioCliente();
     });
 
     $("#cboTipoIdentificacionTributaria").on("change", function () {
@@ -1051,10 +1057,10 @@ function fnPlaceholderDolaresIf() {
     $("#txtOtrosIngresosIF").attr('placeholder', '$');
 }
 
+
+
 //#endregion
 ///-------FIN ISA CHECKBOX TRUE O FALSE-------
-
-
 function fnGuardarFormularioCliente() {
     console.log("entro fncion guardar");
     //DG()
@@ -1379,8 +1385,350 @@ function fnGuardarFormularioCliente() {
         parametros.data = fdata;
         PostUpload("FormularioCliente/GuardarFormularioCliente", fdata).done(function (response) {
             if (response.code == 0) {
-                fnAlertSuccess(response.message);
+
+                fnAlertSuccess(response.message, function () {
+                    window.location = fnBaseUrlWeb("Main/BandejaComercial");
+                });
+
                 console.log(response.data);
+
+            } else {
+                fnAlertError(response.message);
+            }
+        });
+    }
+    else {
+        fnAlertAdvertencia("No Ingreso Un Formato JPG O PNG O PDF");
+    }
+}
+
+
+
+function fnEnviarFormularioCliente() {
+    console.log("entro fncion guardar");
+    //DG()
+    var NombreRazonSocialDG = $("#txtNombreRazonDG").val();
+    var DireccionDG = $("#txtDireccionDG").val();
+    var PaisId = $("#cboPais").val();
+    var CiudadPrinciaplDDG = $("#txtCiudadPrincipalDG").val();
+    var TelefonoFijoDG = $("#txtTelefonoFijoDG").val();
+    var CelularDG = $("#txtCelularDG").val();
+    var CorreoElecontronicoDG = $("#txtCorreoEnvioFacturaElectronicaDG").val();
+    var DireccionFacturaDG = $("#txtDireccionEntregaFacturaDG").val();
+    var CiudadFacturaDG = $("#txtCiudadFacturaDG").val();
+    var DireccionPedidoDG = $("#txtDireccionEntregaPedidoDG").val();
+    var CiudadPedidoDG = $("#txtCiudadPedidoDG").val();
+    var DireccionPedidoSecundarioDG = $("#txtDireccionEntregaSecundarioPedidoDG").val();
+    var CiudadPedidoSecundarioDG = $("#txtCiudadSecundarioPedidoDG").val();
+    //IC()
+    var NombreContactoAreaCobranza = $("#txtNombreContactoAreaCobranzaIDC1").val();
+    var TelefonoContactoAreaCobranza = $("#txtTelefonoContactoAreaCobranzaIDC1").val();
+    var CorreoContactoAreaCobranza = $("#txtCorreoContactoAreaCobranzaIDC1").val();
+    var NombreContactoAreaFinanciera = $("#txtNombreContactoAreaFinancieraIDC2").val();
+    var TelefonoContactoAreaFinanciera = $("#txtTelefonoContactoAreaFinancieraIDC2").val();
+    var CorreoContactoAreaFinanciera = $("#txtCorreoContactoAreaFinancieraIDC2").val();
+    var NombreContactoAreaComercial = $("#txtNombreContactoAreaComercialIDC3").val();
+    var TelefonoContactoAreaComercial = $("#txtTelefonoContactoAreaComercialIDC3").val();
+    var CorreoContactoAreaComercial = $("#txtCorreoContactoAreaComercialIDC3").val();
+    //IT()
+    var TipoIdentificacionIdIT = $("#cboTipoIdentificacionTributaria").val();
+    var CualIdentificacionIT = $("#txtCualIdentificacionIT").val();
+    var NumeroIdentificacionIT = $("#txtNumIdentificacionIT").val();
+    var cboTipoContribuyente = $("#cboTipoContribuyente").val();
+    var cboTipoSociedad = $("#cboTipoSociedad").val();
+    var txtCualSociedadIT = $("#txtCualSociedadIT").val();
+    var cboOrigenCapital = $("#cboOrigenCapital").val();
+    var cboActividadEconomica = $("#cboActividadEconomica").val();
+    var txtCualEconomicaIT = $("#txtCualEconomicaIT").val();
+    var txtSuperIntendenciaIT = $("#txtSuperIntendenciaIT").val();
+    var txtFechaConstitucionIT = $("#txtFechaConstitucionIT").val();
+    var cboRegimen = $("#cboRegimen").val();
+    //INFORMACION AE()
+    var txtActividadPrincipalIAE = $("#txtActividadPrincipalIAE").val();
+    var txtActividadSecundariaIAE = $("#txtActividadSecundariaIAE").val();
+    //informacion representante legal()
+    var txtNombreRepresentanteLegalIRL = $("#txtNombreRepresentanteLegalIRL").val();
+    var cboTipoIdenticacionLegal = $("#cboTipoIdenticacionLegal").val();
+    var txtNumeroIdentificacionIRL = $("#txtNumeroIdentificacionIRL").val();
+    var cboNacionalidad = $("#cboNacionalidad").val();
+    var txtCualIRL = $("#txtCualIRL").val();
+    var txtFechaExpedicionDocumentoIRL = $("#txtFechaExpedicionDocumentoIRL").val();
+    var txtDireccionResidenciaIRL = $("#txtDireccionResidenciaIRL").val();
+    var txtCiudadIRL = $("#txtCiudadIRL").val();
+    //preguntas pep (persona publicamente expuesta)
+    var checkGozaPEP = false;
+    if (document.getElementById("checkSiGozaPEP").checked) { checkGozaPEP = true }
+    var txtEspecifiqueGozaPEP = $("#txtEspecifiqueGozaPEP").val();
+    var checkManejaPEP = false;
+    if (document.getElementById("checkSiManejaPEP").checked) { checkManejaPEP = true }
+    var txtEspecifiqueManejaPEP = $("#txtEspecifiqueManejaPEP").val();
+    var checkOcupaPEP = false;
+    if (document.getElementById("checkSiOcupaPEP").checked) { checkOcupaPEP = true }
+    var txtEspecifiqueOcupaPEP = $("#txtEspecifiqueOcupaPEP").val();
+    var checkVinculo1PEP = false;
+    if (document.getElementById("checkSiVinculo1PEP").checked) { checkVinculo1PEP = true }
+    var txtEspecifiqueVinculo1PEP = $("#txtEspecifiqueVinculo1PEP").val();
+    var checkVinculo2PEP = false
+    if (document.getElementById("checkSiVinculo2PEP").checked) { checkVinculo2PEP = true }
+    var txtEspecifiqueVinculo2PEP = $("#txtEspecifiqueVinculo2PEP").val();
+    var txtNombreApellidoPEP = $("#txtNombreApellidoPEP").val();
+    var txtCargoPEP = $("#txtCargoPEP").val();
+    //informacion socios o accionistas
+    var checkAccionistaISA = false;
+    if (document.getElementById("checkSiAccionistaISA").checked) { checkAccionistaISA = true }
+    var txtNombreApellidoAccionista1ISA = $("#txtNombreApellidoAccionista1ISA").val();
+    var txtTipoIdAccionista1ISA = $("#txtTipoIdAccionista1ISA").val();
+    var txtNroDocumentoAccionista1ISA = $("#txtNroDocumentoAccionista1ISA").val();
+    var txtParticipacionAccionista1ISA = $("#txtParticipacionAccionista1ISA").val();
+    var txtNacionalidadAccionista1ISA = $("#txtNacionalidadAccionista1ISA").val();
+    var txtNombreApellidoAccionista2ISA = $("#txtNombreApellidoAccionista2ISA").val();
+    var txtTipoIdAccionista2ISA = $("#txtTipoIdAccionista2ISA").val();
+    var txtNroDocumentoAccionista2ISA = $("#txtNroDocumentoAccionista2ISA").val();
+    var txtParticipacionAccionista2ISA = $("#txtParticipacionAccionista2ISA").val();
+    var txtNacionalidadAccionista2ISA = $("#txtNacionalidadAccionista2ISA").val();
+    var txtNombreApellidoAccionista3ISA = $("#txtNombreApellidoAccionista3ISA").val();
+    var txtTipoIdAccionista3ISA = $("#txtTipoIdAccionista3ISA").val();
+    var txtNroDocumentoAccionista3ISA = $("#txtNroDocumentoAccionista3ISA").val();
+    var txtParticipacionAccionista3ISA = $("#txtParticipacionAccionista3ISA").val();
+    var txtNacionalidadAccionista3ISA = $("#txtNacionalidadAccionista3ISA").val();
+    var txtNombreApellidoAccionista4ISA = $("#txtNombreApellidoAccionista4ISA").val();
+    var txtTipoIdAccionista4ISA = $("#txtTipoIdAccionista4ISA").val();
+    var txtNroDocumentoAccionista4ISA = $("#txtNroDocumentoAccionista4ISA").val();
+    var txtParticipacionAccionista4ISA = $("#txtParticipacionAccionista4ISA").val();
+    var txtNacionalidadAccionista4ISA = $("#txtNacionalidadAccionista4ISA").val();
+    //INFORMACIÓN FINANCIERA
+    var FechaCorte = $("#FechaCorte").val();
+    var checkSolesIF = false;
+    if (document.getElementById("checkSolesIF").checked) {
+        checkSolesIF = true
+    }
+    var checkDolaresIF = false;
+    if (document.getElementById("checkDolaresIF").checked) {
+        checkDolaresIF = true
+    }
+    var txtActivosIF = $("#txtActivosIF").val();
+    var txtIngresosMensualesIF = $("#txtIngresosMensualesIF").val();
+    var txtPasivosIF = $("#txtPasivosIF").val();
+    var txtEgresosMensualesIF = $("#txtEgresosMensualesIF").val();
+    var txtPatrimonioIF = $("#txtPatrimonioIF").val();
+    var txtOtrosIngresosIF = $("#txtOtrosIngresosIF").val();
+    var txtConceptoOtrosIngresosIF = $("#txtConceptoOtrosIngresosIF").val();
+    //Referencias Comerciales
+    var txtEmpresa1RC = $("#txtEmpresa1RC").val();
+    var txtRuc1RC = $("#txtRuc1RC").val();
+    var txtTelefono1RC = $("#txtTelefono1RC").val();
+    var txtDireccion1RC = $("#txtDireccion1RC").val();
+    var txtCiudad1RC = $("#txtCiudad1RC").val();
+    var txtEmpresa2RC = $("#txtEmpresa2RC").val();
+    var txtRuc2RC = $("#txtRuc2RC").val();
+    var txtTelefono2RC = $("#txtTelefono2RC").val();
+    var txtDireccion2RC = $("#txtDireccion2RC").val();
+    var txtCiudad2RC = $("#txtCiudad2RC").val();
+    //Referencias BANCARIAS
+    var txtInstitucionRB = $("#txtInstitucionRB").val();
+    var txtNroCuentaRB = $("#txtNroCuentaRB").val();
+    var txtTipoCuentaRB = $("#txtTipoCuentaRB").val();
+    var txtBeneficiarioRB = $("#txtBeneficiarioRB").val();
+    var txtEmpresaRB = $("#txtEmpresaRB").val();
+    var txtRucRB = $("#txtRucRB").val();
+    var txtTelefonoRB = $("#txtTelefonoRB").val();
+    var txtDireccionRB = $("#txtDireccionRB").val();
+    //Clasificación para uso Comercial CUC
+    var cboUnidad = $("#cboUnidad").val();
+    var cboSubUnidad = $("#cboSubUnidad").val();
+    var cboAsesorComercial = $("#cboAsesorComercial").val();
+    var txtDescripcion = $("#txtDescripcion").val();
+    //Terminos de pago  
+    var cboTipoPago = $("#cboTipoPago").val();
+    var cuposolicitado = $("#cuposolicitado").val();
+    //Verificacion=  
+    var txtAsesorComercialVUI = $("#txtAsesorComercialVUI").val();
+    // Control de Documentos 
+    var file1 = $("#real-input1")[0].files;
+    console.log(file1);
+    var file2 = $("#real-input2")[0].files;
+    console.log(file2);
+    var file3 = $("#real-input3")[0].files;
+    console.log(file3);
+    var file4 = $("#real-input4")[0].files;
+    console.log(file4);
+    var file5 = $("#real-input5")[0].files;
+    console.log(file5);
+    var file6 = $("#real-input6")[0].files;
+    console.log(file6);
+    var file7 = $("#real-input7")[0].files;
+    console.log(file7);
+    var file8 = $("#real-input8")[0].files;
+    console.log(file8);
+    var file9 = $("#real-input9")[0].files;
+    console.log(file9);
+    var file10 = $("#real-input10")[0].files;
+    console.log(file10);
+    var file11 = $("#real-input11")[0].files;
+    console.log(file11);
+    var file12 = $("#real-input12")[0].files;
+    console.log(file12);
+    var file13 = $("#real-input13")[0].files;
+    console.log(file13);
+    var fdata = new FormData();
+    fdata.append("FormFile1", file1[0]);
+    fdata.append("FormFile2", file2[0]);
+    fdata.append("FormFile3", file3[0]);
+    fdata.append("FormFile4", file4[0]);
+    fdata.append("FormFile5", file5[0]);
+    fdata.append("FormFile6", file6[0]);
+    fdata.append("FormFile7", file7[0]);
+    fdata.append("FormFile8", file8[0]);
+    fdata.append("FormFile9", file9[0]);
+    fdata.append("FormFile10", file10[0]);
+    fdata.append("FormFile11", file11[0]);
+    fdata.append("FormFile12", file12[0]);
+    fdata.append("FormFile13", file13[0]);
+    //perfil
+    fdata.append("IdPerfil", $("#perfil").val());
+    //DG()
+    fdata.append("NombreRazonSocialDG", NombreRazonSocialDG);
+    fdata.append("DireccionDG", DireccionDG);
+    fdata.append("PaisId", PaisId);
+    fdata.append("CiudadPrinciaplDDG", CiudadPrinciaplDDG);
+    fdata.append("TelefonoFijoDG", TelefonoFijoDG);
+    fdata.append("CelularDG", CelularDG);
+    fdata.append("CorreoElecontronicoDG", CorreoElecontronicoDG);
+    fdata.append("DireccionFacturaDG", DireccionFacturaDG);
+    fdata.append("CiudadFacturaDG", CiudadFacturaDG);
+    fdata.append("DireccionPedidoDG", DireccionPedidoDG);
+    fdata.append("CiudadPedidoDG", CiudadPedidoDG);
+    fdata.append("DireccionPedidoSecundarioDG", DireccionPedidoSecundarioDG);
+    fdata.append("CiudadPedidoSecundarioDG", CiudadPedidoSecundarioDG);
+    //IC()
+    fdata.append("NombreContactoAreaCobranza", NombreContactoAreaCobranza);
+    fdata.append("TelefonoContactoAreaCobranza", TelefonoContactoAreaCobranza);
+    fdata.append("CorreoContactoAreaCobranza", CorreoContactoAreaCobranza);
+    fdata.append("NombreContactoAreaFinanciera", NombreContactoAreaFinanciera);
+    fdata.append("TelefonoContactoAreaFinanciera", TelefonoContactoAreaFinanciera);
+    fdata.append("CorreoContactoAreaFinanciera", CorreoContactoAreaFinanciera);
+    fdata.append("NombreContactoAreaComercial", NombreContactoAreaComercial);
+    fdata.append("TelefonoContactoAreaComercial", TelefonoContactoAreaComercial);
+    fdata.append("CorreoContactoAreaComercial", CorreoContactoAreaComercial);
+    //IT()
+    fdata.append("TipoIdentificacionIdIT", TipoIdentificacionIdIT);
+    fdata.append("CualIdentificacionIT", CualIdentificacionIT);
+    fdata.append("NumeroIdentificacionIT", NumeroIdentificacionIT);
+    fdata.append("cboTipoContribuyente", cboTipoContribuyente);
+    fdata.append("cboTipoSociedad", cboTipoSociedad);
+    fdata.append("txtCualSociedadIT", txtCualSociedadIT);
+    fdata.append("cboOrigenCapital", cboOrigenCapital);
+    fdata.append("cboActividadEconomica", cboActividadEconomica);
+    fdata.append("txtCualEconomicaIT", txtCualEconomicaIT);
+    fdata.append("txtSuperIntendenciaIT", txtSuperIntendenciaIT);
+    fdata.append("txtFechaConstitucionIT", txtFechaConstitucionIT);
+    fdata.append("cboRegimen", cboRegimen);
+    //INFORMACION AE()
+    fdata.append("txtActividadPrincipalIAE", txtActividadPrincipalIAE);
+    fdata.append("txtActividadSecundariaIAE", txtActividadSecundariaIAE);
+    //informacion representante legal()
+    fdata.append("txtNombreRepresentanteLegalIRL", txtNombreRepresentanteLegalIRL);
+    fdata.append("cboTipoIdenticacionLegal", cboTipoIdenticacionLegal);
+    fdata.append("txtNumeroIdentificacionIRL", txtNumeroIdentificacionIRL);
+    fdata.append("cboNacionalidad", cboNacionalidad);
+    fdata.append("txtCualIRL", txtCualIRL);
+    fdata.append("txtFechaExpedicionDocumentoIRL", txtFechaExpedicionDocumentoIRL);
+    fdata.append("txtDireccionResidenciaIRL", txtDireccionResidenciaIRL);
+    fdata.append("txtCiudadIRL", txtCiudadIRL);
+    //preguntas pep (persona publicamente expuesta)
+    fdata.append("checkGozaPEP", checkGozaPEP);
+    fdata.append("txtEspecifiqueGozaPEP", txtEspecifiqueGozaPEP);
+    fdata.append("checkManejaPEP", checkManejaPEP);
+    fdata.append("txtEspecifiqueManejaPEP", txtEspecifiqueManejaPEP);
+    fdata.append("checkOcupaPEP", checkOcupaPEP);
+    fdata.append("txtEspecifiqueOcupaPEP", txtEspecifiqueOcupaPEP);
+    fdata.append("checkVinculo1PEP", checkVinculo1PEP);
+    fdata.append("txtEspecifiqueVinculo1PEP", txtEspecifiqueVinculo1PEP);
+    fdata.append("checkVinculo2PEP", checkVinculo2PEP);
+    fdata.append("txtEspecifiqueVinculo2PEP", txtEspecifiqueVinculo2PEP);
+    fdata.append("txtNombreApellidoPEP", txtNombreApellidoPEP);
+    fdata.append("txtCargoPEP", txtCargoPEP);
+    //informacion socios o accionistas
+    fdata.append("checkAccionistaISA", checkAccionistaISA);
+    fdata.append("txtNombreApellidoAccionista1ISA", txtNombreApellidoAccionista1ISA);
+    fdata.append("txtTipoIdAccionista1ISA", txtTipoIdAccionista1ISA);
+    fdata.append("txtNroDocumentoAccionista1ISA", txtNroDocumentoAccionista1ISA);
+    fdata.append("txtParticipacionAccionista1ISA", txtParticipacionAccionista1ISA);
+    fdata.append("txtNacionalidadAccionista1ISA", txtNacionalidadAccionista1ISA);
+    fdata.append("txtNombreApellidoAccionista2ISA", txtNombreApellidoAccionista2ISA);
+    fdata.append("txtTipoIdAccionista2ISA", txtTipoIdAccionista2ISA);
+    fdata.append("txtNroDocumentoAccionista2ISA", txtNroDocumentoAccionista2ISA);
+    fdata.append("txtParticipacionAccionista2ISA", txtParticipacionAccionista2ISA);
+    fdata.append("txtNacionalidadAccionista2ISA", txtNacionalidadAccionista2ISA);
+    fdata.append("txtNombreApellidoAccionista3ISA", txtNombreApellidoAccionista3ISA);
+    fdata.append("txtTipoIdAccionista3ISA", txtTipoIdAccionista3ISA);
+    fdata.append("txtNroDocumentoAccionista3ISA", txtNroDocumentoAccionista3ISA);
+    fdata.append("txtParticipacionAccionista3ISA", txtParticipacionAccionista3ISA);
+    fdata.append("txtNacionalidadAccionista3ISA", txtNacionalidadAccionista3ISA);
+    fdata.append("txtNombreApellidoAccionista4ISA", txtNombreApellidoAccionista4ISA);
+    fdata.append("txtTipoIdAccionista4ISA", txtTipoIdAccionista4ISA);
+    fdata.append("txtNroDocumentoAccionista4ISA", txtNroDocumentoAccionista4ISA);
+    fdata.append("txtParticipacionAccionista4ISA", txtParticipacionAccionista4ISA);
+    fdata.append("txtNacionalidadAccionista4ISA", txtNacionalidadAccionista4ISA);
+    //INFORMACIÓN FINANCIERA
+    fdata.append("FechaCorte", FechaCorte);
+    fdata.append("checkSolesIF", checkSolesIF);
+    fdata.append("checkDolaresIF", checkDolaresIF);
+    fdata.append("txtActivosIF", txtActivosIF);
+    fdata.append("txtIngresosMensualesIF", txtIngresosMensualesIF);
+    fdata.append("txtPasivosIF", txtPasivosIF);
+    fdata.append("txtEgresosMensualesIF", txtEgresosMensualesIF);
+    fdata.append("txtPatrimonioIF", txtPatrimonioIF);
+    fdata.append("txtOtrosIngresosIF", txtOtrosIngresosIF);
+    fdata.append("txtConceptoOtrosIngresosIF", txtConceptoOtrosIngresosIF);
+    //Referencias Comerciales
+    fdata.append("txtEmpresa1RC", txtEmpresa1RC);
+    fdata.append("txtRuc1RC", txtRuc1RC);
+    fdata.append("txtTelefono1RC", txtTelefono1RC);
+    fdata.append("txtDireccion1RC", txtDireccion1RC);
+    fdata.append("txtCiudad1RC", txtCiudad1RC);
+    fdata.append("txtEmpresa2RC", txtEmpresa2RC);
+    fdata.append("txtRuc2RC", txtRuc2RC);
+    fdata.append("txtTelefono2RC", txtTelefono2RC);
+    fdata.append("txtDireccion2RC", txtDireccion2RC);
+    fdata.append("txtCiudad2RC", txtCiudad2RC);
+    //Referencias BANCARIAS
+    fdata.append("txtInstitucionRB", txtInstitucionRB);
+    fdata.append("txtNroCuentaRB", txtNroCuentaRB);
+    fdata.append("txtTipoCuentaRB", txtTipoCuentaRB);
+    fdata.append("txtBeneficiarioRB", txtBeneficiarioRB);
+    fdata.append("txtEmpresaRB", txtEmpresaRB);
+    fdata.append("txtRucRB", txtRucRB);
+    fdata.append("txtTelefonoRB", txtTelefonoRB);
+    fdata.append("txtDireccionRB", txtDireccionRB);
+    //Clasificación para uso Comercial
+    fdata.append("cboUnidad", cboUnidad);
+    fdata.append("cboSubUnidad", cboSubUnidad);
+    fdata.append("cboAsesorComercial", cboAsesorComercial);
+    fdata.append("txtDescripcion", txtDescripcion);
+    //Terminos de pago  
+    fdata.append("cboTipoPago", cboTipoPago);
+    fdata.append("cuposolicitado", cuposolicitado);
+    //Verificacion=  
+    fdata.append("txtAsesorComercialVUI", txtAsesorComercialVUI);
+
+    if (validateExtension(file1) && validateExtension(file2) && validateExtension(file3) && validateExtension(file4) &&
+        validateExtension(file5) && validateExtension(file6) && validateExtension(file7) && validateExtension(file8) &&
+        validateExtension(file9) && validateExtension(file10) && validateExtension(file11) && validateExtension(file12) &&
+        validateExtension(file13)) {
+        var parametros = new Object();
+        parametros.data = fdata;
+        PostUpload("FormularioCliente/EnviarFormularioCliente", fdata).done(function (response) {
+            if (response.code == 0) {
+
+                fnAlertSuccess(response.message, function () {
+                    window.location = fnBaseUrlWeb("Main/BandejaComercial");
+                });
+
+                console.log(response.data); 
+
+            } else {
+                fnAlertError(response.message);
             }
         });
     }
@@ -1392,13 +1740,10 @@ function fnGuardarFormularioCliente() {
 
 
 
-
 function validateExtension(file) {
     console.log(file);
-
     if (file != null
         && file.length > 0) {
-
         var extension = "";
         var extxml = file[0].type;
         var extxml2 = extxml.split("/");
@@ -1406,15 +1751,12 @@ function validateExtension(file) {
         var extensionpdf = "";
         var extpdf = file[0].type;
         var extpdf2 = extpdf.split("/");
-
         if (extxml2.length >= 1 && extpdf2.length > 1) {
             extension = extxml2[1];
             extensionpdf = extpdf2[1];
             console.log(extension);
-
             if (extension.toUpperCase() == "JPG" || extension.toUpperCase() == "JPEG" || extension.toUpperCase() == "PNG" ||
                 extensionpdf.toUpperCase() == "PDF" || extensionpdf.toUpperCase() == "pdf") {
-
                 return true;
             }
             else {

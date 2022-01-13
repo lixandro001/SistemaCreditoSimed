@@ -49,4 +49,3 @@ C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito\obj\Debug
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito\obj\Debug\netcoreapp2.1\SimedCredito.dll
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito\obj\Debug\netcoreapp2.1\SimedCredito.pdb
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito\obj\Debug\netcoreapp2.1\SimedCredito.genruntimeconfig.cache
-C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito\obj\Debug\netcoreapp2.1\SimedCredito.csproj.CopyComplete

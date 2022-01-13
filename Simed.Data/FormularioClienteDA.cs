@@ -20,7 +20,7 @@ namespace Simed.Data
             GC.SuppressFinalize(this);
         }
 
-        public int GuardarFormulario(FormularioRequestCliente datos)
+        public int GuardarFormulario(EnviarFromulatioRequestCliente datos)
         {
             using (var Ado = new SQLServer(ConStr))
                 try
@@ -29,12 +29,13 @@ namespace Simed.Data
                     var parametros = new SqlParameter[]
                     {
                        new SqlParameter { ParameterName = "@IdClienteDatosGenerales", SqlDbType = SqlDbType.Int, Direction= ParameterDirection.Output},
+                       new SqlParameter { ParameterName = "@mensaje", SqlDbType = SqlDbType.VarChar, Size=100, Direction= ParameterDirection.Output},
                        new SqlParameter { ParameterName = "@Nombre_RazonSocialDatosGenerales", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.NombreRazonSocialDG },
-                       new SqlParameter { ParameterName = "@DireccionDatosGenerales", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.DireccionDG },
-                       new SqlParameter { ParameterName = "@IdPaisDatosGenerales", SqlDbType = SqlDbType.Int, SqlValue = datos.PaisId },
+                       new SqlParameter { ParameterName = "@DireccionDatosGenerales", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue= datos.DireccionDG },
+                       new SqlParameter { ParameterName = "@IdPaisDatosGenerales", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue= datos.PaisId },
                        new SqlParameter { ParameterName = "@CiudadSedePrincipalDatosGenerales", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.CiudadPrinciaplDDG },
                        new SqlParameter { ParameterName = "@TelefonoFijoDatosGenerales", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.TelefonoFijoDG },
-                       new SqlParameter { ParameterName = "@CelularDatosGenerales", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.CelularDG },
+                       new SqlParameter { ParameterName = "@CelularDatosGenerales", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.CelularDG },  
                        new SqlParameter { ParameterName = "@CorreoEnvioFacturaElectronicaDatosGenerales", SqlDbType = SqlDbType.VarChar,Size=100, SqlValue = datos.CorreoElecontronicoDG },
                        new SqlParameter { ParameterName = "@DireccionEntregaFacturaDatosGenerales", SqlDbType = SqlDbType.VarChar,Size=100, SqlValue = datos.DireccionFacturaDG },
                        new SqlParameter { ParameterName = "@CiudadDireccionEntregaFacturaDatosGenerales", SqlDbType = SqlDbType.VarChar,Size=100, SqlValue = datos.CiudadFacturaDG },
@@ -42,14 +43,15 @@ namespace Simed.Data
                        new SqlParameter { ParameterName = "@CiudadDireccionEntregaPedidoDatosGenerales", SqlDbType = SqlDbType.VarChar,Size=100, SqlValue = datos.CiudadPedidoDG },
                        new SqlParameter { ParameterName = "@DireccionSecundariaEntregaPedidoDatosGenerales", SqlDbType = SqlDbType.VarChar,Size=100, SqlValue = datos.DireccionPedidoSecundarioDG },
                        new SqlParameter { ParameterName = "@CiudadDireccionSecundariaEntregaPedidoDatosGenerales", SqlDbType = SqlDbType.VarChar,Size=100, SqlValue = datos.CiudadPedidoSecundarioDG },
-                       new SqlParameter { ParameterName = "@IdUsuario", SqlDbType = SqlDbType.Int, SqlValue = datos.IdUsuario},
-                       new SqlParameter { ParameterName = "@IdPerfil", SqlDbType = SqlDbType.Int, SqlValue = datos.IdPerfil},
+                       new SqlParameter { ParameterName = "@IdUsuario", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.IdUsuario},
+                       new SqlParameter { ParameterName = "@IdPerfil", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.IdPerfil},                
+                       new SqlParameter { ParameterName = "@code", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.code},
                     };
                     Ado.ExecNonQueryProc(strsql, parametros);
                     var idcliente = Convert.ToInt32(parametros[0].Value.ToString());
+                    var mensaje = Convert.ToInt32(parametros[1].Value.ToString());
 
-
-                    if (idcliente != 0)
+                    if (idcliente != 0) 
                     {
                         string strsql2 = "usp_GuardarInformacionContacto";
                         var parametros2 = new SqlParameter[]
@@ -196,60 +198,59 @@ namespace Simed.Data
                         string strsql11 = "usp_GuardarControlDocumentosExigidosIngresoClientes";
                         var parametros11 = new SqlParameter[]
                         {
-                                    new SqlParameter { ParameterName = "@IdClienteDatosGenerales", SqlDbType = SqlDbType.Int, SqlValue = idcliente},
-                                    new SqlParameter { ParameterName = "@CopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename1},
-                                    new SqlParameter { ParameterName = "@GuidCopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = Convert.ToString(Guid.NewGuid())},
-                                    new SqlParameter { ParameterName = "@BytesCopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual", SqlDbType = SqlDbType.BigInt, SqlValue =0 },
-                                    new SqlParameter { ParameterName = "@RutaCopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta1},
-                                    new SqlParameter { ParameterName = "@CopiasFormularioPDTAnualRentaTerceraPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename2},
-                                    new SqlParameter { ParameterName = "@GuidCopiasFormularioPDTAnualRentaTerceraPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue =Convert.ToString(Guid.NewGuid())},
-                                    new SqlParameter { ParameterName = "@BytesCopiasFormularioPDTAnualRentaTerceraPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
-                                    new SqlParameter { ParameterName = "@RutaCopiasFormularioPDTAnualRentaTerceraPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta2},
-                                    new SqlParameter { ParameterName = "@CopiaFichaRucPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename3},
-                                    new SqlParameter { ParameterName = "@GuidCopiaFichaRucPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue =Convert.ToString(Guid.NewGuid())},
-                                    new SqlParameter { ParameterName = "@BytesCopiaFichaRucPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
-                                    new SqlParameter { ParameterName = "@RutaCopiaFichaRucPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue =  datos.ruta3},
-                                    new SqlParameter { ParameterName = "@CopiaDniPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename4},
-                                    new SqlParameter { ParameterName = "@GuidCopiaDniPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue =Convert.ToString(Guid.NewGuid())},
-                                    new SqlParameter { ParameterName = "@BytesCopiaDniPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
-                                    new SqlParameter { ParameterName = "@RutaCopiaDniPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta4},
-                                    new SqlParameter { ParameterName = "@CertificacoReferenciaComercialPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename5},
-                                    new SqlParameter { ParameterName = "@GuidCertificacoReferenciaComercialPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue =Convert.ToString(Guid.NewGuid())},
-                                    new SqlParameter { ParameterName = "@BytesCertificacoReferenciaComercialPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
-                                    new SqlParameter { ParameterName = "@RutaCertificacoReferenciaComercialPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta5},
-                                    new SqlParameter { ParameterName = "@CertificadoBancarioPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename6},
-                                    new SqlParameter { ParameterName = "@GuidCertificadoBancarioPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = Convert.ToString(Guid.NewGuid())},
-                                   new SqlParameter { ParameterName = "@BytesCertificadoBancarioPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
-                                    new SqlParameter { ParameterName = "@RutaCertificadoBancarioPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue =datos.ruta6},
-                                   new SqlParameter { ParameterName = "@SituacionFinancieraBalanceGeneralPerdidasJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename7},
-                                  new SqlParameter { ParameterName = "@GuidSituacionFinancieraBalanceGeneralPerdidasJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = Convert.ToString(Guid.NewGuid())},
-                                  new SqlParameter { ParameterName = "@BytesSituacionFinancieraBalanceGeneralPerdidasJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
-                                  new SqlParameter { ParameterName = "@RutaSituacionFinancieraBalanceGeneralPerdidasJuridicas", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta7},
+                                 new SqlParameter { ParameterName = "@IdClienteDatosGenerales", SqlDbType = SqlDbType.Int, SqlValue = idcliente},
+                                 new SqlParameter { ParameterName = "@CopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename1},
+                                 new SqlParameter { ParameterName = "@GuidCopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = Convert.ToString(Guid.NewGuid())},
+                                 new SqlParameter { ParameterName = "@BytesCopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual", SqlDbType = SqlDbType.BigInt, SqlValue =0 },
+                                 new SqlParameter { ParameterName = "@RutaCopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta1},
+                                 new SqlParameter { ParameterName = "@CopiasFormularioPDTAnualRentaTerceraPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename2},
+                                 new SqlParameter { ParameterName = "@GuidCopiasFormularioPDTAnualRentaTerceraPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue =Convert.ToString(Guid.NewGuid())},
+                                 new SqlParameter { ParameterName = "@BytesCopiasFormularioPDTAnualRentaTerceraPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
+                                 new SqlParameter { ParameterName = "@RutaCopiasFormularioPDTAnualRentaTerceraPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta2},
+                                 new SqlParameter { ParameterName = "@CopiaFichaRucPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename3},
+                                 new SqlParameter { ParameterName = "@GuidCopiaFichaRucPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue =Convert.ToString(Guid.NewGuid())},
+                                 new SqlParameter { ParameterName = "@BytesCopiaFichaRucPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
+                                 new SqlParameter { ParameterName = "@RutaCopiaFichaRucPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue =  datos.ruta3},
+                                 new SqlParameter { ParameterName = "@CopiaDniPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename4},
+                                 new SqlParameter { ParameterName = "@GuidCopiaDniPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue =Convert.ToString(Guid.NewGuid())},
+                                 new SqlParameter { ParameterName = "@BytesCopiaDniPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
+                                 new SqlParameter { ParameterName = "@RutaCopiaDniPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta4},
+                                 new SqlParameter { ParameterName = "@CertificacoReferenciaComercialPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename5},
+                                 new SqlParameter { ParameterName = "@GuidCertificacoReferenciaComercialPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue =Convert.ToString(Guid.NewGuid())},
+                                 new SqlParameter { ParameterName = "@BytesCertificacoReferenciaComercialPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
+                                 new SqlParameter { ParameterName = "@RutaCertificacoReferenciaComercialPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta5},
+                                 new SqlParameter { ParameterName = "@CertificadoBancarioPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename6},
+                                 new SqlParameter { ParameterName = "@GuidCertificadoBancarioPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = Convert.ToString(Guid.NewGuid())},
+                                 new SqlParameter { ParameterName = "@BytesCertificadoBancarioPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
+                                 new SqlParameter { ParameterName = "@RutaCertificadoBancarioPersonaNatual", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue =datos.ruta6},
+                                 new SqlParameter { ParameterName = "@SituacionFinancieraBalanceGeneralPerdidasJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename7},
+                                 new SqlParameter { ParameterName = "@GuidSituacionFinancieraBalanceGeneralPerdidasJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = Convert.ToString(Guid.NewGuid())},
+                                 new SqlParameter { ParameterName = "@BytesSituacionFinancieraBalanceGeneralPerdidasJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
+                                 new SqlParameter { ParameterName = "@RutaSituacionFinancieraBalanceGeneralPerdidasJuridicas", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta7},
                                  new SqlParameter { ParameterName = "@CopiaFormularioPDTAnualRentaTerceraJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename8},
-
-                            new SqlParameter { ParameterName = "@GuidCopiaFormularioPDTAnualRentaTerceraJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = Convert.ToString(Guid.NewGuid())},
+                                 new SqlParameter { ParameterName = "@GuidCopiaFormularioPDTAnualRentaTerceraJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = Convert.ToString(Guid.NewGuid())},
                                  new SqlParameter { ParameterName = "@BytesCopiaFormularioPDTAnualRentaTerceraJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
-                               new SqlParameter { ParameterName = "@RutaCopiaFormularioPDTAnualRentaTerceraJuridicas", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta8},
-                               new SqlParameter { ParameterName = "@CopiaFichaRucJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename9},
-                               new SqlParameter { ParameterName = "@GuidCopiaFichaRucJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue =Convert.ToString(Guid.NewGuid())},
-                               new SqlParameter { ParameterName = "@BytesCopiaFichaRucJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue =  0},
-                               new SqlParameter { ParameterName = "@RutaCopiaFichaRucJuridicas", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta9},
-                               new SqlParameter { ParameterName = "@CopiaDNIRepresentanteLegalJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename10},
-                               new SqlParameter { ParameterName = "@GuidCopiaDNIRepresentanteLegalJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue =  Convert.ToString(Guid.NewGuid())},
-                               new SqlParameter { ParameterName = "@BytesCopiaDNIRepresentanteLegalJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
-                               new SqlParameter { ParameterName = "@RutaCopiaDNIRepresentanteLegalJuridicas", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta10},
-                               new SqlParameter { ParameterName = "@VigenciaPoderRepresentanteLegalJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename11},
-                               new SqlParameter { ParameterName = "@GuidVigenciaPoderRepresentanteLegalJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = Convert.ToString(Guid.NewGuid())},
-                               new SqlParameter { ParameterName = "@BytesVigenciaPoderRepresentanteLegalJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue =0},
-                               new SqlParameter { ParameterName = "@RutaVigenciaPoderRepresentanteLegalJuridicas", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta11},
-                               new SqlParameter { ParameterName = "@CertificadoReferenciaComercialJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename12},
-                               new SqlParameter { ParameterName = "@GuidCertificadoReferenciaComercialJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = Convert.ToString(Guid.NewGuid())},
-                               new SqlParameter { ParameterName = "@BytesCertificadoReferenciaComercialJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
-                               new SqlParameter { ParameterName = "@RutaCertificadoReferenciaComercialJuridicas", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta12},
-                               new SqlParameter { ParameterName = "@CertificadoBancarioJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename13},
-                               new SqlParameter { ParameterName = "@GuidCertificadoBancarioJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = Convert.ToString(Guid.NewGuid())},
-                               new SqlParameter { ParameterName = "@BytesCertificadoBancarioJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
-                               new SqlParameter { ParameterName = "@RutaCertificadoBancarioJuridicas", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta13},
+                                   new SqlParameter { ParameterName = "@RutaCopiaFormularioPDTAnualRentaTerceraJuridicas", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta8},
+                                   new SqlParameter { ParameterName = "@CopiaFichaRucJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename9},
+                                   new SqlParameter { ParameterName = "@GuidCopiaFichaRucJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue =Convert.ToString(Guid.NewGuid())},
+                                   new SqlParameter { ParameterName = "@BytesCopiaFichaRucJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue =  0},
+                                   new SqlParameter { ParameterName = "@RutaCopiaFichaRucJuridicas", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta9},
+                                   new SqlParameter { ParameterName = "@CopiaDNIRepresentanteLegalJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename10},
+                                   new SqlParameter { ParameterName = "@GuidCopiaDNIRepresentanteLegalJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue =  Convert.ToString(Guid.NewGuid())},
+                                   new SqlParameter { ParameterName = "@BytesCopiaDNIRepresentanteLegalJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
+                                   new SqlParameter { ParameterName = "@RutaCopiaDNIRepresentanteLegalJuridicas", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta10},
+                                   new SqlParameter { ParameterName = "@VigenciaPoderRepresentanteLegalJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename11},
+                                   new SqlParameter { ParameterName = "@GuidVigenciaPoderRepresentanteLegalJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = Convert.ToString(Guid.NewGuid())},
+                                   new SqlParameter { ParameterName = "@BytesVigenciaPoderRepresentanteLegalJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue =0},
+                                   new SqlParameter { ParameterName = "@RutaVigenciaPoderRepresentanteLegalJuridicas", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta11},
+                                   new SqlParameter { ParameterName = "@CertificadoReferenciaComercialJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename12},
+                                   new SqlParameter { ParameterName = "@GuidCertificadoReferenciaComercialJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = Convert.ToString(Guid.NewGuid())},
+                                   new SqlParameter { ParameterName = "@BytesCertificadoReferenciaComercialJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
+                                   new SqlParameter { ParameterName = "@RutaCertificadoReferenciaComercialJuridicas", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta12},
+                                   new SqlParameter { ParameterName = "@CertificadoBancarioJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.Filename13},
+                                   new SqlParameter { ParameterName = "@GuidCertificadoBancarioJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = Convert.ToString(Guid.NewGuid())},
+                                   new SqlParameter { ParameterName = "@BytesCertificadoBancarioJuridicas", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = 0},
+                                   new SqlParameter { ParameterName = "@RutaCertificadoBancarioJuridicas", SqlDbType = SqlDbType.VarChar, Size = 1000, SqlValue = datos.ruta13},
 
                         };
                         Ado.ExecNonQueryProc(strsql11, parametros11);
@@ -285,11 +286,11 @@ namespace Simed.Data
 
                         };
                         Ado.ExecNonQueryProc(strsql14, parametros14);
-
+ 
                     }
+                   
+                    return mensaje;
 
-
-                    return idcliente;
                 }
                 catch (Exception ex)
                 {

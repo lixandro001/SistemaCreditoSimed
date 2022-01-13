@@ -22,6 +22,7 @@ function LoadDataViewByCode(code) {
 }
 
 function SeteoDatosFormulario(Datos) {
+    console.log(Datos);
     //-   DATOS GENERALES -//
     $("#txtNombreRazonDG").val(Datos.Nombre_RazonSocialDatosGenerales);
     $("#txtDireccionDG").val(Datos.DireccionDatosGenerales);

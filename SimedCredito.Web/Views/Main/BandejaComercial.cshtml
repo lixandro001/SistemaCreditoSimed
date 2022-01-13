@@ -1,11 +1,14 @@
 ﻿@{
     ViewBag.Title = "Gestión de Clientes";
-    string CFecha = string.Format("{0:dd/MM/yyyy}", DateTime.Today);
+    string CFecha = string.Format("{0:dd/MM/yyyy}", DateTime.Today.AddDays(-3));
+    string FFecha = string.Format("{0:dd/MM/yyyy}", DateTime.Today);
 }
 
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">Bandeja de Cientes - Asesor Comercial</h3>
+         
+
         <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                 <i class="fas fa-minus"></i>
@@ -22,7 +25,7 @@
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-4 col-form-label">Desde</label>
                     <div class="col-sm-8">
-                        <input type="hidden" id="hdnStartDate" class="form-control" name="date1" />
+                        <input type="hidden" id="hdnStartDate" class="form-control" name="date1" />   
                         <div class="input-group date">
                             <input type="text" class="form-control pull-right" id="txtStartDate" value="@CFecha">
                             <div class="input-group-append" data-target="#txtStartDate" data-toggle="datetimepicker">
@@ -38,8 +41,8 @@
                     <div class="col-sm-8">
                         <input type="hidden" id="hdnEndDate" class="form-control" name="date2" />
                         <div class="input-group date">
-                            <input type="text" class="form-control pull-right" id="txtEndDate" value="@CFecha">
-                            <div class="input-group-append" data-target="#txtStartDate" data-toggle="datetimepicker">
+                            <input type="text" class="form-control pull-right" id="txtEndDate" value="@FFecha">
+                            <div class="input-group-append" data-target="#txtEndDate" data-toggle="datetimepicker">
                                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                             </div>
                         </div>
@@ -50,7 +53,7 @@
     </div>
     <div class="card-footer">
         <button type="button" id="btnConsultar" class="btn btn-primary">Consultar</button>
-        <button type="button" id="btnNuevo" class="btn btn-success">Nuevo</button>
+        <button type="button" id="btnNuevo" class="btn btn-success">Nuevo Cliente</button>
     </div>
     <div class="card-body">
         <table id="tabDescTable" class="table table-bordered table-striped">

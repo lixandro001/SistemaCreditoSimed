@@ -130,18 +130,18 @@
                                 <a href="@Url.Action("BandejaComercial", "Main")" class="nav-link">
                                     <i class="nav-icon far fa-file"></i>
                                     <p>
-                                        Bandeja de Cliente Comercial
+                                       Cliente Comercial
                                     </p>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            @*<li class="nav-item">
                                 <a href="@Url.Action("FormularioCliente", "Main")" class="nav-link">
                                     <i class="nav-icon far fa-file"></i>
                                     <p>
                                         Formulario credito Cliente Comercial
                                     </p>
                                 </a>
-                            </li>
+                            </li>*@
                         }
                         else if (profileId == (int)Enums.Profile.ANALISTACREDITO)
                         {
@@ -149,7 +149,7 @@
                                 <a href="@Url.Action("Cliente", "Main")" class="nav-link">
                                     <i class="nav-icon far fa-file"></i>
                                     <p>
-                                        Bandeja de Cliente Credito
+                                        Cliente Credito
                                     </p>
                                 </a>
                             </li>

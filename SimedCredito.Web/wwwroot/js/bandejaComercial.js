@@ -1,7 +1,6 @@
-﻿let ArrayCodes = [];
-
+﻿  
 $(function () {
-
+      
     $("#tabDescTable").DataTable({
         "paging": true,
         "lengthChange": false,
@@ -24,6 +23,7 @@ $(function () {
             "data": "CodeClienteDatosGenerales",
             "render": function (data, type, full, meta) {
                 if (data.IdEstadoComercial == 4) {
+                    console.log(data.IdEstadoComercial);
                     return `<div style="text-align:center;">
                             <a class="fa fa-pencil" href="#" onclick="event.preventDefault();fnEditRegister('${data.CodeClienteDatosGenerales}')"><i class="fa fa-edit" aria-hidden="true"></i></a>
                         </div>`;
@@ -38,6 +38,7 @@ $(function () {
         }
         ]
     });
+  
 
     $("#txtStartDate, #txtEndDate").datepicker({
         autoclose: true,
@@ -51,19 +52,20 @@ $(function () {
     $("#btnNuevo").on("click", function () {
         fnViewForm();
     });
-
 });
+
 
 function fnLoadTrayUser() {
     var startDate = "";
     var endDate = "";
+    var PerfilId = "";
     startDate = $("#txtStartDate").val();
     endDate = $("#txtEndDate").val();
-    var PerfilId = $("#perfil").val();
-
+    PerfilId = $("#perfil").val();
     Get("Bandeja/GetBandejaCliente?StartDate=" + startDate + "&EndDate=" + endDate + "&PerfilId=" + PerfilId).done(function (response) {
         if (response.data.Data != null) {
             fnClearTable($('#tabDescTable').dataTable());
+            console.log(response.data.Data);
             if (response.data.Data.length > 0) {
                 $('#tabDescTable').dataTable().fnAddData(response.data.Data);
             } else {

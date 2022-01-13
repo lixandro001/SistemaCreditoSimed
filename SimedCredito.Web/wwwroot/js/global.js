@@ -104,15 +104,15 @@ function fnAlertError(messange) {
     });
 }
 
-function fnAlertSuccess(message) {
+function fnAlertSuccess(message, functionOnConfirm) {
     swal({
         title: "¡Exito!",
         html: false,
-        text: message || "Acción ejecutada con exito." ,
+        text: message || "Acción ejecutada con exito.",
         type: "success",
         showCancelButton: false,
         confirmButtonColor: "#007bff",
         confirmButtonText: "Aceptar",
         closeOnConfirm: true
-    });
+    }, functionOnConfirm);
 }

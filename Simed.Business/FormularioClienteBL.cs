@@ -19,7 +19,7 @@ namespace Simed.Business
             GC.SuppressFinalize(this);
         }
 
-        public int GuardarFormulario(FormularioRequestCliente request)
+        public int GuardarFormulario(EnviarFromulatioRequestCliente request)
         {
             try
             {

@@ -33,23 +33,23 @@ namespace Simed.Entity.Request
         public string TipoIdentificacionIdIT { get; set; }
         public string CualIdentificacionIT { get; set; }
         public string NumeroIdentificacionIT { get; set; }
-        public int cboTipoContribuyente { get; set; }
-        public int cboTipoSociedad { get; set; }
+        public string cboTipoContribuyente { get; set; }
+        public string cboTipoSociedad { get; set; }
         public string txtCualSociedadIT { get; set; }
-        public int cboOrigenCapital { get; set; }
-        public int cboActividadEconomica { get; set; }
+        public string cboOrigenCapital { get; set; }
+        public string cboActividadEconomica { get; set; }
         public string txtCualEconomicaIT { get; set; }
         public string txtSuperIntendenciaIT { get; set; }
-        public DateTime txtFechaConstitucionIT { get; set; }
-        public int cboRegimen { get; set; }
+        public string txtFechaConstitucionIT { get; set; }
+        public string cboRegimen { get; set; }
         public string txtActividadPrincipalIAE { get; set; }
         public string txtActividadSecundariaIAE { get; set; }
         public string txtNombreRepresentanteLegalIRL { get; set; }
-        public int cboTipoIdenticacionLegal { get; set; }
+        public string cboTipoIdenticacionLegal { get; set; }
         public string txtNumeroIdentificacionIRL { get; set; }
-        public int cboNacionalidad { get; set; }
+        public string cboNacionalidad { get; set; }
         public string txtCualIRL { get; set; }
-        public DateTime txtFechaExpedicionDocumentoIRL { get; set; }
+        public string txtFechaExpedicionDocumentoIRL { get; set; }
         public string txtDireccionResidenciaIRL { get; set; }
         public string txtCiudadIRL { get; set; }
         public bool checkGozaPEP { get; set; }
@@ -64,15 +64,15 @@ namespace Simed.Entity.Request
         public string txtEspecifiqueVinculo2PEP { get; set; }
         public string txtNombreApellidoPEP { get; set; }
         public string txtCargoPEP { get; set; }
-        public DateTime FechaCorte { get; set; }
+        public string FechaCorte { get; set; }
         public bool checkSolesIF { get; set; }
         public bool checkDolaresIF { get; set; }
-        public decimal txtActivosIF { get; set; }
-        public decimal txtIngresosMensualesIF { get; set; }
-        public decimal txtPasivosIF { get; set; }
-        public decimal txtEgresosMensualesIF { get; set; }
-        public decimal txtPatrimonioIF { get; set; }
-        public decimal txtOtrosIngresosIF { get; set; }
+        public string txtActivosIF { get; set; }
+        public string txtIngresosMensualesIF { get; set; }
+        public string txtPasivosIF { get; set; }
+        public string txtEgresosMensualesIF { get; set; }
+        public string txtPatrimonioIF { get; set; }
+        public string txtOtrosIngresosIF { get; set; }
         public string txtConceptoOtrosIngresosIF { get; set; }
         public string txtInstitucionRB { get; set; }
         public string txtNroCuentaRB { get; set; }
@@ -82,11 +82,11 @@ namespace Simed.Entity.Request
         public string txtRucRB { get; set; }
         public string txtTelefonoRB { get; set; }
         public string txtDireccionRB { get; set; }
-        public int cboUnidad { get; set; }
-        public int cboSubUnidad { get; set; }
-        public int cboAsesorComercial { get; set; }
+        public string cboUnidad { get; set; }
+        public string cboSubUnidad { get; set; }
+        public string cboAsesorComercial { get; set; }
         public string txtDescripcion { get; set; }
-        public int cboTipoPago { get; set; }
+        public string cboTipoPago { get; set; }
         public string cuposolicitado { get; set; }
         public string txtAsesorComercialVUI { get; set; }
         public string Filename1 { get; set; }
@@ -115,8 +115,8 @@ namespace Simed.Entity.Request
         public string ruta11 { get; set; }
         public string ruta12 { get; set; }
         public string ruta13 { get; set; }
-
-
+        public int IdEstadosCliente { get; set; }
+        public string code { get; set; }
         public string tokenCode { get; set; }
 
         //---detealle list refererncias comerciales--//
