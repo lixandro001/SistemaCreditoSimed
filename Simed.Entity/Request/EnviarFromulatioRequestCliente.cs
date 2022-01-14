@@ -118,6 +118,7 @@ namespace Simed.Entity.Request
         public int IdEstadosCliente { get; set; }
         public string code { get; set; }
         public string tokenCode { get; set; }
+        public int btnEnvio { get; set; }
 
         //---detealle list refererncias comerciales--//
         public List<ReferenciasComercialesArray> DetalleReferenciasComerciales { get; set; }

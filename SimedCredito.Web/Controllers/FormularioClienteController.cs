@@ -678,7 +678,8 @@ namespace SimedCredito.Web.Controllers
                 request.ruta11 = PathFilename11;
                 request.ruta12 = PathFilename12;
                 request.ruta13 = PathFilename13;
-                 
+                request.btnEnvio = 2;
+
                 var Url = GeneralModel.UrlWebApi + "FormularioCliente/GuardarClienteFormulario";
                 var Result = Simed.Utilities.Rest.RestClient.ProcessPostRequest(Url, request, token);
  
@@ -1346,6 +1347,7 @@ namespace SimedCredito.Web.Controllers
                 request.ruta11 = PathFilename11;
                 request.ruta12 = PathFilename12;
                 request.ruta13 = PathFilename13;
+                request.btnEnvio = 1;
 
                 var Url = GeneralModel.UrlWebApi + "FormularioCliente/GuardarClienteFormulario";
                 var Result = Simed.Utilities.Rest.RestClient.ProcessPostRequest(Url, request, token);

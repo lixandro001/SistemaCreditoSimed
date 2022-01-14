@@ -155,6 +155,7 @@ namespace SimedCredito.Controllers
                 Body.tokenCode = request.tokenCode;  
                 Body.DetalleReferenciasComerciales = request.DetalleReferenciasComerciales;
                 Body.DetalleUnicamentePersonaJuridicas = request.DetalleUnicamentePersonaJuridicas;
+                Body.btnEnvio = request.btnEnvio;
 
                 int resul = objFormularioClienteBL.GuardarFormulario(Body);
                 return Ok(resul);

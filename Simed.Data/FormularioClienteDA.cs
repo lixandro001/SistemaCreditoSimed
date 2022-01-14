@@ -29,7 +29,7 @@ namespace Simed.Data
                     var parametros = new SqlParameter[]
                     {
                        new SqlParameter { ParameterName = "@IdClienteDatosGenerales", SqlDbType = SqlDbType.Int, Direction= ParameterDirection.Output},
-                       new SqlParameter { ParameterName = "@mensaje", SqlDbType = SqlDbType.VarChar, Size=100, Direction= ParameterDirection.Output},
+                       new SqlParameter { ParameterName = "@mensaje", SqlDbType = SqlDbType.Int, Direction= ParameterDirection.Output},
                        new SqlParameter { ParameterName = "@Nombre_RazonSocialDatosGenerales", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.NombreRazonSocialDG },
                        new SqlParameter { ParameterName = "@DireccionDatosGenerales", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue= datos.DireccionDG },
                        new SqlParameter { ParameterName = "@IdPaisDatosGenerales", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue= datos.PaisId },
@@ -46,8 +46,10 @@ namespace Simed.Data
                        new SqlParameter { ParameterName = "@IdUsuario", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.IdUsuario},
                        new SqlParameter { ParameterName = "@IdPerfil", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.IdPerfil},                
                        new SqlParameter { ParameterName = "@code", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.code},
+                       new SqlParameter { ParameterName = "@BtnEnvio", SqlDbType = SqlDbType.Int, SqlValue = datos.btnEnvio},
                     };
                     Ado.ExecNonQueryProc(strsql, parametros);
+                    var valor = parametros[0].Value;
                     var idcliente = Convert.ToInt32(parametros[0].Value.ToString());
                     var mensaje = Convert.ToInt32(parametros[1].Value.ToString());
 
