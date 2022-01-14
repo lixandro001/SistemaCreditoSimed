@@ -133,6 +133,14 @@ namespace Simed.Data
                         };
                         Ado.ExecNonQueryProc(strsql6, parametros6);
 
+                        string strsqlDelete1 = "LimpiarInformacionSociosAccionistasUnicamentePersonasJuridicasById";
+
+                        var parametrosDelete1 = new SqlParameter[]
+                        {
+                        new SqlParameter { ParameterName = "@IdClienteDatosGenerales", SqlDbType = SqlDbType.Int, SqlValue = idcliente},
+                        };
+                        Ado.ExecNonQueryProc(strsqlDelete1, parametrosDelete1);
+
                         string strsql7 = "usp_GuardarInformacionSociosAccionistasUnicamentePersonasJuridicas";
                         foreach (var item in datos.DetalleUnicamentePersonaJuridicas)
                         {
@@ -165,6 +173,14 @@ namespace Simed.Data
                         new SqlParameter { ParameterName = "@ConceptoOtrosIngresos", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.txtConceptoOtrosIngresosIF},
                         };
                         Ado.ExecNonQueryProc(strsql8, parametros8);
+
+                        string strsqlDelete2 = "LimpiarReferenciasComercialesById";
+
+                        var parametrosDelete2 = new SqlParameter[]
+                        {
+                            new SqlParameter { ParameterName = "@IdClienteDatosGenerales", SqlDbType = SqlDbType.Int, SqlValue = idcliente},
+                        };
+                        Ado.ExecNonQueryProc(strsqlDelete2, parametrosDelete2);
 
                         string strsql9 = "usp_GuardarReferenciasComerciales";
                         foreach (var item in datos.DetalleReferenciasComerciales)
@@ -452,7 +468,7 @@ namespace Simed.Data
                             if (Dr["Nombre_S_ASESOR_COMERCIAL"] != DBNull.Value) { Entity.Nombre_S_ASESOR_COMERCIAL = (string)Dr["Nombre_S_ASESOR_COMERCIAL"]; }
                             if (Dr["Descripcion"] != DBNull.Value) { Entity.Descripcion = (string)Dr["Descripcion"]; }
                             //TERMINO DE PAGO
-                            if (Dr["IdTerminoPago"] != DBNull.Value) { Entity.IdTerminoPago = (int)Dr["IdTerminoPago"]; }
+                            if (Dr["tipoPago"] != DBNull.Value) { Entity.IdTerminoPago = (int)Dr["tipoPago"]; }
                             if (Dr["DescripcionPago"] != DBNull.Value) { Entity.DescripcionPAGO = (string)Dr["DescripcionPago"]; }
                             if (Dr["cupoSolicitado"] != DBNull.Value) { Entity.cupoSolicitado = (string)Dr["cupoSolicitado"]; }
                             //VERIFICACION PARA USO EXTERNO
