@@ -1,5 +1,7 @@
 ﻿var TituloApp = "FACT EKT";
 
+var urlglobal = "http://localhost:28548/files/";
+
 $(function (e) {
 
 });
@@ -75,6 +77,7 @@ function fnBaseUrlWeb(url) {
     return window.appURL + url;
 }
 
+ 
 
 function fnAlertAdvertencia(messange,titulo) {
  

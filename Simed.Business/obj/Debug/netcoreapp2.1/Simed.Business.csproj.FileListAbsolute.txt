@@ -14,6 +14,7 @@ C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\Simed.Business\obj\Debug\
 C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\Simed.Business\obj\Debug\netcoreapp2.1\Simed.Business.csproj.CopyComplete
 C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\Simed.Business\obj\Debug\netcoreapp2.1\Simed.Business.dll
 C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\Simed.Business\obj\Debug\netcoreapp2.1\Simed.Business.pdb
+C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\Simed.Business\obj\Debug\netcoreapp2.1\Simed.Business.csproj.AssemblyReference.cache
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\bin\Debug\netcoreapp2.1\Simed.Business.deps.json
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\bin\Debug\netcoreapp2.1\Simed.Business.dll
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\bin\Debug\netcoreapp2.1\Simed.Business.pdb
@@ -23,7 +24,6 @@ C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\bin\Deb
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\bin\Debug\netcoreapp2.1\Simed.Data.pdb
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\bin\Debug\netcoreapp2.1\Simed.Entity.pdb
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\bin\Debug\netcoreapp2.1\System.Data.SqlClient.xml
-C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\obj\Debug\netcoreapp2.1\Simed.Business.csproj.AssemblyReference.cache
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\obj\Debug\netcoreapp2.1\Simed.Business.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\obj\Debug\netcoreapp2.1\Simed.Business.AssemblyInfoInputs.cache
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\obj\Debug\netcoreapp2.1\Simed.Business.AssemblyInfo.cs
@@ -31,4 +31,3 @@ C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\obj\Deb
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\obj\Debug\netcoreapp2.1\Simed.Business.csproj.CopyComplete
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\obj\Debug\netcoreapp2.1\Simed.Business.dll
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\obj\Debug\netcoreapp2.1\Simed.Business.pdb
-C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\Simed.Business\obj\Debug\netcoreapp2.1\Simed.Business.csproj.AssemblyReference.cache

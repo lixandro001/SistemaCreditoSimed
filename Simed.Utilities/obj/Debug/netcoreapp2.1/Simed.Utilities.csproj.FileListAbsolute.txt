@@ -7,6 +7,7 @@ C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\Simed.Utilities\obj\Debug
 C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\Simed.Utilities\obj\Debug\netcoreapp2.1\Simed.Utilities.csproj.CoreCompileInputs.cache
 C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\Simed.Utilities\obj\Debug\netcoreapp2.1\Simed.Utilities.dll
 C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\Simed.Utilities\obj\Debug\netcoreapp2.1\Simed.Utilities.pdb
+C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\Simed.Utilities\obj\Debug\netcoreapp2.1\Simed.Utilities.csproj.AssemblyReference.cache
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\bin\Debug\netcoreapp2.1\Simed.Utilities.deps.json
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\bin\Debug\netcoreapp2.1\Simed.Utilities.dll
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\bin\Debug\netcoreapp2.1\Simed.Utilities.pdb
@@ -16,5 +17,3 @@ C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\obj\De
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\obj\Debug\netcoreapp2.1\Simed.Utilities.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\obj\Debug\netcoreapp2.1\Simed.Utilities.dll
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\obj\Debug\netcoreapp2.1\Simed.Utilities.pdb
-C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\obj\Debug\netcoreapp2.1\Simed.Utilities.csproj.AssemblyReference.cache
-C:\Users\usuario\source\repos\.NET\SistemaCreditoSimed\Simed.Utilities\obj\Debug\netcoreapp2.1\Simed.Utilities.csproj.AssemblyReference.cache

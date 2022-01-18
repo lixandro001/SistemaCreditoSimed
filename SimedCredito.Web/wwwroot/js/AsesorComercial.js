@@ -134,31 +134,95 @@ function SeteoDatosFormulario(Datos) {
     $("#txtDireccionRB").val(Datos.Direccion);
     //--CONTROL DE DOCUMENTOS EXIGIDOS PARA INGRESO DE CLIENTES
     $("#txtFile1CDE").html(Datos.CopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual);
-    $("#txtFile1CDE").attr('href', Datos.RutaCopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual);
+    $("#txtFile1CDE").attr({
+        target: '_blank',
+        href: urlglobal + Datos.CopiasTresUltimasDeclaracionesPDTIGV621PersonaNatual
+         
+    });
     $("#txtFile2CDE").html(Datos.CopiasFormularioPDTAnualRentaTerceraPersonaNatual);
-    $("#txtFile2CDE").attr('href', Datos.RutaCopiasFormularioPDTAnualRentaTerceraPersonaNatual);
+    $("#txtFile2CDE").attr({
+        target: '_blank',
+        href: urlglobal + Datos.CopiasFormularioPDTAnualRentaTerceraPersonaNatual
+
+    });
+
     $("#txtFile3CDE").html(Datos.CopiaFichaRucPersonaNatual);
-    $("#txtFile3CDE").attr('href', Datos.RutaCopiaFichaRucPersonaNatual);
+    $("#txtFile3CDE").attr({
+        target: '_blank',
+        href: urlglobal + Datos.CopiaFichaRucPersonaNatual
+
+    });
+
     $("#txtFile4CDE").html(Datos.CopiaDniPersonaNatual);
-    $("#txtFile4CDE").attr('href', Datos.RutaCopiaDniPersonaNatual);
+    $("#txtFile4CDE").attr({
+        target: '_blank',
+        href: urlglobal + Datos.CopiaDniPersonaNatual
+
+    });
+
     $("#txtFile5CDE").html(Datos.CertificacoReferenciaComercialPersonaNatual);
-    $("#txtFile5CDE").attr('href', Datos.RutaCertificacoReferenciaComercialPersonaNatual);
+    $("#txtFile5CDE").attr({
+        target: '_blank',
+        href: urlglobal + Datos.CertificacoReferenciaComercialPersonaNatual
+
+    });
+
     $("#txtFile6CDE").html(Datos.CertificadoBancarioPersonaNatual);
-    $("#txtFile6CDE").attr('href', Datos.RutaCertificadoBancarioPersonaNatual);
+    $("#txtFile6CDE").attr({
+        target: '_blank',
+        href: urlglobal + Datos.CertificadoBancarioPersonaNatual
+
+    });
+
     $("#txtFile7CDE").html(Datos.SituacionFinancieraBalanceGeneralPerdidasJuridicas);
-    $("#txtFile7CDE").attr('href', Datos.RutaSituacionFinancieraBalanceGeneralPerdidasJuridicas);
+    $("#txtFile7CDE").attr({
+        target: '_blank',
+        href: urlglobal + Datos.SituacionFinancieraBalanceGeneralPerdidasJuridicas
+
+    });
+
     $("#txtFile8CDE").html(Datos.CopiaFormularioPDTAnualRentaTerceraJuridicas);
-    $("#txtFile8CDE").attr('href', Datos.RutaCopiaFormularioPDTAnualRentaTerceraJuridicas);
+    $("#txtFile8CDE").attr({
+        target: '_blank',
+        href: urlglobal + Datos.CopiaFormularioPDTAnualRentaTerceraJuridicas
+
+    });
+
     $("#txtFile9CDE").html(Datos.CopiaFichaRucJuridicas);
-    $("#txtFile9CDE").attr('href', Datos.RutaCopiaFichaRucJuridicas);
+    $("#txtFile9CDE").attr({
+        target: '_blank',
+        href: urlglobal + Datos.CopiaFichaRucJuridicas
+
+    });
+
     $("#txtFile10CDE").html(Datos.CopiaDNIRepresentanteLegalJuridicas);
-    $("#txtFile10CDE").attr('href', Datos.RutaCopiaDNIRepresentanteLegalJuridicas);
+    $("#txtFile10CDE").attr({
+        target: '_blank',
+        href: urlglobal + Datos.CopiaDNIRepresentanteLegalJuridicas
+
+    });
+
     $("#txtFile11CDE").html(Datos.VigenciaPoderRepresentanteLegalJuridicas);
-    $("#txtFile11CDE").attr('href', Datos.RutaVigenciaPoderRepresentanteLegalJuridicas);
+    $("#txtFile11CDE").attr({
+        target: '_blank',
+        href: urlglobal + Datos.VigenciaPoderRepresentanteLegalJuridicas
+
+    });
+
     $("#txtFile12CDE").html(Datos.CertificadoReferenciaComercialJuridicas);
-    $("#txtFile12CDE").attr('href', Datos.RutaCertificadoReferenciaComercialJuridicas);
+    $("#txtFile12CDE").attr({
+        target: '_blank',
+        href: urlglobal + Datos.CertificadoReferenciaComercialJuridicas
+
+    });
+
     $("#txtFile13CDE").html(Datos.CertificadoBancarioJuridicas);
-    $("#txtFile13CDE").attr('href', Datos.RutaCertificadoBancarioJuridicas);
+    $("#txtFile13CDE").attr({
+        target: '_blank',
+        href: urlglobal + Datos.CertificadoBancarioJuridicas
+
+    });
+
     //--CLASIFICACIÓN PARA USO COMERCIAL
     $("#cboUnidad").val(Datos.DescripcionUnidad);
     $("#cboSubUnidad").val(Datos.Nombre_S_SUB_UNIDAD);
@@ -169,7 +233,8 @@ function SeteoDatosFormulario(Datos) {
     $("#cuposolicitado").val(Datos.cupoSolicitado);
     //--VERIFICACION PARA USO EXTERNO
     $("#txtAsesorComercialVUI").val(Datos.ResponsableContratacion);
-    $("#txtFirmaVUI").val(Datos.Firma);
+    /* $("#txtFirmaVUI").val(Datos.Firma);*/
+    $("#txtFirmaVUI").val(Datos.ResponsableContratacion)
 
     if (Datos.EstadoComercial == 3 || Datos.EstadoCredito == 3 || Datos.EstadoVenta == 3 || Datos.EstadoFinanza == 3) {
         $("#verrechazopoppup").val(Datos.MotivoRechazo);
