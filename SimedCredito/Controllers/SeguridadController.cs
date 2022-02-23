@@ -23,8 +23,7 @@ namespace SimedCredito.Controllers
         {
             Configuration = IConfiguration;
             Logger = LoggerFactory.CreateLogger<SeguridadController>();
-            objSeguridadBL = new SeguridadBL(Configuration["ConnectionStrings:SIMED"]);
-            
+            objSeguridadBL = new SeguridadBL(Configuration["ConnectionStrings:SIMED"]);      
         }
 
         [HttpPost]
