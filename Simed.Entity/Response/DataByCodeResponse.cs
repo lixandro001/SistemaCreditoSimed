@@ -7,6 +7,7 @@ namespace Simed.Entity.Response
     public class DataByCodeResponse
     {
         //---Datos generales
+        public int IdClienteDatosGenerales { get; set; }
         public string Nombre_RazonSocialDatosGenerales { get; set; }
         public string DireccionDatosGenerales { get; set; }
         public int IdPaisDatosGenerales { get; set; }
@@ -174,6 +175,10 @@ namespace Simed.Entity.Response
         public string cupoSolicitado { get; set; }
         public string ResponsableContratacion { get; set; }
         public string Firma { get; set; }
+        public int idEvaluacionDocumento { get; set; }
+        public string NombreOriginal { get; set; }
+
+        public string ruta { get; set; }
         public List<listadoDetalleInformacionSocios> DetalleInformacionSocio { get; set; }
         public List<listadoDetalleReferenciaComercial> DetalleReferenciaComercial { get; set; }
  

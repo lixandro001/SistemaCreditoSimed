@@ -25,7 +25,7 @@ namespace SimedCredito.Controllers
             Configuration = IConfiguration;
             Logger = LoggerFactory.CreateLogger<FormularioClienteController>();
             objFormularioClienteBL = new FormularioClienteBL(Configuration["ConnectionStrings:SIMED"]);
-            
+
         }
 
 
@@ -35,12 +35,12 @@ namespace SimedCredito.Controllers
         {
             try
             {
-                EnviarFromulatioRequestCliente Body=new EnviarFromulatioRequestCliente();
+                EnviarFromulatioRequestCliente Body = new EnviarFromulatioRequestCliente();
 
                 string secretTokenName = "Auth-Token";
                 var tokenCode = HttpContext.Request.Headers[secretTokenName].ToString();
                 request.tokenCode = tokenCode;
-    
+
                 Body.IdUsuario = request.IdUsuario;
                 Body.IdPerfil = request.IdPerfil;
                 Body.NombreRazonSocialDG = request.NombreRazonSocialDG;
@@ -65,26 +65,26 @@ namespace SimedCredito.Controllers
                 Body.NombreContactoAreaComercial = request.NombreContactoAreaComercial;
                 Body.TelefonoContactoAreaComercial = request.TelefonoContactoAreaComercial;
                 Body.CorreoContactoAreaComercial = request.CorreoContactoAreaComercial;
-                Body.TipoIdentificacionIdIT = request.TipoIdentificacionIdIT == "" ? 0 : Convert.ToInt32(request.TipoIdentificacionIdIT);  
-                Body.CualIdentificacionIT =  request.CualIdentificacionIT;
+                Body.TipoIdentificacionIdIT = request.TipoIdentificacionIdIT == "" ? 0 : Convert.ToInt32(request.TipoIdentificacionIdIT);
+                Body.CualIdentificacionIT = request.CualIdentificacionIT;
                 Body.NumeroIdentificacionIT = request.NumeroIdentificacionIT;
-                Body.cboTipoContribuyente =    request.cboTipoContribuyente == "" ? 0 : Convert.ToInt32(request.cboTipoContribuyente);
-                Body.cboTipoSociedad =   request.cboTipoSociedad == "" ? 0 : Convert.ToInt32(request.cboTipoSociedad);
+                Body.cboTipoContribuyente = request.cboTipoContribuyente == "" ? 0 : Convert.ToInt32(request.cboTipoContribuyente);
+                Body.cboTipoSociedad = request.cboTipoSociedad == "" ? 0 : Convert.ToInt32(request.cboTipoSociedad);
                 Body.txtCualSociedadIT = request.txtCualSociedadIT;
-                Body.cboOrigenCapital =  request.cboOrigenCapital == "" ? 0 : Convert.ToInt32(request.cboOrigenCapital);
-                Body.cboActividadEconomica =   request.cboActividadEconomica == "" ? 0 : Convert.ToInt32(request.cboActividadEconomica);
+                Body.cboOrigenCapital = request.cboOrigenCapital == "" ? 0 : Convert.ToInt32(request.cboOrigenCapital);
+                Body.cboActividadEconomica = request.cboActividadEconomica == "" ? 0 : Convert.ToInt32(request.cboActividadEconomica);
                 Body.txtCualEconomicaIT = request.txtCualEconomicaIT;
                 Body.txtSuperIntendenciaIT = request.txtSuperIntendenciaIT;
-                Body.txtFechaConstitucionIT =  request.txtFechaConstitucionIT == "" ? DateTime.Now : Convert.ToDateTime(request.txtFechaConstitucionIT);
+                Body.txtFechaConstitucionIT = request.txtFechaConstitucionIT == "" ? DateTime.Now : Convert.ToDateTime(request.txtFechaConstitucionIT);
                 Body.cboRegimen = request.cboRegimen == "" ? 0 : Convert.ToInt32(request.cboRegimen);
                 Body.txtActividadPrincipalIAE = request.txtActividadPrincipalIAE;
                 Body.txtActividadSecundariaIAE = request.txtActividadSecundariaIAE;
                 Body.txtNombreRepresentanteLegalIRL = request.txtNombreRepresentanteLegalIRL;
-                Body.cboTipoIdenticacionLegal =  request.cboTipoIdenticacionLegal == "" ? 0 : Convert.ToInt32(request.cboTipoIdenticacionLegal);
+                Body.cboTipoIdenticacionLegal = request.cboTipoIdenticacionLegal == "" ? 0 : Convert.ToInt32(request.cboTipoIdenticacionLegal);
                 Body.txtNumeroIdentificacionIRL = request.txtNumeroIdentificacionIRL;
-                Body.cboNacionalidad =  request.cboNacionalidad == "" ? 0 : Convert.ToInt32(request.cboNacionalidad);
+                Body.cboNacionalidad = request.cboNacionalidad == "" ? 0 : Convert.ToInt32(request.cboNacionalidad);
                 Body.txtCualIRL = request.txtCualIRL;
-                Body.txtFechaExpedicionDocumentoIRL =   request.txtFechaExpedicionDocumentoIRL == "" ? DateTime.Now : Convert.ToDateTime(request.txtFechaExpedicionDocumentoIRL);
+                Body.txtFechaExpedicionDocumentoIRL = request.txtFechaExpedicionDocumentoIRL == "" ? DateTime.Now : Convert.ToDateTime(request.txtFechaExpedicionDocumentoIRL);
                 Body.txtDireccionResidenciaIRL = request.txtDireccionResidenciaIRL;
                 Body.txtCiudadIRL = request.txtCiudadIRL;
                 Body.checkGozaPEP = request.checkGozaPEP;
@@ -99,15 +99,15 @@ namespace SimedCredito.Controllers
                 Body.txtEspecifiqueVinculo2PEP = request.txtEspecifiqueVinculo2PEP;
                 Body.txtNombreApellidoPEP = request.txtNombreApellidoPEP;
                 Body.txtCargoPEP = request.txtCargoPEP;
-                Body.FechaCorte =   request.FechaCorte == "" ? DateTime.Now : Convert.ToDateTime(request.FechaCorte);
+                Body.FechaCorte = request.FechaCorte == "" ? DateTime.Now : Convert.ToDateTime(request.FechaCorte);
                 Body.checkSolesIF = request.checkSolesIF;
                 Body.checkDolaresIF = request.checkDolaresIF;
-                Body.txtActivosIF =   request.txtActivosIF == "" ? 0 : Convert.ToDecimal(request.txtActivosIF);
-                Body.txtIngresosMensualesIF =   request.txtIngresosMensualesIF == "" ? 0 : Convert.ToDecimal(request.txtIngresosMensualesIF);
-                Body.txtPasivosIF =  request.txtPasivosIF == "" ? 0 : Convert.ToDecimal(request.txtPasivosIF);
-                Body.txtEgresosMensualesIF =  request.txtEgresosMensualesIF == "" ? 0 : Convert.ToDecimal(request.txtEgresosMensualesIF);
-                Body.txtPatrimonioIF =  request.txtPatrimonioIF == "" ? 0 : Convert.ToDecimal(request.txtPatrimonioIF);
-                Body.txtOtrosIngresosIF =  request.txtOtrosIngresosIF == "" ? 0 : Convert.ToDecimal(request.txtOtrosIngresosIF);
+                Body.txtActivosIF = request.txtActivosIF == "" ? 0 : Convert.ToDecimal(request.txtActivosIF);
+                Body.txtIngresosMensualesIF = request.txtIngresosMensualesIF == "" ? 0 : Convert.ToDecimal(request.txtIngresosMensualesIF);
+                Body.txtPasivosIF = request.txtPasivosIF == "" ? 0 : Convert.ToDecimal(request.txtPasivosIF);
+                Body.txtEgresosMensualesIF = request.txtEgresosMensualesIF == "" ? 0 : Convert.ToDecimal(request.txtEgresosMensualesIF);
+                Body.txtPatrimonioIF = request.txtPatrimonioIF == "" ? 0 : Convert.ToDecimal(request.txtPatrimonioIF);
+                Body.txtOtrosIngresosIF = request.txtOtrosIngresosIF == "" ? 0 : Convert.ToDecimal(request.txtOtrosIngresosIF);
                 Body.txtConceptoOtrosIngresosIF = request.txtConceptoOtrosIngresosIF;
                 Body.txtInstitucionRB = request.txtInstitucionRB;
                 Body.txtNroCuentaRB = request.txtNroCuentaRB;
@@ -118,10 +118,10 @@ namespace SimedCredito.Controllers
                 Body.txtTelefonoRB = request.txtTelefonoRB;
                 Body.txtDireccionRB = request.txtDireccionRB;
                 Body.cboUnidad = request.cboUnidad == "" ? 0 : Convert.ToInt32(request.cboUnidad);
-                Body.cboSubUnidad =  request.cboSubUnidad == "" ? 0 : Convert.ToInt32(request.cboSubUnidad);
-                Body.cboAsesorComercial =  request.cboAsesorComercial == "" ? 0 : Convert.ToInt32(request.cboAsesorComercial);
+                Body.cboSubUnidad = request.cboSubUnidad == "" ? 0 : Convert.ToInt32(request.cboSubUnidad);
+                Body.cboAsesorComercial = request.cboAsesorComercial == "" ? 0 : Convert.ToInt32(request.cboAsesorComercial);
                 Body.txtDescripcion = request.txtDescripcion;
-                Body.cboTipoPago =  request.cboTipoPago == "" ? 0 : Convert.ToInt32(request.cboTipoPago);
+                Body.cboTipoPago = request.cboTipoPago == "" ? 0 : Convert.ToInt32(request.cboTipoPago);
                 Body.cuposolicitado = request.cuposolicitado;
                 Body.txtAsesorComercialVUI = request.txtAsesorComercialVUI;
                 Body.Filename1 = request.Filename1;
@@ -152,7 +152,7 @@ namespace SimedCredito.Controllers
                 Body.ruta13 = request.ruta13;
                 Body.IdEstadosCliente = request.IdEstadosCliente;
                 Body.code = request.code;
-                Body.tokenCode = request.tokenCode;  
+                Body.tokenCode = request.tokenCode;
                 Body.DetalleReferenciasComerciales = request.DetalleReferenciasComerciales;
                 Body.DetalleUnicamentePersonaJuridicas = request.DetalleUnicamentePersonaJuridicas;
                 Body.btnEnvio = request.btnEnvio;
@@ -187,6 +187,46 @@ namespace SimedCredito.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("DataUsuario/{CodeUsuario}")]
+        public IActionResult DataUsuario(string CodeUsuario)
+        {
+            try
+            {
+                var response = new GenericResponse();
+                var data = objFormularioClienteBL.DataUsuario(CodeUsuario);
+                response.code = (int)Enums.eCodeError.OK;
+                response.Data = data;
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogWarning(ex.Message);
+                Logger.LogError(ex.Message);
+                throw ex;
+            }
+        }
+
+        [HttpGet]
+        [Route("GetListadoUsuario")]
+        public IActionResult GetListadoUsuario()
+        {
+            try
+            { 
+                var response = new GenericResponse();
+                var data = objFormularioClienteBL.GetListadoUsuario();
+                response.code = (int)Enums.eCodeError.OK;
+                response.Data = data;
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogWarning(ex.Message);
+                Logger.LogError(ex.Message);
+                throw ex;
+            }
+        }
+         
         [HttpPost]
         [Route("AprobarFormularioCliente")]
         public IActionResult AprobarFormularioCliente(UpdateEstadoYPerfilRequest request)
@@ -242,6 +282,106 @@ namespace SimedCredito.Controllers
                 throw ex;
             }
         }
+
+
+
+        [HttpPost]
+        [Route("eliminarUsuarios")]
+        public IActionResult eliminarUsuarios(EliminarUsuarioRequest request)
+        {
+            try
+            {
+                GenericResponse response = new GenericResponse();
+
+                if (objFormularioClienteBL.eliminarUsuarios(request))
+                {
+                    response.code = (int)Enums.eCodeError.OK;
+                    response.message = "Se Rechazó Correctamente";
+                }
+                else
+                {
+                    response.code = (int)Enums.eCodeError.ERROR;
+                    response.message = "No se pudo Rechazar";
+                }
+                return Ok(response);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex.Message);
+                throw ex;
+            }
+        }
+
+
+        [HttpPost]
+        [Route("InsertarEvaluacionDocumento")]
+        public IActionResult InsertarEvaluacionDocumento(InsertarEvaluacionDocumento request)
+        {
+            try
+            {
+                GenericResponse response = new GenericResponse();
+                var valor = objFormularioClienteBL.InsertarEvaluacionDocumento(request);
+
+                if (valor== "guardado")
+                {
+                    response.code = (int)Enums.eCodeError.OK;
+                    response.message = "Se Guardo Correctmante";
+                }
+                else if(valor== "existe")
+                {
+                    response.code = (int)Enums.eCodeError.ERROR;
+                    response.message = "Este Documento Ya Existe";
+                }
+                else
+                {
+                    response.code = (int)Enums.eCodeError.VAL;
+                    response.message = "No se Pudo Guardar Comuniquese con el area de sistemas";
+                }
+                return Ok(response);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex.Message);
+                throw ex;
+            }
+        } 
+
+        [HttpPost]
+        [Route("guardarUsuarios")]
+        public IActionResult guardarUsuarios(UsuariosRequest request)
+        {
+            try
+            {
+                GenericResponse response = new GenericResponse();
+                var valor = objFormularioClienteBL.guardarUsuarios(request);
+
+                if (valor == "guardado")
+                {
+                    response.code = (int)Enums.eCodeError.OK;
+                    response.message = "Se Guardo Correctmante";
+                }
+                else if (valor == "existe")
+                {
+                    response.code = (int)Enums.eCodeError.ERROR;
+                    response.message = "Este Usuario Ya Existe";
+                }
+                else
+                {
+                    response.code = (int)Enums.eCodeError.VAL;
+                    response.message = "No se Pudo Guardar Comuniquese con el area de sistemas";
+                }
+                return Ok(response);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex.Message);
+                throw ex;
+            }
+        }
+         
 
     }
 }

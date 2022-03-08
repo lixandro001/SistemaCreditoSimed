@@ -1,0 +1,63 @@
+2022-03-05 11:44:13.344 -05:00 [Warning] Ingreso
+2022-03-05 11:44:23.463 -05:00 [Warning] Ingreso
+2022-03-05 11:46:10.365 -05:00 [Warning] Ingreso
+2022-03-05 11:50:46.474 -05:00 [Warning] Ingreso
+2022-03-05 11:51:39.475 -05:00 [Warning] Ingreso
+2022-03-05 11:52:35.155 -05:00 [Warning] Ingreso
+2022-03-05 11:55:47.361 -05:00 [Warning] Ingreso
+2022-03-05 11:59:25.432 -05:00 [Warning] Ingreso
+2022-03-05 11:59:28.485 -05:00 [Warning] Ingreso
+2022-03-05 11:59:32.378 -05:00 [Warning] Ingreso
+2022-03-05 12:03:21.072 -05:00 [Warning] Ingreso
+2022-03-05 12:09:43.171 -05:00 [Warning] Ingreso
+2022-03-05 12:11:01.431 -05:00 [Warning] Ingreso
+2022-03-05 14:20:20.503 -05:00 [Warning] Ingreso
+2022-03-05 14:20:31.098 -05:00 [Warning] Ingreso
+2022-03-05 14:20:56.932 -05:00 [Warning] Ingreso
+2022-03-05 14:24:18.026 -05:00 [Warning] Ingreso
+2022-03-05 19:35:14.740 -05:00 [Warning] Ingreso
+2022-03-05 19:36:43.934 -05:00 [Warning] Ingreso
+2022-03-05 19:36:46.917 -05:00 [Warning] Ingreso
+2022-03-05 19:39:22.530 -05:00 [Warning] Ingreso
+2022-03-05 19:59:49.528 -05:00 [Warning] Ingreso
+2022-03-05 20:15:29.812 -05:00 [Warning] Ingreso
+2022-03-05 20:31:01.578 -05:00 [Warning] Ingreso
+2022-03-05 20:49:34.300 -05:00 [Warning] Ingreso
+2022-03-05 20:49:43.431 -05:00 [Warning] Ingreso
+2022-03-05 21:04:52.564 -05:00 [Warning] Ingreso
+2022-03-05 21:07:28.858 -05:00 [Warning] Ingreso
+2022-03-05 21:10:33.323 -05:00 [Warning] Ingreso
+2022-03-05 21:48:10.820 -05:00 [Warning] Ingreso
+2022-03-05 22:04:12.068 -05:00 [Warning] Ingreso
+2022-03-05 22:16:02.392 -05:00 [Warning] Ingreso
+2022-03-05 22:20:36.257 -05:00 [Warning] Ingreso
+2022-03-05 22:22:23.330 -05:00 [Warning] Ingreso
+2022-03-05 23:03:22.447 -05:00 [Warning] Ingreso
+2022-03-05 23:06:41.070 -05:00 [Warning] Ingreso
+2022-03-05 23:10:25.180 -05:00 [Warning] Ingreso
+2022-03-05 23:11:47.517 -05:00 [Error] Object reference not set to an instance of an object.
+2022-03-05 23:11:48.754 -05:00 [Error] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at SimedCredito.Controllers.FormularioClienteController.InsertarEvaluacionDocumento(InsertarEvaluacionDocumento request) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito\Controllers\FormularioClienteController.cs:line 278
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-03-05 23:13:03.864 -05:00 [Warning] Ingreso
+2022-03-05 23:14:36.251 -05:00 [Warning] Ingreso
+2022-03-05 23:17:34.151 -05:00 [Warning] Ingreso
+2022-03-05 23:20:08.254 -05:00 [Warning] Ingreso
+2022-03-05 23:22:36.437 -05:00 [Warning] Ingreso
+2022-03-05 23:27:28.777 -05:00 [Warning] Ingreso

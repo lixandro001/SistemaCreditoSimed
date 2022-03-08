@@ -50,7 +50,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link">
-                        Bienvenido(a) :   <strong id="nombreUsuarioLayout"></strong><input id="perfil" type="">
+                        Bienvenido(a) :   <strong id="nombreUsuarioLayout"></strong><input id="perfil" type="hidden">
                     </a>
                 </li>
                 <li class="nav-item">
@@ -79,50 +79,14 @@
                         <li class="nav-header">OPCIONES</li>
                         @if (profileId == (int)Enums.Profile.ADMINISTRADOR)
                         {
-                            /*<li class="nav-item">
-                                <a href="@Url.Action("Cliente", "Main")" class="nav-link">
+                            <li class="nav-item">
+                                <a href="@Url.Action("Index", "Usuarios")" class="nav-link">
                                     <i class="nav-icon far fa-file"></i>
                                     <p>
-                                        Bandeja de Cliente
+                                        Gestionar Usuarios
                                     </p>
                                 </a>
                             </li>
-
-                            <li class="nav-item">
-                                <a href="@Url.Action("FormularioCliente", "Main")" class="nav-link">
-                                    <i class="nav-icon far fa-file"></i>
-                                    <p>
-                                        Formulario credito Cliente
-                                    </p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="@Url.Action("FormularioPerfilFinanzas", "Main")" class="nav-link">
-                                    <i class="nav-icon far fa-file"></i>
-                                    <p>
-                                        Formulario Finanzas
-                                    </p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="@Url.Action("FormularioPerfilGerenteVentas", "Main")" class="nav-link">
-                                    <i class="nav-icon far fa-file"></i>
-                                    <p>
-                                        Formulario Gerente Ventas
-                                    </p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="@Url.Action("FormularioPerfilAnalistaCredito", "Main")" class="nav-link">
-                                    <i class="nav-icon far fa-file"></i>
-                                    <p>
-                                        Formulario Analista Credito
-                                    </p>
-                                </a>
-                            </li>*/
                         }
                         else if (profileId == (int)Enums.Profile.ASESORCOMERCIAL)
                         {
@@ -130,18 +94,11 @@
                                 <a href="@Url.Action("BandejaComercial", "Main")" class="nav-link">
                                     <i class="nav-icon far fa-file"></i>
                                     <p>
-                                       Cliente Comercial
+                                        Asesor Comercial
                                     </p>
                                 </a>
                             </li>
-                            @*<li class="nav-item">
-                                <a href="@Url.Action("FormularioCliente", "Main")" class="nav-link">
-                                    <i class="nav-icon far fa-file"></i>
-                                    <p>
-                                        Formulario credito Cliente Comercial
-                                    </p>
-                                </a>
-                            </li>*@
+
                         }
                         else if (profileId == (int)Enums.Profile.ANALISTACREDITO)
                         {
@@ -149,7 +106,7 @@
                                 <a href="@Url.Action("Cliente", "Main")" class="nav-link">
                                     <i class="nav-icon far fa-file"></i>
                                     <p>
-                                        Cliente Credito
+                                        Analista Credito
                                     </p>
                                 </a>
                             </li>
@@ -160,7 +117,7 @@
                                 <a href="@Url.Action("BandejaGerenteVenta", "Main")" class="nav-link">
                                     <i class="nav-icon far fa-file"></i>
                                     <p>
-                                        Bandeja de Cliente Venta
+                                        Gerente Venta
                                     </p>
                                 </a>
                             </li>
@@ -171,34 +128,12 @@
                                 <a href="@Url.Action("BandejaGerenteFinanzas", "Main")" class="nav-link">
                                     <i class="nav-icon far fa-file"></i>
                                     <p>
-                                        Bandeja de Cliente Finanzas
+                                        Gerente Finanzas
                                     </p>
                                 </a>
                             </li>
                         }
-                        @*else if (profileId == (int)Enums.Profile.FACTURADOR)
-        {
-            <li class="nav-item">
-                <a href="@Url.Action("TrayBilling", "Main")" class="nav-link">
-                    <i class="nav-icon far fa-file"></i>
-                    <p>
-                        Bandeja Facturador
-                    </p>
-                </a>
-            </li>
-        }
-        else if (profileId == (int)Enums.Profile.GESTOR)
-        {
-            <li class="nav-item">
-                <a href="@Url.Action("TrayManager", "Main")" class="nav-link">
-                    <i class="nav-icon far fa-file"></i>
-                    <p>
-                        Bandeja de Gestor
-                    </p>
-                </a>
-            </li>
-
-        }*@
+                         
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

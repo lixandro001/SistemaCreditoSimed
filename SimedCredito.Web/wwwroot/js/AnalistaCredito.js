@@ -1,8 +1,22 @@
 ﻿var code = "";
+ 
 $(function () {
     var url = new URL(location.href);
     code = url.searchParams.get("code");
     LoadDataViewByCode(code);
+
+  
+
+    $("#GuardarEvaluacion").on("click", function () {   
+        var realinput1evaluacion = $("#real-input1evaluacion")[0].files;
+        console.log(realinput1evaluacion);
+        console.log(realinput1evaluacion.length);
+        if (realinput1evaluacion.length == 0) {  
+            fnAlertAdvertencia("Falta Adjubtar Documento De Evaluacion");  
+        } else {
+            GuardarEvaluacionDocumento();
+        }
+    });
 
     $("#btnAprobar").on("click", function () {
         fnAprobarFormulario();
@@ -24,8 +38,97 @@ $(function () {
     $("#btnVerRechazo").on("click", function () {
         $("#VerMotivoRechazo").modal("show");
     });
-    
+
+
+    // PARA ADJUNTO DE EVALUACION
+    $(".browse-btn1evaluacion").on("click", function (a) {
+        a.preventDefault();
+        $("#real-input1evaluacion").click();
+    });
+
+    $("#real-input1evaluacion").on("change", function () {
+        const name = $("#real-input1evaluacion").val().split(/\\|\//).pop();
+        console.log(name);
+        var htmlName = name.length > 80 ? name.substr(name.length - 80) : name;
+        $(".file-info1evaluacion").text(htmlName);
+    });
+
+
 });
+
+
+function GuardarEvaluacionDocumento() {
+
+    var idclientedatosgenerales = $("#IdClienteDatosGenerales").val();
+    var perfil = $("#perfil").val();
+    var txtRucRB = $("#txtRucRB").val();
+
+    var file1 = $("#real-input1evaluacion")[0].files;
+    console.log(file1);
+    var fdata = new FormData();
+
+    fdata.append("FormFile1evaluacion", file1[0]);
+    fdata.append("idclientedatosgenerales", idclientedatosgenerales);
+    fdata.append("perfil", perfil);
+    fdata.append("txtRucRB", txtRucRB);
+
+    if ( validateExtension(file1) ) {
+        var parametros = new Object();
+        parametros.data = fdata;
+        PostUpload("FormularioCliente/InsertarEvaluacionDocumento", fdata).done(function (response) {
+            if (response.code == 0) {
+                fnAlertSuccess(response.message, function () {
+                    window.location = fnBaseUrlWeb("Main/Cliente");
+                });
+                console.log(response.data);
+            }
+            else if (response.code == 1) {
+                fnAlertAdvertencia(response.message);
+            }
+            else {
+                fnAlertError(response.message);
+            }
+        });
+    }
+    else {
+        fnAlertAdvertencia("No Ingreso Un Formato JPG O PNG O PDF");
+    }
+
+}
+
+
+
+function validateExtension(file) {
+    console.log(file);
+    if (file != null
+        && file.length > 0) {
+        var extension = "";
+        var extxml = file[0].type;
+        var extxml2 = extxml.split("/");
+        console.log(extxml);
+        var extensionpdf = "";
+        var extpdf = file[0].type;
+        var extpdf2 = extpdf.split("/");
+        if (extxml2.length >= 1 && extpdf2.length > 1) {
+            extension = extxml2[1];
+            extensionpdf = extpdf2[1];
+            console.log(extension);
+            if (extension.toUpperCase() == "JPG" || extension.toUpperCase() == "JPEG" || extension.toUpperCase() == "PNG" ||
+                extensionpdf.toUpperCase() == "PDF" || extensionpdf.toUpperCase() == "pdf") {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+    else {
+        return true;
+    }
+}
 
 function LoadDataViewByCode(code) {
     Get("FormularioCliente/DataByCode?Code=" + code).done(function (response) {
@@ -40,7 +143,10 @@ function LoadDataViewByCode(code) {
 }
 
 function SeteoDatosFormulario(Datos) {
+     
     //-   DATOS GENERALES -//
+    $("#idrutahide").val(Datos.idEvaluacionDocumento);
+    $("#IdClienteDatosGenerales").val(Datos.IdClienteDatosGenerales);
     $("#txtNombreRazonDG").val(Datos.Nombre_RazonSocialDatosGenerales);
     $("#txtDireccionDG").val(Datos.DireccionDatosGenerales);
     $("#cboPais").val(Datos.Nombre_S_PAIS);
@@ -260,6 +366,23 @@ function SeteoDatosFormulario(Datos) {
         $("#verrechazopoppup").val(Datos.MotivoRechazo);
         $("#btnVerRechazo").show();
     }
+
+     
+    var rutaseven = $("#idrutahide").val();
+    console.log("----" + rutaseven);
+    if (rutaseven == 1) {
+         
+        $("#idAdjuntardocument").hide();    
+        $("#txtevaluacion").html(Datos.NombreOriginal);
+        $("#txtevaluacion").attr({
+            target: '_blank',
+            href: urlglobal + Datos.NombreOriginal
+        });
+
+    } else if (rutaseven == 0) {
+        $("#idAdjuntardocument").show();
+    }
+
 }
 
 function fnAprobarFormulario() {

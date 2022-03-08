@@ -52,5 +52,30 @@ namespace Simed.Business
         {
             return objGuardarFormulario.RechazarFormularioCliente(request);
         }
+
+        public bool eliminarUsuarios(EliminarUsuarioRequest request)
+        {
+            return objGuardarFormulario.eliminarUsuarios(request);
+        }
+        public ListaUsuarioResponse DataUsuario(string CodeUsuario)
+        {
+            return objGuardarFormulario.DataUsuario(CodeUsuario);
+        }
+
+        public string InsertarEvaluacionDocumento(InsertarEvaluacionDocumento request)
+        {
+            return objGuardarFormulario.InsertarEvaluacionDocumento(request);
+        }
+
+        public string guardarUsuarios(UsuariosRequest request)
+        {
+            return objGuardarFormulario.guardarUsuarios(request);
+        }
+
+        public List<ListaUsuarioResponse> GetListadoUsuario()
+        {
+            return objGuardarFormulario.GetListadoUsuario();
+        }
+
     }
 }

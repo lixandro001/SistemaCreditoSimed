@@ -1443,5 +1443,104 @@ namespace SimedCredito.Web.Controllers
             }
             return Json(Response);
         }
+
+        [HttpPost]
+        public JsonResult InsertarEvaluacionDocumento(IFormFile FormFile1evaluacion)
+        {
+            var Response = new GenericObjectResponse();
+            try
+            {
+                var IdclienteDatosGenerales = Request.Form["idclientedatosgenerales"];
+                var Idperfil = Request.Form["perfil"];
+                var IdUsuario = HttpContext.Session.GetInt32("USUARIO_ID");
+                var txtRucRB = Request.Form["txtRucRB"];
+                var nombreoriginal = FormFile1evaluacion.FileName;
+
+                var exten1 = "";
+                if (FormFile1evaluacion != null)
+                {
+                    var extension1 = FormFile1evaluacion.ContentType;
+                    var separar1 = extension1.Split("/");
+                    var ext1 = separar1[1];
+                    exten1 = ext1;
+                }
+
+                var BasePath = Path.Combine(HostingEnvironment.WebRootPath, "files");
+                var fecha = DateTime.Now;
+                var formatfecha = string.Format("{0:yyyyMMdd}", fecha);
+                var formathora = string.Format("{0:HHmmss}", fecha);
+                var Filename1 = "";
+                var PathFilename1 = "";
+                if (FormFile1evaluacion != null)
+                {
+                    Filename1 = string.Format("{0}_{1}_{2}_{3}.{4}", Guid.NewGuid(), txtRucRB, formatfecha, formathora, exten1);
+                    PathFilename1 = Path.Combine(BasePath, Filename1);
+                    //Preguntar si existe para Eliminarlo
+                    if (System.IO.File.Exists(PathFilename1))
+                    {
+                        System.IO.File.Delete(PathFilename1);
+                    }
+                    //Copiar 
+                    var document = new FileStream(PathFilename1, FileMode.Create);
+                    FormFile1evaluacion.CopyTo(document);
+                    document.Flush();
+                    document.Dispose();
+
+                }
+
+                InsertarEvaluacionDocumento request = new InsertarEvaluacionDocumento();
+
+                var token = HttpContext.Session.GetString("TOKEN");
+
+                request.IdclienteDatosGenerales = Convert.ToInt32(IdclienteDatosGenerales);
+                request.NombreOriginal = nombreoriginal;
+                request.NombreDocumento = Convert.ToString(Filename1);  
+                request.Guid = Convert.ToString(Guid.NewGuid());  
+                request.ruta = PathFilename1;
+                request.Bites = 0;
+                request.UsuarioId = Convert.ToInt32(IdUsuario);
+                request.IdPerfil = Convert.ToInt32(Idperfil);
+
+                var Url = GeneralModel.UrlWebApi + "FormularioCliente/InsertarEvaluacionDocumento";
+                var Result = Simed.Utilities.Rest.RestClient.ProcessPostRequest(Url, request, token);
+                Response.data = Result;
+
+                var ResultJson = JsonConvert.SerializeObject(Response.data);
+                var code = JsonConvert.DeserializeObject<GenericResponse>(ResultJson);
+
+                if (code.code == 0)
+                {
+                    Response.code = (int)Enums.eCodeError.OK;
+                    Response.data = Result;
+                    Response.message = code.message;
+                    return Json(Response);
+                }
+                else if(code.code == 1)
+                {
+                    Response.code = (int)Enums.eCodeError.ERROR;
+                    Response.data = Result;
+                    Response.message = code.message;
+                    return Json(Response);
+                }
+                else
+                {
+                    Response.code = (int)Enums.eCodeError.VAL;
+                    Response.data = Result;
+                    Response.message = code.message;
+                    return Json(Response);
+                }
+ 
+            }
+            catch (Exception ex)
+            {
+                Logger.LogWarning(ex, ex.Message);
+                Logger.LogWarning(ex, ex.Message);
+                Response.code = (int)Enums.eCodeError.ERROR;
+                return Json(Response);
+            }
+             
+        }
+
+
     }
 }

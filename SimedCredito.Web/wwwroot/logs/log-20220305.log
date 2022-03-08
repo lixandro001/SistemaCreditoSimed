@@ -1,0 +1,32 @@
+2022-03-05 21:49:44.909 -05:00 [Warning] Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
+System.InvalidCastException: Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at SimedCredito.Web.Controllers.FormularioClienteController.InsertarEvaluacionDocumento(IFormFile FormFile1evaluacion) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\FormularioClienteController.cs:line 1507
+2022-03-05 21:49:44.942 -05:00 [Warning] Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
+System.InvalidCastException: Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at SimedCredito.Web.Controllers.FormularioClienteController.InsertarEvaluacionDocumento(IFormFile FormFile1evaluacion) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\FormularioClienteController.cs:line 1507
+2022-03-05 22:01:37.822 -05:00 [Warning] Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
+System.InvalidCastException: Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at SimedCredito.Web.Controllers.FormularioClienteController.InsertarEvaluacionDocumento(IFormFile FormFile1evaluacion)
+2022-03-05 22:05:19.049 -05:00 [Warning] Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
+System.InvalidCastException: Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at SimedCredito.Web.Controllers.FormularioClienteController.InsertarEvaluacionDocumento(IFormFile FormFile1evaluacion) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\FormularioClienteController.cs:line 1507
+2022-03-05 22:05:19.678 -05:00 [Warning] Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
+System.InvalidCastException: Unable to cast object of type 'Newtonsoft.Json.Linq.JObject' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at SimedCredito.Web.Controllers.FormularioClienteController.InsertarEvaluacionDocumento(IFormFile FormFile1evaluacion) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\FormularioClienteController.cs:line 1507
+2022-03-05 23:11:49.740 -05:00 [Warning] The remote server returned an error: (500) Internal Server Error.
+System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at Simed.Utilities.Rest.RestClient.Post(String Url, String Json, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 51
+   at Simed.Utilities.Rest.RestClient.ProcessPostRequest(String Url, Object Request, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 59
+   at SimedCredito.Web.Controllers.FormularioClienteController.InsertarEvaluacionDocumento(IFormFile FormFile1evaluacion) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\FormularioClienteController.cs:line 1505
+2022-03-05 23:11:49.772 -05:00 [Warning] The remote server returned an error: (500) Internal Server Error.
+System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at Simed.Utilities.Rest.RestClient.Post(String Url, String Json, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 51
+   at Simed.Utilities.Rest.RestClient.ProcessPostRequest(String Url, Object Request, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 59
+   at SimedCredito.Web.Controllers.FormularioClienteController.InsertarEvaluacionDocumento(IFormFile FormFile1evaluacion) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\FormularioClienteController.cs:line 1505

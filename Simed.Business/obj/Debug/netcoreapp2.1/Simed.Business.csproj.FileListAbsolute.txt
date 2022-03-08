@@ -31,3 +31,4 @@ C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\obj\Deb
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\obj\Debug\netcoreapp2.1\Simed.Business.csproj.CopyComplete
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\obj\Debug\netcoreapp2.1\Simed.Business.dll
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\obj\Debug\netcoreapp2.1\Simed.Business.pdb
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Business\obj\Debug\netcoreapp2.1\Simed.Business.csproj.AssemblyReference.cache

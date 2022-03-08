@@ -86,3 +86,5 @@ C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\D
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\SimedCredito.Web.dll
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\SimedCredito.Web.pdb
 C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\SimedCredito.Web.genruntimeconfig.cache
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Usuarios\Index.cshtml.g.cs
+C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\obj\Debug\netcoreapp2.1\Razor\Views\Usuarios\NuevoUsuario.cshtml.g.cs

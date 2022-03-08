@@ -1,0 +1,18 @@
+2022-03-08 11:03:25.732 -05:00 [Warning] The remote server returned an error: (500) Internal Server Error.
+System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at Simed.Utilities.Rest.RestClient.Post(String Url, String Json, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 51
+   at Simed.Utilities.Rest.RestClient.ProcessPostRequest(String Url, Object Request, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 59
+   at SimedCredito.Web.Controllers.UsuariosController.guardarUsuarios(UsuariosRequest request) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\UsuariosController.cs:line 42
+2022-03-08 11:04:22.023 -05:00 [Warning] The remote server returned an error: (500) Internal Server Error.
+System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at Simed.Utilities.Rest.RestClient.Post(String Url, String Json, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 51
+   at Simed.Utilities.Rest.RestClient.ProcessPostRequest(String Url, Object Request, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 59
+   at SimedCredito.Web.Controllers.UsuariosController.guardarUsuarios(UsuariosRequest request) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\UsuariosController.cs:line 42
+2022-03-08 15:20:21.536 -05:00 [Warning] The remote server returned an error: (404) Not Found.
+System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.GetResponse()
+   at Simed.Utilities.Rest.RestClient.Get(String Url, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 31
+   at Simed.Utilities.Rest.RestClient.ProcessGetRequest(String Url, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 75
+   at SimedCredito.Web.Controllers.UsuariosController.DataUsuario(String CodeUsuario) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\UsuariosController.cs:line 108

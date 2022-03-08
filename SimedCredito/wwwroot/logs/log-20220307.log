@@ -1,0 +1,82 @@
+2022-03-07 11:35:15.803 -05:00 [Warning] Ingreso
+2022-03-07 11:52:32.231 -05:00 [Warning] Ingreso
+2022-03-07 12:04:07.823 -05:00 [Warning] Ingreso
+2022-03-07 12:09:36.358 -05:00 [Warning] Ingreso
+2022-03-07 12:13:28.321 -05:00 [Warning] Ingreso
+2022-03-07 12:14:10.731 -05:00 [Error] String[0]: the Size property has an invalid size of 0.
+2022-03-07 12:14:17.761 -05:00 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: String[0]: the Size property has an invalid size of 0.
+   at SimedCredito.Controllers.FormularioClienteController.InsertarEvaluacionDocumento(InsertarEvaluacionDocumento request) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito\Controllers\FormularioClienteController.cs:line 278
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-03-07 12:19:16.007 -05:00 [Warning] Ingreso
+2022-03-07 12:28:17.286 -05:00 [Warning] Ingreso
+2022-03-07 12:32:32.319 -05:00 [Warning] Ingreso
+2022-03-07 13:09:52.596 -05:00 [Warning] Ingreso
+2022-03-07 13:10:03.057 -05:00 [Warning] Unable to cast object of type 'System.Int32' to type 'System.String'.
+2022-03-07 13:10:03.059 -05:00 [Error] Unable to cast object of type 'System.Int32' to type 'System.String'.
+2022-03-07 13:10:12.397 -05:00 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at SimedCredito.Controllers.FormularioClienteController.DataByCode(String Code) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito\Controllers\FormularioClienteController.cs:line 186
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-03-07 13:11:34.086 -05:00 [Warning] Ingreso
+2022-03-07 18:00:58.378 -05:00 [Warning] Ingreso
+2022-03-07 18:02:15.550 -05:00 [Warning] Ingreso
+2022-03-07 18:49:05.175 -05:00 [Warning] Ingreso
+2022-03-07 18:56:35.953 -05:00 [Warning] Ingreso
+2022-03-07 19:57:55.768 -05:00 [Warning] Ingreso
+2022-03-07 19:58:07.934 -05:00 [Warning] Ingreso
+2022-03-07 20:53:25.925 -05:00 [Warning] Ingreso
+2022-03-07 20:53:35.287 -05:00 [Warning] Ingreso
+2022-03-07 20:54:27.913 -05:00 [Warning] Unable to cast object of type 'System.Guid' to type 'System.String'.
+2022-03-07 20:54:27.914 -05:00 [Error] Unable to cast object of type 'System.Guid' to type 'System.String'.
+2022-03-07 20:54:55.604 -05:00 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidCastException: Unable to cast object of type 'System.Guid' to type 'System.String'.
+   at SimedCredito.Controllers.FormularioClienteController.GetListadoUsuario() in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito\Controllers\FormularioClienteController.cs:line 206
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-03-07 20:57:24.316 -05:00 [Warning] Ingreso
+2022-03-07 21:21:48.573 -05:00 [Warning] Ingreso
