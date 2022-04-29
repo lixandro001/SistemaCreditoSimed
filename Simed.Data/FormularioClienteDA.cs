@@ -25,6 +25,7 @@ namespace Simed.Data
             using (var Ado = new SQLServer(ConStr))
                 try
                 {
+                    Ado.BeginTransaction();
                     string strsql = "usp_GuardarFormularioCliente";
                     var parametros = new SqlParameter[]
                     {
@@ -48,7 +49,7 @@ namespace Simed.Data
                        new SqlParameter { ParameterName = "@code", SqlDbType = SqlDbType.VarChar, Size = 100, SqlValue = datos.code},
                        new SqlParameter { ParameterName = "@BtnEnvio", SqlDbType = SqlDbType.Int, SqlValue = datos.btnEnvio},
                     };
-                    Ado.ExecNonQueryProc(strsql, parametros);
+                    Ado.ExecNonQueryProcTransaction(strsql, parametros);
                     var valor = parametros[0].Value;
                     var idcliente = Convert.ToInt32(parametros[0].Value.ToString());
                     var mensaje = Convert.ToInt32(parametros[1].Value.ToString());
@@ -160,6 +161,7 @@ namespace Simed.Data
                         string strsql8 = "usp_GuardarInformacionFinanciera";
                         var parametros8 = new SqlParameter[]
                         {
+                             
                         new SqlParameter { ParameterName = "@IdClienteDatosGenerales", SqlDbType = SqlDbType.Int, SqlValue = idcliente},
                         new SqlParameter { ParameterName = "@FechaCorte", SqlDbType = SqlDbType.DateTime, SqlValue = datos.FechaCorte},
                         new SqlParameter { ParameterName = "@InformacionDebeSoles", SqlDbType = SqlDbType.Bit, SqlValue = datos.checkSolesIF},
@@ -304,14 +306,13 @@ namespace Simed.Data
 
                         };
                         Ado.ExecNonQueryProc(strsql14, parametros14);
-
                     }
-
+                    Ado.Commit();
                     return mensaje;
-
                 }
                 catch (Exception ex)
                 {
+                    Ado.Rollback();
                     throw ex;
                 }
         }
@@ -477,9 +478,10 @@ namespace Simed.Data
                             if (Dr["ResponsableContratacion"] != DBNull.Value) { Entity.ResponsableContratacion = (string)Dr["ResponsableContratacion"]; }
                             if (Dr["Firma"] != DBNull.Value) { Entity.Firma = (string)Dr["Firma"]; }
                             //evaluacion
-                            if (Dr["idEvaluacionDocumento"] != DBNull.Value) { Entity.idEvaluacionDocumento = (int)Dr["idEvaluacionDocumento"]; }
-                            if (Dr["NombreOriginal"] != DBNull.Value) { Entity.NombreOriginal = (string)Dr["NombreOriginal"]; }
-                            if (Dr["ruta"] != DBNull.Value) { Entity.ruta = (string)Dr["ruta"]; }
+                            //if (Dr["idEvaluacionDocumento"] != DBNull.Value) { Entity.idEvaluacionDocumento = (int)Dr["idEvaluacionDocumento"]; }
+                            //if (Dr["NombreOriginal"] != DBNull.Value) { Entity.NombreOriginal = (string)Dr["NombreOriginal"]; }
+                            //if (Dr["NombreDocumento"] != DBNull.Value) { Entity.NombreDocumento = (string)Dr["NombreDocumento"]; }
+                            //if (Dr["ruta"] != DBNull.Value) { Entity.ruta = (string)Dr["ruta"]; }
 
                             break;
                         }
@@ -548,6 +550,35 @@ namespace Simed.Data
 
                         DrMain2.Close();
 
+                        //para evaluacion detalle
+
+                        var ParametersDetalle3 = new SqlParameter[]
+                        {
+                        new SqlParameter{ ParameterName = "@Code", SqlDbType = SqlDbType.VarChar,SqlValue=Code},
+                        };
+                        var DrMain3 = Ado.ExecDataReaderProc("usp_GetDatosDetalleEvaluacionDocumento", ParametersDetalle3);
+                        List<evaluacionResponse> DetalleEvaluacionResponse = new List<evaluacionResponse>();
+                        while (DrMain3.Read())
+                        {
+                            evaluacionResponse EntityEvaluacion = new evaluacionResponse();
+                            if (DrMain3["idEvaluacionDocumento"] != DBNull.Value)
+                                EntityEvaluacion.idEvaluacionDocumento = (int)DrMain3["idEvaluacionDocumento"];
+                            if (DrMain3["IdclienteDatosGenerales"] != DBNull.Value)
+                                EntityEvaluacion.IdclienteDatosGenerales = (int)DrMain3["IdclienteDatosGenerales"];
+                            if (DrMain3["NombreOriginal"] != DBNull.Value)
+                                EntityEvaluacion.NombreOriginal = (string)DrMain3["NombreOriginal"];
+                            if (DrMain3["NombreDocumento"] != DBNull.Value)
+                                EntityEvaluacion.NombreDocumento = (string)DrMain3["NombreDocumento"];
+                            if (DrMain3["Guid"] != DBNull.Value)
+                                EntityEvaluacion.Guid = (Guid)DrMain3["Guid"];
+                            if (DrMain3["ruta"] != DBNull.Value)
+                                EntityEvaluacion.ruta = (string)DrMain3["ruta"];
+                            DetalleEvaluacionResponse.Add(EntityEvaluacion);
+                        }
+
+                        DrMain3.Close();
+
+                        Entity.DetalleEvaluacion = DetalleEvaluacionResponse;
                         Entity.DetalleReferenciaComercial = DetalleReferenciaComercial;
                         Entity.DetalleInformacionSocio = DetalleInformacionSocio;
                         return Entity;
@@ -700,6 +731,39 @@ namespace Simed.Data
                 }
         }
 
+        public string guardarinformacionfinanciera(InformacionFinancieraRequest request)
+        {
+            using (var Ado = new SQLServer(ConStr))
+                try
+                {
+                    Ado.BeginTransaction();
+                    var Parameters = new SqlParameter[]
+                    {
+                        new SqlParameter { ParameterName = "@mensaje", SqlDbType = SqlDbType.VarChar,Size=50, SqlValue = "", Direction= ParameterDirection.InputOutput},
+                        new SqlParameter{ParameterName="@FechaCorte",SqlDbType=SqlDbType.Date,SqlValue=request.FechaCorte},
+                        new SqlParameter{ParameterName="@checkSolesIF",SqlDbType=SqlDbType.Bit,SqlValue=request.checkSolesIF},
+                        new SqlParameter{ParameterName="@checkDolaresIF",SqlDbType=SqlDbType.Bit,SqlValue=request.checkDolaresIF},
+                        new SqlParameter{ParameterName="@txtActivosIF",SqlDbType=SqlDbType.VarChar,Size=500,SqlValue=request.txtActivosIF},
+                        new SqlParameter{ParameterName="@txtIngresosMensualesIF",SqlDbType=SqlDbType.VarChar,Size=500,SqlValue=request.txtIngresosMensualesIF},
+                        new SqlParameter{ParameterName="@txtPasivosIF",SqlDbType=SqlDbType.VarChar,Size=500,SqlValue=request.txtPasivosIF},
+                        new SqlParameter{ParameterName="@txtEgresosMensualesIF",SqlDbType=SqlDbType.VarChar ,Size=500,SqlValue=request.txtEgresosMensualesIF},
+                        new SqlParameter{ParameterName="@txtPatrimonioIF",SqlDbType=SqlDbType.VarChar ,Size=500,SqlValue=request.txtPatrimonioIF},
+                        new SqlParameter{ParameterName="@txtOtrosIngresosIF",SqlDbType=SqlDbType.VarChar ,Size=500,SqlValue=request.txtOtrosIngresosIF},
+                        new SqlParameter{ParameterName="@txtConceptoOtrosIngresosIF",SqlDbType=SqlDbType.VarChar ,Size=500,SqlValue=request.txtConceptoOtrosIngresosIF},
+                        new SqlParameter{ParameterName="@IdClienteDatosGenerales",SqlDbType=SqlDbType.Int,SqlValue=request.IdClienteDatosGenerales},
+                    };
+
+                    Ado.ExecNonQueryProcTransaction("sp_insertarInformacionFinanciera", Parameters);
+                    var mensaje = Convert.ToString(Parameters[0].Value.ToString());
+                    Ado.Commit();
+                    return mensaje;
+                }
+                catch (Exception ex)
+                {
+                    Ado.Rollback();
+                    throw ex;
+                }
+        }
 
         public List<ListaUsuarioResponse> GetListadoUsuario()
         {
@@ -737,6 +801,7 @@ namespace Simed.Data
             }
         }
 
+         
 
 
         public ListaUsuarioResponse DataUsuario(string CodeUsuario)

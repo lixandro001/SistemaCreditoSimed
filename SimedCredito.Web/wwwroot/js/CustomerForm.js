@@ -720,24 +720,24 @@ function fnValidFormularioISA() {
 
 function fnValidFormularioIF() {
     var Rpta = true;
-    if (!document.getElementById("checkSolesIF").checked && !document.getElementById("checkDolaresIF").checked) {
-        Rpta = false;
-    }
-    if ($("#txtActivosIF").val() == '') {
-        Rpta = false;
-    }
-    if ($("#txtIngresosMensualesIF").val() == '') {
-        Rpta = false;
-    }
-    if ($("#txtPasivosIF").val() == '') {
-        Rpta = false;
-    }
-    if ($("#txtEgresosMensualesIF").val() == '') {
-        Rpta = false;
-    }
-    if ($("#txtPatrimonioIF").val() == '') {
-        Rpta = false;
-    }
+    //if (!document.getElementById("checkSolesIF").checked && !document.getElementById("checkDolaresIF").checked) {
+    //    Rpta = false;
+    //}
+    //if ($("#txtActivosIF").val() == '') {
+    //    Rpta = false;
+    //}
+    //if ($("#txtIngresosMensualesIF").val() == '') {
+    //    Rpta = false;
+    //}
+    //if ($("#txtPasivosIF").val() == '') {
+    //    Rpta = false;
+    //}
+    //if ($("#txtEgresosMensualesIF").val() == '') {
+    //    Rpta = false;
+    //}
+    //if ($("#txtPatrimonioIF").val() == '') {
+    //    Rpta = false;
+    //}
     return Rpta;
 }
 
@@ -1006,55 +1006,55 @@ function fnLimpiarCamposTable() {
 //--------ISA CHECKBOX TRUE O FALSE---------
 
 //#region IF CHECKBOC
-$("#checkSolesIF").on("change", function () {
-    fnLimpiarCamposIF();
-    if (this.checked) {
-        $("#checkDolaresIF").prop("checked", false);
-        fnPlaceholderSolesIf();
-    }
-    else {
-        $("#checkDolaresIF").prop("checked", true);
-        fnPlaceholderDolaresIf();
-    }
-});
+//$("#checkSolesIF").on("change", function () {
+//    fnLimpiarCamposIF();
+//    //if (this.checked) {
+//    //    $("#checkDolaresIF").prop("checked", false);
+//    //    fnPlaceholderSolesIf();
+//    //}
+//    //else {
+//    //    $("#checkDolaresIF").prop("checked", true);
+//    //    fnPlaceholderDolaresIf();
+//    //}
+//});
 
 $("#checkDolaresIF").on("change", function () {
     fnLimpiarCamposIF();
-    if (this.checked) {
-        $("#checkSolesIF").prop("checked", false);
-        fnPlaceholderDolaresIf();
-    }
-    else {
-        $("#checkSolesIF").prop("checked", true);
-        fnPlaceholderSolesIf();
-    }
+    //if (this.checked) {
+    //    $("#checkSolesIF").prop("checked", false);
+    //    fnPlaceholderDolaresIf();
+    //}
+    //else {
+    //    $("#checkSolesIF").prop("checked", true);
+    //    fnPlaceholderSolesIf();
+    //}
 });
 
 function fnLimpiarCamposIF() {
-    $("#txtActivosIF").val('');
-    $("#txtIngresosMensualesIF").val('');
-    $("#txtPasivosIF").val('');
-    $("#txtEgresosMensualesIF").val('');
-    $("#txtPatrimonioIF").val('');
-    $("#txtOtrosIngresosIF").val('');
+    /*$("#txtActivosIF").val('');*/
+   /* $("#txtIngresosMensualesIF").val('');*/
+    /*$("#txtPasivosIF").val('');*/
+    /*$("#txtEgresosMensualesIF").val('');*/
+    /*$("#txtPatrimonioIF").val('');*/
+  /*  $("#txtOtrosIngresosIF").val('');*/
 }
 
 function fnPlaceholderSolesIf() {
-    $("#txtActivosIF").attr('placeholder', 'S/.');
-    $("#txtIngresosMensualesIF").attr('placeholder', 'S/.');
-    $("#txtPasivosIF").attr('placeholder', 'S/.');
-    $("#txtEgresosMensualesIF").attr('placeholder', 'S/.');
-    $("#txtPatrimonioIF").attr('placeholder', 'S/.');
-    $("#txtOtrosIngresosIF").attr('placeholder', 'S/.');
+    /*$("#txtActivosIF").attr('placeholder', 'S/.');*/
+    /*$("#txtIngresosMensualesIF").attr('placeholder', 'S/.');*/
+   /* $("#txtPasivosIF").attr('placeholder', 'S/.');*/
+   /* $("#txtEgresosMensualesIF").attr('placeholder', 'S/.');*/
+   /* $("#txtPatrimonioIF").attr('placeholder', 'S/.');*/
+   /* $("#txtOtrosIngresosIF").attr('placeholder', 'S/.');*/
 }
 
 function fnPlaceholderDolaresIf() {
-    $("#txtActivosIF").attr('placeholder', '$');
-    $("#txtIngresosMensualesIF").attr('placeholder', '$');
-    $("#txtPasivosIF").attr('placeholder', '$');
-    $("#txtEgresosMensualesIF").attr('placeholder', '$');
-    $("#txtPatrimonioIF").attr('placeholder', '$');
-    $("#txtOtrosIngresosIF").attr('placeholder', '$');
+    /*$("#txtActivosIF").attr('placeholder', '$');*/
+   /* $("#txtIngresosMensualesIF").attr('placeholder', '$');*/
+   /* $("#txtPasivosIF").attr('placeholder', '$');*/
+   /* $("#txtEgresosMensualesIF").attr('placeholder', '$');*/
+   /* $("#txtPatrimonioIF").attr('placeholder', '$');*/
+    /*$("#txtOtrosIngresosIF").attr('placeholder', '$');*/
 }
 
 
@@ -1155,25 +1155,25 @@ function fnGuardarFormularioCliente() {
     var txtParticipacionAccionista4ISA = $("#txtParticipacionAccionista4ISA").val();
     var txtNacionalidadAccionista4ISA = $("#txtNacionalidadAccionista4ISA").val();
     //INFORMACIÓN FINANCIERA
-    var FechaCorte = $("#FechaCorte").val();
+    /*var FechaCorte = $("#FechaCorte").val();*/
  
-    var checkSolesIF = false; 
-    if (document.getElementById("checkSolesIF").checked)
-    {
-        checkSolesIF = true
-    }
-    var checkDolaresIF = false;
-    if (document.getElementById("checkDolaresIF").checked)
-    {
-        checkDolaresIF = true
-    }
-    var txtActivosIF = $("#txtActivosIF").val();
-    var txtIngresosMensualesIF = $("#txtIngresosMensualesIF").val();
-    var txtPasivosIF = $("#txtPasivosIF").val();
-    var txtEgresosMensualesIF = $("#txtEgresosMensualesIF").val();
-    var txtPatrimonioIF = $("#txtPatrimonioIF").val();
-    var txtOtrosIngresosIF = $("#txtOtrosIngresosIF").val();
-    var txtConceptoOtrosIngresosIF = $("#txtConceptoOtrosIngresosIF").val();
+    //var checkSolesIF = false; 
+    //if (document.getElementById("checkSolesIF").checked)
+    //{
+    //    checkSolesIF = true
+    //}
+    //var checkDolaresIF = false;
+    //if (document.getElementById("checkDolaresIF").checked)
+    //{
+    //    checkDolaresIF = true
+    //}
+    /*var txtActivosIF = $("#txtActivosIF").val();*/
+    /*var txtIngresosMensualesIF = $("#txtIngresosMensualesIF").val();*/
+   /* var txtPasivosIF = $("#txtPasivosIF").val();*/
+   /* var txtEgresosMensualesIF = $("#txtEgresosMensualesIF").val();*/
+   /* var txtPatrimonioIF = $("#txtPatrimonioIF").val();*/
+    /*var txtOtrosIngresosIF = $("#txtOtrosIngresosIF").val();*/
+    /*var txtConceptoOtrosIngresosIF = $("#txtConceptoOtrosIngresosIF").val();*/
     //Referencias Comerciales
     var txtEmpresa1RC = $("#txtEmpresa1RC").val();
     var txtRuc1RC = $("#txtRuc1RC").val();
@@ -1336,16 +1336,16 @@ function fnGuardarFormularioCliente() {
     fdata.append("txtParticipacionAccionista4ISA", txtParticipacionAccionista4ISA);
     fdata.append("txtNacionalidadAccionista4ISA", txtNacionalidadAccionista4ISA);
     //INFORMACIÓN FINANCIERA
-    fdata.append("FechaCorte", FechaCorte);
-    fdata.append("checkSolesIF", checkSolesIF);
-    fdata.append("checkDolaresIF", checkDolaresIF);
-    fdata.append("txtActivosIF", txtActivosIF);
-    fdata.append("txtIngresosMensualesIF", txtIngresosMensualesIF);
-    fdata.append("txtPasivosIF", txtPasivosIF);
-    fdata.append("txtEgresosMensualesIF", txtEgresosMensualesIF);
-    fdata.append("txtPatrimonioIF", txtPatrimonioIF);
-    fdata.append("txtOtrosIngresosIF", txtOtrosIngresosIF);
-    fdata.append("txtConceptoOtrosIngresosIF", txtConceptoOtrosIngresosIF);
+    /*fdata.append("FechaCorte", FechaCorte);*/
+    /*fdata.append("checkSolesIF", checkSolesIF);*/
+    /*fdata.append("checkDolaresIF", checkDolaresIF);*/
+    /*fdata.append("txtActivosIF", txtActivosIF);*/
+    /*fdata.append("txtIngresosMensualesIF", txtIngresosMensualesIF);*/
+    /*fdata.append("txtPasivosIF", txtPasivosIF);*/
+   /* fdata.append("txtEgresosMensualesIF", txtEgresosMensualesIF);*/
+   /* fdata.append("txtPatrimonioIF", txtPatrimonioIF);*/
+    /*fdata.append("txtOtrosIngresosIF", txtOtrosIngresosIF);*/
+    /*fdata.append("txtConceptoOtrosIngresosIF", txtConceptoOtrosIngresosIF);*/
     //Referencias Comerciales
     fdata.append("txtEmpresa1RC", txtEmpresa1RC);
     fdata.append("txtRuc1RC", txtRuc1RC);
@@ -1497,22 +1497,22 @@ function fnEnviarFormularioCliente() {
     var txtParticipacionAccionista4ISA = $("#txtParticipacionAccionista4ISA").val();
     var txtNacionalidadAccionista4ISA = $("#txtNacionalidadAccionista4ISA").val();
     //INFORMACIÓN FINANCIERA
-    var FechaCorte = $("#FechaCorte").val();
-    var checkSolesIF = false;
-    if (document.getElementById("checkSolesIF").checked) {
-        checkSolesIF = true
-    }
-    var checkDolaresIF = false;
-    if (document.getElementById("checkDolaresIF").checked) {
-        checkDolaresIF = true
-    }
-    var txtActivosIF = $("#txtActivosIF").val();
-    var txtIngresosMensualesIF = $("#txtIngresosMensualesIF").val();
-    var txtPasivosIF = $("#txtPasivosIF").val();
-    var txtEgresosMensualesIF = $("#txtEgresosMensualesIF").val();
-    var txtPatrimonioIF = $("#txtPatrimonioIF").val();
-    var txtOtrosIngresosIF = $("#txtOtrosIngresosIF").val();
-    var txtConceptoOtrosIngresosIF = $("#txtConceptoOtrosIngresosIF").val();
+    /*var FechaCorte = $("#FechaCorte").val();*/
+    //var checkSolesIF = false;
+    //if (document.getElementById("checkSolesIF").checked) {
+    //    checkSolesIF = true
+    //}
+    //var checkDolaresIF = false;
+    //if (document.getElementById("checkDolaresIF").checked) {
+    //    checkDolaresIF = true
+    //}
+   /* var txtActivosIF = $("#txtActivosIF").val();*/
+    /*var txtIngresosMensualesIF = $("#txtIngresosMensualesIF").val();*/
+ /*   var txtPasivosIF = $("#txtPasivosIF").val();*/
+  /*  var txtEgresosMensualesIF = $("#txtEgresosMensualesIF").val();*/
+    /*var txtPatrimonioIF = $("#txtPatrimonioIF").val();*/
+    /*var txtOtrosIngresosIF = $("#txtOtrosIngresosIF").val();*/
+    /*var txtConceptoOtrosIngresosIF = $("#txtConceptoOtrosIngresosIF").val();*/
     //Referencias Comerciales
     var txtEmpresa1RC = $("#txtEmpresa1RC").val();
     var txtRuc1RC = $("#txtRuc1RC").val();
@@ -1671,16 +1671,16 @@ function fnEnviarFormularioCliente() {
     fdata.append("txtParticipacionAccionista4ISA", txtParticipacionAccionista4ISA);
     fdata.append("txtNacionalidadAccionista4ISA", txtNacionalidadAccionista4ISA);
     //INFORMACIÓN FINANCIERA
-    fdata.append("FechaCorte", FechaCorte);
-    fdata.append("checkSolesIF", checkSolesIF);
-    fdata.append("checkDolaresIF", checkDolaresIF);
-    fdata.append("txtActivosIF", txtActivosIF);
-    fdata.append("txtIngresosMensualesIF", txtIngresosMensualesIF);
-    fdata.append("txtPasivosIF", txtPasivosIF);
-    fdata.append("txtEgresosMensualesIF", txtEgresosMensualesIF);
-    fdata.append("txtPatrimonioIF", txtPatrimonioIF);
-    fdata.append("txtOtrosIngresosIF", txtOtrosIngresosIF);
-    fdata.append("txtConceptoOtrosIngresosIF", txtConceptoOtrosIngresosIF);
+    /*fdata.append("FechaCorte", FechaCorte);*/
+    /*fdata.append("checkSolesIF", checkSolesIF);*/
+    /*fdata.append("checkDolaresIF", checkDolaresIF);*/
+    /*fdata.append("txtActivosIF", txtActivosIF);*/
+    /*fdata.append("txtIngresosMensualesIF", txtIngresosMensualesIF);*/
+  /*  fdata.append("txtPasivosIF", txtPasivosIF);*/
+    /*fdata.append("txtEgresosMensualesIF", txtEgresosMensualesIF);*/
+    /*fdata.append("txtPatrimonioIF", txtPatrimonioIF);*/
+    /*fdata.append("txtOtrosIngresosIF", txtOtrosIngresosIF);*/
+   /* fdata.append("txtConceptoOtrosIngresosIF", txtConceptoOtrosIngresosIF);*/
     //Referencias Comerciales
     fdata.append("txtEmpresa1RC", txtEmpresa1RC);
     fdata.append("txtRuc1RC", txtRuc1RC);

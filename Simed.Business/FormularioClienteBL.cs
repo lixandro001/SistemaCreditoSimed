@@ -71,7 +71,11 @@ namespace Simed.Business
         {
             return objGuardarFormulario.guardarUsuarios(request);
         }
-
+        public string guardarinformacionfinanciera(InformacionFinancieraRequest request)
+        {
+            return objGuardarFormulario.guardarinformacionfinanciera(request);
+        }
+         
         public List<ListaUsuarioResponse> GetListadoUsuario()
         {
             return objGuardarFormulario.GetListadoUsuario();

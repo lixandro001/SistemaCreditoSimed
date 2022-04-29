@@ -24,7 +24,8 @@ namespace Simed.Entity
             ADMINISTRADOR = 1,
             ASESORCOMERCIAL=2,
             ANALISTACREDITO=3,
-            GERENTENEGOCIO=4
+            GERENTENEGOCIO=4,
+            GERENTEFINANZAS=5
         }
 
     }

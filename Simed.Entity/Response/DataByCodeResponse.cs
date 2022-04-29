@@ -177,10 +177,11 @@ namespace Simed.Entity.Response
         public string Firma { get; set; }
         public int idEvaluacionDocumento { get; set; }
         public string NombreOriginal { get; set; }
-
+        public string NombreDocumento { get; set; }
         public string ruta { get; set; }
         public List<listadoDetalleInformacionSocios> DetalleInformacionSocio { get; set; }
         public List<listadoDetalleReferenciaComercial> DetalleReferenciaComercial { get; set; }
+        public List<evaluacionResponse> DetalleEvaluacion { get; set; }
  
     }
 }

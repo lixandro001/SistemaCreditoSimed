@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="@Url.Content("~/adminlte/css/adminlte.min.css")">
     <link rel="stylesheet" href="@Url.Content("~/plugins/jquery-loading/jquery.loading.min.css")" />
 
+
+
     <link rel="stylesheet" href="@Url.Content("~/plugins/sweetalert/dist/sweetalert.css")">
     <link rel="stylesheet" href="@Url.Content("~/plugins/select2/css/select2.min.css")" />
     <link rel="stylesheet" href="@Url.Content("~/css/style.css")">
@@ -122,7 +124,7 @@
                                 </a>
                             </li>
                         }
-                        else
+                        else if (profileId == (int)Enums.Profile.GERENTEFINANZAS)
                         {
                             <li class="nav-item">
                                 <a href="@Url.Action("BandejaGerenteFinanzas", "Main")" class="nav-link">
@@ -176,6 +178,9 @@
     <!-- AdminLTE App -->
     <script src="@Url.Content("~/adminlte/js/adminlte.min.js")"></script>
     <script src="@Url.Content("~/plugins/jquery-loading/jquery.loading.min.js")"></script>
+
+     
+
     <script src="@Url.Content("~/plugins/sweetalert/dist/sweetalert.min.js")"></script>
 
     <script>

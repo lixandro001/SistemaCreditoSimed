@@ -99,7 +99,15 @@ namespace SimedCredito.Controllers
                 Body.txtEspecifiqueVinculo2PEP = request.txtEspecifiqueVinculo2PEP;
                 Body.txtNombreApellidoPEP = request.txtNombreApellidoPEP;
                 Body.txtCargoPEP = request.txtCargoPEP;
-                Body.FechaCorte = request.FechaCorte == "" ? DateTime.Now : Convert.ToDateTime(request.FechaCorte);
+                if (string.IsNullOrEmpty(request.FechaCorte))
+                {
+                    Body.FechaCorte = DateTime.Now;
+                }
+                else
+                {
+                    Body.FechaCorte = request.FechaCorte == "" ? DateTime.Now : Convert.ToDateTime(request.FechaCorte);
+                }
+                  
                 Body.checkSolesIF = request.checkSolesIF;
                 Body.checkDolaresIF = request.checkDolaresIF;
                 Body.txtActivosIF = request.txtActivosIF == "" ? 0 : Convert.ToDecimal(request.txtActivosIF);
@@ -381,7 +389,42 @@ namespace SimedCredito.Controllers
                 throw ex;
             }
         }
-         
+
+        [HttpPost]
+        [Route("guardarinformacionfinanciera")]
+        public IActionResult guardarinformacionfinanciera(InformacionFinancieraRequest request)
+        {
+            try
+            {
+                GenericResponse response = new GenericResponse();
+                var valor = objFormularioClienteBL.guardarinformacionfinanciera(request);
+
+                if (valor == "guardado" || valor== "actualizado")
+                {
+                    response.code = (int)Enums.eCodeError.OK;
+                    response.message = "Se Guardo Correctmante";
+                }
+                else if (valor == "existe")
+                {
+                    response.code = (int)Enums.eCodeError.ERROR;
+                    response.message = "Este Usuario Ya Existe";
+                }
+                else
+                {
+                    response.code = (int)Enums.eCodeError.VAL;
+                    response.message = "No se Pudo Guardar Comuniquese con el area de sistemas";
+                }
+                return Ok(response);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex.Message);
+                throw ex;
+            }
+        }
+
+
 
     }
 }

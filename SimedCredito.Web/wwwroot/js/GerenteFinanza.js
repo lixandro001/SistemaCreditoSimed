@@ -40,6 +40,7 @@ function LoadDataViewByCode(code) {
 
 function SeteoDatosFormulario(Datos) {
     //-   DATOS GENERALES -//
+    $("#idrutahide").val(Datos.idEvaluacionDocumento);
     $("#txtNombreRazonDG").val(Datos.Nombre_RazonSocialDatosGenerales);
     $("#txtDireccionDG").val(Datos.DireccionDatosGenerales);
     $("#cboPais").val(Datos.Nombre_S_PAIS);
@@ -258,6 +259,66 @@ function SeteoDatosFormulario(Datos) {
     if (Datos.EstadoFinanza == 3) {
         $("#verrechazopoppup").val(Datos.MotivoRechazo);
         $("#btnVerRechazo").show();
+    }
+
+    var rutaseven = $("#idrutahide").val();
+    console.log("----" + rutaseven);
+
+    var nuevoNombre1
+    var nuevoNombre2
+    var Indice2 = 1;
+    for (var i = 0; i < Datos.DetalleEvaluacion.length; i++) {
+
+        var array = Datos.DetalleEvaluacion;
+        var nombre1 = array[0];
+        var nombre2 = array[1];
+
+        console.log(nombre1);
+        console.log(nombre2);
+
+        if (nombre1 == null) {
+            nuevoNombre1 = "";
+            nuevoNombre2 = nombre2.NombreDocumento;
+            Indice2++;
+            $("#idAdjuntardocument2").hide();
+            $("#txtevaluacion2").html(Datos.DetalleEvaluacion[1].NombreOriginal);
+            $("#txtevaluacion2").attr({
+                target: '_blank',
+                href: urlglobal + nuevoNombre2
+            });
+        }
+        else if (nombre2 == null) {
+            nuevoNombre2 = "";
+            nuevoNombre1 = nombre1.NombreDocumento;
+            Indice2++;
+
+            $("#idAdjuntardocument").hide();
+            $("#txtevaluacion").html(Datos.DetalleEvaluacion[0].NombreOriginal);
+            $("#txtevaluacion").attr({
+                target: '_blank',
+                href: urlglobal + nuevoNombre1
+            });
+        }
+        else {
+            nuevoNombre1 = nombre1.NombreDocumento;
+            nuevoNombre2 = nombre2.NombreDocumento;
+            Indice2++;
+
+            $("#idAdjuntardocument").hide();
+            $("#txtevaluacion").html(Datos.DetalleEvaluacion[0].NombreOriginal);
+            $("#txtevaluacion").attr({
+                target: '_blank',
+                href: urlglobal + nuevoNombre1
+            });
+            $("#idAdjuntardocument2").hide();
+            $("#txtevaluacion2").html(Datos.DetalleEvaluacion[1].NombreOriginal);
+            $("#txtevaluacion2").attr({
+                target: '_blank',
+                href: urlglobal + nuevoNombre2
+            });
+
+        }
+
     }
 }
 

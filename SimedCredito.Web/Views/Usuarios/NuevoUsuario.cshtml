@@ -1,13 +1,10 @@
 ﻿
 @{
     ViewBag.Title = "Gestión Creditos Clientes";
-
-
     string CFecha = string.Format("{0:dd/MM/yyyy}", DateTime.Today.AddDays(-7));
     string FFecha = string.Format("{0:dd/MM/yyyy}", DateTime.Today);
 }
-
-
+ 
 <!-- Default box -->
 <div class="card">
     <div class="card-header">
@@ -21,8 +18,7 @@
             </button>
         </div>
     </div>
-
-
+     
     <div class="card-body">
         <form id="frmGuardarUsuario" class="form-horizontal" role="form" method="post" action="">
 
@@ -34,7 +30,6 @@
                 </div>
             </div>
             <br />
-
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group row">
@@ -71,7 +66,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group row">
@@ -97,13 +91,11 @@
                     </div>
                 </div>
             </div>
-
             <div class="card-footer">
                 <button id="btnRefresh" type="button" class="btn btn-primary">Limpiar</button>
                 <button id="btnGuardarFormulario" type="button" class="btn btn-success">Guardar</button>
 
             </div>
-
         </form>
         <!-- /.card-body -->
     </div>

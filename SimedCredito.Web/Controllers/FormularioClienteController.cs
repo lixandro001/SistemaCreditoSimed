@@ -120,16 +120,18 @@ namespace SimedCredito.Web.Controllers
                 var txtNroDocumentoAccionista4ISA = Request.Form["txtNroDocumentoAccionista4ISA"];
                 var txtParticipacionAccionista4ISA = Request.Form["txtParticipacionAccionista4ISA"];
                 var txtNacionalidadAccionista4ISA = Request.Form["txtNacionalidadAccionista4ISA"];
-                var FechaCorte = Request.Form["FechaCorte"];
-                var checkSolesIF = Request.Form["checkSolesIF"];
-                var checkDolaresIF = Request.Form["checkDolaresIF"];
-                var txtActivosIF = Request.Form["txtActivosIF"];
-                var txtIngresosMensualesIF = Request.Form["txtIngresosMensualesIF"];
-                var txtPasivosIF = Request.Form["txtPasivosIF"];
-                var txtEgresosMensualesIF = Request.Form["txtEgresosMensualesIF"];
-                var txtPatrimonioIF = Request.Form["txtPatrimonioIF"];
-                var txtOtrosIngresosIF = Request.Form["txtOtrosIngresosIF"];
-                var txtConceptoOtrosIngresosIF = Request.Form["txtConceptoOtrosIngresosIF"];
+
+                var FechaCorte = "";
+                var checkSolesIF = false;
+                var checkDolaresIF = false;
+                var txtActivosIF = "";
+                var txtIngresosMensualesIF = "";
+                var txtPasivosIF = "";
+                var txtEgresosMensualesIF = "";
+                var txtPatrimonioIF = "";
+                var txtOtrosIngresosIF = "";
+                var txtConceptoOtrosIngresosIF = "";
+
                 var txtEmpresa1RC = Request.Form["txtEmpresa1RC"];
                 var txtRuc1RC = Request.Form["txtRuc1RC"];
                 var txtTelefono1RC = Request.Form["txtTelefono1RC"];
@@ -1420,6 +1422,7 @@ namespace SimedCredito.Web.Controllers
             }
             return Json(Response);
         }
+         
 
         [HttpPost]
         public JsonResult RechazarFormularioCliente(UpdateEstadoYPerfilRequest request)
@@ -1455,16 +1458,25 @@ namespace SimedCredito.Web.Controllers
                 var IdUsuario = HttpContext.Session.GetInt32("USUARIO_ID");
                 var txtRucRB = Request.Form["txtRucRB"];
                 var nombreoriginal = FormFile1evaluacion.FileName;
-
                 var exten1 = "";
-                if (FormFile1evaluacion != null)
+                if (FormFile1evaluacion.ContentType == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+                {
+                    var extension1 = "xlsx";
+                    exten1 = extension1;
+                }else if (FormFile1evaluacion.ContentType == "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+                {
+                    var extension1 = "docx";
+                    exten1 = extension1;
+                }
+                else if (FormFile1evaluacion != null && 
+                    FormFile1evaluacion.ContentType != "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" && 
+                    FormFile1evaluacion.ContentType != "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
                 {
                     var extension1 = FormFile1evaluacion.ContentType;
                     var separar1 = extension1.Split("/");
                     var ext1 = separar1[1];
                     exten1 = ext1;
                 }
-
                 var BasePath = Path.Combine(HostingEnvironment.WebRootPath, "files");
                 var fecha = DateTime.Now;
                 var formatfecha = string.Format("{0:yyyyMMdd}", fecha);

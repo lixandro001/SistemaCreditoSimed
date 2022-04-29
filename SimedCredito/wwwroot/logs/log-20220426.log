@@ -1,0 +1,92 @@
+2022-04-26 17:07:42.101 -05:00 [Warning] Ingreso
+2022-04-26 17:12:33.194 -05:00 [Warning] Ingreso
+2022-04-26 17:14:39.164 -05:00 [Warning] Ingreso
+2022-04-26 19:53:01.402 -05:00 [Warning] Ingreso
+2022-04-26 19:54:04.847 -05:00 [Warning] Ingreso
+2022-04-26 20:17:34.517 -05:00 [Warning] Ingreso
+2022-04-26 20:23:13.940 -05:00 [Warning] Ingreso
+2022-04-26 20:55:58.237 -05:00 [Warning] Ingreso
+2022-04-26 20:59:02.087 -05:00 [Warning] Ingreso
+2022-04-26 20:59:13.840 -05:00 [Warning] Method not found: 'Void Simed.Entity.Response.DataByCodeResponse.set_NombreDocumento(System.String)'.
+2022-04-26 20:59:13.843 -05:00 [Error] Method not found: 'Void Simed.Entity.Response.DataByCodeResponse.set_NombreDocumento(System.String)'.
+2022-04-26 21:00:21.614 -05:00 [Error] An unhandled exception has occurred while executing the request.
+System.MissingMethodException: Method not found: 'Void Simed.Entity.Response.DataByCodeResponse.set_NombreDocumento(System.String)'.
+   at SimedCredito.Controllers.FormularioClienteController.DataByCode(String Code)
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-04-26 21:00:24.280 -05:00 [Warning] Method not found: 'Void Simed.Entity.Response.DataByCodeResponse.set_NombreDocumento(System.String)'.
+2022-04-26 21:00:24.282 -05:00 [Error] Method not found: 'Void Simed.Entity.Response.DataByCodeResponse.set_NombreDocumento(System.String)'.
+2022-04-26 21:00:26.779 -05:00 [Error] An unhandled exception has occurred while executing the request.
+System.MissingMethodException: Method not found: 'Void Simed.Entity.Response.DataByCodeResponse.set_NombreDocumento(System.String)'.
+   at SimedCredito.Controllers.FormularioClienteController.DataByCode(String Code)
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-04-26 21:00:34.147 -05:00 [Warning] Method not found: 'Void Simed.Entity.Response.DataByCodeResponse.set_NombreDocumento(System.String)'.
+2022-04-26 21:00:34.148 -05:00 [Error] Method not found: 'Void Simed.Entity.Response.DataByCodeResponse.set_NombreDocumento(System.String)'.
+2022-04-26 21:00:39.735 -05:00 [Error] An unhandled exception has occurred while executing the request.
+System.MissingMethodException: Method not found: 'Void Simed.Entity.Response.DataByCodeResponse.set_NombreDocumento(System.String)'.
+   at SimedCredito.Controllers.FormularioClienteController.DataByCode(String Code)
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-04-26 21:01:45.196 -05:00 [Warning] Ingreso
+2022-04-26 21:19:46.268 -05:00 [Warning] Ingreso
+2022-04-26 21:19:52.648 -05:00 [Warning] Ingreso
+2022-04-26 21:20:31.579 -05:00 [Warning] Ingreso
+2022-04-26 21:20:51.433 -05:00 [Warning] Ingreso
+2022-04-26 22:42:07.540 -05:00 [Warning] Ingreso
+2022-04-26 22:55:50.230 -05:00 [Warning] Ingreso
+2022-04-26 22:56:19.576 -05:00 [Warning] Ingreso
+2022-04-26 22:56:46.181 -05:00 [Warning] Ingreso
+2022-04-26 22:57:21.070 -05:00 [Warning] Ingreso
+2022-04-26 22:57:58.658 -05:00 [Warning] Ingreso
+2022-04-26 23:12:37.695 -05:00 [Warning] Ingreso
+2022-04-26 23:12:52.037 -05:00 [Warning] Ingreso
+2022-04-26 23:13:08.333 -05:00 [Warning] Ingreso
+2022-04-26 23:17:32.768 -05:00 [Warning] Ingreso
+2022-04-26 23:19:08.755 -05:00 [Warning] Ingreso
+2022-04-26 23:33:01.010 -05:00 [Warning] Ingreso
+2022-04-26 23:38:58.128 -05:00 [Warning] Ingreso
+2022-04-26 23:49:20.118 -05:00 [Warning] Ingreso
+2022-04-26 23:59:23.398 -05:00 [Warning] Ingreso

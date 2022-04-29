@@ -5,7 +5,10 @@ $(function () {
     code = url.searchParams.get("code");
     LoadDataViewByCode(code);
 
-  
+    $(".DateFechaOnly").datepicker({
+        autoclose: true,
+        format: "dd/mm/yyyy",
+    });
 
     $("#GuardarEvaluacion").on("click", function () {   
         var realinput1evaluacion = $("#real-input1evaluacion")[0].files;
@@ -16,6 +19,21 @@ $(function () {
         } else {
             GuardarEvaluacionDocumento();
         }
+    });
+
+    $("#GuardarEvaluacion2").on("click", function () {
+        var realinput2evaluacion = $("#real-input1evaluacion2")[0].files;
+        console.log(realinput2evaluacion);
+        console.log(realinput2evaluacion.length);
+        if (realinput2evaluacion.length == 0) {
+            fnAlertAdvertencia("Falta Adjubtar Documento De Evaluacion");
+        } else {
+            GuardarEvaluacionDocumento2();
+        }
+    });
+
+    $("#btnGuardarInformacion").on("click", function () {
+        fnSaveFormularioCliente();
     });
 
     $("#btnAprobar").on("click", function () {
@@ -39,7 +57,6 @@ $(function () {
         $("#VerMotivoRechazo").modal("show");
     });
 
-
     // PARA ADJUNTO DE EVALUACION
     $(".browse-btn1evaluacion").on("click", function (a) {
         a.preventDefault();
@@ -52,27 +69,187 @@ $(function () {
         var htmlName = name.length > 80 ? name.substr(name.length - 80) : name;
         $(".file-info1evaluacion").text(htmlName);
     });
+    //para el segundo documento 
+    $(".browse-btn1evaluacion2").on("click", function (a) {
+        a.preventDefault();
+        $("#real-input1evaluacion2").click();
+    });
 
+    $("#real-input1evaluacion2").on("change", function () {
+        const name = $("#real-input1evaluacion2").val().split(/\\|\//).pop();
+        console.log(name);
+        var htmlName = name.length > 80 ? name.substr(name.length - 80) : name;
+        $(".file-info1evaluacion2").text(htmlName);
+    });
 
 });
+ 
+function fnSaveFormularioCliente() {
+    //------- INFORMACION FINANCIERA (IF)
+    if (!fnValidFormularioIF()) {
+        fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Información Financiera.");
+        return;
+    }
+    console.log("entro a guardar");
+    fnGuardarFormularioClienteFinanciera();
+}
+ 
+$("#checkSolesIF").on("change", function () {
+    fnLimpiarCamposIF();
+    if (this.checked) {
+        $("#checkDolaresIF").prop("checked", false);
+        fnPlaceholderSolesIf();
+    }
+    else {
+        $("#checkDolaresIF").prop("checked", true);
+        fnPlaceholderDolaresIf();
+    }
+});
 
+$("#checkDolaresIF").on("change", function () {
+    fnLimpiarCamposIF();
+    if (this.checked) {
+        $("#checkSolesIF").prop("checked", false);
+        fnPlaceholderDolaresIf();
+    }
+    else {
+        $("#checkSolesIF").prop("checked", true);
+        fnPlaceholderSolesIf();
+    }
+});
+
+function fnLimpiarCamposIF() {
+    $("#txtActivosIF").val('');
+    $("#txtIngresosMensualesIF").val('');
+    $("#txtPasivosIF").val('');
+    $("#txtEgresosMensualesIF").val('');
+    $("#txtPatrimonioIF").val('');
+    $("#txtOtrosIngresosIF").val('');
+    $("#txtConceptoOtrosIngresosIF").val('');
+}
+
+
+function fnPlaceholderSolesIf() {
+    $("#txtActivosIF").attr('placeholder', 'S/.');
+    $("#txtIngresosMensualesIF").attr('placeholder', 'S/.');
+     $("#txtPasivosIF").attr('placeholder', 'S/.');
+     $("#txtEgresosMensualesIF").attr('placeholder', 'S/.');
+     $("#txtPatrimonioIF").attr('placeholder', 'S/.');
+     $("#txtOtrosIngresosIF").attr('placeholder', 'S/.');
+}
+
+function fnPlaceholderDolaresIf() {
+    $("#txtActivosIF").attr('placeholder', '$');
+     $("#txtIngresosMensualesIF").attr('placeholder', '$');
+     $("#txtPasivosIF").attr('placeholder', '$');
+     $("#txtEgresosMensualesIF").attr('placeholder', '$');
+     $("#txtPatrimonioIF").attr('placeholder', '$');
+    $("#txtOtrosIngresosIF").attr('placeholder', '$');
+}
+
+
+function fnValidFormularioIF() {
+    var Rpta = true;
+
+    if ($("#FechaCorte").val() == '') {
+        Rpta = false;
+    }
+    if (!document.getElementById("checkSolesIF").checked && !document.getElementById("checkDolaresIF").checked) {
+        Rpta = false;
+    }
+    if ($("#txtActivosIF").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtIngresosMensualesIF").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtPasivosIF").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtEgresosMensualesIF").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtPatrimonioIF").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtOtrosIngresosIF").val() == '') {
+        Rpta = false;
+    }
+    if ($("#txtConceptoOtrosIngresosIF").val() == '') {
+        Rpta = false;
+    } 
+    return Rpta;
+}
+
+
+
+function fnGuardarFormularioClienteFinanciera() {
+    console.log("entro funcion guardar");
+    //Verificacion=  
+    var FechaCorte = $("#FechaCorte").val();
+    //var checkSolesIF = $("#checkSolesIF").val();
+    //var checkDolaresIF = $("#checkDolaresIF").val();
+    var txtActivosIF = $("#txtActivosIF").val();
+    var txtIngresosMensualesIF = $("#txtIngresosMensualesIF").val();
+    var txtPasivosIF = $("#txtPasivosIF").val();
+    var txtEgresosMensualesIF = $("#txtEgresosMensualesIF").val();
+    var txtPatrimonioIF = $("#txtPatrimonioIF").val();
+    var txtOtrosIngresosIF = $("#txtOtrosIngresosIF").val();
+    var txtConceptoOtrosIngresosIF = $("#txtConceptoOtrosIngresosIF").val();
+    var IdClienteDatosGenerales = $("#IdClienteDatosGenerales").val();
+
+     var checkSolesIF = false; 
+    if (document.getElementById("checkSolesIF").checked)
+    {
+        checkSolesIF = true
+    }
+    var checkDolaresIF = false;
+    if (document.getElementById("checkDolaresIF").checked)
+    {
+        checkDolaresIF = true
+    }
+
+    var parametro = new Object();
+
+    parametro.FechaCorte = FechaCorte;
+    parametro.checkSolesIF = checkSolesIF;
+    parametro.checkDolaresIF = checkDolaresIF;
+    parametro.txtActivosIF = txtActivosIF;
+    parametro.txtIngresosMensualesIF = txtIngresosMensualesIF;
+    parametro.txtPasivosIF = txtPasivosIF;
+    parametro.txtEgresosMensualesIF = txtEgresosMensualesIF;
+    parametro.txtPatrimonioIF = txtPatrimonioIF;
+    parametro.txtOtrosIngresosIF = txtOtrosIngresosIF;
+    parametro.txtConceptoOtrosIngresosIF = txtConceptoOtrosIngresosIF;
+    parametro.IdClienteDatosGenerales = IdClienteDatosGenerales;
+     
+    Post("Usuarios/guardarinformacionfinanciera", parametro).done(function (response) {
+        console.log("-----------respuesta del guardado");
+        console.log(response);
+        console.log(response.data);
+
+        if (response.data.code == 0) {
+            fnAlertSuccess(response.data.message, function () {
+                window.location = fnBaseUrlWeb("Main/Cliente");
+            });
+
+        } else {
+            fnAlertError(response.data.message);
+        }
+    });
+}
 
 function GuardarEvaluacionDocumento() {
-
     var idclientedatosgenerales = $("#IdClienteDatosGenerales").val();
     var perfil = $("#perfil").val();
     var txtRucRB = $("#txtRucRB").val();
-
     var file1 = $("#real-input1evaluacion")[0].files;
     console.log(file1);
     var fdata = new FormData();
-
     fdata.append("FormFile1evaluacion", file1[0]);
     fdata.append("idclientedatosgenerales", idclientedatosgenerales);
     fdata.append("perfil", perfil);
     fdata.append("txtRucRB", txtRucRB);
-
-    if ( validateExtension(file1) ) {
         var parametros = new Object();
         parametros.data = fdata;
         PostUpload("FormularioCliente/InsertarEvaluacionDocumento", fdata).done(function (response) {
@@ -89,46 +266,74 @@ function GuardarEvaluacionDocumento() {
                 fnAlertError(response.message);
             }
         });
-    }
-    else {
-        fnAlertAdvertencia("No Ingreso Un Formato JPG O PNG O PDF");
-    }
-
+  
 }
 
 
-
-function validateExtension(file) {
-    console.log(file);
-    if (file != null
-        && file.length > 0) {
-        var extension = "";
-        var extxml = file[0].type;
-        var extxml2 = extxml.split("/");
-        console.log(extxml);
-        var extensionpdf = "";
-        var extpdf = file[0].type;
-        var extpdf2 = extpdf.split("/");
-        if (extxml2.length >= 1 && extpdf2.length > 1) {
-            extension = extxml2[1];
-            extensionpdf = extpdf2[1];
-            console.log(extension);
-            if (extension.toUpperCase() == "JPG" || extension.toUpperCase() == "JPEG" || extension.toUpperCase() == "PNG" ||
-                extensionpdf.toUpperCase() == "PDF" || extensionpdf.toUpperCase() == "pdf") {
-                return true;
-            }
-            else {
-                return false;
-            }
+function GuardarEvaluacionDocumento2() {
+    var idclientedatosgenerales = $("#IdClienteDatosGenerales").val();
+    var perfil = $("#perfil").val();
+    var txtRucRB = $("#txtRucRB").val();
+    var file1 = $("#real-input1evaluacion2")[0].files;
+    console.log(file1);
+    var fdata = new FormData();
+    fdata.append("FormFile1evaluacion", file1[0]);
+    fdata.append("idclientedatosgenerales", idclientedatosgenerales);
+    fdata.append("perfil", perfil);
+    fdata.append("txtRucRB", txtRucRB);
+    var parametros = new Object();
+    parametros.data = fdata;
+    PostUpload("FormularioCliente/InsertarEvaluacionDocumento", fdata).done(function (response) {
+        if (response.code == 0) {
+            fnAlertSuccess(response.message, function () {
+                window.location = fnBaseUrlWeb("Main/Cliente");
+            });
+            console.log(response.data);
+        }
+        else if (response.code == 1) {
+            fnAlertAdvertencia(response.message);
         }
         else {
-            return false;
+            fnAlertError(response.message);
         }
-    }
-    else {
-        return true;
-    }
+    });
+
 }
+
+
+//function validateExtension(file) {
+//    console.log(file);
+//    if (file != null && file.length > 0) {
+//        var extension = "";
+//        var extxml = file[0].type;
+//        var extxml2 = extxml.split("/");
+//        console.log(extxml);
+//        var extensionpdf = "";
+//        var extpdf = file[0].type;
+//        var extpdf2 = extpdf.split("/");
+//        if (extxml2.length >= 1 && extpdf2.length > 1) {
+//            extension = extxml2[1];
+//            extensionpdf = extpdf2[1];
+//            console.log(extension);
+//            if (extension.toUpperCase() == "JPG" || extension.toUpperCase() == "JPEG" || extension.toUpperCase() == "PNG" ||
+//                extension.toUpperCase() == "PDF" || extension.toUpperCase() == "pdf" ||
+//                extension.toUpperCase() == "xlsx" || extension.toUpperCase() == "docx" || extension.toUpperCase() == "XLSX")
+//            {
+//                return true;
+//            }
+//            else
+//            {
+//                return false;
+//            }
+//        }
+//        else {
+//            return false;
+//        }
+//    }
+//    else {
+//        return true;
+//    }
+//}
 
 function LoadDataViewByCode(code) {
     Get("FormularioCliente/DataByCode?Code=" + code).done(function (response) {
@@ -268,83 +473,81 @@ function SeteoDatosFormulario(Datos) {
         href: urlglobal + Datos.CopiasFormularioPDTAnualRentaTerceraPersonaNatual
 
     });
-
     $("#txtFile3CDE").html(Datos.CopiaFichaRucPersonaNatual);
     $("#txtFile3CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.CopiaFichaRucPersonaNatual
 
     });
-
     $("#txtFile4CDE").html(Datos.CopiaDniPersonaNatual);
     $("#txtFile4CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.CopiaDniPersonaNatual
 
     });
-
     $("#txtFile5CDE").html(Datos.CertificacoReferenciaComercialPersonaNatual);
     $("#txtFile5CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.CertificacoReferenciaComercialPersonaNatual
 
     });
-
     $("#txtFile6CDE").html(Datos.CertificadoBancarioPersonaNatual);
     $("#txtFile6CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.CertificadoBancarioPersonaNatual
 
     });
-
     $("#txtFile7CDE").html(Datos.SituacionFinancieraBalanceGeneralPerdidasJuridicas);
     $("#txtFile7CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.SituacionFinancieraBalanceGeneralPerdidasJuridicas
 
     });
-
     $("#txtFile8CDE").html(Datos.CopiaFormularioPDTAnualRentaTerceraJuridicas);
     $("#txtFile8CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.CopiaFormularioPDTAnualRentaTerceraJuridicas
 
     });
-
     $("#txtFile9CDE").html(Datos.CopiaFichaRucJuridicas);
     $("#txtFile9CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.CopiaFichaRucJuridicas
 
     });
-
     $("#txtFile10CDE").html(Datos.CopiaDNIRepresentanteLegalJuridicas);
     $("#txtFile10CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.CopiaDNIRepresentanteLegalJuridicas
 
     });
-
     $("#txtFile11CDE").html(Datos.VigenciaPoderRepresentanteLegalJuridicas);
     $("#txtFile11CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.VigenciaPoderRepresentanteLegalJuridicas
-
     });
-
     $("#txtFile12CDE").html(Datos.CertificadoReferenciaComercialJuridicas);
     $("#txtFile12CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.CertificadoReferenciaComercialJuridicas
-
     });
-
     $("#txtFile13CDE").html(Datos.CertificadoBancarioJuridicas);
     $("#txtFile13CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.CertificadoBancarioJuridicas
-
     });
+    //control de documento exigidos para ingreso de clientes
+
+    //if (Datos.NombreDocumento != null || Datos.NombreDocumento != "") {
+    //    $("#txtFile1CDEevaluacion").html(Datos.NombreDocumento);
+    //    $("#txtFile1CDEevaluacion").attr({
+    //        target: '_blank',
+    //        href: urlglobal + Datos.NombreDocumento
+    //    })
+    //} else {
+
+    //}
+
     //--CLASIFICACIÓN PARA USO COMERCIAL
     $("#cboUnidad").val(Datos.DescripcionUnidad);
     $("#cboSubUnidad").val(Datos.Nombre_S_SUB_UNIDAD);
@@ -366,22 +569,70 @@ function SeteoDatosFormulario(Datos) {
         $("#verrechazopoppup").val(Datos.MotivoRechazo);
         $("#btnVerRechazo").show();
     }
-
      
     var rutaseven = $("#idrutahide").val();
     console.log("----" + rutaseven);
-    if (rutaseven == 1) {
-         
-        $("#idAdjuntardocument").hide();    
-        $("#txtevaluacion").html(Datos.NombreOriginal);
-        $("#txtevaluacion").attr({
-            target: '_blank',
-            href: urlglobal + Datos.NombreOriginal
-        });
+    var nuevoNombre1
+    var nuevoNombre2
+    var Indice2 = 1;
+    for (var i = 0; i < Datos.DetalleEvaluacion.length; i++) {
+ 
+        var array = Datos.DetalleEvaluacion;
+        var nombre1 = array[0];
+        var nombre2 = array[1];
 
-    } else if (rutaseven == 0) {
-        $("#idAdjuntardocument").show();
+        console.log(nombre1);
+        console.log(nombre2);
+
+        if (nombre1 == null) {
+            nuevoNombre1 = "";
+            nuevoNombre2 = nombre2.NombreDocumento;
+            Indice2++;
+            $("#idAdjuntardocument2").hide();
+            $("#txtevaluacion2").html(Datos.DetalleEvaluacion[1].NombreOriginal);
+            $("#txtevaluacion2").attr({
+                target: '_blank',
+                href: urlglobal + nuevoNombre2
+            });
+        }
+        else if (nombre2 == null) {
+            nuevoNombre2 = "";
+            nuevoNombre1 = nombre1.NombreDocumento;
+            Indice2++;
+
+            $("#idAdjuntardocument").hide();
+            $("#txtevaluacion").html(Datos.DetalleEvaluacion[0].NombreOriginal);
+            $("#txtevaluacion").attr({
+                target: '_blank',
+                href: urlglobal + nuevoNombre1
+            });
+        }
+        else
+        {
+            nuevoNombre1 = nombre1.NombreDocumento;
+            nuevoNombre2 = nombre2.NombreDocumento;
+            Indice2++;
+
+            $("#idAdjuntardocument").hide();
+            $("#txtevaluacion").html(Datos.DetalleEvaluacion[0].NombreOriginal);
+            $("#txtevaluacion").attr({
+                target: '_blank',
+                href: urlglobal + nuevoNombre1
+            });
+            $("#idAdjuntardocument2").hide();
+            $("#txtevaluacion2").html(Datos.DetalleEvaluacion[1].NombreOriginal);
+            $("#txtevaluacion2").attr({
+                target: '_blank',
+                href: urlglobal + nuevoNombre2
+            });
+       
+        }
+  
     }
+
+    
+   
+
 
 }
 

@@ -76,9 +76,53 @@ namespace SimedCredito.Web.Controllers
             }
              
         }
+         
+        public IActionResult guardarinformacionfinanciera(InformacionFinancieraRequest request)
+        {
+            var Response = new GenericObjectResponse();
+            try
+            {
+                var IdUsuario = HttpContext.Session.GetInt32("USUARIO_ID");
+                request.UsuarioId = Convert.ToInt32(IdUsuario);
+                var Url = GeneralModel.UrlWebApi + "FormularioCliente/guardarinformacionfinanciera";
+                var Result = Simed.Utilities.Rest.RestClient.ProcessPostRequest(Url, request);
+                Response.data = Result;
 
-      
+                var ResultJson = JsonConvert.SerializeObject(Response.data);
+                var User = JsonConvert.DeserializeObject<GenericResponse>(ResultJson);
 
+                if (User.code == 0)
+                {
+                    Response.code = (int)Enums.eCodeError.OK;
+                    Response.data = Result;
+                    Response.message = User.message;
+                    return Json(Response);
+                }
+                else if (User.code == 1)
+                {
+                    Response.code = (int)Enums.eCodeError.ERROR;
+                    Response.data = Result;
+                    Response.message = User.message;
+                    return Json(Response);
+                }
+                else
+                {
+                    Response.code = (int)Enums.eCodeError.VAL;
+                    Response.data = Result;
+                    Response.message = User.message;
+                    return Json(Response);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogWarning(ex, ex.Message);
+                Response.message = ex.Message;
+                return Json(Response);
+            }
+
+        }
+         
         [HttpGet]
         public IActionResult GetListadoUsuario()
         {

@@ -641,7 +641,7 @@
                     <label class="col-sm-3 col-form-label">Fecha de corte DD/MM/AAAA</label>
                     <div class="col-sm-4">
                         <div class="input-group date">
-                            <input id="FechaCorte" type="text" class="form-control DateFechaOnly" disabled />
+                            <input id="FechaCorte" type="text" class="form-control DateFechaOnly" />
                             <div class="input-group-append" data-toggle="datetimepicker">
                                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                             </div>
@@ -657,11 +657,11 @@
                     <label class="col-sm-6 col-form-label">* La información debe estar en soles o dólares</label>
                     <label class="col-form-label">Soles</label>
                     <div class="col-sm-1">
-                        <input id="checkSolesIF" type="checkbox" class="form-control" disabled />
+                        <input id="checkSolesIF" type="checkbox" class="form-control" />
                     </div>
                     <label class="col-form-label">Dólares</label>
                     <div class="col-sm-1">
-                        <input id="checkDolaresIF" type="checkbox" class="form-control" disabled />
+                        <input id="checkDolaresIF" type="checkbox" class="form-control" />
                     </div>
                 </div>
             </div>
@@ -672,7 +672,7 @@
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">* Activos</label>
                     <div class="col-sm-4">
-                        <input id="txtActivosIF" type="number" class="form-control" placeholder="S/. o $" disabled />
+                        <input id="txtActivosIF" type="number" class="form-control" placeholder="S/. o $" />
                     </div>
                 </div>
             </div>
@@ -680,7 +680,7 @@
                 <div class="row">
                     <label class="col-sm-4 col-form-label">* Ingresos mensuales</label>
                     <div class="col-sm-4">
-                        <input id="txtIngresosMensualesIF" type="number" class="form-control" placeholder="S/. o $" disabled />
+                        <input id="txtIngresosMensualesIF" type="number" class="form-control" placeholder="S/. o $" />
                     </div>
                 </div>
             </div>
@@ -691,7 +691,7 @@
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">* Pasivos</label>
                     <div class="col-sm-4">
-                        <input id="txtPasivosIF" type="number" class="form-control" placeholder="S/. o $" disabled />
+                        <input id="txtPasivosIF" type="number" class="form-control" placeholder="S/. o $" />
                     </div>
                 </div>
             </div>
@@ -699,7 +699,7 @@
                 <div class="row">
                     <label class="col-sm-4 col-form-label">* Egresos mensuales</label>
                     <div class="col-sm-4">
-                        <input id="txtEgresosMensualesIF" type="number" class="form-control" placeholder="S/. o $" disabled />
+                        <input id="txtEgresosMensualesIF" type="number" class="form-control" placeholder="S/. o $" />
                     </div>
                 </div>
             </div>
@@ -710,7 +710,7 @@
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">* Patrimonio</label>
                     <div class="col-sm-4">
-                        <input id="txtPatrimonioIF" type="number" class="form-control" placeholder="S/. o $" disabled />
+                        <input id="txtPatrimonioIF" type="number" class="form-control" placeholder="S/. o $" />
                     </div>
                 </div>
             </div>
@@ -718,7 +718,7 @@
                 <div class="row">
                     <label class="col-sm-4 col-form-label">Otros ingresos</label>
                     <div class="col-sm-4">
-                        <input id="txtOtrosIngresosIF" type="number" class="form-control" placeholder="S/. o $" disabled />
+                        <input id="txtOtrosIngresosIF" type="number" class="form-control" placeholder="S/. o $" />
                     </div>
                 </div>
             </div>
@@ -729,7 +729,17 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Concepto de otros ingresos:</label>
                     <div class="col-sm-10">
-                        <input id="txtConceptoOtrosIngresosIF" type="text" class="form-control" disabled />
+                        <input id="txtConceptoOtrosIngresosIF" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <button id="btnGuardarInformacion" type="button" class="btn btn-success">GUARDAR INFORMACIÓN FINANCIERA</button>
                     </div>
                 </div>
             </div>
@@ -1046,26 +1056,34 @@
         <br />
 
         <!---------------Evaluacion Documento---------->
+
+
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-auto bg-dark p-1 text-center">
                     <h6>Evaluacion Documento</h6>
-                    <input type="hidden"  id="IdClienteDatosGenerales">
+                    <input type="hidden" id="IdClienteDatosGenerales">
                     <input type="hidden" id="idrutahide">
+                    <input type="hidden" id="idrutahide2evaluacion">
                 </div>
             </div>
         </div>
         <br>
-        <div class="row" style="margin-bottom:2%">
-            <div class="col-sm-3">
-                <label>Adjuntar Documento de Evaluacion</label>
+
+        <div class="col-sm-12">
+            <label>Adjuntar Documento de Evaluacion</label>
+        </div>
+        <br>
+
+        <div class="row" style="margin-bottom:1%" id="idEvaluaciont">
+            <div class="col-sm-3">    
             </div>
             <div class="col-sm-8" id="idAdjuntardocument">
                 <div class="input-group input-group-sm">
                     <span id="txtFile1CDEevaluacion" name="functionalDocument" class="form-control file-info1evaluacion"></span>
                     <span id="input-group-btn">
                         <button id="btnUploadModal1" class="btnSearchFuncional btn btn-flat btn-info browse-btn1evaluacion">Seleccionar</button>
-                        <input id="real-input1evaluacion" type="file" name="File1CDE" class="inputFile real-input1evaluacion" style="display:none;" accept=".jpg, .png, .pdf .xlsx .docx" />
+                        <input id="real-input1evaluacion" type="file" name="File1CDE" class="inputFile real-input1evaluacion" style="display:none;" accept=".xlsx, .jpg, .png, .pdf, .docx " />
                     </span>
                     &nbsp; &nbsp; &nbsp;
                     <button id="GuardarEvaluacion" type="button" class="form-control btn-primary"> Agregar Documento </button>
@@ -1074,8 +1092,30 @@
             <div class="col-sm-4">
                 <a id="txtevaluacion" target="_blank" class="form-control-file">No cargó Archivo.</a>
             </div>
+
         </div>
-         
+
+
+        <div class="row" style="margin-bottom:1%" id="idEvaluaciont2">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-8" id="idAdjuntardocument2">
+                <div class="input-group input-group-sm">
+                    <span id="txtFile1CDEevaluacion2" name="functionalDocument2" class="form-control file-info1evaluacion2"></span>
+                    <span id="input-group-btn2">
+                        <button id="btnUploadModal12" class="btnSearchFuncional btn btn-flat btn-info browse-btn1evaluacion2">Seleccionar</button>
+                        <input id="real-input1evaluacion2" type="file" name="File1CDE" class="inputFile real-input1evaluacion" style="display:none;" accept=".xlsx, .jpg, .png, .pdf, .docx " />
+                    </span>
+                    &nbsp; &nbsp; &nbsp;
+                    <button id="GuardarEvaluacion2" type="button" class="form-control btn-primary"> Agregar Documento </button>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <a id="txtevaluacion2" target="_blank" class="form-control-file">No cargó Archivo.</a>
+            </div>
+
+        </div>
+
         <!---------------Verificacion para uso interno---------->
         <div class="row">
             <div class="col-sm-12">

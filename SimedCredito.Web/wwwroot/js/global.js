@@ -25,7 +25,6 @@ function Get(url, params, async) {
 
 function ajaxMethod(url, method, params, async) {
     if (async == undefined || async == null) async = true;
-
     $("body").loading({
         zIndex: 1050,
         message: 'Cargando...'
@@ -52,7 +51,7 @@ function ajaxMethodUpload(url, method, params, async) {
     if (async == undefined || async == null) async = true;
 
     $("body").loading({
-        zIndex: 1050,
+        zIndex: 2000,
         message: 'Cargando...'
     });
 

@@ -38,11 +38,9 @@ function validForm() {
 function fnLogin() {
      var parametro = new Object();
      parametro.Login = $("#Login").val();
-    parametro.Password = $("#Password").val();
-
-   
-
-    Post("Login/Validate", parametro).done(function (response) {
+     parametro.Password = $("#Password").val();
+     
+     Post("Login/Validate", parametro).done(function (response) {
         var result = response.data;
         console.log(result);
         if (result.code == 0) {
