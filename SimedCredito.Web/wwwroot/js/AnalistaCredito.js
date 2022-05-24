@@ -11,9 +11,7 @@ $(function () {
     });
 
     $("#GuardarEvaluacion").on("click", function () {   
-        var realinput1evaluacion = $("#real-input1evaluacion")[0].files;
-        console.log(realinput1evaluacion);
-        console.log(realinput1evaluacion.length);
+        var realinput1evaluacion = $("#real-input1evaluacion")[0].files; 
         if (realinput1evaluacion.length == 0) {  
             fnAlertAdvertencia("Falta Adjubtar Documento De Evaluacion");  
         } else {
@@ -37,7 +35,23 @@ $(function () {
     });
 
     $("#btnAprobar").on("click", function () {
-        fnAprobarFormulario();
+        if (!fnValidFormularioIF()) {
+            fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Información Financiera.");
+            return;
+        }
+
+        console.log($("#txtevaluacion").text());
+        var valortext = $("#txtevaluacion").text();
+        if (valortext != null || valortext!='') {
+            fnAprobarFormulario();
+        }
+        var realinput1evaluacion = $("#real-input1evaluacion")[0].files;
+        console.log(realinput1evaluacion);
+        if (realinput1evaluacion.length == 0) {
+            fnAlertAdvertencia("Falta Adjubtar Documento De Evaluacion");
+            return;
+        }  
+         
     });
 
     $("#btnRechazar").on("click", function () {
@@ -224,10 +238,8 @@ function fnGuardarFormularioClienteFinanciera() {
     parametro.IdClienteDatosGenerales = IdClienteDatosGenerales;
      
     Post("Usuarios/guardarinformacionfinanciera", parametro).done(function (response) {
-        console.log("-----------respuesta del guardado");
-        console.log(response);
-        console.log(response.data);
-
+        $('body').loading('stop');
+        
         if (response.data.code == 0) {
             fnAlertSuccess(response.data.message, function () {
                 window.location = fnBaseUrlWeb("Main/Cliente");
@@ -252,7 +264,8 @@ function GuardarEvaluacionDocumento() {
     fdata.append("txtRucRB", txtRucRB);
         var parametros = new Object();
         parametros.data = fdata;
-        PostUpload("FormularioCliente/InsertarEvaluacionDocumento", fdata).done(function (response) {
+    PostUpload("FormularioCliente/InsertarEvaluacionDocumento", fdata).done(function (response) {
+        $('body').loading('stop');
             if (response.code == 0) {
                 fnAlertSuccess(response.message, function () {
                     window.location = fnBaseUrlWeb("Main/Cliente");
@@ -284,6 +297,7 @@ function GuardarEvaluacionDocumento2() {
     var parametros = new Object();
     parametros.data = fdata;
     PostUpload("FormularioCliente/InsertarEvaluacionDocumento", fdata).done(function (response) {
+        $('body').loading('stop');
         if (response.code == 0) {
             fnAlertSuccess(response.message, function () {
                 window.location = fnBaseUrlWeb("Main/Cliente");
@@ -300,43 +314,10 @@ function GuardarEvaluacionDocumento2() {
 
 }
 
-
-//function validateExtension(file) {
-//    console.log(file);
-//    if (file != null && file.length > 0) {
-//        var extension = "";
-//        var extxml = file[0].type;
-//        var extxml2 = extxml.split("/");
-//        console.log(extxml);
-//        var extensionpdf = "";
-//        var extpdf = file[0].type;
-//        var extpdf2 = extpdf.split("/");
-//        if (extxml2.length >= 1 && extpdf2.length > 1) {
-//            extension = extxml2[1];
-//            extensionpdf = extpdf2[1];
-//            console.log(extension);
-//            if (extension.toUpperCase() == "JPG" || extension.toUpperCase() == "JPEG" || extension.toUpperCase() == "PNG" ||
-//                extension.toUpperCase() == "PDF" || extension.toUpperCase() == "pdf" ||
-//                extension.toUpperCase() == "xlsx" || extension.toUpperCase() == "docx" || extension.toUpperCase() == "XLSX")
-//            {
-//                return true;
-//            }
-//            else
-//            {
-//                return false;
-//            }
-//        }
-//        else {
-//            return false;
-//        }
-//    }
-//    else {
-//        return true;
-//    }
-//}
-
+  
 function LoadDataViewByCode(code) {
     Get("FormularioCliente/DataByCode?Code=" + code).done(function (response) {
+        $('body').loading('stop');
         console.log(response.data.Data);
         if (response.data.Data != null) {
             SeteoDatosFormulario(response.data.Data);
@@ -536,18 +517,7 @@ function SeteoDatosFormulario(Datos) {
         target: '_blank',
         href: urlglobal + Datos.CertificadoBancarioJuridicas
     });
-    //control de documento exigidos para ingreso de clientes
-
-    //if (Datos.NombreDocumento != null || Datos.NombreDocumento != "") {
-    //    $("#txtFile1CDEevaluacion").html(Datos.NombreDocumento);
-    //    $("#txtFile1CDEevaluacion").attr({
-    //        target: '_blank',
-    //        href: urlglobal + Datos.NombreDocumento
-    //    })
-    //} else {
-
-    //}
-
+    //control de doc 
     //--CLASIFICACIÓN PARA USO COMERCIAL
     $("#cboUnidad").val(Datos.DescripcionUnidad);
     $("#cboSubUnidad").val(Datos.Nombre_S_SUB_UNIDAD);
@@ -629,10 +599,7 @@ function SeteoDatosFormulario(Datos) {
         }
   
     }
-
-    
-   
-
+     
 
 }
 
@@ -643,6 +610,7 @@ function fnAprobarFormulario() {
     parametros.Code = code;
 
     Post("FormularioCliente/AprobarFormularioCliente", parametros).done(function (response) {
+        $('body').loading('stop');
         if (response.code == 0) {
             fnConfirm(response.message);
         }
@@ -658,6 +626,7 @@ function fnRechazarFormulario() {
     parametros.MensajeRechazado = MensajeRechazo;
 
     Post("FormularioCliente/RechazarFormularioCliente", parametros).done(function (response) {
+        $('body').loading('stop');
         if (response.code == 0) {
             fnConfirm(response.message);
         }

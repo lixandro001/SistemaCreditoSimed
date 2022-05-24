@@ -26,6 +26,7 @@ $(function (e) {
 
 function ObtenereditarUsuario(code) {
     Get("Usuarios/DataUsuario?CodeUsuario=" + code).done(function (response) {
+        $('body').loading('stop');
         console.log(response.data.Data);
         if (response.data.Data != null) {
             SeteoDatosFormulario(response.data.Data);
@@ -78,6 +79,7 @@ function fnguardarusuario() {
     parametro.idperfil = txtperfil;
   
     Post("Usuarios/guardarUsuarios", parametro).done(function (response) {
+        $('body').loading('stop');
         console.log("-----------respuesta del guardado");
         console.log(response);
         console.log(response.data);

@@ -19,7 +19,7 @@ namespace Simed.Data
             GC.SuppressFinalize(this);
         }
 
-        public List<BandejaClienteResponse> GetBandejaCliente(DateTime StartDate, DateTime EndDate, int PerfilId)
+        public List<BandejaClienteResponse> GetBandejaCliente(DateTime StartDate, DateTime EndDate, int PerfilId,int UsuarioCreacion)
         {
             using (var Ado = new SQLServer(ConStr))
             {
@@ -30,7 +30,9 @@ namespace Simed.Data
                     {
                         new SqlParameter{ ParameterName = "@PerfilId", SqlDbType = SqlDbType.Int,SqlValue=PerfilId},
                         new SqlParameter{ ParameterName = "@StartDate", SqlDbType = SqlDbType.DateTime, SqlValue = StartDate},
-                        new SqlParameter{ ParameterName = "@EndDate", SqlDbType = SqlDbType.DateTime, SqlValue= EndDate }
+                        new SqlParameter{ ParameterName = "@EndDate", SqlDbType = SqlDbType.DateTime, SqlValue= EndDate },
+                        new SqlParameter{ ParameterName = "@UsuarioCreacion", SqlDbType = SqlDbType.Int,SqlValue=UsuarioCreacion},
+ 
                     };
                     var Dr = Ado.ExecDataReaderProc("usp_GetBandejaCliente", Parameters);
                     {

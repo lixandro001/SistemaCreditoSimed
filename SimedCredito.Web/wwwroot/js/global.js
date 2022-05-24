@@ -29,22 +29,23 @@ function ajaxMethod(url, method, params, async) {
         zIndex: 1050,
         message: 'Cargando...'
     });
-
     return $.ajax({
         url: window.appURL + url,
         method: method,
-        cache: false,
-        data: params,
         async: async,
-        //processData: false,
-        //contentType: false,
+        //contentType: 'application/json',
+        //dataType: 'json',
+        cache: false,
+        data: params
     }).fail(function (jqXHR, textStatus, errorThrown) {
         console.debug(jqXHR);
         console.debug(textStatus);
         console.debug(errorThrown);
-    }).always(function () {
-        $('body').loading('stop');  
+    }).always(function (dataOrjqXHR, textStatus, jqXHRorErrorThrown)
+    {
+         
     });
+     
 }
 
 function ajaxMethodUpload(url, method, params, async) {
@@ -75,7 +76,6 @@ function ajaxMethodUpload(url, method, params, async) {
 function fnBaseUrlWeb(url) {
     return window.appURL + url;
 }
-
  
 
 function fnAlertAdvertencia(messange,titulo) {

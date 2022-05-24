@@ -32,10 +32,9 @@
         parametros.Token = TK;
 
         Post("Request/ChangePassword", parametros).done(function (response) {
-
+            $('body').loading('stop');
             var result = response.data;
             console.log(result);
-
             $("#hidenChangePassword").html("<p class='login-box-msg'>" + result.message + "</p>")
 
 

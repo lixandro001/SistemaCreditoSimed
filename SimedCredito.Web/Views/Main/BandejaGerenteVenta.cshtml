@@ -1,6 +1,9 @@
 ﻿@{
     ViewBag.Title = "Gestión de Clientes";
-    string CFecha = string.Format("{0:dd/MM/yyyy}", DateTime.Today);
+   
+
+    string CFecha = string.Format("{0:dd/MM/yyyy}", DateTime.Today.AddDays(-7));
+    string FFecha = string.Format("{0:dd/MM/yyyy}", DateTime.Today);
 }
 
 <div class="card">
@@ -38,7 +41,7 @@
                     <div class="col-sm-8">
                         <input type="hidden" id="hdnEndDate" class="form-control" name="date2" />
                         <div class="input-group date">
-                            <input type="text" class="form-control pull-right" id="txtEndDate" value="@CFecha">
+                            <input type="text" class="form-control pull-right" id="txtEndDate" value="@FFecha">
                             <div class="input-group-append" data-target="#txtStartDate" data-toggle="datetimepicker">
                                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                             </div>

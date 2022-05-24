@@ -2,25 +2,23 @@
 $(function () {
     var url = new URL(location.href);
     code = url.searchParams.get("code");
-    LoadDataViewByCode(code);
-
-    $("#btnVerRechazo").on("click", function () {
-        $("#VerMotivoRechazo").modal("show");
-    });
-});
-
-function LoadDataViewByCode(code) {
+    //LoadDataViewByCode(code);
     Get("FormularioCliente/DataByCode?Code=" + code).done(function (response) {
+        $('body').loading('stop');
+        console.log('always was called');
         console.log(response.data.Data);
-        if (response.data.Data != null) {
+        if (response.data.Data != null) {     
             SeteoDatosFormulario(response.data.Data);
         }
         else {
             fnAlertAdvertencia("No se Encontro Datos Disponibles");
         }
     });
-}
-
+    $("#btnVerRechazo").on("click", function () {
+        $("#VerMotivoRechazo").modal("show");
+    });
+});
+ 
 function SeteoDatosFormulario(Datos) {
     console.log(Datos);
     //-   DATOS GENERALES -//
@@ -88,7 +86,6 @@ function SeteoDatosFormulario(Datos) {
     //--INFORMACIÓN DE SOCIOS O ACCIONISTAS(UNICAMENTE APLICA PARA PERSONAS JURIDICAS)-- - pendiente-- 
     if (Datos.DetalleInformacionSocio[0].CompañiaCuentaAccionistas) { $("#checkSiAccionistaISA").prop("checked", true); } else { $("#checkNoAccionistaISA").prop("checked", true); }
     for (var i = 0; i < Datos.DetalleInformacionSocio.length; i++) {
-
         $("#tblDocumentos > tbody").append('<tr>' +
             '<td style="text-align: center;"> ' + Datos.DetalleInformacionSocio[i].NombreApellidoAccionistas + ' </td>' +
             '<td style="text-align: center;font-size:12pt;"> ' + Datos.DetalleInformacionSocio[i].TipoId + '</td>' +
@@ -143,51 +140,39 @@ function SeteoDatosFormulario(Datos) {
     $("#txtFile2CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.CopiasFormularioPDTAnualRentaTerceraPersonaNatual
-
     });
-
     $("#txtFile3CDE").html(Datos.CopiaFichaRucPersonaNatual);
     $("#txtFile3CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.CopiaFichaRucPersonaNatual
 
     });
-
     $("#txtFile4CDE").html(Datos.CopiaDniPersonaNatual);
     $("#txtFile4CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.CopiaDniPersonaNatual
-
     });
-
     $("#txtFile5CDE").html(Datos.CertificacoReferenciaComercialPersonaNatual);
     $("#txtFile5CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.CertificacoReferenciaComercialPersonaNatual
 
     });
-
     $("#txtFile6CDE").html(Datos.CertificadoBancarioPersonaNatual);
     $("#txtFile6CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.CertificadoBancarioPersonaNatual
-
     });
-
     $("#txtFile7CDE").html(Datos.SituacionFinancieraBalanceGeneralPerdidasJuridicas);
     $("#txtFile7CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.SituacionFinancieraBalanceGeneralPerdidasJuridicas
-
     });
-
     $("#txtFile8CDE").html(Datos.CopiaFormularioPDTAnualRentaTerceraJuridicas);
     $("#txtFile8CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.CopiaFormularioPDTAnualRentaTerceraJuridicas
-
     });
-
     $("#txtFile9CDE").html(Datos.CopiaFichaRucJuridicas);
     $("#txtFile9CDE").attr({
         target: '_blank',
@@ -198,31 +183,23 @@ function SeteoDatosFormulario(Datos) {
     $("#txtFile10CDE").html(Datos.CopiaDNIRepresentanteLegalJuridicas);
     $("#txtFile10CDE").attr({
         target: '_blank',
-        href: urlglobal + Datos.CopiaDNIRepresentanteLegalJuridicas
-
+       href: urlglobal + Datos.CopiaDNIRepresentanteLegalJuridicas
     });
-
     $("#txtFile11CDE").html(Datos.VigenciaPoderRepresentanteLegalJuridicas);
     $("#txtFile11CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.VigenciaPoderRepresentanteLegalJuridicas
-
     });
-
     $("#txtFile12CDE").html(Datos.CertificadoReferenciaComercialJuridicas);
     $("#txtFile12CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.CertificadoReferenciaComercialJuridicas
-
     });
-
     $("#txtFile13CDE").html(Datos.CertificadoBancarioJuridicas);
     $("#txtFile13CDE").attr({
         target: '_blank',
         href: urlglobal + Datos.CertificadoBancarioJuridicas
-
     });
-
     //--CLASIFICACIÓN PARA USO COMERCIAL
     $("#cboUnidad").val(Datos.DescripcionUnidad);
     $("#cboSubUnidad").val(Datos.Nombre_S_SUB_UNIDAD);
@@ -235,7 +212,6 @@ function SeteoDatosFormulario(Datos) {
     $("#txtAsesorComercialVUI").val(Datos.ResponsableContratacion);
     /* $("#txtFirmaVUI").val(Datos.Firma);*/
     $("#txtFirmaVUI").val(Datos.ResponsableContratacion)
-
     if (Datos.EstadoComercial == 3 || Datos.EstadoCredito == 3 || Datos.EstadoVenta == 3 || Datos.EstadoFinanza == 3) {
         $("#verrechazopoppup").val(Datos.MotivoRechazo);
         $("#btnVerRechazo").show();

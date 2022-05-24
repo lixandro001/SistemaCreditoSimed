@@ -126,7 +126,7 @@ namespace SimedCredito.Controllers
                 Body.txtTelefonoRB = request.txtTelefonoRB;
                 Body.txtDireccionRB = request.txtDireccionRB;
                 Body.cboUnidad = request.cboUnidad == "" ? 0 : Convert.ToInt32(request.cboUnidad);
-                Body.cboSubUnidad = request.cboSubUnidad == "" ? 0 : Convert.ToInt32(request.cboSubUnidad);
+                Body.cboSubUnidad = 0;
                 Body.cboAsesorComercial = request.cboAsesorComercial == "" ? 0 : Convert.ToInt32(request.cboAsesorComercial);
                 Body.txtDescripcion = request.txtDescripcion;
                 Body.cboTipoPago = request.cboTipoPago == "" ? 0 : Convert.ToInt32(request.cboTipoPago);

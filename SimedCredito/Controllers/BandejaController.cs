@@ -28,15 +28,15 @@ namespace SimedCredito.Controllers
         }
 
         [HttpGet]
-        [Route("GetBandejaCliente/{StartDate}/{EndDate}/{PerfilId}")]
-        public IActionResult GetCategoriaCliente(string StartDate, string EndDate, int PerfilId)
+        [Route("GetBandejaCliente/{StartDate?}/{EndDate?}/{PerfilId?}/{UsuarioCreacion?}")]
+        public IActionResult GetBandejaCliente(string StartDate, string EndDate, int PerfilId, int UsuarioCreacion)
         {
             try
             {
                 var response = new GenericResponse();
                 DateTime fechaIniDate = DateTime.ParseExact(StartDate, "yyyy-MM-dd", CultureInfo.InvariantCulture);
                 DateTime fechaFinDate = DateTime.ParseExact(EndDate, "yyyy-MM-dd", CultureInfo.InvariantCulture); ;
-                var data = objBandejaBL.GetBandejaCliente(fechaIniDate, fechaFinDate, PerfilId);
+                var data = objBandejaBL.GetBandejaCliente(fechaIniDate, fechaFinDate, PerfilId, UsuarioCreacion);
                 response.code = (int)Enums.eCodeError.OK;
                 response.Data = data;
                 return Ok(response);

@@ -1,0 +1,72 @@
+2022-05-16 16:31:10.082 -05:00 [Warning] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid.
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.DangerousUnprotect(Byte[] protectedData, Boolean ignoreRevocationErrors, Boolean& requiresMigration, Boolean& wasRevoked)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2022-05-16 16:31:12.703 -05:00 [Warning] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid.
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.DangerousUnprotect(Byte[] protectedData, Boolean ignoreRevocationErrors, Boolean& requiresMigration, Boolean& wasRevoked)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2022-05-16 16:31:12.717 -05:00 [Warning] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid.
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.DangerousUnprotect(Byte[] protectedData, Boolean ignoreRevocationErrors, Boolean& requiresMigration, Boolean& wasRevoked)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2022-05-16 16:31:16.244 -05:00 [Warning] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid.
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.DangerousUnprotect(Byte[] protectedData, Boolean ignoreRevocationErrors, Boolean& requiresMigration, Boolean& wasRevoked)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2022-05-16 17:33:27.908 -05:00 [Warning] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid.
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.DangerousUnprotect(Byte[] protectedData, Boolean ignoreRevocationErrors, Boolean& requiresMigration, Boolean& wasRevoked)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2022-05-16 17:33:32.531 -05:00 [Warning] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid.
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.DangerousUnprotect(Byte[] protectedData, Boolean ignoreRevocationErrors, Boolean& requiresMigration, Boolean& wasRevoked)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2022-05-16 17:57:47.514 -05:00 [Warning] The remote server returned an error: (500) Internal Server Error.
+System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at Simed.Utilities.Rest.RestClient.Get(String Url, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 31
+   at Simed.Utilities.Rest.RestClient.ProcessGetRequest(String Url, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 75
+   at SimedCredito.Web.Controllers.SisInternoSelectController.GetAsesorComercial() in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\SisInternoSelectController.cs:line 263
+2022-05-16 18:04:09.492 -05:00 [Warning] The remote server returned an error: (500) Internal Server Error.
+System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at Simed.Utilities.Rest.RestClient.Post(String Url, String Json, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 51
+   at Simed.Utilities.Rest.RestClient.ProcessPostRequest(String Url, Object Request, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 59
+   at SimedCredito.Web.Controllers.FormularioClienteController.GuardarFormularioCliente(IFormFile FormFile1, IFormFile FormFile2, IFormFile FormFile3, IFormFile FormFile4, IFormFile FormFile5, IFormFile FormFile6, IFormFile FormFile7, IFormFile FormFile8, IFormFile FormFile9, IFormFile FormFile10, IFormFile FormFile11, IFormFile FormFile12, IFormFile FormFile13) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\FormularioClienteController.cs:line 686
+2022-05-16 18:04:09.494 -05:00 [Warning] The remote server returned an error: (500) Internal Server Error.
+System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at Simed.Utilities.Rest.RestClient.Post(String Url, String Json, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 51
+   at Simed.Utilities.Rest.RestClient.ProcessPostRequest(String Url, Object Request, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 59
+   at SimedCredito.Web.Controllers.FormularioClienteController.GuardarFormularioCliente(IFormFile FormFile1, IFormFile FormFile2, IFormFile FormFile3, IFormFile FormFile4, IFormFile FormFile5, IFormFile FormFile6, IFormFile FormFile7, IFormFile FormFile8, IFormFile FormFile9, IFormFile FormFile10, IFormFile FormFile11, IFormFile FormFile12, IFormFile FormFile13) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\FormularioClienteController.cs:line 686
+2022-05-16 23:52:07.183 -05:00 [Warning] The operation has timed out.
+System.Net.WebException: The operation has timed out.
+   at System.Net.HttpWebRequest.GetResponse()
+   at Simed.Utilities.Rest.RestClient.Get(String Url, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 31
+   at Simed.Utilities.Rest.RestClient.ProcessGetRequest(String Url, String Authorization) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\Simed.Utilities\Rest\RestClient.cs:line 75
+   at SimedCredito.Web.Controllers.BandejaController.GetBandejaCliente(String StartDate, String EndDate) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\BandejaController.cs:line 52

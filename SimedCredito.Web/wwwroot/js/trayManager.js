@@ -114,6 +114,7 @@ $(function () {
         parametros.mail = correo;
 
         Post("Receipt/SendMail", parametros).done(function (response) {
+            $('body').loading('stop');
             var result = response.data;
             console.log(result);
             if (response.code == 0) {
@@ -156,6 +157,7 @@ $(function () {
         }
 
         Post("Receipt/SaveMailData", parametros).done(function (response) {
+            $('body').loading('stop');
             if (response.code == 0) {
                 $("#modalSaveMail").modal("hide");
                 fnAlertSuccess("Datos Registrados Correctamente");
@@ -202,7 +204,7 @@ $(function () {
 function fnLoadSubsidiary() {
 
     Get("Main/GetSubsidiary").done(function (response) {
-      
+        $('body').loading('stop');
         if (response.data != null) {
             var select = document.getElementById('cboSubsidiary');
             var options = '<option value="">Seleccionar Subsidiario</option>';
@@ -235,6 +237,7 @@ function fnRefreshTrayManager() {
     }
     
     Get("Receipt/GetReceiptManager?startdate=" + startDate + "&enddate=" + endDate + "&subsidiaryId=" + subsidiaryId + "&numorder=" + numorder + "&documentNumber=" + documentNumber).done(function (response) {
+        $('body').loading('stop');
         console.log(response);
         if (response.data != null) {
             fnClearTable($('#tabTrayManager').dataTable());
@@ -274,6 +277,7 @@ function poppupSaveMail() {
             f.preventDefault();
 
             Get("Receipt/GetDataMail?ReciedCode=" + code).done(function (response) {
+                $('body').loading('stop');
                 var respuesta = response.data
                 console.log(respuesta);
                 if (respuesta.maildata_subject == null || respuesta.maildata_acquiring == null

@@ -52,7 +52,8 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link">
-                        Bienvenido(a) :   <strong id="nombreUsuarioLayout"></strong><input id="perfil" type="hidden">
+                        Bienvenido(a) :   <strong id="nombreUsuarioLayout"></strong>
+                        <input id="perfil" type="">
                     </a>
                 </li>
                 <li class="nav-item">
@@ -178,30 +179,30 @@
     <!-- AdminLTE App -->
     <script src="@Url.Content("~/adminlte/js/adminlte.min.js")"></script>
     <script src="@Url.Content("~/plugins/jquery-loading/jquery.loading.min.js")"></script>
-
-     
-
     <script src="@Url.Content("~/plugins/sweetalert/dist/sweetalert.min.js")"></script>
 
     <script>
         var appURL = "@Url.Content("~/")";
 
         $(function () {
-
+            //$('body').loading('stop');
             Get("Main/GetUserData").done(function (response) {
                 var result = response.data;
                 console.log(result);
                 if (response.code == 0) {
                     var nombre = result.Fullname;
-                    var perfil = result.ProfileId;
+                    //var perfil = result.ProfileId;
                     $("#nombreUsuarioLayout").text(nombre);
-                    $("#perfil").val(perfil);
+                    $("#perfil").val(result.ProfileId);
                 }
             });
+            $('body').loading('stop');
 
         });
     </script>
-    <script src="@Url.Content("~/js/global.js")"></script>
+    <script src="@Url.Content("~/js/global.js")">
+
+    </script>
     @RenderSection("scripts", false)
 </body>
 </html>

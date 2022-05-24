@@ -169,7 +169,8 @@ $(function () {
 
                     parametros.data = fdata;
 
-                    PostUpload("Main/UploadFile",fdata).done(function (response) {
+                    PostUpload("Main/UploadFile", fdata).done(function (response) {
+                        $('body').loading('stop');
                         if (response.code == 0) {
                             $("#modalEnviarCorreo").modal("hide");
                             fnAlertSuccess(response.message);
@@ -244,6 +245,7 @@ function eventDelete() {
             }, function (isConfirm) {
                 if (isConfirm) {
                     PostUpload("Main/DeleteReceiptFileName?ReceiptCode=" + code).done(function (response) {
+                        $('body').loading('stop');
                         if (response.code == 0) {
                             fnRefreshTrayBilling();
                             fnAlertSuccess("Se elimino Correctamente");
@@ -260,6 +262,7 @@ function eventDelete() {
 function fnLoadSubsidiary() {
 
     Get("Main/GetSubsidiary").done(function (response) {
+        $('body').loading('stop');
         console.log(response.data);
         if (response.data != null) {
             var select = document.getElementById('cboSubsidiary');
@@ -293,7 +296,8 @@ function fnRefreshTrayBilling() {
     }
     
 
-    Get("Receipt/GetReceiptBilling?startdate=" + startDate + "&enddate=" + endDate + "&subsidiaryId=" + subsidiaryId + "&numorder=" + numorder + "&documentNumber=" + documentNumber).done(function (response) {
+    Get("Receipt/GetReceiptBilling?startdate=" + startDate + "&enddate=" + endDate + "&subsidiaryId=" + subsidiaryId + "&numorder=" + numorder + "&documentNumber=" + documentNumber) (function (response) {
+        $('body').loading('stop');
         console.log(response.data);
         if (response.data != null) {
            

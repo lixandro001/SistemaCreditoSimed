@@ -19,9 +19,9 @@ namespace Simed.Business
             GC.SuppressFinalize(this);
         }
 
-        public List<BandejaClienteResponse> GetBandejaCliente(DateTime StartDate, DateTime EndDate, int PerfilId)
+        public List<BandejaClienteResponse> GetBandejaCliente(DateTime StartDate, DateTime EndDate, int PerfilId,int UsuarioCreacion)
         {
-            var Data = objBandejaDL.GetBandejaCliente(StartDate, EndDate, PerfilId);
+            var Data = objBandejaDL.GetBandejaCliente(StartDate, EndDate, PerfilId, UsuarioCreacion);
             return Data;
         }
 

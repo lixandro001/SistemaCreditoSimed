@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -27,11 +28,15 @@ namespace SimedCredito.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetBandejaCliente(string StartDate, string EndDate, int PerfilId)
+        public IActionResult GetBandejaCliente(string StartDate, string EndDate)
         {
             var Response = new GenericObjectResponse();
             try
             {
+               // HttpContext.Session.SetInt32("PROFILE_ID", UserData.ProfileId);
+                var PerfilId = HttpContext.Session.GetInt32("PROFILE_ID");
+                var UsuarioCreacion = HttpContext.Session.GetInt32("USUARIO_ID");
+
                 if (!string.IsNullOrEmpty(StartDate))
                 {
                     DateTime CDate1 = DateTime.ParseExact(StartDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -43,7 +48,7 @@ namespace SimedCredito.Web.Controllers
                     DateTime CDate2 = DateTime.ParseExact(EndDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                     EndDate = string.Format("{0:yyyy-MM-dd}", CDate2);
                 }
-                var Url = GeneralModel.UrlWebApi + "Bandeja/GetBandejaCliente/" + StartDate + "/" + EndDate + "/" + PerfilId;
+                var Url = GeneralModel.UrlWebApi + "Bandeja/GetBandejaCliente/" + StartDate + "/" + EndDate + "/" + PerfilId+"/"+ UsuarioCreacion;
                 var Result = Simed.Utilities.Rest.RestClient.ProcessGetRequest(Url);
                 Response.data = Result;
             }

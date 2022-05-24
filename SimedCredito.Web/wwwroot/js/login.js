@@ -9,6 +9,7 @@
     $("#btnLogin").click(function () {
         if (validForm() == true) { 
             fnLogin();
+            $('body').loading('stop');
         }
         else
         {
@@ -40,11 +41,12 @@ function fnLogin() {
      parametro.Login = $("#Login").val();
      parametro.Password = $("#Password").val();
      
-     Post("Login/Validate", parametro).done(function (response) {
+    Post("Login/Validate", parametro).done(function (response) {
+        $('body').loading('stop');
         var result = response.data;
         console.log(result);
         if (result.code == 0) {
-        
+            
             window.location = fnBaseUrlWeb("Main/Index");
             
         } else {

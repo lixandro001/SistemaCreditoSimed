@@ -1,6 +1,10 @@
-﻿  
+﻿var perfilixandro = '';
+
 $(function () {
-      
+    console.log(perfilixandro);
+  
+    fnLoadTrayUser();
+     
     $("#tabDescTable").DataTable({
         "paging": true,
         "lengthChange": false,
@@ -52,6 +56,7 @@ $(function () {
     $("#btnNuevo").on("click", function () {
         fnViewForm();
     });
+     
 });
 
 
@@ -61,8 +66,9 @@ function fnLoadTrayUser() {
     var PerfilId = "";
     startDate = $("#txtStartDate").val();
     endDate = $("#txtEndDate").val();
-    PerfilId = $("#perfil").val();
+    PerfilId = perfilixandro;
     Get("Bandeja/GetBandejaCliente?StartDate=" + startDate + "&EndDate=" + endDate + "&PerfilId=" + PerfilId).done(function (response) {
+        $('body').loading('stop');
         if (response.data.Data != null) {
             fnClearTable($('#tabDescTable').dataTable());
             console.log(response.data.Data);

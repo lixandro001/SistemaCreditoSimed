@@ -28,6 +28,7 @@ $(function () {
 
 function LoadDataViewByCode(code) {
     Get("FormularioCliente/DataByCode?Code=" + code).done(function (response) {
+        $('body').loading('stop');
         console.log(response.data.Data);
         if (response.data.Data != null) {
             SeteoDatosFormulario(response.data.Data);
@@ -330,6 +331,7 @@ function fnAprobarFormulario() {
     parametros.Code = code;
 
     Post("FormularioCliente/AprobarFormularioCliente", parametros).done(function (response) {
+        $('body').loading('stop');
         if (response.code == 0) {
             fnConfirm(response.message);
         }
@@ -345,6 +347,7 @@ function fnRechazarFormulario() {
     parametros.MensajeRechazado = MensajeRechazo;
 
     Post("FormularioCliente/RechazarFormularioCliente", parametros).done(function (response) {
+        $('body').loading('stop');
         if (response.code == 0) {
             fnConfirm(response.message);
         }

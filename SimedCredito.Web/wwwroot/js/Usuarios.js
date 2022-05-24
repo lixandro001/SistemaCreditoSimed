@@ -67,6 +67,7 @@
 
 function fnLoadTrayUser() {
     Get("Usuarios/GetListadoUsuario").done(function (response) {
+        $('body').loading('stop');
         if (response.data.Data != null) {
             fnClearTable($('#tabDescTable').dataTable());
             console.log(response.data.Data);
@@ -85,6 +86,7 @@ function fnViewEliminar(UsuarioCodeGuid) {
     var parametro = new Object();
     parametro.codeUsuario = UsuarioCodeGuid;
     Post("Usuarios/eliminarUsuarios", parametro).done(function (response) {
+        $('body').loading('stop');
         console.log("-----------respuesta del guardado");
         console.log(response);
         console.log(response.data);

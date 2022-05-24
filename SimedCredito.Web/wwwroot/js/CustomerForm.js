@@ -19,7 +19,7 @@ $(function (e) {
     fnLoadActividadEconomica();
     fnLoadRegimen();
     fnLoadNacionalidad();
-    fnLoadSubUnidad();
+   /* fnLoadSubUnidad();*/
     fnLoadAsesorComercial();
     fnLoadUnidad();
     fnLoadTipoPago();
@@ -28,29 +28,23 @@ $(function (e) {
         fnSaveFormularioCliente();
          
     });
-
     $("#btnEnviarFormulario").on("click", function (e) {
         console.log("entro numero 1");          
     
         fnEnviarFormularioCliente();
     });
-
     $("#cboTipoIdentificacionTributaria").on("change", function () {
         fnChangeIdentificacionIT();
     });
-
     $("#cboTipoSociedad").on("change", function () {
         fnChangeSociedadIT();
     });
-
     $("#cboActividadEconomica").on("change", function () {
         fnChangeEconomicaIT();
     });
-
     $("#cboNacionalidad").on("change", function () {
         fnChangeNacionalidadIT();
     });
-
     //********************************************************
     // PARA ADJUNTO 1
     $(".browse-btn1").on("click", function (a) {
@@ -196,12 +190,12 @@ $(function (e) {
         var htmlName = name.length > 80 ? name.substr(name.length - 80) : name;
         $(".file-info13").text(htmlName);
     });
-
 });
 
  
 function fnLoadCategoriaCliente() {
     Get("SisInternoSelect/GetCategoriaCliente").done(function (response) {
+        $('body').loading('stop');
         console.log(response.data.Data);
         var Response = response.data.Data;
         /*if (Response != null) {
@@ -217,6 +211,7 @@ function fnLoadCategoriaCliente() {
 
 function fnLoadPrecios() {
     Get("SisInternoSelect/GetPrecios").done(function (response) {
+        $('body').loading('stop');
         console.log(response.data.Data);
         var Response = response.data.Data;
         /*if (Response != null) {
@@ -232,6 +227,7 @@ function fnLoadPrecios() {
 
 function fnLoadTipoIdentificacion() {
     Get("SisInternoSelect/GetTipoIdentificacion").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             //-----------Combo para Identificacion (seccion : Representate Legal)
@@ -254,6 +250,7 @@ function fnLoadTipoIdentificacion() {
 
 function fnLoadTipoContribuyente() {
     Get("SisInternoSelect/GetTipoContribuyente").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboTipoContribuyente');
@@ -268,6 +265,7 @@ function fnLoadTipoContribuyente() {
 
 function fnLoadTipoSociedad() {
     Get("SisInternoSelect/GetTipoSociedad").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboTipoSociedad');
@@ -282,6 +280,7 @@ function fnLoadTipoSociedad() {
 
 function fnLoadOrigenCapital() {
     Get("SisInternoSelect/GetOrigenCapital").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboOrigenCapital');
@@ -296,6 +295,7 @@ function fnLoadOrigenCapital() {
 
 function fnLoadPais() {
     Get("SisInternoSelect/GetPais").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboPais');
@@ -310,6 +310,7 @@ function fnLoadPais() {
 
 function fnLoadActividadEconomica() {
     Get("SisInternoSelect/GetActividadEconomica").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboActividadEconomica');
@@ -324,6 +325,7 @@ function fnLoadActividadEconomica() {
 
 function fnLoadRegimen() {
     Get("SisInternoSelect/GetRegimen").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboRegimen');
@@ -338,6 +340,7 @@ function fnLoadRegimen() {
 
 function fnLoadNacionalidad() {
     Get("SisInternoSelect/GetNacionalidad").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboNacionalidad');
@@ -352,6 +355,7 @@ function fnLoadNacionalidad() {
 
 function fnLoadBiociencias() {
     Get("SisInternoSelect/GetBiociencias").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         /*if (Response != null) {
             var select = document.getElementById('cboBioCiencias');
@@ -364,22 +368,24 @@ function fnLoadBiociencias() {
     });
 }
 
-function fnLoadSubUnidad() {
-    Get("SisInternoSelect/GetSubUnidad").done(function (response) {
-        var Response = response.data.Data;
-        if (Response != null) {
-            var select = document.getElementById('cboSubUnidad');
-            var options = '<option value="">Seleccionar Sub Unidad</option>';
-            for (let item of Response) {
-                options += `<option value="${item.Id_S_Sub_Unidad}">${item.Nombre_S_Sub_Unidad}</option>`;
-            }
-            select.innerHTML = options;
-        }
-    });
-}
+//function fnLoadSubUnidad() {
+//    Get("SisInternoSelect/GetSubUnidad").done(function (response) {
+//        $('body').loading('stop');
+//        var Response = response.data.Data;
+//        if (Response != null) {
+//            var select = document.getElementById('cboSubUnidad');
+//            var options = '<option value="">Seleccionar Sub Unidad</option>';
+//            for (let item of Response) {
+//                options += `<option value="${item.Id_S_Sub_Unidad}">${item.Nombre_S_Sub_Unidad}</option>`;
+//            }
+//            select.innerHTML = options;
+//        }
+//    });
+//}
 
 function fnLoadAsesorComercial() {
     Get("SisInternoSelect/GetAsesorComercial").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboAsesorComercial');
@@ -394,6 +400,7 @@ function fnLoadAsesorComercial() {
 
 function fnLoadUnidad() {
     Get("SisInternoSelect/GetUnidad").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboUnidad');
@@ -408,6 +415,7 @@ function fnLoadUnidad() {
 
 function fnLoadTipoPago() {
     Get("SisInternoSelect/GetTipoPago").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboTipoPago');
@@ -460,8 +468,6 @@ function fnChangeNacionalidadIT() {
 }
 
 function fnSaveFormularioCliente() {
-
-
     //---- DATOS GENERALES (DG)
     if (!fnValidFormularioDG()) {
         fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Datos Generales.");
@@ -808,9 +814,9 @@ function fnValidFormularioCUC() {
     if ($("#cboUnidad").val() == '') {
         Rpta = false;
     }
-    if ($("#cboSubUnidad").val() == '') {
-        Rpta = false;
-    }
+    //if ($("#cboSubUnidad").val() == '') {
+    //    Rpta = false;
+    //}
     if ($("#cboAsesorComercial").val() == '') {
         Rpta = false;
     }
@@ -1004,20 +1010,7 @@ function fnLimpiarCamposTable() {
 //#endregion
 ///-------FIN ISA CHECKBOX TRUE O FALSE-------
 //--------ISA CHECKBOX TRUE O FALSE---------
-
-//#region IF CHECKBOC
-//$("#checkSolesIF").on("change", function () {
-//    fnLimpiarCamposIF();
-//    //if (this.checked) {
-//    //    $("#checkDolaresIF").prop("checked", false);
-//    //    fnPlaceholderSolesIf();
-//    //}
-//    //else {
-//    //    $("#checkDolaresIF").prop("checked", true);
-//    //    fnPlaceholderDolaresIf();
-//    //}
-//});
-
+  
 $("#checkDolaresIF").on("change", function () {
     fnLimpiarCamposIF();
     //if (this.checked) {
@@ -1056,9 +1049,7 @@ function fnPlaceholderDolaresIf() {
    /* $("#txtPatrimonioIF").attr('placeholder', '$');*/
     /*$("#txtOtrosIngresosIF").attr('placeholder', '$');*/
 }
-
-
-
+ 
 //#endregion
 ///-------FIN ISA CHECKBOX TRUE O FALSE-------
 function fnGuardarFormularioCliente() {
@@ -1156,24 +1147,7 @@ function fnGuardarFormularioCliente() {
     var txtNacionalidadAccionista4ISA = $("#txtNacionalidadAccionista4ISA").val();
     //INFORMACIÓN FINANCIERA
     /*var FechaCorte = $("#FechaCorte").val();*/
- 
-    //var checkSolesIF = false; 
-    //if (document.getElementById("checkSolesIF").checked)
-    //{
-    //    checkSolesIF = true
-    //}
-    //var checkDolaresIF = false;
-    //if (document.getElementById("checkDolaresIF").checked)
-    //{
-    //    checkDolaresIF = true
-    //}
-    /*var txtActivosIF = $("#txtActivosIF").val();*/
-    /*var txtIngresosMensualesIF = $("#txtIngresosMensualesIF").val();*/
-   /* var txtPasivosIF = $("#txtPasivosIF").val();*/
-   /* var txtEgresosMensualesIF = $("#txtEgresosMensualesIF").val();*/
-   /* var txtPatrimonioIF = $("#txtPatrimonioIF").val();*/
-    /*var txtOtrosIngresosIF = $("#txtOtrosIngresosIF").val();*/
-    /*var txtConceptoOtrosIngresosIF = $("#txtConceptoOtrosIngresosIF").val();*/
+  
     //Referencias Comerciales
     var txtEmpresa1RC = $("#txtEmpresa1RC").val();
     var txtRuc1RC = $("#txtRuc1RC").val();
@@ -1196,7 +1170,7 @@ function fnGuardarFormularioCliente() {
     var txtDireccionRB = $("#txtDireccionRB").val();
     //Clasificación para uso Comercial CUC
     var cboUnidad = $("#cboUnidad").val();
-    var cboSubUnidad = $("#cboSubUnidad").val();
+    var cboSubUnidad = "";
     var cboAsesorComercial = $("#cboAsesorComercial").val();
     var txtDescripcion = $("#txtDescripcion").val();
     //Terminos de pago  
@@ -1336,16 +1310,7 @@ function fnGuardarFormularioCliente() {
     fdata.append("txtParticipacionAccionista4ISA", txtParticipacionAccionista4ISA);
     fdata.append("txtNacionalidadAccionista4ISA", txtNacionalidadAccionista4ISA);
     //INFORMACIÓN FINANCIERA
-    /*fdata.append("FechaCorte", FechaCorte);*/
-    /*fdata.append("checkSolesIF", checkSolesIF);*/
-    /*fdata.append("checkDolaresIF", checkDolaresIF);*/
-    /*fdata.append("txtActivosIF", txtActivosIF);*/
-    /*fdata.append("txtIngresosMensualesIF", txtIngresosMensualesIF);*/
-    /*fdata.append("txtPasivosIF", txtPasivosIF);*/
-   /* fdata.append("txtEgresosMensualesIF", txtEgresosMensualesIF);*/
-   /* fdata.append("txtPatrimonioIF", txtPatrimonioIF);*/
-    /*fdata.append("txtOtrosIngresosIF", txtOtrosIngresosIF);*/
-    /*fdata.append("txtConceptoOtrosIngresosIF", txtConceptoOtrosIngresosIF);*/
+   
     //Referencias Comerciales
     fdata.append("txtEmpresa1RC", txtEmpresa1RC);
     fdata.append("txtRuc1RC", txtRuc1RC);
@@ -1384,6 +1349,7 @@ function fnGuardarFormularioCliente() {
         var parametros = new Object();
         parametros.data = fdata;
         PostUpload("FormularioCliente/GuardarFormularioCliente", fdata).done(function (response) {
+            $('body').loading('stop');
             if (response.code == 0) {
 
                 fnAlertSuccess(response.message, function () {
@@ -1535,7 +1501,7 @@ function fnEnviarFormularioCliente() {
     var txtDireccionRB = $("#txtDireccionRB").val();
     //Clasificación para uso Comercial CUC
     var cboUnidad = $("#cboUnidad").val();
-    var cboSubUnidad = $("#cboSubUnidad").val();
+    var cboSubUnidad = ""
     var cboAsesorComercial = $("#cboAsesorComercial").val();
     var txtDescripcion = $("#txtDescripcion").val();
     //Terminos de pago  
@@ -1719,6 +1685,7 @@ function fnEnviarFormularioCliente() {
         var parametros = new Object();
         parametros.data = fdata;
         PostUpload("FormularioCliente/EnviarFormularioCliente", fdata).done(function (response) {
+            $('body').loading('stop');
             if (response.code == 0) {
 
                 fnAlertSuccess(response.message, function () {

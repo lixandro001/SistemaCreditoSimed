@@ -1,20 +1,13 @@
 ﻿$(function (e) {
-
-    
-
+     
     $("#fmrRegister").on("submit", function (e) {
         e.preventDefault();
     });
-    
-  
-
+     
     $("#btnRegister").click(function () {
-        if (validForm() == 0) {
-
-           
+        if (validForm() == 0) { 
             fnSave();
         } else {
-
             fnAlertAdvertencia("Ingrese Todos Sus Datos");
           
             return;
@@ -106,6 +99,7 @@ function fnSave() {
     parametro.Password = Password;
 
     Post("User/SaveUser", parametro).done(function (response) {
+        $('body').loading('stop');
         var result = response.data;
         console.log(result)
 

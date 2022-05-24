@@ -1,7 +1,7 @@
 ﻿let ArrayCodes = [];
 
 $(function () {
-
+    fnLoadTrayUser();
     $("#tabDescTable").DataTable({
         "paging": true,
         "lengthChange": false,
@@ -49,6 +49,7 @@ function fnLoadTrayUser() {
     endDate = $("#txtEndDate").val();
     var PerfilId = $("#perfil").val();
     Get("Bandeja/GetBandejaCliente?StartDate=" + startDate + "&EndDate=" + endDate + "&PerfilId=" + PerfilId).done(function (response) {
+        $('body').loading('stop');
         if (response.data.Data != null) {
             fnClearTable($('#tabDescTable').dataTable());
             if (response.data.Data.length > 0) {

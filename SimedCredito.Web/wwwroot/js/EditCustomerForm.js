@@ -205,6 +205,7 @@ $(function () {
 
 function LoadDataViewByCode(code) {
     Get("FormularioCliente/DataByCode?Code=" + code).done(function (response) {
+        $('body').loading('stop');
         console.log(response.data.Data);
         if (response.data.Data != null) {
             SeteoDatosFormulario(response.data.Data);
@@ -381,6 +382,7 @@ function SeteoDatosFormulario(Datos) {
 
 function fnLoadTipoIdentificacion() {
     Get("SisInternoSelect/GetTipoIdentificacion").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             //-----------Combo para Identificacion (seccion : Representate Legal)
@@ -403,6 +405,7 @@ function fnLoadTipoIdentificacion() {
 
 function fnLoadTipoContribuyente() {
     Get("SisInternoSelect/GetTipoContribuyente").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboTipoContribuyente');
@@ -417,6 +420,7 @@ function fnLoadTipoContribuyente() {
 
 function fnLoadTipoSociedad() {
     Get("SisInternoSelect/GetTipoSociedad").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboTipoSociedad');
@@ -431,6 +435,7 @@ function fnLoadTipoSociedad() {
 
 function fnLoadOrigenCapital() {
     Get("SisInternoSelect/GetOrigenCapital").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboOrigenCapital');
@@ -445,6 +450,7 @@ function fnLoadOrigenCapital() {
 
 function fnLoadPais() {
     Get("SisInternoSelect/GetPais").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboPais');
@@ -459,6 +465,7 @@ function fnLoadPais() {
 
 function fnLoadActividadEconomica() {
     Get("SisInternoSelect/GetActividadEconomica").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboActividadEconomica');
@@ -473,6 +480,7 @@ function fnLoadActividadEconomica() {
 
 function fnLoadRegimen() {
     Get("SisInternoSelect/GetRegimen").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboRegimen');
@@ -487,6 +495,7 @@ function fnLoadRegimen() {
 
 function fnLoadNacionalidad() {
     Get("SisInternoSelect/GetNacionalidad").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboNacionalidad');
@@ -501,6 +510,7 @@ function fnLoadNacionalidad() {
 
 function fnLoadBiociencias() {
     Get("SisInternoSelect/GetBiociencias").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         /*if (Response != null) {
             var select = document.getElementById('cboBioCiencias');
@@ -515,6 +525,7 @@ function fnLoadBiociencias() {
 
 function fnLoadSubUnidad() {
     Get("SisInternoSelect/GetSubUnidad").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboSubUnidad');
@@ -529,6 +540,7 @@ function fnLoadSubUnidad() {
 
 function fnLoadAsesorComercial() {
     Get("SisInternoSelect/GetAsesorComercial").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboAsesorComercial');
@@ -543,6 +555,7 @@ function fnLoadAsesorComercial() {
 
 function fnLoadUnidad() {
     Get("SisInternoSelect/GetUnidad").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboUnidad');
@@ -557,6 +570,7 @@ function fnLoadUnidad() {
 
 function fnLoadTipoPago() {
     Get("SisInternoSelect/GetTipoPago").done(function (response) {
+        $('body').loading('stop');
         var Response = response.data.Data;
         if (Response != null) {
             var select = document.getElementById('cboTipoPago');
@@ -1531,6 +1545,7 @@ function fnGuardarFormularioCliente() {
         var parametros = new Object();
         parametros.data = fdata;
         PostUpload("FormularioCliente/GuardarFormularioCliente", fdata).done(function (response) {
+            $('body').loading('stop');
             if (response.code == 0) {
                 fnAlertSuccess(response.message);
                 console.log(response.data);
@@ -1896,6 +1911,7 @@ function fnEnviarFormularioCliente() {
         var parametros = new Object();
         parametros.data = fdata;
         PostUpload("FormularioCliente/EnviarFormularioCliente", fdata).done(function (response) {
+            $('body').loading('stop');
             if (response.code == 0) {
 
                 fnAlertSuccess(response.message, function () {
