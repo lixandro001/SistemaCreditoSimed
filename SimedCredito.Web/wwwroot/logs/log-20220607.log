@@ -1,0 +1,68 @@
+2022-06-07 21:04:36.276 -05:00 [Warning] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid.
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.DangerousUnprotect(Byte[] protectedData, Boolean ignoreRevocationErrors, Boolean& requiresMigration, Boolean& wasRevoked)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2022-06-07 21:04:38.048 -05:00 [Warning] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid.
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.DangerousUnprotect(Byte[] protectedData, Boolean ignoreRevocationErrors, Boolean& requiresMigration, Boolean& wasRevoked)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2022-06-07 21:04:38.052 -05:00 [Warning] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid.
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.DangerousUnprotect(Byte[] protectedData, Boolean ignoreRevocationErrors, Boolean& requiresMigration, Boolean& wasRevoked)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2022-06-07 21:07:23.949 -05:00 [Warning] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid.
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.DangerousUnprotect(Byte[] protectedData, Boolean ignoreRevocationErrors, Boolean& requiresMigration, Boolean& wasRevoked)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2022-06-07 23:37:45.248 -05:00 [Warning] Input string was not in a correct format.
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(ReadOnlySpan`1 str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(ReadOnlySpan`1 s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at SimedCredito.Web.Controllers.FormularioClienteController.EnviarFormularioCliente(IFormFile FormFile1, IFormFile FormFile2, IFormFile FormFile3, IFormFile FormFile4, IFormFile FormFile5, IFormFile FormFile6, IFormFile FormFile7, IFormFile FormFile8, IFormFile FormFile9, IFormFile FormFile10, IFormFile FormFile11, IFormFile FormFile12, IFormFile FormFile13) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\FormularioClienteController.cs:line 1193
+2022-06-07 23:38:00.057 -05:00 [Warning] Input string was not in a correct format.
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(ReadOnlySpan`1 str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(ReadOnlySpan`1 s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at SimedCredito.Web.Controllers.FormularioClienteController.EnviarFormularioCliente(IFormFile FormFile1, IFormFile FormFile2, IFormFile FormFile3, IFormFile FormFile4, IFormFile FormFile5, IFormFile FormFile6, IFormFile FormFile7, IFormFile FormFile8, IFormFile FormFile9, IFormFile FormFile10, IFormFile FormFile11, IFormFile FormFile12, IFormFile FormFile13) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\FormularioClienteController.cs:line 1193
+2022-06-07 23:38:02.936 -05:00 [Warning] Input string was not in a correct format.
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(ReadOnlySpan`1 str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(ReadOnlySpan`1 s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at SimedCredito.Web.Controllers.FormularioClienteController.EnviarFormularioCliente(IFormFile FormFile1, IFormFile FormFile2, IFormFile FormFile3, IFormFile FormFile4, IFormFile FormFile5, IFormFile FormFile6, IFormFile FormFile7, IFormFile FormFile8, IFormFile FormFile9, IFormFile FormFile10, IFormFile FormFile11, IFormFile FormFile12, IFormFile FormFile13) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\FormularioClienteController.cs:line 1193
+2022-06-07 23:39:40.855 -05:00 [Warning] Input string was not in a correct format.
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(ReadOnlySpan`1 str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(ReadOnlySpan`1 s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at SimedCredito.Web.Controllers.FormularioClienteController.EnviarFormularioCliente(IFormFile FormFile1, IFormFile FormFile2, IFormFile FormFile3, IFormFile FormFile4, IFormFile FormFile5, IFormFile FormFile6, IFormFile FormFile7, IFormFile FormFile8, IFormFile FormFile9, IFormFile FormFile10, IFormFile FormFile11, IFormFile FormFile12, IFormFile FormFile13) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\FormularioClienteController.cs:line 1193
+2022-06-07 23:42:18.839 -05:00 [Warning] Input string was not in a correct format.
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(ReadOnlySpan`1 str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(ReadOnlySpan`1 s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at SimedCredito.Web.Controllers.FormularioClienteController.EnviarFormularioCliente(IFormFile FormFile1, IFormFile FormFile2, IFormFile FormFile3, IFormFile FormFile4, IFormFile FormFile5, IFormFile FormFile6, IFormFile FormFile7, IFormFile FormFile8, IFormFile FormFile9, IFormFile FormFile10, IFormFile FormFile11, IFormFile FormFile12, IFormFile FormFile13) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\FormularioClienteController.cs:line 1193
+2022-06-07 23:42:26.159 -05:00 [Warning] Input string was not in a correct format.
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(ReadOnlySpan`1 str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(ReadOnlySpan`1 s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at SimedCredito.Web.Controllers.FormularioClienteController.EnviarFormularioCliente(IFormFile FormFile1, IFormFile FormFile2, IFormFile FormFile3, IFormFile FormFile4, IFormFile FormFile5, IFormFile FormFile6, IFormFile FormFile7, IFormFile FormFile8, IFormFile FormFile9, IFormFile FormFile10, IFormFile FormFile11, IFormFile FormFile12, IFormFile FormFile13) in C:\Users\Usuario\Desktop\SistemaCreditoSimed\SimedCredito\SimedCredito.Web\Controllers\FormularioClienteController.cs:line 1193

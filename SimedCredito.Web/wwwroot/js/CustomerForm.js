@@ -1,5 +1,10 @@
 ﻿
 $(function (e) {
+      
+    
+    fnLoadPais();
+    
+     
     $(".DateFechaOnly").datepicker({
         autoclose: true,
         format: "dd/mm/yyyy",
@@ -15,7 +20,9 @@ $(function (e) {
     fnLoadTipoContribuyente();
     fnLoadTipoSociedad();
     fnLoadOrigenCapital();
-    fnLoadPais();
+
+    
+
     fnLoadActividadEconomica();
     fnLoadRegimen();
     fnLoadNacionalidad();
@@ -297,14 +304,27 @@ function fnLoadPais() {
     Get("SisInternoSelect/GetPais").done(function (response) {
         $('body').loading('stop');
         var Response = response.data.Data;
-        if (Response != null) {
-            var select = document.getElementById('cboPais');
-            var options = '<option value="">Seleccionar País</option>';
-            for (let item of Response) {
-                options += `<option value="${item.Id_S_Pais}">${item.Nombre_S_Pais}</option>`;
+
+        //if (Response != null) {
+        //    console.log(response.code);
+
+            if (response.code == 0) {
+                var select = document.getElementById('cboPais');
+                var options = '<option value="">Seleccionar País</option>';
+                for (let item of Response) {
+                    options += `<option value="${item.Id_S_Pais}">${item.Nombre_S_Pais}</option>`;
+                }
+                select.innerHTML = options;
+            } else if (response.code == 3) {
+                if (response.data == "SESSION_TIMEOUT") {
+                    fnAlertAdvertenciaSession(response.message, function () {
+                        window.location = fnBaseUrlWeb("FormularioCliente/Exit");
+                    });
+                }
             }
-            select.innerHTML = options;
-        }
+
+           
+        //}
     });
 }
 
@@ -1358,7 +1378,14 @@ function fnGuardarFormularioCliente() {
 
                 console.log(response.data);
 
+            } else if (response.code == 3) {
+                if (response.data == "SESSION_TIMEOUT") {
+                    fnAlertAdvertenciaSession(response.message, function () {
+                        window.location = fnBaseUrlWeb("FormularioCliente/Exit");
+                    });
+                }
             } else {
+
                 fnAlertError(response.message);
             }
         });
@@ -1687,13 +1714,16 @@ function fnEnviarFormularioCliente() {
         PostUpload("FormularioCliente/EnviarFormularioCliente", fdata).done(function (response) {
             $('body').loading('stop');
             if (response.code == 0) {
-
                 fnAlertSuccess(response.message, function () {
                     window.location = fnBaseUrlWeb("Main/BandejaComercial");
                 });
-
                 console.log(response.data); 
-
+            } else if (response.code == 3) {
+                if (response.data == "SESSION_TIMEOUT") {
+                    fnAlertAdvertenciaSession(response.message, function () {
+                        window.location = fnBaseUrlWeb("FormularioCliente/Exit");
+                    });
+                }
             } else {
                 fnAlertError(response.message);
             }

@@ -69,13 +69,21 @@ function fnLoadTrayUser() {
     PerfilId = perfilixandro;
     Get("Bandeja/GetBandejaCliente?StartDate=" + startDate + "&EndDate=" + endDate + "&PerfilId=" + PerfilId).done(function (response) {
         $('body').loading('stop');
-        if (response.data.Data != null) {
+        if (response.code == 0) {
             fnClearTable($('#tabDescTable').dataTable());
             console.log(response.data.Data);
             if (response.data.Data.length > 0) {
                 $('#tabDescTable').dataTable().fnAddData(response.data.Data);
-            } else {
+            }
+
+            else {
                 fnAlertAdvertencia("No se Encontro Datos Disponibles");
+            }
+        } else if (response.code == 3) {
+            if (response.data == "SESSION_TIMEOUT") {
+                fnAlertAdvertenciaSession(response.message, function () {
+                    window.location = fnBaseUrlWeb("FormularioCliente/Exit");
+                });
             }
         }
     });

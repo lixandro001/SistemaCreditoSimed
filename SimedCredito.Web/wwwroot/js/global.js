@@ -76,6 +76,21 @@ function ajaxMethodUpload(url, method, params, async) {
 function fnBaseUrlWeb(url) {
     return window.appURL + url;
 }
+
+
+function fnAlertAdvertenciaSession(message, functionOnError) {
+    swal({
+        title: "¡Error!",
+        html: false,
+        text: message || "Session Terminada",
+        type: "error",
+        showCancelButton: false,
+        confirmButtonColor: "#007bff",
+        confirmButtonText: "Aceptar",
+        closeOnConfirm: true
+    }, functionOnError);
+}
+
  
 
 function fnAlertAdvertencia(messange,titulo) {

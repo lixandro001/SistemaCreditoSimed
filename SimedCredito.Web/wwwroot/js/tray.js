@@ -40,7 +40,7 @@ $(function () {
     });
 
 });
-
+ 
 function fnLoadTrayUser() {
     var startDate = "";
     var endDate = "";
@@ -49,13 +49,21 @@ function fnLoadTrayUser() {
     var PerfilId = $("#perfil").val();
     Get("Bandeja/GetBandejaCliente?StartDate=" + startDate + "&EndDate=" + endDate + "&PerfilId=" + PerfilId).done(function (response) {
         $('body').loading('stop');
-        if (response.data.Data != null) {
+
+        if (response.code == 0) {
             fnClearTable($('#tabTray').dataTable());
             if (response.data.Data.length > 0) {
                 $('#tabTray').dataTable().fnAddData(response.data.Data);
             } else {
                 fnAlertAdvertencia("No se Encontro Datos Disponibles");
             }
+
+         } else if (response.code == 3) {
+            if (response.data == "SESSION_TIMEOUT") {
+                fnAlertAdvertenciaSession(response.message, function () {
+                    window.location = fnBaseUrlWeb("FormularioCliente/Exit");
+                });
+              }
         }
     });
 }

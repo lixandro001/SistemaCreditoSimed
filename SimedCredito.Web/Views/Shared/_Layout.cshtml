@@ -190,10 +190,14 @@
                 var result = response.data;
                 console.log(result);
                 if (response.code == 0) {
-                    var nombre = result.Fullname;
-                    //var perfil = result.ProfileId;
-                    $("#nombreUsuarioLayout").text(nombre);
-                    $("#perfil").val(result.ProfileId);
+
+                    if (result != null) {
+                        var nombre = result.Fullname;
+                        //var perfil = result.ProfileId;
+                        $("#nombreUsuarioLayout").text(nombre);
+                        $("#perfil").val(result.ProfileId);
+                    }
+                    
                 }
             });
             $('body').loading('stop');

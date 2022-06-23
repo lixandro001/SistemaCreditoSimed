@@ -10,7 +10,8 @@ namespace Simed.Entity
         {
             OK = 0,
             ERROR = 1,
-            VAL = 2
+            VAL = 2,
+            SESIONCADUCA=3
         }
 
         public enum TokenType : int

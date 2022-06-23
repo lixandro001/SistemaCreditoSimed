@@ -10,6 +10,7 @@ using Simed.Entity.Response;
 using Simed.Utilities.General;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -82,6 +83,13 @@ namespace SimedCredito.Web.Controllers
             var Response = new GenericObjectResponse();
             try
             {
+
+                if (request.FechaCorte==null)
+                {
+                     DateTime fecha = DateTime.Now;
+                     request.FechaCorte = Convert.ToString(fecha);
+                }
+
                 var IdUsuario = HttpContext.Session.GetInt32("USUARIO_ID");
                 request.UsuarioId = Convert.ToInt32(IdUsuario);
                 var Url = GeneralModel.UrlWebApi + "FormularioCliente/guardarinformacionfinanciera";

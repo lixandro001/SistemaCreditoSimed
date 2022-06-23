@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Simed.Entity;
 using Simed.Entity.Response;
 using Simed.Utilities.General;
 using System;
@@ -30,12 +31,20 @@ namespace SimedCredito.Web.Controllers
         [HttpGet]
         public IActionResult GetBandejaCliente(string StartDate, string EndDate)
         {
-            var Response = new GenericObjectResponse();
+            var Response = new GenericObjectResponse();   
             try
             {
                // HttpContext.Session.SetInt32("PROFILE_ID", UserData.ProfileId);
                 var PerfilId = HttpContext.Session.GetInt32("PROFILE_ID");
                 var UsuarioCreacion = HttpContext.Session.GetInt32("USUARIO_ID");
+
+                if (HttpContext.Session.GetInt32("TOKEN") == null || HttpContext.Session.GetString("TOKEN") == null)
+                {
+                    Response.code = (int)Enums.eCodeError.SESIONCADUCA;
+                    Response.message = "Su sesión ha caducado.";
+                    Response.data = "SESSION_TIMEOUT";
+                    return Json(Response);
+                }
 
                 if (!string.IsNullOrEmpty(StartDate))
                 {
@@ -51,6 +60,7 @@ namespace SimedCredito.Web.Controllers
                 var Url = GeneralModel.UrlWebApi + "Bandeja/GetBandejaCliente/" + StartDate + "/" + EndDate + "/" + PerfilId+"/"+ UsuarioCreacion;
                 var Result = Simed.Utilities.Rest.RestClient.ProcessGetRequest(Url);
                 Response.data = Result;
+
             }
             catch (Exception ex)
             {

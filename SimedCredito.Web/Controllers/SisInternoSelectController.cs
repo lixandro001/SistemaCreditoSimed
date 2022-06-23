@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Simed.Entity;
 using Simed.Entity.Response;
 using Simed.Utilities.General;
 using System;
@@ -143,6 +145,15 @@ namespace SimedCredito.Web.Controllers
         public IActionResult GetPais()
         {
             var Response = new GenericObjectResponse();
+
+            if (HttpContext.Session.GetInt32("TOKEN") == null || HttpContext.Session.GetString("TOKEN") == null)
+            {
+                Response.code = (int)Enums.eCodeError.SESIONCADUCA;
+                Response.message = "Su sesión ha caducado.";
+                Response.data = "SESSION_TIMEOUT";
+                return Json(Response);
+            }
+
             try
             {
                 var Url = GeneralModel.UrlWebApi + "SisInternoSelect/GetPais";

@@ -10,6 +10,12 @@ $(function () {
         format: "dd/mm/yyyy",
     });
 
+    $("#txtActivosIF").prop("disabled", true);
+    $("#txtPasivosIF").prop("disabled", true);
+    $("#txtPatrimonioIF").prop("disabled", true);
+    $("#txtIngresosMensualesIF").prop("disabled", true);
+    $("#txtEgresosMensualesIF").prop("disabled", true);
+
     $("#GuardarEvaluacion").on("click", function () {   
         var realinput1evaluacion = $("#real-input1evaluacion")[0].files; 
         if (realinput1evaluacion.length == 0) {  
@@ -21,25 +27,43 @@ $(function () {
 
     $("#GuardarEvaluacion2").on("click", function () {
         var realinput2evaluacion = $("#real-input1evaluacion2")[0].files;
-        console.log(realinput2evaluacion);
-        console.log(realinput2evaluacion.length);
         if (realinput2evaluacion.length == 0) {
             fnAlertAdvertencia("Falta Adjubtar Documento De Evaluacion");
         } else {
             GuardarEvaluacionDocumento2();
         }
     });
+     
+    $("#txtActivosIF").change(function () {
+        $(this).val(parseFloat($(this).val()).toFixed(2));
+    });
+    $("#txtPasivosIF").change(function () {
+        $(this).val(parseFloat($(this).val()).toFixed(2));
+    });
+    $("#txtPatrimonioIF").change(function () {
+        $(this).val(parseFloat($(this).val()).toFixed(2));
+    });
+    $("#txtIngresosMensualesIF").change(function () {
+        $(this).val(parseFloat($(this).val()).toFixed(2));
+    });
+    $("#txtEgresosMensualesIF").change(function () {
+        $(this).val(parseFloat($(this).val()).toFixed(2));
+    });
+    $("#txtOtrosIngresosIF").change(function () {
+        $(this).val(parseFloat($(this).val()).toFixed(2));
+    });
+
 
     $("#btnGuardarInformacion").on("click", function () {
         fnSaveFormularioCliente();
     });
 
+     
     $("#btnAprobar").on("click", function () {
         if (!fnValidFormularioIF()) {
             fnAlertAdvertencia("Debe llenar los datos obligatorios (*) de Información Financiera.");
             return;
         }
-
         console.log($("#txtevaluacion").text());
         var valortext = $("#txtevaluacion").text();
         if (valortext != null || valortext!='') {
@@ -50,9 +74,10 @@ $(function () {
         if (realinput1evaluacion.length == 0) {
             fnAlertAdvertencia("Falta Adjubtar Documento De Evaluacion");
             return;
-        }  
-         
+        }        
     });
+
+
 
     $("#btnRechazar").on("click", function () {
         $("#rechazopoppup").val("");
@@ -107,21 +132,38 @@ function fnSaveFormularioCliente() {
     console.log("entro a guardar");
     fnGuardarFormularioClienteFinanciera();
 }
- 
+
+
 $("#checkSolesIF").on("change", function () {
     fnLimpiarCamposIF();
+
+    $("#txtActivosIF").prop("disabled", false);
+    $("#txtPasivosIF").prop("disabled", false);
+    $("#txtPatrimonioIF").prop("disabled", false);
+    $("#txtIngresosMensualesIF").prop("disabled", false);
+    $("#txtEgresosMensualesIF").prop("disabled", false);
+
     if (this.checked) {
         $("#checkDolaresIF").prop("checked", false);
         fnPlaceholderSolesIf();
     }
-    else {
+    else
+    {
         $("#checkDolaresIF").prop("checked", true);
         fnPlaceholderDolaresIf();
     }
+
 });
 
 $("#checkDolaresIF").on("change", function () {
     fnLimpiarCamposIF();
+
+    $("#txtActivosIF").prop("disabled", false);
+    $("#txtPasivosIF").prop("disabled", false);
+    $("#txtPatrimonioIF").prop("disabled", false);
+    $("#txtIngresosMensualesIF").prop("disabled", false);
+    $("#txtEgresosMensualesIF").prop("disabled", false);
+
     if (this.checked) {
         $("#checkSolesIF").prop("checked", false);
         fnPlaceholderDolaresIf();
@@ -153,21 +195,21 @@ function fnPlaceholderSolesIf() {
 }
 
 function fnPlaceholderDolaresIf() {
-    $("#txtActivosIF").attr('placeholder', '$');
+     $("#txtActivosIF").attr('placeholder', '$');
      $("#txtIngresosMensualesIF").attr('placeholder', '$');
      $("#txtPasivosIF").attr('placeholder', '$');
      $("#txtEgresosMensualesIF").attr('placeholder', '$');
      $("#txtPatrimonioIF").attr('placeholder', '$');
-    $("#txtOtrosIngresosIF").attr('placeholder', '$');
+     $("#txtOtrosIngresosIF").attr('placeholder', '$');
 }
 
 
 function fnValidFormularioIF() {
     var Rpta = true;
 
-    if ($("#FechaCorte").val() == '') {
-        Rpta = false;
-    }
+    //if ($("#FechaCorte").val() == '') {
+    //    Rpta = false;
+    //}
     if (!document.getElementById("checkSolesIF").checked && !document.getElementById("checkDolaresIF").checked) {
         Rpta = false;
     }
@@ -186,16 +228,17 @@ function fnValidFormularioIF() {
     if ($("#txtPatrimonioIF").val() == '') {
         Rpta = false;
     }
-    if ($("#txtOtrosIngresosIF").val() == '') {
-        Rpta = false;
-    }
-    if ($("#txtConceptoOtrosIngresosIF").val() == '') {
-        Rpta = false;
-    } 
+    //if ($("#txtOtrosIngresosIF").val() == '') {
+    //    Rpta = false;
+    //}
+    //if ($("#txtConceptoOtrosIngresosIF").val() == '') {
+    //    Rpta = false;
+    //} 
     return Rpta;
 }
 
 
+  
 
 function fnGuardarFormularioClienteFinanciera() {
     console.log("entro funcion guardar");
@@ -242,7 +285,9 @@ function fnGuardarFormularioClienteFinanciera() {
         
         if (response.data.code == 0) {
             fnAlertSuccess(response.data.message, function () {
-                window.location = fnBaseUrlWeb("Main/Cliente");
+                window.location = fnBaseUrlWeb("Main/FormularioPerfilAnalistaCredito/?code=" + code);
+
+                /*location.href = '/Main/EditFormularioPerfilComercial/?code=' + CodeRegister;*/
             });
 
         } else {
@@ -268,7 +313,7 @@ function GuardarEvaluacionDocumento() {
         $('body').loading('stop');
             if (response.code == 0) {
                 fnAlertSuccess(response.message, function () {
-                    window.location = fnBaseUrlWeb("Main/Cliente");
+                    window.location = fnBaseUrlWeb("Main/FormularioPerfilAnalistaCredito/?code=" + code);             
                 });
                 console.log(response.data);
             }
@@ -300,7 +345,7 @@ function GuardarEvaluacionDocumento2() {
         $('body').loading('stop');
         if (response.code == 0) {
             fnAlertSuccess(response.message, function () {
-                window.location = fnBaseUrlWeb("Main/Cliente");
+                window.location = fnBaseUrlWeb("Main/FormularioPerfilAnalistaCredito/?code=" + code);
             });
             console.log(response.data);
         }
@@ -599,23 +644,30 @@ function SeteoDatosFormulario(Datos) {
         }
   
     }
-     
-
 }
+
 
 function fnAprobarFormulario() {
     var parametros = new Object();
     var PerfilId = $("#perfil").val();
     parametros.IdPerfil = PerfilId;
     parametros.Code = code;
-
     Post("FormularioCliente/AprobarFormularioCliente", parametros).done(function (response) {
         $('body').loading('stop');
         if (response.code == 0) {
             fnConfirm(response.message);
+        } else if (response.code == 3) {
+            if (response.data == "SESSION_TIMEOUT") {
+                fnAlertAdvertenciaSession(response.message, function () {
+                    window.location = fnBaseUrlWeb("FormularioCliente/Exit");
+                });
+            }
         }
+         
     });
 }
+
+
 
 function fnRechazarFormulario() {
     var MensajeRechazo = $("#rechazopoppup").val();

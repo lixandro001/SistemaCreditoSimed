@@ -1,8 +1,7 @@
 ﻿
 @{
-    ViewBag.Title = "Gestión Creditos Clientes";
-    
-
+    ViewBag.Title = "GestionCreditosClientes";
+ 
     string CFecha = string.Format("{0:dd/MM/yyyy}", DateTime.Today.AddDays(-7));
     string FFecha = string.Format("{0:dd/MM/yyyy}", DateTime.Today);
 }
@@ -21,8 +20,7 @@
             </button>
         </div>
     </div>
-
-
+     
     <div class="card-body">
         <form id="frmGuardar" class="form-horizontal" role="form" method="post" action="">
               <input id="codecliente"  type="hidden" name="" />
