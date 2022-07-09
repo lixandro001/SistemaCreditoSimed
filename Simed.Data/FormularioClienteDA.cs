@@ -640,7 +640,28 @@ namespace Simed.Data
                 }
         }
 
-         
+        public bool ReiniciarFormulario(UpdateEstadoYPerfilRequest request)
+        {
+            using (var Ado = new SQLServer(ConStr))
+                try
+                {
+                    Ado.BeginTransaction();
+                    var Parameters = new SqlParameter[]
+                    {
+                        new SqlParameter{ParameterName="@CodClienteDatosGenerales",SqlDbType=SqlDbType.VarChar,Size=500,SqlValue=request.Code},
+                         };
+
+                    Ado.ExecNonQueryProcTransaction("uspReiniciarProceso", Parameters);
+                    Ado.Commit();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Ado.Rollback();
+                    throw ex;
+                }
+        }
+
         public bool eliminarUsuarios(EliminarUsuarioRequest request)
         {
             using (var Ado = new SQLServer(ConStr))

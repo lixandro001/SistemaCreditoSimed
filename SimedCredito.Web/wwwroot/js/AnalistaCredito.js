@@ -92,6 +92,12 @@ $(function () {
         fnRechazarFormulario();
     });
 
+
+    $("#btnReiniciar").on("click", function () {
+        fnReiniciar();
+    });
+
+
     $("#btnVerRechazo").on("click", function () {
         $("#VerMotivoRechazo").modal("show");
     });
@@ -666,9 +672,7 @@ function fnAprobarFormulario() {
          
     });
 }
-
-
-
+  
 function fnRechazarFormulario() {
     var MensajeRechazo = $("#rechazopoppup").val();
     var PerfilId = $("#perfil").val();
@@ -685,6 +689,21 @@ function fnRechazarFormulario() {
     });
 }
 
+
+function fnReiniciar() {   
+    var PerfilId = $("#perfil").val();
+    var parametros = new Object();
+    parametros.IdPerfil = PerfilId;
+    parametros.Code = code;
+
+    Post("FormularioCliente/ReiniciarFormulario", parametros).done(function (response) {
+        $('body').loading('stop');
+        if (response.code == 0) {
+            fnConfirm(response.message);
+        }
+    });
+}
+ 
 function fnConfirm(message) {
     swal({
         title: "¡Exito!",

@@ -1459,9 +1459,7 @@ namespace SimedCredito.Web.Controllers
                     Response.message = ex.Message;
                 }
                 return Json(Response);
-
-            }
-            
+            }      
         }
          
 
@@ -1487,6 +1485,31 @@ namespace SimedCredito.Web.Controllers
             }
             return Json(Response);
         }
+
+         
+        [HttpPost]
+        public JsonResult ReiniciarFormulario(UpdateEstadoYPerfilRequest request)
+        {
+            var Response = new GenericObjectResponse();
+            try
+            {
+                var IdUsuario = HttpContext.Session.GetInt32("USUARIO_ID");
+                request.UsuarioId = Convert.ToInt32(IdUsuario);
+                var Url = GeneralModel.UrlWebApi + "FormularioCliente/ReiniciarFormulario";
+                var Result = Simed.Utilities.Rest.RestClient.ProcessPostRequest(Url, request);
+                Response.data = Result;
+
+                var ResultJson = JsonConvert.SerializeObject(Response.data);
+                var User = JsonConvert.DeserializeObject<GenericResponse>(ResultJson);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogWarning(ex, ex.Message);
+                Response.message = ex.Message;
+            }
+            return Json(Response);
+        }
+         
 
         [HttpPost]
         public JsonResult InsertarEvaluacionDocumento(IFormFile FormFile1evaluacion)

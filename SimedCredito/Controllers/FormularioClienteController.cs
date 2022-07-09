@@ -291,6 +291,34 @@ namespace SimedCredito.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("ReiniciarFormulario")]
+        public IActionResult ReiniciarFormulario(UpdateEstadoYPerfilRequest request)
+        {
+            try
+            {
+                GenericResponse response = new GenericResponse();
+
+                if (objFormularioClienteBL.ReiniciarFormulario(request))
+                {
+                    response.code = (int)Enums.eCodeError.OK;
+                    response.message = "Se Reinicio Correctamente";
+                }
+                else
+                {
+                    response.code = (int)Enums.eCodeError.ERROR;
+                    response.message = "No se pudo Reiniciar";
+                }
+                return Ok(response);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex.Message);
+                throw ex;
+            }
+        }
+
 
 
         [HttpPost]

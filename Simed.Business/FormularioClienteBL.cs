@@ -53,6 +53,11 @@ namespace Simed.Business
             return objGuardarFormulario.RechazarFormularioCliente(request);
         }
 
+        public bool ReiniciarFormulario(UpdateEstadoYPerfilRequest request)
+        {
+            return objGuardarFormulario.ReiniciarFormulario(request);
+        }
+
         public bool eliminarUsuarios(EliminarUsuarioRequest request)
         {
             return objGuardarFormulario.eliminarUsuarios(request);
